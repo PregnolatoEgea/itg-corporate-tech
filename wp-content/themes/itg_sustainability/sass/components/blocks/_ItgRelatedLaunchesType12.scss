@@ -1,0 +1,74 @@
+
+.itgBlock-relatedLaunchesType12 {
+  .columns {
+  //  align-items: center;
+    
+    @include desktop {
+  //    align-items: initial;
+    }
+    
+  }
+  .column {
+    @include touch {
+      margin: auto;
+    }
+    &.is-12-mobile {
+      @include tablet-only {
+        width: 75%;
+      }
+    }
+  }
+
+  &__item {
+    &-img {
+      z-index: 9;
+      text-align: center;
+      @include desktop {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+      img{
+        width: 100%;
+        margin: auto;
+        display: block;
+        z-index: 9;
+        position: relative;
+      }
+    }
+    &-content {
+      background-color: white;
+      width: 100%;
+      justify-content: space-between;
+      padding-bottom: 8.5rem;
+      position: relative;
+      box-shadow: 0px 8px 24px 8px rgba(0,0,0,0.08);
+      -webkit-box-shadow: 0px 8px 24px 8px rgba(0,0,0,0.08);
+      -moz-box-shadow: 0px 8px 24px 8px rgba(0,0,0,0.08);
+      @include desktop {
+        padding-top: 4.5rem;
+        margin-top: -3rem;
+        border-radius: 0.625rem;
+      }
+    }
+    &-title {
+      font-weight: 500;
+      color: $itg__blue-1;
+      @include touch {
+        padding-top: 2rem;
+      }
+    }
+    &-cta {
+      position: absolute;
+      bottom: 2rem;
+      .columns {
+        @include touch {
+          display: block;
+        }
+      }
+    }
+  }
+  p {
+    margin-bottom: 0;
+  }
+
+}

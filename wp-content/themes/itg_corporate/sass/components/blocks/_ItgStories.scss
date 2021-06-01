@@ -1,0 +1,91 @@
+.itgBlock {
+  &-ItgStories {
+    padding-top: 40px;
+    padding-bottom: 56px;
+
+    &__single {
+      @include touch {
+        flex-direction: column;
+      }
+      &--reverse {
+        @include from($tablet) {
+          display: flex;
+          flex-direction: row-reverse;
+
+          .itgBlock-ItgStories__image {
+            text-align: left;
+          }
+        }
+      }
+    }
+
+    &__text {
+      @include mobile {
+        width: 100% !important;
+      }
+      @include touch {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 16px;
+
+      @include from($tablet) {
+        padding-top: 48px;
+        padding-bottom: 48px;
+      }
+
+      &-title {
+        @include mobile {
+          width: 100% !important;
+        }
+        @include touch {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        @include h5;
+        padding-bottom: 16px;
+
+        @include from($tablet) {
+          @include h2;
+        }
+      }
+
+      &-copy {
+        @include p2;
+        padding-bottom: 32px;
+
+        @include mobile {
+          text-align: left;
+          @include  p2(1.125rem !important, 1.75rem !important);
+          padding-bottom: 40px;
+        }
+        @include tablet-only {
+          text-align: left;
+          @include p4(2rem !important, 2.75rem !important);
+          padding-bottom: 40px;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    &__image {
+      @include mobile {
+        width: 100% !important;
+      }
+      @include touch {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100% !important;
+      }
+      @include from($tablet) {
+        text-align: right;
+      }
+    }
+  }
+}

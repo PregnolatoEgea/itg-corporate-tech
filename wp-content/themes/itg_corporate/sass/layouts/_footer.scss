@@ -1,0 +1,82 @@
+.itgFooter {
+  > div:first-child {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+  @include mobile {
+    padding: 24px !important;
+  }
+  &__left-container {
+    @include mobile {
+      margin-left: 0px;
+    }
+    @include tablet-only {
+      flex-direction: column;
+      margin-left: 15%;
+      margin-top: 20px;
+      margin-right: 5px;
+    }
+  }
+  &__logo {
+    @include mobile {
+      max-width: 180px;
+    }
+  }
+  &__menu {
+    * {
+      @include p1;
+      font-weight: 600;
+      color: $itg__blue-2 !important;
+      display: block;
+    }
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__social {
+    @include tablet-only {
+      align-self: center;
+      margin-right: 15%;
+      margin-top: 20px;
+      margin-left: 5px;
+    }
+    @include p1;
+    &--title {
+      font-weight: 600;
+      * {
+        margin-bottom: 0;
+      }
+    }
+    &--copy {
+      * {
+        margin-bottom: 0;
+      }
+    }
+    &--icon {
+      @include mobile {
+        margin-top: 16px;
+      }
+      * {
+        display: inline-block;
+      }
+    }
+  }
+}
+.itgSubFooter {
+  a:nth-of-type(n + 2):before {
+    content: '|';
+    display: inline-block;
+    margin: 0 5px 0px 0;
+  }
+  @include touch {
+    flex-direction: column;
+    height: auto;
+    & > *{
+      margin: 8px 0;
+    }
+    &__centerSide{
+      order: -1;
+    }
+  }
+}

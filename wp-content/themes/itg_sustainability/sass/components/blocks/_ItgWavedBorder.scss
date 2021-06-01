@@ -1,0 +1,11 @@
+.Itg__wavedBorder {
+  width: 100%;
+  max-width: 100%;
+  position: absolute;
+  transform: translate(0, calc(-100% + 1px));
+  left: 0;
+  top: 0;
+  @include mobile{
+      display: none;
+  }
+}
