@@ -1,0 +1,104 @@
+.itgBlock-hero-image {
+  background-size: cover;
+  min-height: calc(100vh - 350px);
+  margin-bottom: 40px !important;
+  &.has_reduced_height{
+    min-height: 50vh;
+  }
+
+  #breadcrumbs {
+    text-align: left;
+    a:visited {
+      color: inherit;
+    }
+    .breadcrumb_last {
+      font-weight: 500;
+    }
+  }
+
+  &-container {
+    @include touch {
+      min-height: 60vh;
+    }
+    @include desktop {
+      min-height: 90vh;
+      .has_reduced_height &{
+        min-height: 50vh;
+      }
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @include tablet {
+      font-size: 5rem !important;
+      font-weight: 700 !important;
+      line-height: 6rem !important;
+    }
+    @include mobile {
+      font-size: 2.5rem !important;
+      font-weight: 700 !important;
+      line-height: 3rem !important;
+    }
+    * {
+      margin-bottom: 0;
+    }
+  }
+
+  &__subtitle {
+    &--mobile-style {
+      @include mobile {
+        @include p1;
+      }
+      @include tablet {
+        font-size: 1.5rem !important;
+        line-height: 2.1rem !important;
+      }
+    }
+    p {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  &__cta-list {
+    margin-top: 48px;
+    @include until($desktop) {
+      margin-top: 18px;
+    }
+    &-inner {
+      .columns {
+        &:not(:first-child) {
+          margin-left: 24px !important;
+        }
+
+        .itgAtom__ItgCTA {
+          @include until($desktop) {
+            max-width: 80%;
+          }
+        }
+      }
+    }
+  }
+
+  &__arrow-down {
+    @include from($desktop) {
+      position: absolute;
+    }
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    left: 0;
+    bottom: 64px;
+    &-image {
+      width: 23px;
+      height: 34px;
+      background: url('src/images/icons/vertical_scroll.svg') center no-repeat;
+      background-size: 23px 34px;
+      @include until($desktop) {
+        width: 26px;
+        height: 67px;
+        background: url('src/images/icons/vertical_scroll_long.svg') center no-repeat;
+        background-size: 26px 67px;
+      }
+    }
+  }
+}

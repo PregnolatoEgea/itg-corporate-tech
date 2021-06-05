@@ -1,0 +1,253 @@
+/*** GALLERY HUB PAGE ***/
+
+.galleryBox{
+	box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.1);
+	min-height: 470px;
+	height: 470px;
+	margin-bottom: 15px;
+	background-color: white;
+}
+
+.galleryBox__image{
+	position: relative;
+	height: 50%;
+}
+
+@media (min-width: 768px) {
+	.galleryBox{
+		height: 700px;
+	}
+	.galleryBox__image {
+		height: 65%;
+	}
+}
+
+@media (min-width: 1025px) {
+	.galleryBox {
+		height: 470px;
+	}
+	.galleryBox__image {
+		height: 50%;
+	}
+}
+
+.galleryBox__imageCover {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+}
+
+.galleryBox__iconNumber {
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 30px;
+    background: #fff;
+    text-align: center;
+    right: 0;
+	bottom: 0;
+	color: #1898dd;
+	padding-top: 8px;
+}
+
+.galleryBox__iconNumber > span {
+	font-size: 12px;
+	padding-left: 5px;
+	vertical-align: middle;
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.galleryBox__iconNumber > img {
+	width: 24px;
+	height: 19px
+}
+
+.galleryBox__date{
+	padding: 30px 40px 40px;
+	font-size: 13px;
+	color: #878788;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	font-weight: 300;
+}
+
+/*
+@media (min-width: 480px) {
+	.galleryBox__date {
+		position: static;
+	}
+}
+*/
+
+@media (min-width: 1025px) {
+	.galleryBox__date {
+		position: absolute;
+		bottom: 0px;
+	}
+}
+
+.galleryBox__category {
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 20px;
+	text-transform: uppercase;
+	color: #878788;
+	letter-spacing: 0.05rem;
+}
+
+.download-image{
+    width: 19px;
+    height: 20px;
+    background: transparent url(../img/download.png) no-repeat center center;
+    background-size: contain;
+   	position: relative;
+   	float: right;
+}
+
+.img-icon-social{
+	width: 19px;
+	height: 20px;
+    position: relative;
+	float: right;
+	cursor: pointer;
+	margin-right: 15px;
+}
+
+.galleryBox__popover > .popover {
+    width: 125px;
+	border: 1px solid #0096dc;
+}
+.galleryBox__popover > .popover.top > .arrow{
+	border-top-color: #0096dc;
+}
+.galleryBox__popover > .popover-content {
+    padding: 0px;
+    text-align: center;
+}
+
+.galleryBox__popover > .popover-content > .social-share-links > a {
+    height: 16px;
+    width: 23px;
+}
+
+.box-tile{
+	margin-bottom: 15px;
+}
+.gallery-box-desc{
+	padding: 32px 40px 0;
+	min-height: 30%;
+}
+
+.gallery-box-desc .tags {
+	margin-bottom: 22px;
+}
+
+.galleryBox__abstract {
+  	font-size: 21px;
+	line-height: 25px;
+	font-weight: 300;
+}
+
+.section-margins {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.section-margins .tag-title {
+	font-weight: 500;
+}
+
+
+/*** GALLERY DETAIL PAGE ***/
+.galleryBox_video_iframe{
+	text-align: center;
+}
+
+.box_icon_detailGallery{
+	border-bottom: 1px solid #42bbf1;
+	padding-bottom: 15px;
+	margin-top: 45px;
+}
+
+.section-grey{
+	background-color: #f0f0f0;
+}
+
+.swiper-container {
+	width: 100%;
+	/*height: 300px;*/
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 0 !important;
+}
+.swiper-slide {
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.gallery-top {
+	height: 80%;
+	width: 100%;
+}
+.gallery-thumbs {
+	height: 20%;
+	box-sizing: border-box;
+	padding: 10px 0;
+}
+.gallery-thumbs .swiper-slide {
+	width: 25%;
+	height: 100%;
+	opacity: 0.4;
+}
+.gallery-thumbs .swiper-slide-active {
+	opacity: 1;
+}
+.gallery-detail-container {
+	height: 385px;
+	background-color: black;
+	padding-top: 10px;
+}
+.gallery-detail-container .swiper-button-next, 
+.gallery-detail-container .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    width: 27px;
+    height: 44px;
+    margin-top: -22px;
+    z-index: 10;
+    cursor: pointer;
+    background-size: 27px 44px;
+    background-position: center;
+    background-repeat: no-repeat;
+	background-color: transparent;
+}
+@media (min-width: 321px) {
+	.gallery-detail-container {
+		height: 500px;
+		background-color: black;
+		padding-top: 10px;
+	}
+}
+.gallery-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+#gallery-image-description {
+	font-size: 14px;
+	color: gray;
+	margin-top: 10px;
+}
+.gallery-video {
+	height: 390px;
+}
+
+@media (min-width: 321px) {
+	.gallery-video {
+		height: 500px;
+	}
+}
