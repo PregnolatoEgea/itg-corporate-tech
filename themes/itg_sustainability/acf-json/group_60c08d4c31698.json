@@ -1,9 +1,9 @@
 {
-    "key": "group_5fbee8b59229a",
-    "title": "Layout",
+    "key": "group_60c08d4c31698",
+    "title": "LayoutPosts",
     "fields": [
         {
-            "key": "field_5fc2c80b810c0",
+            "key": "field_60c08d4c553c1",
             "label": "Background Image",
             "name": "background_image",
             "type": "image",
@@ -28,7 +28,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5fc2c81d810c1",
+            "key": "field_60c08d4c55420",
             "label": "Background Color",
             "name": "layout_background_color",
             "type": "clone",
@@ -50,7 +50,7 @@
             "prefix_name": 0
         },
         {
-            "key": "field_5fc93b0d8add2",
+            "key": "field_60c08d4c5546b",
             "label": "Has Wave Border",
             "name": "has_wave_border",
             "type": "true_false",
@@ -70,7 +70,7 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5fd507bc0209c",
+            "key": "field_60c08d4c554af",
             "label": "Has blue blobs",
             "name": "has_blue_blobs",
             "type": "true_false",
@@ -90,7 +90,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5fbee8ba5ab73",
+            "key": "field_60c08d4c554f3",
             "label": "Layout",
             "name": "layout",
             "type": "flexible_content",
@@ -111,7 +111,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc2753746390",
+                            "key": "field_60c08d4c9a384",
                             "label": "Carousel Image Card",
                             "name": "carousel_image_card",
                             "type": "clone",
@@ -143,7 +143,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc2cd0ec9835",
+                            "key": "field_60c08d4c9a401",
                             "label": "Intro Section",
                             "name": "intro_section",
                             "type": "clone",
@@ -175,7 +175,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc2cd27c9837",
+                            "key": "field_60c08d4c9a453",
                             "label": "Quote",
                             "name": "quote",
                             "type": "clone",
@@ -207,7 +207,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc51ba6785cb",
+                            "key": "field_60c08d4c9a4a0",
                             "label": "Stories",
                             "name": "stories",
                             "type": "clone",
@@ -239,7 +239,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc6064eace83",
+                            "key": "field_60c08d4c9a4ed",
                             "label": "Report List",
                             "name": "report_list",
                             "type": "clone",
@@ -271,7 +271,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fca00711752d",
+                            "key": "field_60c08d4c9a53a",
                             "label": "Social Section",
                             "name": "social_section",
                             "type": "clone",
@@ -303,7 +303,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fca00611752c",
+                            "key": "field_60c08d4c9a58e",
                             "label": "Carousel Numbers",
                             "name": "carousel_numbers",
                             "type": "clone",
@@ -335,7 +335,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc6884790e6d",
+                            "key": "field_60c08d4c9a5db",
                             "label": "Video",
                             "name": "video",
                             "type": "clone",
@@ -367,7 +367,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc6886b90e6f",
+                            "key": "field_60c08d4c9a627",
                             "label": "Video & Text",
                             "name": "video_&_text",
                             "type": "clone",
@@ -399,7 +399,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc7a44638e52",
+                            "key": "field_60c08d4c9a676",
                             "label": "Lancio",
                             "name": "lancio",
                             "type": "clone",
@@ -431,7 +431,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc8d732033b0",
+                            "key": "field_60c08d4c9a6c3",
                             "label": "Single Launch",
                             "name": "single_launch",
                             "type": "clone",
@@ -463,7 +463,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc8ca0c9df67",
+                            "key": "field_60c08d4c9a70f",
                             "label": "Hero Image",
                             "name": "hero_image",
                             "type": "clone",
@@ -495,7 +495,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc91dad90d83",
+                            "key": "field_60c08d4c9a75c",
                             "label": "Video & Texts",
                             "name": "video_&_texts",
                             "type": "clone",
@@ -527,7 +527,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd0bc76a8a08",
+                            "key": "field_60c08d4c9a7a9",
                             "label": "Tab years",
                             "name": "tab_years",
                             "type": "clone",
@@ -559,7 +559,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd0fa85ac7aa",
+                            "key": "field_60c08d4c9a7f7",
                             "label": "Accordion",
                             "name": "accordion",
                             "type": "clone",
@@ -591,7 +591,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd0c22c24bb1",
+                            "key": "field_60c08d4c9a846",
                             "label": "Related Launches",
                             "name": "related_launches",
                             "type": "clone",
@@ -623,7 +623,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd3691babcc5",
+                            "key": "field_60c08d4c9a892",
                             "label": "Icon & Text (type 1)",
                             "name": "icon_&_text_type_1",
                             "type": "clone",
@@ -655,7 +655,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd52fc05f6ba",
+                            "key": "field_60c08d4c9a8e1",
                             "label": "Icon & Text (type 2-3)",
                             "name": "icon_&_text_type_2-3",
                             "type": "clone",
@@ -687,7 +687,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd77d6507888",
+                            "key": "field_60c08d4c9a92e",
                             "label": "Lancio Rating ESG",
                             "name": "lancio_rating_esg",
                             "type": "clone",
@@ -719,7 +719,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd77f51741dc",
+                            "key": "field_60c08d4c9a97b",
                             "label": "Infogram",
                             "name": "infogram",
                             "type": "clone",
@@ -751,7 +751,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd9e84ebff7e",
+                            "key": "field_60c08d4c9a9c7",
                             "label": "Carousel Launches",
                             "name": "carousel_launches",
                             "type": "clone",
@@ -783,7 +783,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fda07c98c38b",
+                            "key": "field_60c08d4c9aa13",
                             "label": "Logo Wall",
                             "name": "logo_wall",
                             "type": "clone",
@@ -815,7 +815,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd8e4a665187",
+                            "key": "field_60c08d4c9aa60",
                             "label": "Content Carousel",
                             "name": "content_carousel",
                             "type": "clone",
@@ -847,7 +847,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5ffc701d2112f",
+                            "key": "field_60c08d4c9aaac",
                             "label": "Matrix",
                             "name": "matrix",
                             "type": "clone",
@@ -897,5 +897,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1623231747
+    "modified": 1623231846
 }
