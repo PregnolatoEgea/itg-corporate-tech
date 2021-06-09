@@ -21,30 +21,7 @@
             "max": 0,
             "layout": "row",
             "button_label": "Aggiungi Layout Builder",
-            "sub_fields": [
-                {
-                    "key": "field_5fc7e129ed2b4",
-                    "label": "Layout",
-                    "name": "layout_builder",
-                    "type": "clone",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "wpml_cf_preferences": 0,
-                    "clone": [
-                        "group_5fbee8b59229a"
-                    ],
-                    "display": "seamless",
-                    "layout": "block",
-                    "prefix_label": 0,
-                    "prefix_name": 0
-                }
-            ]
+            "sub_fields": []
         }
     ],
     "location": [
@@ -64,5 +41,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1606945856
+    "modified": 1623231680
 }
