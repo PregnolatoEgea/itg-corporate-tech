@@ -1,0 +1,51 @@
+.itg--background-color-blue-1{
+ h1{
+  color: $itg__white;
+ }
+}
+.ajaxsearchpro{
+  legend{
+   display: none;
+  }
+ .categoryfilter{
+  .asp_label{
+   background-color: $itg__blue-4;
+   display: block;
+   border-radius: 50px!important;
+   padding: 10px!important;
+   color: $itg__white;
+   .asp_option_inner{
+     display: none;
+    } 
+  } 
+  input[type=radio]{
+   appearance: none!important;
+   -moz-appearance: none!important;
+   -webkit-appearance: none!important;
+   visibility: hidden!important;
+   position: absolute;
+   &:checked {
+       & + .asp_label{
+        background-color: $itg__blue-2;
+       }
+     }
+  }
+ }
+ .asp_option_cat {
+    display: block;
+    background-color: $itg__blue-4;
+    border-radius: 50px!important;
+    text-align: center!important;
+    padding: 10px!important;
+    color: $itg__white;
+    .asp_option_label{
+     width: 100%!important;
+    }
+    .asp_option_inner{
+     display: none;
+    }
+ }
+ .post_tag_filter_box.categoryfilter {
+    display: none;
+ }
+}
