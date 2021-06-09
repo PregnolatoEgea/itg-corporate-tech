@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/drop_top</title>
+    <defs>
+        <polygon id="path-1" points="12 5.99609665 20 15.9960967 4 15.9960967"></polygon>
+    </defs>
+    <g id="Icon/drop_top" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Triangle" fill="#00A9E0" xlink:href="#path-1"></use>
+    </g>
+</svg>

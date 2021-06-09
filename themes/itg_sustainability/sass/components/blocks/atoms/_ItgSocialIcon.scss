@@ -1,0 +1,10 @@
+.itgAtom {
+  &__ItgSocialIcon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    &:hover{
+      color: currentColor;
+    }
+  }
+}

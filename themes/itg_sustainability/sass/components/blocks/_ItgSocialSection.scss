@@ -1,0 +1,76 @@
+.itgBlock {
+  &__ItgSocialSection {
+    > .columns > div {
+      @include touch {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @include mobile {
+        width: 100% !important;
+      }
+    }
+    @include mobile {
+      text-align: left;
+    }
+    &--image {
+      padding: 70px;
+      @include desktop-only {
+        padding: 0;
+        display: block;
+        height: auto;
+        height: 55%;
+        object-fit: cover;
+        transform: translateY(-50%);
+        top: 50%;
+        overflow: hidden;
+        position: absolute;
+      }
+      @include touch {
+        padding: 0;
+      }
+    }
+    &--eyelet,
+    &--tile {
+      * {
+        margin-bottom: 0;
+      }
+    }
+    &--eyelet {
+      @include mobile {
+        font-size: 1.5rem !important;
+        line-height: 2.0625rem !important;
+      }
+    }
+    &--socials {
+      justify-content: flex-start;
+      align-items: center;
+      @include mobile {
+        justify-content: flex-start;
+      }
+      > div:first-child {
+        flex-direction: row !important;
+      }
+    }
+    > div:first-child {
+      @include tablet-only {
+        flex-direction: column;
+      }
+    }
+    .image {
+      @include tablet-only {
+        margin-bottom: -224px;
+        z-index: -1000;
+        overflow: hidden;
+        position: relative;
+        height: 288px;
+      }
+      @include mobile {
+        margin-bottom: -224px;
+        z-index: -1000;
+        overflow: hidden;
+        position: relative;
+        height: 159px;
+      }
+    }
+  }
+}
