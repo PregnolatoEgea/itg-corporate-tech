@@ -70,43 +70,8 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_600877ad52d40",
-            "label": "Wave border type",
-            "name": "wave_border_type",
-            "type": "radio",
-            "instructions": "Default is set to waved border. Otherwise choose another type from the list below",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5fc93b0d8add2",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": [
-                "Ellipse Blue",
-                "Ellipse Dark Blue",
-                "Ellipse Light Azure",
-                "Ellipse White"
-            ],
-            "allow_null": 1,
-            "other_choice": 0,
-            "default_value": "",
-            "layout": "vertical",
-            "return_format": "value",
-            "wpml_cf_preferences": 0,
-            "save_other_choice": 0
-        },        
-        {
             "key": "field_5fd507bc0209c",
-            "label": "Has blobs",
+            "label": "Has blue blobs",
             "name": "has_blue_blobs",
             "type": "true_false",
             "instructions": "",
@@ -117,172 +82,12 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
             "message": "",
             "default_value": 0,
             "ui": 0,
             "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_600addbfd741f",
-            "label": "Blobs attributes",
-            "name": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5fd507bc0209c",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 0,
+            "ui_off_text": "",
             "wpml_cf_preferences": 0
-        },
-        {
-            "key": "field_600ad44117d93",
-            "label": "Blobs color one",
-            "name": "blobs_color_one",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "#ffffff": "white",
-                "#202020": "black",
-                "#003478": "blue-1",
-                "#007ac9": "blue-2",
-                "#00a9e0": "blue-3",
-                "#d3f4ff": "light-blue",
-                "#34b233": "green-1",
-                "#bed600": "green-2",
-                "#fecb00": "yellow",
-                "#e98300": "orange",
-                "#e00034": "red",
-                "#983222": "brown",
-                "#8e8e8e": "grey-1",
-                "#dfdfdf": "grey-2"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "",
-            "layout": "vertical",
-            "return_format": "value",
-            "wpml_cf_preferences": 0,
-            "save_other_choice": 0
-        },
-        {
-            "key": "field_600ad48f17d94",
-            "label": "Blobs color two",
-            "name": "blobs_color_two",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "#ffffff": "white",
-                "#202020": "black",
-                "#003478": "blue-1",
-                "#007ac9": "blue-2",
-                "#00a9e0": "blue-3",
-                "#d3f4ff": "light-blue",
-                "#34b233": "green-1",
-                "#bed600": "green-2",
-                "#fecb00": "yellow",
-                "#e98300": "orange",
-                "#e00034": "red",
-                "#983222": "brown",
-                "#8e8e8e": "grey-1",
-                "#dfdfdf": "grey-2"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "",
-            "layout": "vertical",
-            "return_format": "value",
-            "wpml_cf_preferences": 0,
-            "save_other_choice": 0
-        },
-        {
-            "key": "field_600ad6fe17d96",
-            "label": "Blobs number",
-            "name": "blobs_number",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "min": "",
-            "max": "",
-            "step": "",
-            "wpml_cf_preferences": 0
-        },
-        {
-            "key": "field_600ade0cd7420",
-            "label": "Blobs attributes",
-            "name": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 1,
-            "wpml_cf_preferences": 0
-        },
-        {
-            "key": "field_6002b34a40c52",
-            "label": "Has no padding",
-            "name": "has_no_padding",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "wpml_cf_preferences": 0,
-            "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
         },
         {
             "key": "field_5fbee8ba5ab73",
@@ -781,8 +586,8 @@
                 },
                 "layout_5fd0c21f24bb0": {
                     "key": "layout_5fd0c21f24bb0",
-                    "name": "related_launches_type_3",
-                    "label": "Related Launches (type 3)",
+                    "name": "related_launches",
+                    "label": "Related Launches",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -798,46 +603,14 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "wpml_cf_preferences": 0,
                             "clone": [
                                 "group_5fd0b9db8aa40"
                             ],
                             "display": "seamless",
                             "layout": "block",
                             "prefix_label": 0,
-                            "prefix_name": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_5fff1ef01df5d": {
-                    "key": "layout_5fff1ef01df5d",
-                    "name": "related_launches_type_1_e_2",
-                    "label": "Related Launches (type 1 e 2)",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5fff1ef11df5e",
-                            "label": "Related Launches (type 1 e 2)",
-                            "name": "related_launches_type_1_e_2",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "wpml_cf_preferences": 0,
-                            "clone": [
-                                "group_5fff1299ae63c"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
+                            "prefix_name": 0,
+                            "wpml_cf_preferences": 0
                         }
                     ],
                     "min": "",
@@ -1067,38 +840,6 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_5ffeee57f696e": {
-                    "key": "layout_5ffeee57f696e",
-                    "name": "download",
-                    "label": "Download",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5ffeee5ff696f",
-                            "label": "Download",
-                            "name": "download",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_5fd252127fd16"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "wpml_cf_preferences": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
                 "layout_5ffc70192112e": {
                     "key": "layout_5ffc70192112e",
                     "name": "matrix",
@@ -1130,143 +871,6 @@
                     ],
                     "min": "",
                     "max": ""
-                },
-                "layout_60016c8806b5f": {
-                    "key": "layout_60016c8806b5f",
-                    "name": "icon_list_type_1_e_2",
-                    "label": "Icon List (type 1 e 2)",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_60016c8806b60",
-                            "label": "Icon List",
-                            "name": "icon list",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "wpml_cf_preferences": 0,
-                            "clone": [
-                                "group_6001664b0cc1f"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_6001a5ecbe9e9": {
-                    "key": "layout_6001a5ecbe9e9",
-                    "name": "text_block",
-                    "label": "Text Block",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_6001a5f6be9ea",
-                            "label": "Text Block",
-                            "name": "text_block",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_5fd1eeddb5fd5"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "wpml_cf_preferences": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_6005555bdb3db": {
-                    "key": "layout_6005555bdb3db",
-                    "name": "accordion_carousel",
-                    "label": "Accordion Carousel",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_60055566db3dc",
-                            "label": "Accordion Carousel",
-                            "name": "accordion_carousel",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_600552bd89225"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "wpml_cf_preferences": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_6006ebe2df098": {
-                    "key": "layout_6006ebe2df098",
-                    "name": "stakeholder",
-                    "label": "Stakeholder",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_6006ebe9df099",
-                            "label": "Stakeholder",
-                            "name": "stakeholder",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_6006e600afa0e"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "wpml_cf_preferences": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_60098c8063d6c": {
-                    "key": "layout_60098c8063d6c",
-                    "name": "table",
-                    "label": "Table",
-                    "display": "block",
-                    "sub_fields": [],
-                    "min": "",
-                    "max": ""
                 }
             },
             "button_label": "Aggiungi Layout",
@@ -1293,5 +897,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1611325523
+    "modified": 1623231747
 }
