@@ -1,0 +1,13 @@
+@import "sass/abstracts/abstracts.scss";
+
+.category-price-sensitive {
+  background-color: $itg__light-blue;
+  h1 {
+    color:$itg__blue-1;
+    font-family: $font__main;
+  }
+  h2 {
+    color:$itg__blue-1;
+    font-family: $font__main;
+  }
+}
