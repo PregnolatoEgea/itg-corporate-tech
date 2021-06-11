@@ -1,7 +1,7 @@
 <?php foreach ($filter->get() as $kk => $term): ?>
     <?php if ($term->id == 0): ?>
         <div class="aligncenter itg_option_cat">
-            <div class="itg_option_inner ">
+            <div class="itg_option_inner">
               <label aria-hidden="true"
                        for="itg_<?php echo $ch_class; ?>_all<?php echo $id; ?>">
                 <input id="itg_<?php echo $ch_class; ?>_all<?php echo $id; ?>"
@@ -10,7 +10,6 @@
                     <?php echo $term->default ? 'data-origvalue="1"' : ''; ?>
                     <?php echo($term->selected ? 'checked="checked"' : ''); ?>  aria-hidden="true"/>
                
-                    <?php echo asp_icl_t('Hidden label', 'Hidden label'); ?>
                 </label>
             </div>
             <div class="itg_option_label"><?php echo asp_icl_t("Select all text [" . $taxonomy . "]" . " ($real_id)", $term->label); ?></div>
@@ -23,7 +22,6 @@
             <div class="itg_option_inner">
                 <label aria-hidden="true"
                        for="<?php echo $id; ?>termset_<?php echo $term->id; ?>">
-                    <?php echo asp_icl_t('Hidden label', 'Hidden label'); ?>
                 <input type="checkbox" value="<?php echo $term->id; ?>" class="asp_<?php echo $ch_class; ?>_checkbox"
                        aria-label="<?php echo esc_html($term->label); ?>"
                     <?php if (isset($filter->data['custom_name'])): ?>
