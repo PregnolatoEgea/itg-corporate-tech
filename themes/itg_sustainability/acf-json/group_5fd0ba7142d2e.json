@@ -180,94 +180,6 @@
             "placement": "top",
             "endpoint": 0,
             "wpml_cf_preferences": 0
-        },
-        {
-            "key": "field_5fd0baba430ba",
-            "label": "Years",
-            "name": "years",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "wpml_cf_preferences": 0,
-            "sub_fields": [
-                {
-                    "key": "field_5fd0bada430bb",
-                    "label": "Year",
-                    "name": "year",
-                    "type": "number",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "min": "",
-                    "max": "",
-                    "step": "",
-                    "wpml_cf_preferences": 0
-                },
-                {
-                    "key": "field_5fd0bb08430bc",
-                    "label": "Numbers",
-                    "name": "numbers",
-                    "type": "repeater",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "wpml_cf_preferences": 0,
-                    "collapsed": "",
-                    "min": 0,
-                    "max": 3,
-                    "layout": "table",
-                    "button_label": "",
-                    "sub_fields": [
-                        {
-                            "key": "field_5fd0bb28430bd",
-                            "label": "Number",
-                            "name": "number",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_5fc7c9a0e9c64"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0,
-                            "wpml_cf_preferences": 0
-                        }
-                    ]
-                }
-            ]
         }
     ],
     "location": [
@@ -287,5 +199,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1607951777
+    "modified": 1623422423
 }

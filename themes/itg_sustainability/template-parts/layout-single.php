@@ -43,24 +43,28 @@ if ( ! empty( $categories ) ) {
 }
 ?>
 <header class="entry-header">
-    <div class="category-<?php echo $cls ?>">
-    <?php
-    if ( is_singular() ) :
-        the_title( '<h1 class="entry-title">', '</h1>' );
-    else :
-        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-    endif; ?>
-    </div>
-    <?php if ( 'post' === get_post_type() ) :
-        ?>
-        <div class="entry-meta">
-            <?php
-            itg_sustainability_posted_on();
-            itg_sustainability_posted_by();
-            ?>
-        </div><!-- .entry-meta -->
-    <?php endif; ?>
+    &nbsp;
 </header>
+    <div class="category-<?php echo $cls ?>" style="margin-top: 120px; height: auto; padding: 30px; text-align:center; min-height: 250px;">
+        <?php
+        if ( is_singular() ) :
+            echo '<div class="categoria_singola ">'; the_category(); echo '</div>';
+            the_title( '<h3 class="entry-title" style="color: royalblue">', '</h3>' );
+        else :
+            the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+        endif; ?>
+    </div>
+<?php if ( 'post' === get_post_type() ) :
+    ?>
+    <div class="entry-meta" style="color:grey; text-align:center; margin-top: 90px"><strong>
+        <?php
+        itg_sustainability_posted_on();
+        ?>
+        </strong>
+    </div><!-- .entry-meta -->
+    <div class="contenuto_articolo" style="text-align:center; color: black; padding: 30px 60px 30px 60px; word-wrap: break-word; font-size: 1.25rem">
+        <span style="background-color: white"><?php the_content(); ?></span></div>
+<?php endif; ?>
 <?php
 if( have_rows('layout_builder_posts') ):
 
@@ -114,97 +118,114 @@ if( have_rows('layout_builder_posts') ):
           ?>
             <img class="Itg__wavedBorder" src="<?php echo get_template_directory_uri() . '/dist/src/images/White.svg'; ?>" alt="Border">
           <?php
-        }      
+        }
 
         // Loop through rows.
         while ( have_rows('layout', $acf_id) ) : the_row();
 
+
         //switch between blocks layout with following these examples
 
-        // Case: Sample layout.
-        switch (get_row_layout()) {
-          case 'carousel_image_card':
-            require 'blocks/ItgCarouselImageCard.php';
-          break;
-          case 'report_list':
-            require 'blocks/ItgReportList.php';
-          break;
-          case 'video':
-            require 'blocks/ItgVideo.php';
-          break;
-          case 'lancio':
-            require 'blocks/ItgLancio.php';
-          break;
-          case 'single_launch':
-            require "blocks/ItgSingleLaunch.php";
-          break;
-          case 'hero_image':
-            require 'blocks/ItgHeroImage.php';
-          break;
-          case 'video_&_texts':
-            require 'blocks/ItgVideoAndTexts.php';
-          break;
-          case 'carousel_numbers':
-            require 'blocks/ItgCarouselNumbers.php';
-          break;
-          case 'related_launches_type_3':
-            require 'blocks/ItgRelatedLauchesType3.php';
-          break;
-          case 'text_block':
-            require 'blocks/ItgTextBox.php';
-          break;
-          case 'accordion':
-            require 'blocks/ItgAccordion.php';
-          break;
-          case 'tab_years':
-            require 'blocks/ItgTabYears.php';
-          break;
-          case 'icon_&_text_type_1':
-            require 'blocks/ItgIconTextType1.php';
-          break;
-          case 'download':
-            require 'blocks/ItgDownload.php';
-          break;
-          case 'icon_&_text_type_2-3':
-            require 'blocks/ItgIconTextType23.php';
-          break;
-          case 'lancio_rating_esg':
-            require 'blocks/ItgLancioRatingESG.php';
-          break;
-          case 'infogram':
-            require 'blocks/ItgInfogram.php';
-          break;
-          case 'carousel_launches':
-            require 'blocks/ItgCarouselLaunches.php';
-          break;
-          case 'logo_wall':
-            require 'blocks/ItgLogoWall.php';
-          break;
-          case 'content_carousel':
-            require 'blocks/ItgContentCarousel.php';
-          break;
-          case 'matrix':
-            require 'blocks/ItgMatrix.php';
-          break;
-          case 'related_launches_type_1_e_2':
-            require 'blocks/ItgRelatedLauchesType12.php';
-          break;
-          case 'icon_list_type_1_e_2':
-            require 'blocks/ItgIconList.php';
-          break;
-          case 'accordion_carousel':
-            require 'blocks/ItgAccordionCarousel.php';
-          break;
-          case 'stakeholder':
-            require 'blocks/ItgStakeholder.php';
-          break;
-          case 'table':
-            require 'blocks/ItgTable.php';
-          break;
+            // Case: Sample layout.
+            switch (get_row_layout()) {
+                case 'sample':
+                    require 'blocks/ItgSample.php';
+                    break;
+                case 'carousel_image_card':
+                    require 'blocks/ItgCarouselImageCard.php';
+                    break;
+                case 'intro_section':
+                    require 'blocks/ItgIntroSection.php';
+                    break;
+                case 'quote':
+                    require 'blocks/ItgQuote.php';
+                    break;
+                case 'social_section':
+                    require 'blocks/ItgSocialSection.php';
+                    break;
+                case 'stories':
+                    require 'blocks/ItgStories.php';
+                    break;
+                case 'report_list':
+                    require 'blocks/ItgReportList.php';
+                    break;
+                case 'video':
+                    require 'blocks/ItgVideo.php';
+                    break;
+                case 'lancio':
+                    require 'blocks/ItgLancio.php';
+                    break;
+                case 'single_launch':
+                    require "blocks/ItgSingleLaunch.php";
+                    break;
+                case 'hero_image':
+                    require 'blocks/ItgHeroImage.php';
+                    break;
+                case 'video_&_texts':
+                    require 'blocks/ItgVideoAndTexts.php';
+                    break;
+                case 'carousel_numbers':
+                    echo '<div class="numeri">';
+                    require 'blocks/ItgCarouselNumbers.php';
+                    echo '</div>';
+                    break;
+                case 'related_launches_type_3':
+                    require 'blocks/ItgRelatedLauchesType3.php';
+                    break;
+                case 'text_block':
+                    require 'blocks/ItgTextBox.php';
+                    break;
+                case 'accordion':
+                    require 'blocks/ItgAccordion.php';
+                    break;
+                case 'tab_years':
+                    require 'blocks/ItgTabYears.php';
+                    break;
+                case 'icon_&_text_type_1':
+                    require 'blocks/ItgIconTextType1.php';
+                    break;
+                case 'download':
+                    require 'blocks/ItgDownload.php';
+                    break;
+                case 'icon_&_text_type_2-3':
+                    require 'blocks/ItgIconTextType23.php';
+                    break;
+                case 'lancio_rating_esg':
+                    require 'blocks/ItgLancioRatingESG.php';
+                    break;
+                case 'infogram':
+                    require 'blocks/ItgInfogram.php';
+                    break;
+                case 'carousel_launches':
+                    require 'blocks/ItgCarouselLaunches.php';
+                    break;
+                case 'logo_wall':
+                    require 'blocks/ItgLogoWall.php';
+                    break;
+                case 'content_carousel':
+                    require 'blocks/ItgContentCarousel.php';
+                    break;
+                case 'matrix':
+                    require 'blocks/ItgMatrix.php';
+                    break;
+                case 'related_launches_type_1_e_2':
+                    require 'blocks/ItgRelatedLauchesType12.php';
+                    break;
+                case 'icon_list_type_1_e_2':
+                    require 'blocks/ItgIconList.php';
+                    break;
+                case 'accordion_carousel':
+                    require 'blocks/ItgAccordionCarousel.php';
+                    break;
+                case 'stakeholder':
+                    require 'blocks/ItgStakeholder.php';
+                    break;
+                case 'table':
+                    require 'blocks/ItgTable.php';
+                    break;
 
-          default:
-
-          break;
+                default:
+                break;
         }
 
           $block_id++;

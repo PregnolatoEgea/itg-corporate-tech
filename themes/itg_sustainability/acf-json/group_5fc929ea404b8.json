@@ -37,12 +37,12 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
             "collapsed": "",
             "min": 2,
-            "max": 4,
-            "layout": "block",
+            "max": 20,
+            "layout": "row",
             "button_label": "Add Number",
-            "wpml_cf_preferences": 0,
             "sub_fields": [
                 {
                     "key": "field_5fc92a2789ea1",
@@ -86,5 +86,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1607071485
+    "modified": 1623422201
 }
