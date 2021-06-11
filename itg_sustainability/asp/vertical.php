@@ -73,7 +73,6 @@ defined('ABSPATH') or die("You can't access this file directly.");
          </a></h3>
                  <span class="itg_excerpt">
                      <?php echo $r->content; ?>
-                     <?php bloginfo('the_excerpt'); ?>
                  </span>
 
         </div>      

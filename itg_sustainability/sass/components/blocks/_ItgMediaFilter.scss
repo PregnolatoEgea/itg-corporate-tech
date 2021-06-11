@@ -1,8 +1,8 @@
- .itg--background-color-blue-1{
-  h1{
+ .itgBlock-media-filter{
+  padding-top: 100px;
+  .itgBlock-media-filter-title{
    color: $itg__white;
   }
- }
  .ajaxsearchpro{
    legend{
     display: none;
@@ -14,8 +14,18 @@
     color: $itg__white;
     text-align: center;
     font-size: 16px;
-    margin: 0;
-    padding: 7px 20px!important;
+    padding: 0px 20px!important;
+    label{
+     width: 100%;
+     display: block;
+     margin: 0 auto!important;
+     text-align: center!important;
+     padding: 10px!important;
+     line-height: 25px;
+    }
+    &:hover{
+     cursor: pointer;
+    }
     .asp_option_inner{
      display: none;
     }  
@@ -24,6 +34,8 @@
      font-size: 16px;
     }  
    input[type=radio]{
+    position: absolute;
+    opacity: 0;
     &:checked + .itg_asp_label{
          background-color: $itg__blue-3;
          text-align: center;
@@ -39,12 +51,17 @@
      padding: 7px 20px!important;
      font-size: 16px;
      color: $itg__white;
+     margin: 0 10px!important;
      .itg_option_label{
       width: 100%!important;
       cursor: pointer;
+      line-height: 24px;
+      text-align: center;
+      padding-top: 4px;
      }
      .itg_option_inner{
-      display: none;
+      position: absolute;
+      opacity: 0;
      }
   }
   .post_tag_filter_box.categoryfilter {
@@ -52,12 +69,15 @@
   }
   .itgtag-filter{
    @extend .itg_option_cat;
-   border-radius: 8px;
+   border-radius: 8px!important;
    position: relative;
-   width: 165px;
+   min-width: 125px;
+   margin: 0 5px!important;
    a{
     color: $itg__white;
     font-size: 16px;
+    padding-top: 3px!important;
+    display: inherit;
     &:after{
      content: "";
      display: block;
@@ -70,6 +90,11 @@
      right: 14px;
      top:20px;
     }
+   }
+   label{
+    margin: 0 auto;
+    display: block;
+    line-height: 100%;
    }
   }
    &.vertical{
@@ -187,4 +212,4 @@
     }
   }
  }
-
+}
