@@ -29,7 +29,8 @@
         [
             {
                 "param": "block",
-                "operator": "=="
+                "operator": "==",
+                "value": ""
             }
         ]
     ],
@@ -41,5 +42,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1606845642
+    "modified": 1623422466
 }

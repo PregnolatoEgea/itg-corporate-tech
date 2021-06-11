@@ -23,26 +23,6 @@
             "button_label": "Add Story",
             "sub_fields": [
                 {
-                    "key": "field_5fc519a80f6a5",
-                    "label": "Title",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "wpml_cf_preferences": 0,
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
                     "key": "field_5fc5230e6848d",
                     "label": "Title Settings -",
                     "name": "title_settings",
@@ -129,31 +109,6 @@
                     "wpml_cf_preferences": 0
                 },
                 {
-                    "key": "field_5fc51a340f6a8",
-                    "label": "Image",
-                    "name": "image",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "wpml_cf_preferences": 0
-                },
-                {
                     "key": "field_5fc51a9b0f6a9",
                     "label": "Layout",
                     "name": "layout",
@@ -198,5 +153,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1606828860
+    "modified": 1623422417
 }
