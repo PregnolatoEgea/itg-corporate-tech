@@ -1,4 +1,6 @@
 
+@use "sass:math";
+
 .itgBlock-singleLaunch {
   @include touch {
     margin-top: 6.25rem;
@@ -19,19 +21,19 @@
           transform: translate(0);
           @include desktop {
             $width-cont: $desktop - $container-offset;
-            $columns-size: $width-cont/12;
+            $columns-size: math.div($width-cont, 12);
             transform: translate(-$columns-size);
             max-width: 100%;
             margin: auto;
           }
           @include widescreen {
             $width-cont: min($widescreen, $container-max-width) - $container-offset;
-            $columns-size: $width-cont/12;
+            $columns-size: math.div($width-cont, 12);
             transform: translate(-$columns-size);
           }
           @include fullhd {
             $width-cont: min($fullhd, $container-max-width) - $container-offset;
-            $columns-size: $width-cont/12;
+            $columns-size: math.div($width-cont, 12);
             transform: translate(-$columns-size);
           }
         }
@@ -39,19 +41,19 @@
           transform: translate(0);
           @include desktop {
             $width-cont: $desktop - $container-offset;
-            $columns-size: $width-cont/12;
+            $columns-size: math.div($width-cont, 12);
             transform: translate($columns-size);
             max-width: 100%;
             margin: auto;
           }
           @include widescreen {
             $width-cont: min($widescreen, $container-max-width) - $container-offset;
-            $columns-size: $width-cont/12;
+            $columns-size: math.div($width-cont, 12);
             transform: translate($columns-size);
           }
           @include fullhd {
             $width-cont: min($fullhd, $container-max-width) - $container-offset;
-            $columns-size: $width-cont/12;
+            $columns-size: math.div($width-cont, 12);
             transform: translate($columns-size);
           }
         }
@@ -67,19 +69,19 @@
           transform: translate(0);
           @include desktop {
             $width-cont: $desktop - $container-offset;
-            $columns-size: $width-cont/12;
+            $columns-size: math.div($width-cont, 12);
             transform: translate(-$columns-size);
             max-width: 100%;
             margin: auto;
           }
           @include widescreen {
             $width-cont: min($widescreen, $container-max-width) - $container-offset;
-            $columns-size: $width-cont/12;
+            $columns-size: math.div($width-cont, 12);
             transform: translate(-$columns-size);
           }
           @include fullhd {
             $width-cont: min($fullhd, $container-max-width) - $container-offset;
-            $columns-size: $width-cont/12;
+            $columns-size: math.div($width-cont, 12);
             transform: translate(-$columns-size);
           }
         }
