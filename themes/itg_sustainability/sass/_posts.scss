@@ -7,6 +7,9 @@
   padding: 30px;
   text-align:center;
   min-height: 250px;
+  font-family: $font__main;
+  color: $itg__blue-1;
+  }
 
   .categoria_singola + ul {
     list-style: none !important;
@@ -17,7 +20,6 @@
     font-wieght: 500;
     text-align: center;
   }
-}
 .ItgLayoutSection{
   .itgBlock-icon-text-type1 {
     p {
@@ -39,4 +41,11 @@
   &:after {
     margin-bottom: 0 !important;
   }
+}
+.entry-title {
+  color: $itg__blue-1 !important;
+  font-family: $font__main !important;
+}
+.testo-blocco {
+  color: $itg__blue-1 !important;
 }
