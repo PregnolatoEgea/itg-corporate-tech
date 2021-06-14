@@ -45,7 +45,7 @@ if ( ! empty( $categories ) ) {
 <header class="entry-header">
     &nbsp;
 </header>
-    <div class="category-<?php echo $cls ?>" style="margin-top: 120px; height: auto; padding: 30px; text-align:center; min-height: 250px;">
+    <div class="category-<?php echo $cls ?>">
         <?php
         if ( is_singular() ) :
             echo '<div class="categoria_singola ">'; the_category(); echo '</div>';
