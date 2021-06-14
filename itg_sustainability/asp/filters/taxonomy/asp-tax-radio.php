@@ -22,9 +22,9 @@
             <div class="column is-2 itgtag-filter is-pulled-right">
               <a id="itg_tagfilterbtn" href="#">Argomento</a>
             </div>
-            <div class="column is-2 itgtag-filter is-pulled-right">
+           <!-- <div class="column is-2 itgtag-filter is-pulled-right">
               <a id="itg_datefilterbtn" href="#">Periodo</a>
-            </div>
+            </div>-->
             <div class="is-clearfix"></div>
             <div class="container">
              <div id="itg_tagfilterresults" class="columns pt-5" style="display: none;">
