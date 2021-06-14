@@ -45,7 +45,7 @@ if ( ! empty( $categories ) ) {
 <header class="entry-header">
     &nbsp;
 </header>
-    <div class="category-<?php echo $cls ?>" style="margin-top: 120px; height: auto; padding: 30px; text-align:center; min-height: 250px;">
+    <div class="category-<?php echo $cls ?>">
         <?php
         if ( is_singular() ) :
             echo '<div class="categoria_singola ">'; the_category(); echo '</div>';
@@ -54,17 +54,7 @@ if ( ! empty( $categories ) ) {
             the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
         endif; ?>
     </div>
-<?php if ( 'post' === get_post_type() ) :
-    ?>
-    <div class="entry-meta" style="color:grey; text-align:center; margin-top: 90px"><strong>
-        <?php
-        itg_sustainability_posted_on();
-        ?>
-        </strong>
-    </div><!-- .entry-meta -->
-    <div class="contenuto_articolo" style="text-align:center; color: black; padding: 30px 60px 30px 60px; word-wrap: break-word; font-size: 1.25rem">
-        <span style="background-color: white"><?php the_content(); ?></span></div>
-<?php endif; ?>
+
 <?php
 if( have_rows('layout_builder_posts') ):
 
@@ -165,9 +155,7 @@ if( have_rows('layout_builder_posts') ):
                     require 'blocks/ItgVideoAndTexts.php';
                     break;
                 case 'carousel_numbers':
-                    echo '<div class="numeri">';
                     require 'blocks/ItgCarouselNumbers.php';
-                    echo '</div>';
                     break;
                 case 'related_launches_type_3':
                     require 'blocks/ItgRelatedLauchesType3.php';
