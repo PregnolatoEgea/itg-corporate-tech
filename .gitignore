@@ -95,8 +95,4 @@ fabric.properties
 .idea/modules.xml
 .DS_Store
 
-/themes/itg_sustainability/node_modules
-node_modules
-/node_modules
-./themes/itg_sustainability/node_modules
-themes/itg_sustainability/node_modules
+themes/itg_sustainability/node_modules/
