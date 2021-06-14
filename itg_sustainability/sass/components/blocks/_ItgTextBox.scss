@@ -1,0 +1,14 @@
+
+.itgBlock-textBox {
+  .search & {
+    padding: 25px;
+    @include until ($desktop){
+      > .container > .columns > .column > div {
+        flex-direction: column !important;
+      }
+    }
+  }
+  &-title {
+    font-weight: 500;
+  }
+}

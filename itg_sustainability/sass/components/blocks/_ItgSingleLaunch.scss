@@ -1,0 +1,153 @@
+
+@use "sass:math";
+
+.itgBlock-singleLaunch {
+  @include touch {
+    margin-top: 6.25rem;
+    padding: 0;
+  } 
+  .columns {
+    align-items: center;
+    &.reverse {
+      flex-direction: column-reverse;
+      @include desktop {
+        flex-direction: row-reverse;
+      }
+      .itgBlock-singleLaunch {
+        &__image {
+          text-align: left;
+        }
+        &__image:not(.is-6-desktop) {
+          transform: translate(0);
+          @include desktop {
+            $width-cont: $desktop - $container-offset;
+            $columns-size: math.div($width-cont, 12);
+            transform: translate(-$columns-size);
+            max-width: 100%;
+            margin: auto;
+          }
+          @include widescreen {
+            $width-cont: min($widescreen, $container-max-width) - $container-offset;
+            $columns-size: math.div($width-cont, 12);
+            transform: translate(-$columns-size);
+          }
+          @include fullhd {
+            $width-cont: min($fullhd, $container-max-width) - $container-offset;
+            $columns-size: math.div($width-cont, 12);
+            transform: translate(-$columns-size);
+          }
+        }
+        &__content.translate_me {
+          transform: translate(0);
+          @include desktop {
+            $width-cont: $desktop - $container-offset;
+            $columns-size: math.div($width-cont, 12);
+            transform: translate($columns-size);
+            max-width: 100%;
+            margin: auto;
+          }
+          @include widescreen {
+            $width-cont: min($widescreen, $container-max-width) - $container-offset;
+            $columns-size: math.div($width-cont, 12);
+            transform: translate($columns-size);
+          }
+          @include fullhd {
+            $width-cont: min($fullhd, $container-max-width) - $container-offset;
+            $columns-size: math.div($width-cont, 12);
+            transform: translate($columns-size);
+          }
+        }
+      } 
+    }
+    
+    &.default {
+      .itgBlock-singleLaunch {
+        &__image {
+          text-align: right;
+        }
+        &__content {
+          transform: translate(0);
+          @include desktop {
+            $width-cont: $desktop - $container-offset;
+            $columns-size: math.div($width-cont, 12);
+            transform: translate(-$columns-size);
+            max-width: 100%;
+            margin: auto;
+          }
+          @include widescreen {
+            $width-cont: min($widescreen, $container-max-width) - $container-offset;
+            $columns-size: math.div($width-cont, 12);
+            transform: translate(-$columns-size);
+          }
+          @include fullhd {
+            $width-cont: min($fullhd, $container-max-width) - $container-offset;
+            $columns-size: math.div($width-cont, 12);
+            transform: translate(-$columns-size);
+          }
+        }
+      } 
+    }
+  }
+  &__image {
+    position: relative;
+    @include tablet-only {
+      margin: auto;
+      max-width: 80%;
+    }
+    &-layer {
+      display: none;
+    }
+    img {
+      width: 100%;
+      display: block;
+      @include touch {
+        width: 100%;
+      }
+    }
+  }
+  &__content {
+    padding-left: 64px;
+    padding-right: 64px;
+    z-index: 9;
+    position: relative;
+//    margin: -3.4375rem auto auto;
+    background-color: #ffffff;   
+    box-shadow: 0px 8px 24px 8px rgba(0,0,0,0.08);
+    -webkit-box-shadow: 0px 8px 24px 8px rgba(0,0,0,0.08);
+    -moz-box-shadow: 0px 8px 24px 8px rgba(0,0,0,0.08);
+    @include tablet {
+      border-radius: 10px;
+    }
+    @include mobile {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    @include touch {
+      margin-top: -10px;
+    }
+    &-title {
+      @include h5();
+    }
+    &-text {
+      p {
+        margin: 0;
+      }
+      &.text-p2 {
+        @include p2();
+      }
+      &.text-p4 {
+        @include p4();
+        font-weight: bold;
+        @include mobile {
+          @include p3();
+        }
+      }
+    }
+  }
+  .itgAtom__ItgCTA{
+    border: 2px solid $itg__blue-1;
+    span {
+      color: $itg__blue-1;
+    }
+  }
+}
