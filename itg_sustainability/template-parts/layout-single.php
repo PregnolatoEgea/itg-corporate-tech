@@ -45,7 +45,7 @@ if ( ! empty( $categories ) ) {
 <header class="entry-header">
     &nbsp;
 </header>
-    <div class="category-<?php echo $cls ?>">
+    <div class="itg__single_header">
         <?php
         if ( is_singular() ) :
             echo '<div class="itg__single_category ">'; the_category(); echo '</div>';
@@ -54,7 +54,8 @@ if ( ! empty( $categories ) ) {
             the_title( '<h2 class="itg__entry_title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
         endif; ?>
     </div>
-    <div class="itg__entry_date has-text-centered"><?php echo get_the_date(); ?></div>
+    <div class="itg__entry_date">Data di pubblicazione: <?php echo get_the_date(); ?></div>
+    <div class="itg__entry_content"><?php the_content(); ?></div>
 
 <?php
 if( have_rows('layout_builder_posts') ):
