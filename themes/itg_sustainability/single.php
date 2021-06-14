@@ -14,9 +14,9 @@ get_header();
 
 		<?php
 		while ( have_posts() ) :
-			the_post();
+			//the_post();
 
-			get_template_part( 'template-parts/layout_single.php', get_post_type());
+			get_template_part( 'template-parts/layout-single.php');
 
 			the_post_navigation(
 				array(

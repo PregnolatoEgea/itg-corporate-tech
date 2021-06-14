@@ -3,26 +3,6 @@
     "title": "Component | Hero Image",
     "fields": [
         {
-            "key": "field_60a1815f30e23",
-            "label": "Has reduced height",
-            "name": "has_reduced_height",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "wpml_cf_preferences": 0
-        },
-        {
             "key": "field_5fc8b5ef57057",
             "label": "Texts",
             "name": "",
@@ -253,7 +233,7 @@
             "name": "background_image",
             "type": "image",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -310,5 +290,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1621197197
+    "modified": 1623422225
 }

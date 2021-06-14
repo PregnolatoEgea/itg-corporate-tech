@@ -101,3 +101,25 @@ strong {
   padding-top: 0!important;
   padding-bottom: 0!important;
 }
+.postid-1095 {
+  .itgBlock__ItgCarouselNumbers {
+    background-color: $itg__light-blue!important;
+  }
+  .swiper-container {
+    //background-color: $itg__light-blue;
+  }
+  .columns:not(.is-desktop) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+.container{
+  &:not(.is-max-desktop) {
+    max-width: initial !important;
+  }
+}
+.section-margin {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}

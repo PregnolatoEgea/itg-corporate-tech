@@ -88,7 +88,7 @@
             {
                 "param": "nav_menu_item",
                 "operator": "==",
-                "value": "11"
+                "value": "all"
             }
         ]
     ],
@@ -100,5 +100,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1608073652
+    "modified": 1623422519
 }

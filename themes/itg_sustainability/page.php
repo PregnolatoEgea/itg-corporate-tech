@@ -18,7 +18,7 @@ get_header();
 <main id="primary" class="site-main">
 
 <?php
-  require 'template-parts/layout.php';
+  require './wp-content/themes/itg_sustainability/template-parts/layout-single.php';
 ?>
 
 </main><!-- #main -->

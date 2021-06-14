@@ -1,13 +1,14 @@
 .itgAtom {
   &-number {
     @include mobile {
-      margin-bottom: 48px !important;
+      /* margin-bottom: 48px !important; */
     }
     &__value {
       color: $itg__blue-2;
       @include h1;
       //font-size: 120px;
-      font-size: 70px;
+      //font-size: 70px;
+      font-size: 50px;
       span {
         display: inline-block;
       }
