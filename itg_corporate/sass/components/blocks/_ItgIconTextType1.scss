@@ -1,0 +1,48 @@
+.itgBlock-icon-text-type1 {
+
+  &__title {
+    @include until($tablet) {
+      h2, h3, h4, h5, h6 {
+        @include h5(2rem !important, 2.75rem !important);
+        font-weight: 800 !important;
+      }
+    }
+
+    &-inner {
+      @include until($desktop) {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+    *{
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    @include from($desktop) {
+      img {
+        max-height: 158px;
+      }
+    }
+  }
+
+  &__subtitle, &__description {
+    p {
+      margin-bottom: 1rem;
+    }
+    @include until($desktop) {
+      p {
+        @include p2;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__cta {
+    &-inner {
+      margin-top: 34px !important;
+      padding-top: 0;
+    }
+  }
+}

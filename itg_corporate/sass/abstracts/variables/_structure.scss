@@ -1,0 +1,57 @@
+$size__site-main: 100%;
+$size__site-sidebar: 25%;
+
+/*
+* ITG Custom helpers
+*/
+
+$sizes: (0,8,16,24,32,40,48,56,64,72,80,92,116);
+$positions: ('top','left','bottom','right');
+@each $size in $sizes {
+  .itg-m-#{$size} {
+    margin: $size + px !important;
+  }
+  .itg-p-#{$size} {
+    padding: $size + px !important;
+  }
+  .itg-mt-#{$size} {
+    margin-top: $size + px !important;
+  }
+  .itg-pt-#{$size} {
+    padding-top: $size + px !important;
+  }
+  .itg-mb-#{$size} {
+    margin-bottom: $size + px !important;
+  }
+  .itg-pb-#{$size} {
+    padding-bottom: $size + px !important;
+  }
+  .itg-ml-#{$size} {
+    margin-left: $size + px !important;
+  }
+  .itg-pl-#{$size} {
+    padding-left: $size + px !important;
+  }
+  .itg-mr-#{$size} {
+    margin-right: $size + px !important;
+  }
+  .itg-pr-#{$size} {
+    padding-right: $size + px !important;
+  }
+  .itg-mx-#{$size} {
+    margin-left: $size + px !important;
+    margin-right: $size + px !important;
+  }
+  .itg-px-#{$size} {
+    padding-left: $size + px !important;
+    padding-right: $size + px !important;
+  }
+  .itg-my-#{$size} {
+    margin-top: $size + px !important;
+    margin-bottom: $size + px !important;
+  }
+  .itg-py-#{$size} {
+    padding-top: $size + px !important;
+    padding-bottom: $size + px !important;
+  }
+}
