@@ -16,7 +16,7 @@ get_header();
 		while ( have_posts() ) :
 			//the_post();
 
-			get_template_part( 'template-parts/layout-single.php');
+			require ('template-parts/layout-single.php');
 
 			the_post_navigation(
 				array(

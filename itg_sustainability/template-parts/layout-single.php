@@ -48,12 +48,13 @@ if ( ! empty( $categories ) ) {
     <div class="category-<?php echo $cls ?>">
         <?php
         if ( is_singular() ) :
-            echo '<div class="categoria_singola ">'; the_category(); echo '</div>';
-            the_title( '<h3 class="entry-title">', '</h3>' );
-        else :
-            the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+            echo '<div class="itg__single_category ">'; the_category(); echo '</div>';
+            the_title( '<h3 class="itg__entry_title">', '</h3>' ); ?>
+        <?php else :
+            the_title( '<h2 class="itg__entry_title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
         endif; ?>
     </div>
+    <div class="itg__entry_date has-text-centered"><?php echo get_the_date(); ?></div>
 
 <?php
 if( have_rows('layout_builder_posts') ):
