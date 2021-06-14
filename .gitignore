@@ -96,3 +96,5 @@ fabric.properties
 .DS_Store
 
 themes/itg_sustainability/node_modules/
+*.js
+themes/itg_sustainability/dist/main.css
