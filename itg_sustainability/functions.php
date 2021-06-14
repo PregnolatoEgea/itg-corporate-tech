@@ -136,6 +136,34 @@ function itg_sustainability_widgets_init() {
 }
 add_action( 'widgets_init', 'itg_sustainability_widgets_init' );
 
+/* 
+ ASP date filter override
+
+add_action('asp_pre_parse_filters', 'asp_add_my_own_filters', 10, 2);
+function asp_add_my_own_filters($search_id, $options) {
+    if ( $search_id == 1 ) {
+        $filter = wd_asp()->front_filters->create(
+            'custom_field',
+            'Date test',
+            'datepicker',
+            array(
+                'field' => '_date',
+                'placeholder' => '',
+                // The display date format
+                'date_format' => 'dd/mm/yy',
+                'date_store_format' => 'datetime'
+            )
+        );
+        $filter->add(array(
+            'label' => 'Ultimi 30 giorni',
+            'value' => '',
+            'default' => ''
+        ));
+        $filter->selectByOptions($options);
+        wd_asp()->front_filters->add($filter);
+    }
+}
+*/
 /**
  * Enqueue scripts and styles.
  */
