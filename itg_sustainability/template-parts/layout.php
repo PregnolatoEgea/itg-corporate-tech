@@ -196,6 +196,9 @@ if( have_rows('layout_builder') ):
           case 'focus_box':
             require 'blocks/ItgFocusBox.php';
           break;
+          case 'media_filter':
+            require 'blocks/ItgMediaFilter.php';
+          break;
           
           default:
 
