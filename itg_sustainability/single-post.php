@@ -20,7 +20,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-            require './wp-content/themes/itg_sustainability/template-parts/layout-single.php';
+            require 'template-parts/layout-single.php';
 		endwhile; // End of the loop.
 		?>
 
