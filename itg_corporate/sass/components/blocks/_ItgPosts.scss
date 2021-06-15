@@ -1,99 +1,12 @@
-@import "sass/abstracts/abstracts.scss";
 .single-post {
-  .category-price-sensitive {
-    .itg__single_category + ul {
-      list-style: none !important;
-      text-transform: uppercase;
-      color: $itg__blue-1;
-    }
-    .itg__single_header {
-      background-color: $itg__light-blue;
-      margin-top: 120px;
-      height: 412px;
-      padding: 30px;
-      text-align: center;
-      line-height: 48px;
-      font-family: $font__main;
-      color: $itg__blue-1;
-      list-style-type: none;
-      font-weight: bold;
-      letter-spacing: 0;
-      word-wrap: break-word;
-      .itg__single_category + ul {
-        list-style: none !important;
-        text-transform: uppercase;
-        color: $itg__blue-1;
-      }
-      li {
-        list-style: none;
-        text-transform: uppercase;
-        color: $itg__blue-2;
-      }
-      h4 {
-        font-family: $font__main;
-        font-wieght: 500;
-        text-align: center;
-      }
-    }
-    .itg__entry_title {
-      color: $itg__blue-2 !important;
-      font-family: $font__main !important;
-    }
-    .itg__entry_date {
-      color: $itg__grey-1 !important;
-      text-align: center;
-      margin-top: 50px !important;
-      font-family: $font__main;
-      font-weight: 500 !important;
-    }
-    .itg__entry_content {
-      font-family: $font__main;
-      margin-top: 40px;
-      margin-bottom: 40px;
-      width: fit-content;
-      display: block;
-      padding-left: 20%;
-      padding-right: 20%;
-      text-align: center;
-      word-wrap: break-word;
-      p {
-        @include p3($font-size: 1.5rem !important, $line-height: 2.0625rem !important)
-      }
-    }
-    .ItgLayoutSection {
-      .itgBlock-icon-text-type1 {
-        p {
-          color: $itg__blue-1 !important;
-        }
-      }
-      .itgAtom-number__value {
-        font-size: 50px !important;
-      }
-      .itgAtom-number__copy {
-        color: $itg__blue-1 !important;
-      }
-    }
-    .itg__posts_number {
-      word-wrap: break-word;
-      display: flex;
-      flex: 1 0 21%;
-      padding: 0px;
-      margin: 0 0 0 0;
-      &:after {
-        margin-bottom: 0 !important;
-      }
-      .itgBlock-icon-text-type1 {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-        height: 120px !important;
-      }
-    }
-    .itgBlock-intro-section__description {
+  .itgBlock-intro-section__description {
+    &.p3 {
       p {
         color: $itg__blue-2;
         font-weight: bold;
       }
     }
+
     .itgBlock-icon-text-type1__description {
       p {
         color: $itg__blue-2 !important;
@@ -103,6 +16,7 @@
         line-height: 47px;
       }
     }
+
     .itgBlock-intro-section__title {
       &.column {
         &.is-1 {
@@ -119,6 +33,7 @@
         }
       }
     }
+
     .itgBlock-intro-section__description {
       &.p2 {
         span {
@@ -128,13 +43,107 @@
           color: $itg__black;
           font-weight: lighter !important;
         }
+
         p {
+          color: $itg__blue-1 !important;
           font-size: 16px;
           letter-spacing: 0;
           line-height: 25.6px;
           color: $itg__black;
           font-weight: lighter !important;
         }
+      }
+    }
+
+    .itgBlock-icon-text-type1 {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      height: 120px !important;
+    }
+
+    .itg__entry_date {
+      color: $itg__grey-1 !important;
+      text-align: center;
+      margin-bottom: 40px;
+      width: fit-content;
+      display: block;
+      padding-left: 20%;
+      padding-right: 20%;
+      text-align: center;
+      word-wrap: break-word;
+
+      p {
+        @include p3($font-size: 1.5rem !important, $line-height: 2.0625rem !important)
+      }
+
+    }
+
+    .itgAtom-number__value {
+      font-size: 50px !important;
+    }
+
+    .itg__single_header {
+      background-color: $itg__light-blue;
+      margin-top: 120px;
+      height: 350px;
+      height: 412px;
+      padding: 30px;
+      text-align: center;
+      min-height: 270px;
+      line-height: 48px;
+      font-family: $font__main;
+      color: $itg__blue-1;
+      list-style-type: none;
+      font-weight: bold;
+      letter-spacing: 0;
+      word-wrap: break-word;
+
+      .itg__single_category + ul {
+        list-style: none !important;
+        text-transform: uppercase;
+        color: $itg__blue-1;
+      }
+
+      li {
+        list-style: none;
+        text-transform: uppercase;
+        color: $itg__blue-2;
+      }
+
+      h4 {
+        font-family: $font__main;
+        font-wieght: 500;
+        text-align: center;
+      }
+
+      .ItgLayoutSection {
+        .itgBlock-icon-text-type1 {
+          p {
+            color: $itg__blue-1 !important;
+          }
+        }
+      }
+
+      .itg__posts_number {
+        word-wrap: break-word;
+        display: flex;
+        flex: 1 0 21%;
+        padding: 0px;
+        margin: 0 0 0 0;
+
+        &:after {
+          margin-bottom: 0 !important;
+        }
+      }
+
+      .itg__entry_title {
+        color: $itg__blue-2 !important;
+        font-family: $font__main !important;
+      }
+
+      .testo-blocco {
+        color: $itg__blue-1 !important;
+        font-family: $font__main !important;
       }
     }
   }
