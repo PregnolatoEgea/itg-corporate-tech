@@ -38,11 +38,18 @@ defined('ABSPATH') or die("You can't access this file directly.");
             foreach($itgcatname as $itgpost){ 
              $itgcatname = $itgpost->cat_name;
              $itglowcatname = strtolower($itgcatname);
+             
+             $itgcaticon = get_field('upload_category_icon', $itgpost);
+
             ?>
          <span class="itgmediacat">
              <?php echo $itgcatname; ?>
          </span>
-         <div class="itgcatimage-<?php echo $itglowcatname ?>"></div>
+         <div class="itgcatimage-<?php echo $itglowcatname ?>">
+          <?php if ( $itgcaticon ) : ?>
+          <img src="<?php the_field('upload_category_icon', $itgpost); ?>" width="" height="" border="0" alt="<?php echo $itgcatname; ?>" />
+          <?php endif; ?>
+         </div>
          <?php 
              }
            ?>
