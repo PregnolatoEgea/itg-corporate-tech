@@ -31,16 +31,8 @@ if(is_single() || is_page()){
 // Check value exists.
 $block_id = 0;
 $section_id = 0;
-?>
-<?php
-$categories = get_the_category();
-$cls = '';
-
-if ( ! empty( $categories ) ) {
-    foreach ( $categories as $cat ) {
-        $cls .= $cat->slug . ' ';
-    }
-}
+$cat = get_the_category();
+$image = get_field('image', $cat);
 ?>
 <header class="entry-header">
     &nbsp;
