@@ -12,9 +12,16 @@
  */
 
 get_header();
+$terms = get_the_terms( $post->ID , 'category');
+if($terms) {
+    foreach( $terms as $term ) {
+        $cat_obj = get_term($term->term_id, 'category');
+        $cat_slug = $cat_obj->slug;
+    }
+}
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main category-<?php echo $cat_slug; ?>">
 
 		<?php
 		while ( have_posts() ) :
