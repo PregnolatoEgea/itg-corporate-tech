@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>F92DEF35-A40A-4BC9-BE8A-AE6B067E4AEE</title>
+    <defs>
+        <path d="M9.5,0 C14.7467051,0 19,4.25329488 19,9.5 C19,11.5819334 18.3302914,13.5074481 17.1945516,15.0728665 L21.561728,19.4404076 C22.1475144,20.0261941 22.1475144,20.9759415 21.561728,21.561728 C20.9759415,22.1475144 20.0261941,22.1475144 19.4404076,21.561728 L15.0728665,17.1945516 C13.5074481,18.3302914 11.5819334,19 9.5,19 C4.25329488,19 0,14.7467051 0,9.5 C0,4.25329488 4.25329488,0 9.5,0 Z M9.5,3 C5.91014913,3 3,5.91014913 3,9.5 C3,13.0898509 5.91014913,16 9.5,16 C13.0898509,16 16,13.0898509 16,9.5 C16,5.91014913 13.0898509,3 9.5,3 Z" id="path-1"></path>
+    </defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage_menu_open-Copy" transform="translate(-1228.000000, -80.000000)">
+            <rect fill="#003478" x="0" y="0" width="1440" height="800"></rect>
+            <g id="Group" transform="translate(1204.000000, 64.000000)">
+                <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="120" height="56" rx="2"></rect>
+                <g id="Icon/menu/search" transform="translate(25.000000, 17.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Combined-Shape" fill="#D8D8D8" xlink:href="#path-1"></use>
+                    <rect id="Rectangle" fill="#003478" mask="url(#mask-2)" x="-1" y="-1" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
