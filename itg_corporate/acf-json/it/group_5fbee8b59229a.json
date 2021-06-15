@@ -1264,6 +1264,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_60c925b5a1687": {
+                    "key": "layout_60c925b5a1687",
+                    "name": "focus_box",
+                    "label": "Focus box",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60c925b5a1688",
+                            "label": "Focus box",
+                            "name": "focus_box",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "clone": [
+                                "group_60b8f7f3a6365"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Aggiungi Layout",
@@ -1290,5 +1322,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1623763560
+    "modified": 1623795267
 }

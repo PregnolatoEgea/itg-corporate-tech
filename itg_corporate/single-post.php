@@ -20,7 +20,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-            require 'template-parts/layout-single.php';
+            require 'template-parts/layout.php';
 		endwhile; // End of the loop.
 		?>
 
