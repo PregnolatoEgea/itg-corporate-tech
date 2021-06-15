@@ -31,24 +31,19 @@ if(is_single() || is_page()){
 // Check value exists.
 $block_id = 0;
 $section_id = 0;
-?>
-<?php
-$categories = get_the_category();
-$cls = '';
-
-if ( ! empty( $categories ) ) {
-    foreach ( $categories as $cat ) {
-        $cls .= $cat->slug . ' ';
-    }
-}
+$itgterm = get_queried_object();
+$itgcaticon = get_field('category_image', $itgterm);
 ?>
 <header class="entry-header">
     &nbsp;
 </header>
     <div class="itg__single_header">
         <?php
-        if ( is_singular() ) :
-            echo '<div class="itg__single_category ">'; the_category(); echo '</div>';
+        if ( is_singular() ) : ?>
+            <?php if ( $itgcaticon ) : ?>
+                <img src="<?php the_field('category_image', $itgterm); ?>" width="" height="" border="0" alt="<?php echo $itgterm; ?>" />
+            <?php endif; ?>
+            <?php echo '<div class="itg__single_category ">'; the_category(); echo '</div>';
             the_title( '<h3 class="itg__entry_title">', '</h3>' ); ?>
         <?php else :
             the_title( '<h2 class="itg__entry_title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );

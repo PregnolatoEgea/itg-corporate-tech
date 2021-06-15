@@ -1,11 +1,58 @@
 @import "sass/abstracts/abstracts.scss";
 .single-post {
   .itgBlock-intro-section__description{
-    &.p3 {
-      p {
-        color: $itg__blue-1 !important;
+    p {
+        color: $itg__blue-2;
+        font-weight: bold;
       }
     }
+  .itgBlock-icon-text-type1__description {
+    p{
+      color: $itg__blue-2 !important;
+      font-size: 40px;
+      font-weight: bold;
+      letter-spacing: 1.33px;
+      line-height: 47px;
+    }
+  }
+  .itgBlock-intro-section__title{
+    &.column{
+    &.is-1{
+     &.has-text-centered-touch{
+       width: 100% !important;
+       h6 {
+         color: $itg__blue-1 !important;
+         font-size: 21px !important;
+         text-align: center !important;
+         width: 100% !important;
+       }
+        }
+    }
+  }
+  }
+
+  .itgBlock-intro-section__description {
+    &.p2 {
+      span {
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: 25.6px;
+        color: $itg__black;
+        font-weight: lighter !important;
+      }
+      p {
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: 25.6px;
+        color: $itg__black;
+        font-weight: lighter !important;
+      }
+    }
+  }
+  .itgBlock-icon-text-type1 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    height: 120px !important;
   }
   .itg__entry_date {
     color: $itg__grey-1 !important;
@@ -20,6 +67,14 @@
     margin-bottom: 40px;
     width: fit-content;
     display: block;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: center;
+    word-wrap: break-word;
+    p {
+      @include p3($font-size:1.5rem !important, $line-height: 2.0625rem !important)
+    }
+
   }
   .itgAtom-number__value {
     font-size: 50px !important;
@@ -27,13 +82,16 @@
   .itg__single_header {
     background-color: $itg__light-blue;
     margin-top: 120px;
-    height: 350px;
+    height: 412px;
     padding: 30px;
     text-align: center;
-    min-height: 270px;
+    line-height: 48px;
     font-family: $font__main;
     color: $itg__blue-1;
     list-style-type: none;
+    font-weight: bold;
+    letter-spacing: 0;
+    word-wrap: break-word;
 
     .itg__single_category + ul {
       list-style: none !important;
