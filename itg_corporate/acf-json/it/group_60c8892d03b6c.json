@@ -1,0 +1,50 @@
+{
+    "key": "group_60c8892d03b6c",
+    "title": "Atom | Text Color",
+    "fields": [
+        {
+            "key": "field_60c8892d03b89",
+            "label": "Text Color",
+            "name": "text_color",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "choices": {
+                "white": "White",
+                "black": "Black",
+                "blue-1": "Blue 1",
+                "blue-2": "Blue 2",
+                "blue-3": "Blue 3"
+            },
+            "allow_null": 1,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": ""
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1623755053
+}

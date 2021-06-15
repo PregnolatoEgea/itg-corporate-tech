@@ -1,9 +1,9 @@
 {
-    "key": "group_5fbee8b59229a",
+    "key": "group_60c8894644586",
     "title": "Layout",
     "fields": [
         {
-            "key": "field_5fc2c80b810c0",
+            "key": "field_60c88946445ac",
             "label": "Background Image",
             "name": "background_image",
             "type": "image",
@@ -28,7 +28,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5fc2c81d810c1",
+            "key": "field_60c88946445c6",
             "label": "Background Color",
             "name": "layout_background_color",
             "type": "clone",
@@ -50,7 +50,7 @@
             "prefix_name": 0
         },
         {
-            "key": "field_5fc93b0d8add2",
+            "key": "field_60c88946445d5",
             "label": "Has Wave Border",
             "name": "has_wave_border",
             "type": "true_false",
@@ -70,7 +70,7 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_600877ad52d40",
+            "key": "field_60c88946445e2",
             "label": "Wave border type",
             "name": "wave_border_type",
             "type": "radio",
@@ -79,7 +79,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5fc93b0d8add2",
+                        "field": "field_60c88946445d5",
                         "operator": "==",
                         "value": "1"
                     }
@@ -105,7 +105,7 @@
             "save_other_choice": 0
         },
         {
-            "key": "field_5fd507bc0209c",
+            "key": "field_60c88946445ef",
             "label": "Has blue blobs",
             "name": "has_blue_blobs",
             "type": "true_false",
@@ -125,7 +125,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_6002b34a40c52",
+            "key": "field_60c88946445fd",
             "label": "Has no padding",
             "name": "has_no_padding",
             "type": "true_false",
@@ -145,7 +145,7 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5fbee8ba5ab73",
+            "key": "field_60c889464460a",
             "label": "Layout",
             "name": "layout",
             "type": "flexible_content",
@@ -166,7 +166,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc2753746390",
+                            "key": "field_60c88946c5466",
                             "label": "Carousel Image Card",
                             "name": "carousel_image_card",
                             "type": "clone",
@@ -198,7 +198,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc2cd0ec9835",
+                            "key": "field_60c88946c547f",
                             "label": "Intro Section",
                             "name": "intro_section",
                             "type": "clone",
@@ -230,7 +230,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc2cd27c9837",
+                            "key": "field_60c88946c548b",
                             "label": "Quote",
                             "name": "quote",
                             "type": "clone",
@@ -262,7 +262,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc51ba6785cb",
+                            "key": "field_60c88946c5494",
                             "label": "Stories",
                             "name": "stories",
                             "type": "clone",
@@ -294,7 +294,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc6064eace83",
+                            "key": "field_60c88946c549d",
                             "label": "Report List",
                             "name": "report_list",
                             "type": "clone",
@@ -326,7 +326,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fca00711752d",
+                            "key": "field_60c88946c54a6",
                             "label": "Social Section",
                             "name": "social_section",
                             "type": "clone",
@@ -358,7 +358,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fca00611752c",
+                            "key": "field_60c88946c54b0",
                             "label": "Carousel Numbers",
                             "name": "carousel_numbers",
                             "type": "clone",
@@ -390,7 +390,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc6884790e6d",
+                            "key": "field_60c88946c54b9",
                             "label": "Video",
                             "name": "video",
                             "type": "clone",
@@ -422,7 +422,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc6886b90e6f",
+                            "key": "field_60c88946c54c2",
                             "label": "Video & Text",
                             "name": "video_&_text",
                             "type": "clone",
@@ -454,7 +454,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc7a44638e52",
+                            "key": "field_60c88946c54cd",
                             "label": "Lancio",
                             "name": "lancio",
                             "type": "clone",
@@ -486,7 +486,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc8d732033b0",
+                            "key": "field_60c88946c54d7",
                             "label": "Single Launch",
                             "name": "single_launch",
                             "type": "clone",
@@ -518,7 +518,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc8ca0c9df67",
+                            "key": "field_60c88946c54e0",
                             "label": "Hero Image",
                             "name": "hero_image",
                             "type": "clone",
@@ -550,7 +550,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fc91dad90d83",
+                            "key": "field_60c88946c54ea",
                             "label": "Video & Texts",
                             "name": "video_&_texts",
                             "type": "clone",
@@ -582,7 +582,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd0bc76a8a08",
+                            "key": "field_60c88946c54f4",
                             "label": "Tab years",
                             "name": "tab_years",
                             "type": "clone",
@@ -614,7 +614,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd0fa85ac7aa",
+                            "key": "field_60c88946c54fe",
                             "label": "Accordion",
                             "name": "accordion",
                             "type": "clone",
@@ -646,7 +646,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd0c22c24bb1",
+                            "key": "field_60c88946c5507",
                             "label": "Related Launches",
                             "name": "related_launches",
                             "type": "clone",
@@ -678,7 +678,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fff1ef11df5e",
+                            "key": "field_60c88946c5511",
                             "label": "Related Launches (type 1 e 2)",
                             "name": "related_launches_type_1_e_2",
                             "type": "clone",
@@ -710,7 +710,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd3691babcc5",
+                            "key": "field_60c88946c551b",
                             "label": "Icon & Text (type 1)",
                             "name": "icon_&_text_type_1",
                             "type": "clone",
@@ -742,7 +742,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd52fc05f6ba",
+                            "key": "field_60c88946c5525",
                             "label": "Icon & Text (type 2-3)",
                             "name": "icon_&_text_type_2-3",
                             "type": "clone",
@@ -774,7 +774,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd77d6507888",
+                            "key": "field_60c88946c552e",
                             "label": "Lancio Rating ESG",
                             "name": "lancio_rating_esg",
                             "type": "clone",
@@ -806,7 +806,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd77f51741dc",
+                            "key": "field_60c88946c5538",
                             "label": "Infogram",
                             "name": "infogram",
                             "type": "clone",
@@ -838,7 +838,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd9e84ebff7e",
+                            "key": "field_60c88946c5542",
                             "label": "Carousel Launches",
                             "name": "carousel_launches",
                             "type": "clone",
@@ -870,7 +870,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fda07c98c38b",
+                            "key": "field_60c88946c554b",
                             "label": "Logo Wall",
                             "name": "logo_wall",
                             "type": "clone",
@@ -902,7 +902,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd8e4a665187",
+                            "key": "field_60c88946c5555",
                             "label": "Content Carousel",
                             "name": "content_carousel",
                             "type": "clone",
@@ -934,7 +934,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5ffeee5ff696f",
+                            "key": "field_60c88946c555e",
                             "label": "Download",
                             "name": "download",
                             "type": "clone",
@@ -966,7 +966,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5ffc701d2112f",
+                            "key": "field_60c88946c5567",
                             "label": "Matrix",
                             "name": "matrix",
                             "type": "clone",
@@ -998,7 +998,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_60016c8806b60",
+                            "key": "field_60c88946c5571",
                             "label": "Icon List",
                             "name": "icon list",
                             "type": "clone",
@@ -1030,7 +1030,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_6001a5f6be9ea",
+                            "key": "field_60c88946c557a",
                             "label": "Text Block",
                             "name": "text_block",
                             "type": "clone",
@@ -1062,7 +1062,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_60055566db3dc",
+                            "key": "field_60c88946c5584",
                             "label": "Accordion Carousel",
                             "name": "accordion_carousel",
                             "type": "clone",
@@ -1094,7 +1094,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_6006ebe9df099",
+                            "key": "field_60c88946c558f",
                             "label": "Stakeholder",
                             "name": "stakeholder",
                             "type": "clone",
@@ -1127,6 +1127,38 @@
                     "sub_fields": [],
                     "min": "",
                     "max": ""
+                },
+                "layout_60c7338f8091c": {
+                    "key": "layout_60c7338f8091c",
+                    "name": "media_filter",
+                    "label": "Media filter",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60c88946c5599",
+                            "label": "Media filter",
+                            "name": "media_filter",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_60c336e137c19"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "wpml_cf_preferences": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Aggiungi Layout",
@@ -1153,5 +1185,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1611238545
+    "modified": 1623755081
 }
