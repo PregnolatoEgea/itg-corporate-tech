@@ -208,6 +208,18 @@ if( have_rows('layout_builder_posts') ):
                 case 'table':
                     require 'blocks/ItgTable.php';
                     break;
+                case 'anchor_name':
+                    require 'blocks/ItgAnchorName.php';
+                    break;
+                case 'anchor_buttons_bar':
+                    require 'blocks/ItgAnchorsButtonsBar.php';
+                    break;
+                case 'focus_box':
+                    require 'blocks/ItgFocusBox.php';
+                    break;
+                case 'media_filter':
+                    require 'blocks/ItgMediaFilter.php';
+                    break;   
 
                 default:
                 break;
