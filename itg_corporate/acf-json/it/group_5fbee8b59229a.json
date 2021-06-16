@@ -1296,6 +1296,70 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_60c9cd6d53537": {
+                    "key": "layout_60c9cd6d53537",
+                    "name": "anchors_buttons_bar",
+                    "label": "Anchors Buttons Bar",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60c9cd6d53538",
+                            "label": "Anchors Buttons Bar",
+                            "name": "anchors_buttons_bar",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": "",
+                            "clone": [
+                                "group_60b8b2f30708c"
+                            ],
+                            "display": "seamless",
+                            "layout": "",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60c9cdfa53539": {
+                    "key": "layout_60c9cdfa53539",
+                    "name": "anchor_name",
+                    "label": "Anchor Name",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60c9cdfb5353a",
+                            "label": "Anchor Name",
+                            "name": "anchor_name",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "clone": [
+                                "group_60b8ae965d568"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Aggiungi Layout",
@@ -1322,5 +1386,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1623795267
+    "modified": 1623838271
 }
