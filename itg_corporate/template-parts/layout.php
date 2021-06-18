@@ -198,10 +198,7 @@ if( have_rows('layout_builder') ):
           break;
           case 'media_filter':
             require 'blocks/ItgMediaFilter.php';
-          break;
-          case 'media_filter':
-            require 'blocks/ItgMediaFilter.php';
-          break;
+          break;          
           case 'balance_sheet':
             require 'blocks/ItgBalanceSheets.php';
           break;
