@@ -199,6 +199,12 @@ if( have_rows('layout_builder') ):
           case 'media_filter':
             require 'blocks/ItgMediaFilter.php';
           break;
+          case 'media_filter':
+            require 'blocks/ItgMediaFilter.php';
+          break;
+          case 'balance_sheet':
+            require 'blocks/ItgBalanceSheets.php';
+          break;
           
           default:
 
@@ -456,6 +462,9 @@ if( have_rows('layout_builder_posts') ):
           break;
           case 'media_filter':
             require 'blocks/ItgMediaFilter.php';
+          break;
+          case 'balance_sheet':
+            require 'blocks/ItgBalanceSheets.php';
           break;
           
           default:

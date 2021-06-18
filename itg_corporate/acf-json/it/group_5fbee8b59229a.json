@@ -1360,6 +1360,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_60c86a41bed08": {
+                    "key": "layout_60c86a41bed08",
+                    "name": "balance_sheet",
+                    "label": "Balance Sheet",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60c86a41bed09",
+                            "label": "Balance Sheet",
+                            "name": "balance_sheet",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "clone": [
+                                "group_60c85e9d626d6"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Aggiungi Layout",
