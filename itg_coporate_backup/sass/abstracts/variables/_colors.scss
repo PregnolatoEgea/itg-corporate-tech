@@ -1,0 +1,107 @@
+$color__background-body: #fff;
+$color__background-screen: #f1f1f1;
+$color__background-hr: #ccc;
+$color__background-button: #e6e6e6;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
+
+$color__text-screen: #21759b;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+$color__link: #4169e1; //royalblue
+$color__link-visited: #800080; //purple
+$color__link-hover: #191970; //midnightblue
+$color__text-main: #404040;
+
+$color__border-button: #ccc #ccc #bbb;
+$color__border-button-hover: #ccc #bbb #aaa;
+$color__border-button-focus: #aaa #bbb #bbb;
+$color__border-input: #ccc;
+$color__border-abbr: #666;
+
+/*
+* ITG Sustainability colors
+*/
+
+//Primary
+$itg__white: #ffffff;
+$itg__black: #202020;
+$itg__blue-1: #003478;
+$itg__blue-2: #007ac9;
+$itg__blue-3: #00a9e0;
+
+//Secondary
+$itg__light-blue: #d3f4ff;
+$itg__green-1: #34b233;
+$itg__green-2: #bed600;
+$itg__yellow: #fecb00;
+$itg__orange: #e98300;
+$itg__red: #e00034;
+$itg__brown: #983222;
+$itg__grey-1: #8e8e8e;
+$itg__grey-2: #dfdfdf;
+$itg__white-60: rgba(255, 255, 255, 0.6);
+$itg__white-20: rgba(255, 255, 255, 0.2);
+$itg__blue-1-60: rgba(0, 52, 120, 0.6);
+$itg__blue-1-30: rgba(0, 52, 120, 0.3);
+
+$palette: (
+  white: $itg__white,
+  black: $itg__black,
+  blue-1: $itg__blue-1,
+  blue-2: $itg__blue-2,
+  blue-3: $itg__blue-3,
+  light-blue: $itg__light-blue,
+  green-1: $itg__green-1,
+  green-2: $itg__green-2,
+  yellow: $itg__yellow,
+  orange: $itg__orange,
+  red: $itg__red,
+  brown: $itg__brown,
+  grey-1: $itg__grey-1,
+  grey-2: $itg__grey-2,
+  itg-white-60: $itg__white-60,
+  itg-white-20: $itg__white-20,
+  itg-blue-1-60: $itg__blue-1-60,
+  itg-blue-1-30: $itg__blue-1-30,
+);
+
+//palette color classes
+@each $color, $code in $palette {
+  .itg--color-#{$color} {
+    color: $code !important;
+  }
+}
+
+//palette background color classes
+@each $color, $code in $palette {
+  .itg--background-color-#{$color} {
+    background-color: $code !important;
+  }
+}
+
+//Gradient
+$itg__gradient-1: linear-gradient(312.41deg, #bed600 0%, #34b233 100%);
+$itg__gradient-2: radial-gradient(circle, #007ac9 0%, #0071be 49.18%, #003478 100%);
+$itg__gradient-3: linear-gradient(297.44deg, rgba(2, 28, 61, 0.5) 0%, #021c3d 100%);
+
+//Transparencies
+$itg__transparent-1: linear-gradient(312.41deg, #bed600 0%, #34b233 100%);
+$itg__transparent-2: radial-gradient(circle, #007ac9 0%, #0071be 49.18%, #003478 100%);
+$itg__transparent-3: linear-gradient(297.44deg, rgba(2, 28, 61, 0.5) 0%, #021c3d 100%);
+
+$palette_image: (
+  itg-gradient-1: $itg__gradient-1,
+  itg-gradient-2: $itg__gradient-2,
+  itg-gradient-3: $itg__gradient-3,
+  itg-transparent-1: $itg__transparent-1,
+  itg-transparent-2: $itg__transparent-2,
+  itg-transparent-3: $itg__transparent-3,
+);
+
+//palette background color classes
+@each $color, $code in $palette_image {
+  .itg--background-color-#{$color} {
+    background-image: $code !important;
+  }
+}

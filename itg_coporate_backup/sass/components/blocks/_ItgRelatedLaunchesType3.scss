@@ -1,0 +1,50 @@
+
+.itgBlock-relatedLaunchesType3 {
+  .columns {
+    align-items: center;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    &-img {
+      width: 80px;
+      height: 80px;
+      z-index: 9;
+      min-width: 80px;
+      img{
+        width: 80px;
+        height: 80px;
+      }
+    }
+    &-content {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      min-height: 96px;
+      width: 100%;
+      margin-left: -32px;
+      border-radius: 5px;
+      justify-content: space-between;
+      box-shadow: 0px 8px 24px 8px rgba(0,0,0,0.08);
+      -webkit-box-shadow: 0px 8px 24px 8px rgba(0,0,0,0.08);
+      -moz-box-shadow: 0px 8px 24px 8px rgba(0,0,0,0.08);
+    }
+    &-cta {
+      img {
+        width: 32px;
+        min-width: 32px;
+      }
+    }
+    &-title {
+      font-weight: 500;
+      color: $itg__blue-1;
+      @include mobile {
+        @include p1(1rem !important, 1.25rem !important);
+      }
+    } 
+  }
+  p {
+    margin-bottom: 0;
+  }
+
+}
