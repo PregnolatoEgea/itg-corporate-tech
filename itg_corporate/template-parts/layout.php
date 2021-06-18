@@ -1,4 +1,5 @@
 <?php
+$url=get_permalink();
 
 if(is_single() || is_page()){
 
@@ -259,6 +260,20 @@ if(is_single()) {
 </header>
 <div class="columns">
  <div class="column is-10 is-offset-1">
+     <div class="itg__singlepost_share aligncenter itg--my-20">
+         <!-- Twitter Social Share -->
+         <script src="https://platform.twitter.com/widgets.js" type="text/javascript"></script>
+         <a href="https://twitter.com/share" class="twitter-share-button"
+            data-url="<?php echo $url; ?>"
+            data-via="italgas"
+            data-text="<?php the_title(); ?>"
+            data-related="Italgas"
+            data-count="vertical">
+             <img src="./dist/src/images/icons/twitter_no_bg.svg">
+         </a>
+         <!-- Linkedin Social Share -->
+         <a href="https://www.linkedin.com/cws/share?url=".<?php echo $url; ?>><img src="./dist/src/images/icons/linkedin.svg" /> </a>
+     </div>
   <div class="itg__singlepost_date aligncenter itg-mt-80">
   <?php _e('Data di pubblicazione'); ?>: <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
   </div>
@@ -282,6 +297,20 @@ if(is_single()) {
  </header>
  <div class="columns">
  <div class="column is-10 is-offset-1">
+     <div class="itg__singlepost_share aligncenter itg--my-20">
+         <!-- Twitter Social Share -->
+         <script src="https://platform.twitter.com/widgets.js" type="text/javascript"></script>
+         <a href="https://twitter.com/share" class="twitter-share-button"
+            data-url="<?php echo $url; ?>"
+            data-via="italgas"
+            data-text="<?php the_title(); ?>"
+            data-related="Italgas"
+            data-count="vertical">
+             <img src="./dist/src/images/icons/twitter_no_bg.svg">
+         </a>
+         <!-- Linkedin Social Share -->
+         <a href="https://www.linkedin.com/cws/share?url=".<?php echo $url; ?>><img src="./dist/src/images/icons/linkedin.svg" /> </a>
+     </div>
   <div class="itg__singlepost_date aligncenter itg-mt-80">
   <?php _e('Data di pubblicazione'); ?>: <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
   </div>
