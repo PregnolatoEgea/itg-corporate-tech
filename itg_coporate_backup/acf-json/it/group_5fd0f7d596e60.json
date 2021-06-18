@@ -48,29 +48,9 @@
             "wpml_cf_preferences": 2
         },
         {
-            "key": "field_60b9ebb576b21",
-            "label": "Table",
-            "name": "table",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "wpml_cf_preferences": 2
-        },
-        {
-            "key": "field_5fd0f9a346017",
-            "label": "Text Box",
-            "name": "text_box",
+            "key": "field_60c9f14fabece",
+            "label": "Background Color",
+            "name": "background_color",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -80,14 +60,78 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
             "clone": [
-                "group_5fd1eeddb5fd5"
+                "group_5fc274028b95e"
             ],
             "display": "seamless",
             "layout": "block",
             "prefix_label": 0,
-            "prefix_name": 0,
-            "wpml_cf_preferences": 2
+            "prefix_name": 0
+        },
+        {
+            "key": "field_60c9c9d60d071",
+            "label": "Blocks",
+            "name": "blocks",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "",
+            "wpml_cf_preferences": 2,
+            "sub_fields": [
+                {
+                    "key": "field_60b9ebb576b21",
+                    "label": "Table",
+                    "name": "table",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": "",
+                    "wpml_cf_preferences": 2
+                },
+                {
+                    "key": "field_5fd0f9a346017",
+                    "label": "Text Box",
+                    "name": "text_box",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_5fd1eeddb5fd5"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0,
+                    "wpml_cf_preferences": 2
+                }
+            ]
         }
     ],
     "location": [
@@ -107,5 +151,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623159470
+    "modified": 1623849046
 }

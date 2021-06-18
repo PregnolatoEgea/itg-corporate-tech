@@ -75,17 +75,13 @@ $focus_box_background_color = get_sub_field("background_color");
                           <?= $focus_box_title; ?> 
                         </<?= $focus_box_title_style ?>></div>
                     <?php endif; ?>
-                    <?php if($focus_box_text): ?>
-                      <div class="<?= $focus_box_text_style ?> itg--color-<?php echo $focus_box_text_color; ?>">
-                        <?= $focus_box_text; ?>
-                      </div>
-                    <?php endif; ?>
                     
                     <?php if($focus_box_text): ?>
                       <div class="<?= $focus_box_text_style ?> itg--color-<?php echo $focus_box_text_color; ?>">
                         <?= $focus_box_text; ?>
                       </div>
                     <?php endif; ?>
+                    
                     <?php
                       if($focus_box_cta_link){  ?>
                       </div>

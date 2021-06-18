@@ -21,7 +21,7 @@ $downloads = get_sub_field("text_box_downloads"); // list of downloads
 <div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-textBox <?php echo $enviroment; ?>">
   <div class="container itg--background-color-<?php echo $text_box_background_color; ?>" >
     <div class="columns is-centered is-mobile">
-      <div class="column <?= $text_box_columns ?>">
+      <div class="column <?php if($text_box_columns){ echo $text_box_columns; }else{ echo 'is-8'; };  ?>">
         <?php if ($titolo): ?>
           <div class="<?= $titolo_style ?> itg--color-<?php echo $text_box_title_color; ?>">
             <<?= $titolo_style ?>>
