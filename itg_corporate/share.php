@@ -8,4 +8,4 @@ $url=get_permalink();
    data-text="<?php the_title(); ?>"
    data-related="Italgas"
    data-count="vertical">SVG Twtitter</a>
-<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+<script src="https://platform.twitter.com/widgets.js" type="text/javascript"></script>
