@@ -1,0 +1,14 @@
+
+.itgBlock-lastUpdate {
+    padding: 0;
+    background-color: transparent;
+    height: 120px;
+    font-size: 18px;
+    color:$itg__grey-1;
+    &__container {
+        height: 100%;
+    }
+    &__date{
+        font-weight: $strong-weight;
+    }
+}

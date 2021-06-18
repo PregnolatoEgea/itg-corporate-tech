@@ -202,6 +202,9 @@ if( have_rows('layout_builder') ):
           case 'balance_sheet':
             require 'blocks/ItgBalanceSheets.php';
           break;
+          case 'last_update':
+            require 'blocks/ItgLastUpdate.php';
+          break;
           
           default:
 
@@ -462,6 +465,9 @@ if( have_rows('layout_builder_posts') ):
           break;
           case 'balance_sheet':
             require 'blocks/ItgBalanceSheets.php';
+          break;
+          case 'last_update':
+            require 'blocks/ItgLastUpdate.php';
           break;
           
           default:
