@@ -2,7 +2,7 @@
 $url=get_permalink();
 ?>
 <a href="https://www.linkedin.com/cws/share?url=".<?php echo $url; ?>>SVG Linkedin</a>
-<a href="http://twitter.com/share" class="twitter-share-button"
+<a href="https://twitter.com/share" class="twitter-share-button"
    data-url="<?php echo $url; ?>"
    data-via="italgas"
    data-text="<?php the_title(); ?>"
