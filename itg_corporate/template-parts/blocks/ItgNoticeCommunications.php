@@ -40,8 +40,8 @@ endif;
                 <?php echo _e('Avvisi e comunicazioni'); ?>
             </h4>
         </div>
-        <div class="columns is-centered is-mobile is-vcentered">
-            <div class="column itgBlock-ItgNoticesCommunications__tab-list">
+        <div class="columns is-centered is-vcentered ">
+            <div class="column itgBlock-ItgNoticesCommunications__tab-list is-10 is-offset-desktop-2">
                 <div class="columns is-marginless is-vcentered is-mobile">
                     <?php foreach ($tabLabels as $tabLabel):  ?>
                         <div class="column is-narrow">
@@ -53,8 +53,8 @@ endif;
                 </div>                           
             </div>
         </div>
-        <div class="columns is-marginless">
-            <div class="column">
+        <div class="column is-centered is-vcentereds">
+            <div class="column is-10 is-offset-2">
                 <?php while( have_rows('notices_and_communications') ) : the_row(); 
                     $notices_and_communications_title = get_sub_field("notices_and_communications_title");
                     $notices_and_communications_date = get_sub_field("notices_and_communications__date"); 
