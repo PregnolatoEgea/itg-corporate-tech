@@ -1,5 +1,4 @@
 <?php
-$url=get_permalink();
 
 if(is_single() || is_page()){
 
@@ -241,6 +240,7 @@ endif;
 
 <?php
 if(is_single()) { 
+ $url=get_permalink();
  $categories = get_the_category( $post->ID );
 
  foreach((get_the_category()) as $category){ 
@@ -252,9 +252,11 @@ if(is_single()) {
 <header class="itg_detail_post_header itg__has_post_thumbnail <?php echo $category->slug; ?>" style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
  <div class="columns">
   <div class="column is-10 itg__single_wrapper is-offset-1 pt-5">
+   <?php if ($cat_icon) : ?>
    <span class="itg__single_category_img aligncenter itg-mt-92">
    <img src="<?php echo $cat_icon; ?>" width="70" height="70" alt="<?php echo $category->name; ?>" />
    </span>
+   <?php endif; ?>
    <span class="itg__single_category aligncenter">
     <?php echo $category->name; ?>
    </span>
@@ -264,7 +266,7 @@ if(is_single()) {
 </header>
 <div class="columns">
  <div class="column is-10 is-offset-1">
-     <div class="itg__singlepost_share aligncenter itg--my-20">
+  <div class="itg__singlepost_share aligncenter itg--my-20">
          <!-- Twitter Social Share -->
          <script src="https://platform.twitter.com/widgets.js" type="text/javascript"></script>
          <a href="https://twitter.com/share" class="twitter-share-button"
@@ -289,9 +291,11 @@ if(is_single()) {
  <header class="itg_detail_post_header <?php echo $category->slug; ?>">
    <div class="columns">
     <div class="column is-10 itg__single_wrapper is-offset-1 pt-5">
-     <span class="itg__single_category_img aligncenter itg-mt-92">
-       <img src="<?php echo $cat_icon; ?>" width="70" height="70" alt="<?php echo $category->name; ?>" />
+     <?php if ($cat_icon) : ?>
+      <span class="itg__single_category_img aligncenter itg-mt-92">
+      <img src="<?php echo $cat_icon; ?>" width="70" height="70" alt="<?php echo $category->name; ?>" />
       </span>
+     <?php endif; ?>
       <span class="itg__single_category aligncenter">
        <?php echo $category->name; ?>
       </span>
@@ -301,20 +305,6 @@ if(is_single()) {
  </header>
  <div class="columns">
  <div class="column is-10 is-offset-1">
-     <div class="itg__singlepost_share aligncenter itg--my-20">
-         <!-- Twitter Social Share -->
-         <script src="https://platform.twitter.com/widgets.js" type="text/javascript"></script>
-         <a href="https://twitter.com/share" class="twitter-share-button"
-            data-url="<?php echo $url; ?>"
-            data-via="italgas"
-            data-text="<?php the_title(); ?>"
-            data-related="Italgas"
-            data-count="vertical">
-             <img src="./dist/src/images/icons/twitter_no_bg.svg">
-         </a>
-         <!-- Linkedin Social Share -->
-         <a href="https://www.linkedin.com/cws/share?url=".<?php echo $url; ?>><img src="./dist/src/images/icons/linkedin.svg" /> </a>
-     </div>
   <div class="itg__singlepost_date aligncenter itg-mt-80">
   <?php _e('Data di pubblicazione'); ?>: <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
   </div>

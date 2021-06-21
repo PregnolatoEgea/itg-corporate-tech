@@ -34,7 +34,7 @@ endif;
 ?>
   <div class="container" >
     <div class="columns is-centered">
-      <div class="column itgBlock-ItgNoticesCommunications__container is-12">
+      <div class="column itgBlock-ItgNoticesCommunications__container">
         <div class="h4 itgBlock-ItgNoticesCommunications__title itg--color-white">
             <h4>
                 <?php echo _e('Avvisi e comunicazioni'); ?>
@@ -63,11 +63,12 @@ endif;
                     list($day, $month, $year) = explode("/", $notices_and_communications_date);
                     $notices_and_communications_timestamp = strtotime($year . "-" . $month . "-" . $day);
                     $notices_and_communications_year = date("Y", $notices_and_communications_timestamp);
+                    setlocale(LC_TIME, "it_IT.UTF-8");
                 ?>
-                    <div class="itgBlock-ItgNoticesCommunications__block <?php echo ($currentYear != $tabLabel ? 'hidden' : ' '); ?> itg-mt-24" 
+                    <div class="itgBlock-ItgNoticesCommunications__block <?php echo ($currentYear != $tabLabel ? '' : 'hidden '); ?> itg-mt-24" 
                                 data-commYear="<?php echo $notices_and_communications_year ?>">
                         <div class="itgBlock-ItgNoticesCommunications__block--title p2">
-                            <?php echo $notices_and_communications_title ?> 
+                            <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo strftime('%e %B %G', $notices_and_communications_timestamp); ?></time> 
                         </div>
                         <div class="itgBlock-ItgNoticesCommunications__block--list"> 
                             <div class="columns is-multiline">
@@ -94,7 +95,14 @@ endif;
                                         <a href="<?php echo $notices_and_communications_url; ?>" target="<?= $target; ?>">
                                             <div class="itgBlock-ItgNoticesCommunications__block__file-title itg-pl-32 ">                                                
                                                     <div class="itgBlock-ItgNoticesCommunications__block__file-title-label p2 ">   
-                                                     <span class="itgBlock-ItgNoticesCommunications__block__file-title-name"><?php echo $notices_and_communications_name; ?> </span>                                                    
+                                                     <span class="itgBlock-ItgNoticesCommunications__block__file-title-name">
+                                                     <?php if ($notices_and_communications_title) { ?>
+                                                     <?php echo $notices_and_communications_title; ?>
+                                                     <?php } else { ?>
+                                                     <?php echo $notices_and_communications_name; ?>
+                                                     <?php } ?>
+                                                     
+                                                      </span>                                                    
                                                       <small><?php _e('File'); ?>: <?php echo $filetype; ?> <?php echo $notecomm_filesize; ?> </small>
                                                       
                                                       

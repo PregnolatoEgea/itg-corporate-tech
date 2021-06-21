@@ -27,9 +27,9 @@
             </div>
             <div class="is-clearfix"></div>
             <div class="container">
-             <div id="itg_tagfilterresults" class="columns pt-5 itg_tagfilterresults" style="display: none;">
-              <div class="column is-10 is-offset-2">
-               <div class="columns">
+             <div id="itg_tagfilterresults" class="columns pt-5 is-mobile is-centered itg_tagfilterresults">
+              <div class="column is-12">
+               <div class="columns is-mobile is-centered">
                  <?php foreach ($filter->get() as $kk => $term): ?>
                    <div class="itg_asp_label aligncenter <?php echo $taxonomy; ?>_filter_box itgtagfilter column is-3">
                     <input id="itg_<?php echo $ch_class; ?>_sub-<?php echo $term->id; ?>" type="checkbox" class="asp_checkbox"
@@ -42,96 +42,71 @@
                      </div>
                   <?php endforeach; ?>
                </div>
-               <div class="columns">
-                <div class="column is-3 is-offset-3 itg_applyfilters aligncenter">
+              </div>
+              <div class="columns is-mobile is-centered itg-mt-32">
+                <div class="column is-narrow itg_applyfilters aligncenter">
                  <a href="#">Applica filtri</a>
                 </div>
-                <div class="column is-3 is-offset-3 itg_resetfilters aligncenter">
-                 <a href="#">Azzera filtri X</a>
+                <div class="column is-narrow itg_resetfilters aligncenter">
+                 <a href="#">Azzera filtri <img src="<?php bloginfo('template_directory'); ?>/dist/src/images/icons/burger_menu_close.svg" width="18" height="18" border="0" /></a>
                 </div>
                </div>
-              </div>
              </div>
             </div>
             
             
             <!-- date range filter -->
-             <div id="itg_dateRangefilterresults" class="columns pt-5 " style="display: none;">
+             <div id="itg_dateRangefilterresults" class="columns is-vcentered pt-5 itg_tagdatefilterdateresults itg-mt-32 itg-mb-32">
                <div class="columns is-mobile is-centered">
              
-                <div class="column is-4">
+                <div class="column is-4 itg_columndaterange">
+                 <a class="itg_activecolumn itg_recentpost activerange" href="#"><?php _e('Recenti'); ?></a>
                  <?php foreach($filter->get() as $date): ?>
                     <div class="asp_<?php echo esc_attr($date->name); ?>">
                     <?php if ( $date->label != "" ): ?>
                     <legend><?php echo esc_html($date->label); ?></legend>
                     <?php endif; ?>
-                    <textarea class="asp_datepicker_format"
-                              aria-hidden="true"
-                              aria-label="<?php echo esc_attr($date->label); ?>"
-                              style="display:none !important;"><?php echo esc_html($date->format); ?></textarea>
-                    <input type="text"
-                           aria-label="<?php echo esc_attr($date->label); ?>"
-                           placeholder="<?php echo esc_attr($date->placeholder); ?>"
-                           class="asp_datepicker"
-                           name="<?php echo esc_attr($date->name); ?>_real"
-                           data-origvalue="<?php echo esc_attr($date->default); ?>"
-                           value="<?php echo esc_attr($date->value); ?>">
-                    <input type="" class="asp_datepicker_hidden" name="<?php echo esc_attr($date->name); ?>" value="">
+                    
                     </div>
                  <?php endforeach; ?>
                 </div>
                 
-                <div class="column is-4">
+                <div class="column is-4 itg_columndaterange">
+                 <a class="itg_activecolumn itg_periodposts" href="#"><?php _e('Seleziona periodo'); ?></a>
                  <?php foreach($filter->get() as $date): ?>
                     <div class="asp_<?php echo esc_attr($date->name); ?>">
                     <?php if ( $date->label != "" ): ?>
                     <legend><?php echo esc_html($date->label); ?></legend>
                     <?php endif; ?>
-                    <textarea class="asp_datepicker_format"
-                              aria-hidden="true"
-                              aria-label="<?php echo esc_attr($date->label); ?>"
-                              style="display:none !important;"><?php echo esc_html($date->format); ?></textarea>
-                    <input type="text"
-                           aria-label="<?php echo esc_attr($date->label); ?>"
-                           placeholder="<?php echo esc_attr($date->placeholder); ?>"
-                           class="asp_datepicker"
-                           name="<?php echo esc_attr($date->name); ?>_real"
-                           data-origvalue="<?php echo esc_attr($date->default); ?>"
-                           value="<?php echo esc_attr($date->value); ?>">
-                    <input type="" class="asp_datepicker_hidden" name="<?php echo esc_attr($date->name); ?>" value="">
+                    
+                    </div>
+                <?php endforeach; ?>
+                </div>
+               
+               <div class="column is-4 itg_columndaterange">
+                <a class="itg_activecolumn itg_yearpost" href="#"><?php _e('Seleziona anno'); ?></a>
+                 <?php foreach($filter->get() as $date): ?>
+                    <div class="asp_<?php echo esc_attr($date->name); ?>">
+                    <?php if ( $date->label != "" ): ?>
+                    <legend><?php echo esc_html($date->label); ?></legend>
+                    <?php endif; ?>
+                    
                     </div>
                 <?php endforeach; ?>
                 </div>
                </div>
                
                <div class="is-clearfix"></div>
-               <div class="columns is-mobile is-centered">
-                <div class="column is-narrow is-offset-3 itg_applyfilters aligncenter">
+               <div class="columns is-mobile is-centered itg-mt-32">
+                <div class="column is-narrow itg_applyfilters aligncenter">
                  <a href="#">Applica filtri</a>
                 </div>
-                <div class="column is-3 is-narrow is-offset-3 itg_resetfilters aligncenter">
-                 <a href="#">Azzera filtri X</a>
+                <div class="column is-narrow aligncenter itg_resetfilters">
+                 <a href="#">Azzera filtri <img src="<?php bloginfo('template_directory'); ?>/dist/src/images/icons/burger_menu_close.svg" width="18" height="18" border="0" /></a>
                 </div>
                </div>
             
+
         <?php endif; ?>
 
-         <script type="text/javascript">
-          /*
-          jQuery('#itg_tagfilterbtn').click(function(e){
-           jQuery(this).toggleClass('active');
-           jQuery('#itg_tagfilterresults').toggle();
-           jQuery('#itg_dateRangefilterresults').hide();
-           jQuery('#itg_datefilterbtn').removeClass('active');
-           e.preventDefault();
-          });
-          
-          jQuery('#itg_datefilterbtn').click(function(e){
-           jQuery(this).toggleClass('active');
-           jQuery('#itg_dateRangefilterresults').toggle();
-           jQuery('#itg_tagfilterresults').hide();
-           jQuery('#itg_tagfilterbtn').removeClass('active');
-           e.preventDefault();
-          });
-          */
-         </script>
+         
