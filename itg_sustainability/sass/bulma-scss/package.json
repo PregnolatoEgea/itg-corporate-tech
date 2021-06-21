@@ -1,25 +1,56 @@
 {
-  "name": "bulma-scss",
-  "version": "0.9.2",
+  "_args": [
+    [
+      "bulma-scss@0.9.2",
+      "C:\\Users\\samue\\Desktop\\Work\\itg-corporate-tech\\itg_sustainability"
+    ]
+  ],
+  "_development": true,
+  "_from": "bulma-scss@0.9.2",
+  "_id": "bulma-scss@0.9.2",
+  "_inBundle": false,
+  "_integrity": "sha512-biyLa2oq5NMbYXMYDcboG0+fNc2TQrfwqtFtJVe9b5TVGo/LNFk/jYhEDct4VZSOkajHIkjCXw3Eq6VQ0q/rZA==",
+  "_location": "/bulma-scss",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "bulma-scss@0.9.2",
+    "name": "bulma-scss",
+    "escapedName": "bulma-scss",
+    "rawSpec": "0.9.2",
+    "saveSpec": null,
+    "fetchSpec": "0.9.2"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/bulma-scss/-/bulma-scss-0.9.2.tgz",
+  "_spec": "0.9.2",
+  "_where": "C:\\Users\\samue\\Desktop\\Work\\itg-corporate-tech\\itg_sustainability",
+  "author": {
+    "name": "Jim Campbell"
+  },
+  "bugs": {
+    "url": "https://github.com/j1mc/bulma-scss/issues"
+  },
   "description": "The Bulma CSS Framework files converted to SCSS syntax",
-  "main": "bulma.scss",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/j1mc/bulma-scss.git"
-  },
+  "homepage": "https://github.com/j1mc/bulma-scss#readme",
   "keywords": [
     "bulma",
     "css",
     "scss",
     "flexbox"
   ],
-  "author": "Jim Campbell",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/j1mc/bulma-scss/issues"
+  "main": "bulma.scss",
+  "name": "bulma-scss",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j1mc/bulma-scss.git"
   },
-  "homepage": "https://github.com/j1mc/bulma-scss#readme"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.9.2"
 }
