@@ -1,0 +1,72 @@
+.itgBlock-intro-section {
+  @include touch {
+    margin-top: 1rem;
+  }
+
+  .swap-mobile {
+    @include until($desktop) {
+      display: flex;
+     flex-direction: column-reverse;
+    }
+  }
+
+  &__title {
+    @include tablet-only {
+      width: 100% !important;
+    }
+    @include mobile {
+      h1, h2, h3, h4, h5, h6 {
+        @include h5(2rem !important, 2.75rem !important);
+      }
+      width: 83.3% !important;
+    }
+    @include until($desktop) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include until($widescreen) {
+      line-height: 2.5rem;
+      padding-top: 0;
+      padding-bottom: 0;
+      h1, h2, h3, h4, h5, h6 {
+        @include h5(2rem !important, 2.75rem !important);
+        font-weight: 800 !important;
+      }
+    }
+    *{
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    @include touch {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__description-container{
+    @include mobile {
+      width: 100% !important;
+    }
+    @include tablet-only {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__description{
+    @include tablet-only {
+      p {
+        margin-bottom: 0 !important;
+      }
+      @include p3(1.5rem !important, 2.0625rem !important)
+    }
+    @include mobile {
+      p {
+        margin-bottom: 0 !important;
+      }
+      @include p2(1.125rem !important, 1.75rem !important);
+    }
+  }
+}

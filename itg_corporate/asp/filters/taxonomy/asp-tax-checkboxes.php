@@ -1,6 +1,6 @@
 <?php foreach ($filter->get() as $kk => $term): ?>
     <?php if ($term->id == 0): ?>
-        <div class="aligncenter itg_option_cat">
+        <div class="aligncenter itg_option_cat is-narrow">
             <div class="itg_option_inner">
               
                 <input id="itg_<?php echo $ch_class; ?>_all<?php echo $id; ?>"

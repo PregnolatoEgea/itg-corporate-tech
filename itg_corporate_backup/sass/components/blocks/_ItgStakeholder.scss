@@ -1,0 +1,180 @@
+.itgBlock {
+  &__ItgStakeholder {
+    &--title {
+      h1, h2, h3, h4, h5, h6 {
+        @include mobile {
+          @include h5(2rem !important, 2.75rem !important);
+        }
+      }
+    }
+    &--title,
+    &--copy {
+      text-align: center;
+      * {
+        margin-bottom: 0;
+      }
+    }
+    &--iconSlider,
+    &--titleSlider {
+      &-single {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include h5();
+        * {
+          margin-bottom: 0;
+        }
+        img{
+          max-width: 50px;
+        }
+      }
+      .swiper-button-next {
+        background: url(src/images/icons/right-arrow.svg);
+        background-color: $itg__white;
+        width: 60px;
+        height: 60px;
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 100%;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        @include until($desktop){
+            right: 0;
+            width: 40px;
+            height: 40px;
+        }
+      }
+      .swiper-button-prev {
+        background: url(src/images/icons/right-arrow.svg);
+        transform: rotate(180deg);
+        background-color: $itg__white;
+        width: 60px;
+        height: 60px;
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 100%;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        @include until($desktop){
+            left: 0;
+            width: 40px;
+            height: 40px;
+        }
+      }
+    }
+    &--iconSlider {
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      &-whiteHighlight {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        width: 180px;
+        height: 180px;
+        background-color: $itg__white;
+        border-radius: 100%;
+      }
+      &-single {
+        transition: transform linear 0.3s;
+        transform: scale(1);
+        cursor: pointer;
+        &.swiper-slide-active {
+          transition: transform linear 0.3s;
+          transform: scale(1.2);
+        }
+      }
+    }
+    &--titleSlider {
+      min-height: 80px;
+      &-single {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        a {
+          color: currentColor;
+          max-width: 160px;
+        }
+      }
+    }
+    &--popup {
+      position: absolute;
+      height: 80%;
+      background-color: $itg__white;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: 4;
+      border-radius: 8px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s linear;
+      *{
+        color: $itg__blue-1 !important;
+      }
+      &.is-active {
+        opacity: 1;
+        pointer-events: all;
+        transition: opacity 0.3s linear;
+      }
+      &-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 20px;
+        cursor: pointer;
+      }
+      &-copy {
+        position: absolute;
+        height: calc(100% - 100px);
+        width: calc(100% - 100px);
+        padding: 0 20px 20px;
+        top: auto;
+        bottom: 40px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        @include mobile {
+          width: calc(100% - 50px);
+        }
+
+        &::-webkit-scrollbar-track {
+          border-radius: 20px;
+          background-color: $itg__white;
+        }
+
+        &::-webkit-scrollbar {
+          width: 8px;
+          background-color: $itg__white;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          border-radius: 20px;
+          background-color: $itg__grey-1;
+        }
+      }
+      &-title {
+        @include h5;
+      }
+      &-content {
+        color: $itg__black;
+        @include p2;
+        @include mobile {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

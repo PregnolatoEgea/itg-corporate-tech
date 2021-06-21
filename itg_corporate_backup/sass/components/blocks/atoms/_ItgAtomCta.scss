@@ -1,0 +1,18 @@
+.itgAtom {
+  &__ItgCTA {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid currentColor;
+    border-radius: 4px;
+    flex: none;
+    min-width: 186px;
+    @include until($tablet) {
+      width: 100%;
+    }
+
+    span {
+      font-weight: 700;
+    }
+  }
+}

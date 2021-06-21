@@ -1,0 +1,140 @@
+.itgBlock-ItgNoticesCommunications {
+
+  &__container {
+    @include tablet-only {
+      width: 75% !important;
+    }  
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__tab-list {
+    padding: 0;
+    @include from($desktop) {
+        overflow-x: hidden;
+    }    
+    @include until($desktop) {
+        overflow-x: scroll;
+    }
+    .columns {
+        height: 128px;
+        @include from($desktop) {
+            -webkit-box-pack: center !important;
+            -ms-flex-pack: center !important;
+            justify-content: center !important;
+        }                    
+    }
+  }    
+
+  &__tab-selector{      
+      box-sizing: border-box;
+      height: 40px;
+      min-width: 170px;
+      color: $itg__white;
+      border-radius: 28px;      
+      line-height: 38px;
+      text-align: center;
+      cursor: pointer;
+      display: block;
+      &:after{
+        content:"";
+        display: block;
+        height: 12px;
+        background-color: $itg__white-30;
+        width: 100%;
+        border-radius: 28px;
+      }
+      &.is-active {
+        font-weight: bold;
+        &:after{
+         background-color: $itg__blue-3;
+        }
+      }
+  }
+
+  &__block {
+    
+    &.invisible {
+      visibility: hidden !important;
+    }
+    &.hidden {
+      display: none !important;
+    }
+    &--title {
+      color: $itg__white;
+      font-weight: bold;
+      height: 50px;
+      text-transform: uppercase;
+    }
+      &__file {
+        display: flex;
+
+        &-icon {
+          &-container{
+            height: 67px;
+            display: flex;
+          }
+          &-image {
+            align-self: center;
+            width: 56px;
+            height: 56px;
+            min-height: 56px;
+            background: $itg__white;
+            background-image: url('src/images/icons/download.svg');
+            background-size: auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 4px;
+            &.press-typology {
+              background-image: url('src/images/icons/balance/press_tipology_icon.svg');
+            }
+            &.video {
+              background-image: url('src/images/icons/balance/video_icon.svg');
+            }
+            &.webcast {
+              background-image: url('src/images/icons/balance/webcast_icon.svg');
+            }
+            &.presentation {
+              background-image: url('src/images/icons/balance/presentation_icon.svg');
+            }
+            &.pdf-report {
+              background-image: url('src/images/icons/balance/pdf_report_icon.svg');
+            }
+            &.online-report {
+              background-image: url('src/images/icons/balance/online_report_icon.svg');
+            }
+          }
+        }
+
+        &-title {
+          height: 67px;
+          display: flex;
+          @include until($desktop) {
+            padding-left: 12px !important;
+          }
+
+          &-label {
+            color: $itg__white !important;
+            align-self: center;
+          }
+          &-name{
+            display: block;
+          }
+          small{
+           color: $itg__grey-2;
+          }
+          a {
+            color: $itg__white !important;
+            @include until($desktop) {
+              word-break: break-word;
+            }
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+  }
+}

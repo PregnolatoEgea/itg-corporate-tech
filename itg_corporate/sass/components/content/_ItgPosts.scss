@@ -1,0 +1,173 @@
+.single-post {
+ .site-main{
+  margin-top: 90px;
+    .itg_detail_post_header {
+     display: block;
+      background-color: $itg__light-blue;
+      margin-top: 120px;
+      height: 368px;
+      text-align: center;
+      min-height: 270px;
+      line-height: 48px;
+      font-family: $font__main;
+      color: $itg__blue-1;
+      list-style-type: none;
+      font-weight: bold;
+      letter-spacing: 0;
+      word-wrap: break-word;
+      background-position: center center;
+      background-size: cover;
+      .itg__single_wrapper{
+       position: relative;
+       z-index: 2;
+      }
+      .itg__single_category_img{
+       margin-bottom: 0;
+       line-height: 100%;
+      }
+      
+      &.itg__has_post_thumbnail{
+       position: relative;
+       overflow: hidden;
+       &:after{
+        content: "";
+        height: 100%;
+        width: 100%;
+        opacity: 0.8;
+        background: linear-gradient(297.44deg, rgba(2,28,61,0.5) 0%, #021C3D 100%); 
+        z-index: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+       }
+       .itg__single_category {
+         text-transform: uppercase;
+         color: $itg__white;
+         margin-bottom: 0;
+       }
+       .itg_detail_post_title {
+        color: $itg__white;
+        position: relative;
+        z-index: 1;
+        line-height: 10px!important;
+        display: inline-block;
+       }
+      }
+      .itg__single_category{
+       text-transform: uppercase;
+       margin: 0;
+      }
+      .itg_detail_post_title {
+        font-size: 40px!important;
+        position: relative;
+        z-index: 1;
+        line-height: 10px!important;
+        display: inline-block;
+        color: $itg__blue-1;
+         &.column {
+           &.is-1 {
+             &.has-text-centered-touch {
+               width: 100% !important;
+               h6 {
+                 color: $itg__blue-1 !important;
+                 font-size: 21px !important;
+                 text-align: center !important;
+                 width: 100% !important;
+               }
+             }
+           }
+         }
+       }
+   
+       .itgBlock-intro-section__description {
+         &.p2 {
+           span {
+             font-size: 16px;
+             letter-spacing: 0;
+             line-height: 25.6px;
+             color: $itg__black;
+             font-weight: lighter !important;
+           }
+   
+           p {
+             color: $itg__blue-1 !important;
+             font-size: 16px;
+             letter-spacing: 0;
+             line-height: 25.6px;
+             color: $itg__black;
+             font-weight: lighter !important;
+           }
+         }
+       }
+   
+       .itgBlock-icon-text-type1 {
+         padding-top: 0 !important;
+         padding-bottom: 0 !important;
+         height: 120px !important;
+       }
+   
+       
+   
+       .itgAtom-number__value {
+         font-size: 50px !important;
+       }
+
+      .ItgLayoutSection {
+        .itgBlock-icon-text-type1 {
+          p {
+            color: $itg__blue-1 !important;
+          }
+        }
+      }
+
+      .itg__posts_number {
+        word-wrap: break-word;
+        display: flex;
+        flex: 1 0 21%;
+        padding: 0px;
+        margin: 0 0 0 0;
+
+        &:after {
+          margin-bottom: 0 !important;
+        }
+      }
+
+      .itg__entry_title {
+        color: $itg__blue-2 !important;
+        font-family: $font__main !important;
+      }
+
+      .testo-blocco {
+        color: $itg__blue-1 !important;
+        font-family: $font__main !important;
+      }
+    }
+    .itg__singlepost_date{
+     text-align: center;
+     color: $itg__grey-1;
+     font-size: 18px;
+     time{
+      font-weight: bold;
+     }
+    }
+    .itg__singlepost_share {
+     text-align: center;
+     svg {
+       path{
+         fill: $itg__blue-1;
+         height: 36px;
+         width: 32px;
+         margin-left: 15px;
+         margin-right: 15px;
+       }
+     }
+     img {
+       margin-right: 10px;
+       margin-left: 10px;
+       height: 36px;
+       width: 32px;
+     }
+   }
+  }
+}

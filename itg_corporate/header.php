@@ -28,7 +28,7 @@
       <div class="itgPreHeader__leftSide">
         <?php
           $left_menu = wp_get_nav_menu_items('pre-header-left-side');
-
+          if ($left_menu) : echo '<span class="itg_preheader-left_label">In evidenza&nbsp;</span>'; endif;
           foreach ($left_menu as $key => $left_menu_item) {
             $left_menu_item_title = $left_menu_item->title;
             $left_menu_item_url = $left_menu_item->url;

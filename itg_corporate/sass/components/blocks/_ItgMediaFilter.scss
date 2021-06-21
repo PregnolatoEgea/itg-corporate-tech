@@ -84,12 +84,13 @@
        display: block;
        cursor: pointer;
        border-radius: 55px;
-       line-height: 40px;
+       line-height: 56px;
        padding: 0 10px;
        text-align: center;
       }
       input{
        visibility: hidden;
+       display: none;
       }
       input:checked + label{
        background-color: $itg__blue-3;
@@ -122,6 +123,7 @@
     top: 0;
     bottom: 0;
     padding-left: 10px;
+    line-height: 38px;
     &:after{
      content: "";
      display: block;
@@ -132,7 +134,7 @@
      border-top: 10px solid $itg__white;
      position: absolute;
      right: 14px;
-     top:20px;
+     top:24px;
     }
     &.active{
      background-color: $itg__blue-3;
@@ -246,6 +248,7 @@
     width: 100%;
     border-top: 2px solid $itg__white;
     margin-top: 40px;
+    display: none;
     .itgtagfilter{
      margin: 30px 3%;
      overflow: hidden;
@@ -261,9 +264,9 @@
       border-radius: 28px;
       background-color: $itg__white-20;
      }
-    }
-   .is-offset-2{
-    margin-left: 16.6666666667%;
+    }   
+   &.showtagresults{
+    display: block;
    }
    .itg_applyfilters{
     a{
@@ -273,13 +276,15 @@
      line-height: 30px;
      display: block;
      margin: 0 auto;
+     border: 2px solid $itg__white;
+     text-align: center;
+     border-radius: 8px;
      &:hover{
-      border: 2px solid $itg__white;
-      border-radius: 8px;
       font-weight: 600;
      }
     }
-    .itg_resetfilters{
+   }
+   .itg_resetfilters{
      a{
       color: $itg__white;
       font-weight: 600;
@@ -287,11 +292,94 @@
       line-height: 30px;
       display: block;
       margin: 0 auto;
+      text-align: center;
+      color: $itg__white;
+      img{
+        margin-left: 10px;
+        vertical-align: middle;
+      }
       &:hover{
-       border: 2px solid $itg__white;
-       border-radius: 8px;
        font-weight: 600;
       }
+     }
+   }
+ }
+ #itg_dateRangefilterresults{
+  display: none;
+  width: 100%;
+  &.showtagdateresults{
+   display: block;
+  }
+  .itg_applyfilters{
+    a{
+     color: $itg__white;
+     font-weight: 600;
+     padding: 10px 20px;
+     line-height: 30px;
+     display: block;
+     margin: 0 auto;
+     border: 2px solid $itg__white;
+     text-align: center;
+     border-radius: 8px;
+     &:hover{
+      font-weight: 600;
+     }
+    }
+   }
+   .itg_resetfilters{
+     a{
+      color: $itg__white;
+      font-weight: 600;
+      padding: 10px 20px;
+      line-height: 30px;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      color: $itg__white;
+     img{
+       margin-left: 10px;
+       vertical-align: middle;
+     }
+     &:hover{
+      font-weight: 600;
+     }
+    }
+   }
+   a.itg_activecolumn {
+    color: #fff;
+    position: relative;
+    &:before{
+     content: "";
+     display: inline-block;
+     width: 40px;
+     height: 40px;
+     line-height: 40px;
+     border-radius: 50%;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border: 2px solid $itg__white;
+     vertical-align: middle;
+     margin-right: 10px;
+     background-color: $itg__blue-1;
+    }
+    &.activerange{
+     &:before{
+      background-color: $itg__blue-1;
+     }
+     &:after{
+      content: "";
+      display: block;
+      background-color: $itg__blue-3;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom:0;
      }
     }
    }

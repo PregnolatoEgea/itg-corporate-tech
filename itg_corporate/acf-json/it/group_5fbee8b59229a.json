@@ -1232,6 +1232,198 @@
                     "sub_fields": [],
                     "min": "",
                     "max": ""
+                },
+                "layout_60c8aa339db47": {
+                    "key": "layout_60c8aa339db47",
+                    "name": "media_filter",
+                    "label": "Media filter",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60c8aa4b9db48",
+                            "label": "Media filter",
+                            "name": "media_filter",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_60c336e137c19"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "wpml_cf_preferences": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60c925b5a1687": {
+                    "key": "layout_60c925b5a1687",
+                    "name": "focus_box",
+                    "label": "Focus box",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60c925b5a1688",
+                            "label": "Focus box",
+                            "name": "focus_box",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "clone": [
+                                "group_60b8f7f3a6365"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60c9cd6d53537": {
+                    "key": "layout_60c9cd6d53537",
+                    "name": "anchors_buttons_bar",
+                    "label": "Anchors Buttons Bar",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60c9cd6d53538",
+                            "label": "Anchors Buttons Bar",
+                            "name": "anchors_buttons_bar",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": "",
+                            "clone": [
+                                "group_60b8b2f30708c"
+                            ],
+                            "display": "seamless",
+                            "layout": "",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60c9cdfa53539": {
+                    "key": "layout_60c9cdfa53539",
+                    "name": "anchor_name",
+                    "label": "Anchor Name",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60c9cdfb5353a",
+                            "label": "Anchor Name",
+                            "name": "anchor_name",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "clone": [
+                                "group_60b8ae965d568"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60c86a41bed08": {
+                    "key": "layout_60c86a41bed08",
+                    "name": "balance_sheet",
+                    "label": "Balance Sheet",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60c86a41bed09",
+                            "label": "Balance Sheet",
+                            "name": "balance_sheet",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "clone": [
+                                "group_60c85e9d626d6"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60ccb2dd6dc72": {
+                    "key": "layout_60ccb2dd6dc72",
+                    "name": "notices_and_communications",
+                    "label": "Notices and Communications",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60ccb2dd6dc73",
+                            "label": "Notices and Communications",
+                            "name": "notices_and_communications",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "clone": [
+                                "group_60ccb1eed4e59"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Aggiungi Layout",
@@ -1258,5 +1450,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1611325523
+    "modified": 1624029438
 }

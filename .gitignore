@@ -212,7 +212,4 @@ out
 .yarn/install-state.gz
 .pnp.*
 
-itg_sustainability/node_modules/
-itg_sustainability/dist/*.css
-itg_sustainability/dist/*.js
-itg_sustainability/dist/
+itg_corporate test/
