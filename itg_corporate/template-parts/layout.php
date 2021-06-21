@@ -205,7 +205,11 @@ if( have_rows('layout_builder') ):
           case 'last_update':
             require 'blocks/ItgLastUpdate.php';
           break;
-          
+          case 'notices_and_communications':
+            require 'blocks/ItgNoticeCommunications.php';
+          break;
+
+                
           default:
 
           break;

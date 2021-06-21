@@ -1393,16 +1393,16 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_60c31ef3e0fcf": {
-                    "key": "layout_60c31ef3e0fcf",
-                    "name": "last_update",
-                    "label": "Last Update",
+                "layout_60ccb2dd6dc72": {
+                    "key": "layout_60ccb2dd6dc72",
+                    "name": "notices_and_communications",
+                    "label": "Notices and Communications",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_60c31ef4e0fd0",
-                            "label": "Last Update",
-                            "name": "last_update",
+                            "key": "field_60ccb2dd6dc73",
+                            "label": "Notices and Communications",
+                            "name": "notices_and_communications",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -1414,7 +1414,7 @@
                             },
                             "wpml_cf_preferences": 0,
                             "clone": [
-                                "group_60c31ca17a0c9"
+                                "group_60ccb1eed4e59"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -1450,5 +1450,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1623838271
+    "modified": 1624029438
 }

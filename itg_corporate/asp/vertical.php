@@ -39,8 +39,7 @@ defined('ABSPATH') or die("You can't access this file directly.");
              $itgcatname = $itgpost->cat_name;
              $itglowcatname = strtolower($itgcatname);
              $itgpostid = $itgpost->term_id;
-             $itgcaticon = get_field('upload_category_icon', $itgpostid );
-             
+             $itgcaticon = get_field('upload_category_icon', 'term_' . $itgpost->term_id );
             ?>
          <span class="itgmediacat">
              <?php echo $itgcatname; ?>

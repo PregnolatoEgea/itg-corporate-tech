@@ -3,7 +3,7 @@
            
         <?php foreach ($filter->get() as $kk => $term): ?>
         <?php if ($taxonomy === 'category') : ?>
-            <div class="is-2 itg_asp_label aligncenter <?php echo $taxonomy; ?>_filter_box itcatfilter">
+            <div class="itg_asp_label aligncenter <?php echo $taxonomy; ?>_filter_box itcatfilter is-narrow">
                 
                  <input type="radio" class="asp_radio"
                         value="<?php echo $term->id; ?>"
@@ -20,14 +20,14 @@
             
         <?php if ($taxonomy === 'post_tag') : ?>
             <div class="column is-2 itgtag-filter is-pulled-right">
-              <a id="itg_tagfilterbtn" href="#">Argomento</a>
+              <a id="itg_tagfilterbtn" class="itg_tagfilterbtn" href="#">Argomento</a>
             </div>
-           <!-- <div class="column is-2 itgtag-filter is-pulled-right">
-              <a id="itg_datefilterbtn" href="#">Periodo</a>
-            </div>-->
+            <div class="column is-2 itgtag-filter is-pulled-right">
+              <a id="itg_datefilterbtn" class="itg_tagdatefilterbtn" href="#">Periodo</a>
+            </div>
             <div class="is-clearfix"></div>
             <div class="container">
-             <div id="itg_tagfilterresults" class="columns pt-5" style="display: none;">
+             <div id="itg_tagfilterresults" class="columns pt-5 itg_tagfilterresults" style="display: none;">
               <div class="column is-10 is-offset-2">
                <div class="columns">
                  <?php foreach ($filter->get() as $kk => $term): ?>
@@ -56,12 +56,9 @@
             
             
             <!-- date range filter -->
-             <div id="itg_dateRangefilterresults" class="columns pt-5" style="display: none;">
-               <div class="columns">
-                <div class="column is-4">
-                
-                </div>
-                
+             <div id="itg_dateRangefilterresults" class="columns pt-5 " style="display: none;">
+               <div class="columns is-mobile is-centered">
+             
                 <div class="column is-4">
                  <?php foreach($filter->get() as $date): ?>
                     <div class="asp_<?php echo esc_attr($date->name); ?>">
@@ -108,11 +105,11 @@
                </div>
                
                <div class="is-clearfix"></div>
-               <div class="columns">
-                <div class="column is-3 is-offset-3 itg_applyfilters aligncenter">
+               <div class="columns is-mobile is-centered">
+                <div class="column is-narrow is-offset-3 itg_applyfilters aligncenter">
                  <a href="#">Applica filtri</a>
                 </div>
-                <div class="column is-3 is-offset-3 itg_resetfilters aligncenter">
+                <div class="column is-3 is-narrow is-offset-3 itg_resetfilters aligncenter">
                  <a href="#">Azzera filtri X</a>
                 </div>
                </div>
@@ -120,6 +117,7 @@
         <?php endif; ?>
 
          <script type="text/javascript">
+          /*
           jQuery('#itg_tagfilterbtn').click(function(e){
            jQuery(this).toggleClass('active');
            jQuery('#itg_tagfilterresults').toggle();
@@ -135,4 +133,5 @@
            jQuery('#itg_tagfilterbtn').removeClass('active');
            e.preventDefault();
           });
+          */
          </script>

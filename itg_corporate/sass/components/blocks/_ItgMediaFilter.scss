@@ -84,12 +84,13 @@
        display: block;
        cursor: pointer;
        border-radius: 55px;
-       line-height: 40px;
+       line-height: 56px;
        padding: 0 10px;
        text-align: center;
       }
       input{
        visibility: hidden;
+       display: none;
       }
       input:checked + label{
        background-color: $itg__blue-3;
@@ -122,6 +123,7 @@
     top: 0;
     bottom: 0;
     padding-left: 10px;
+    line-height: 38px;
     &:after{
      content: "";
      display: block;
@@ -132,7 +134,7 @@
      border-top: 10px solid $itg__white;
      position: absolute;
      right: 14px;
-     top:20px;
+     top:24px;
     }
     &.active{
      background-color: $itg__blue-3;
@@ -264,6 +266,9 @@
     }
    .is-offset-2{
     margin-left: 16.6666666667%;
+   }
+   &.showtagresults{
+    display: block;
    }
    .itg_applyfilters{
     a{
