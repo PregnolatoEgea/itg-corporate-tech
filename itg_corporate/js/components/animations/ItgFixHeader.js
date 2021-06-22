@@ -1,24 +1,44 @@
-export const ItgFixHeader = function () {
+export const ItgFixHeader = function ()
+{
 
   let headers = document.querySelectorAll('.itgHeader');
-  
+  let a = document.querySelectorAll()
 
-  window.onscroll = () => {
+  window.onscroll = () =>
+  {
 
-    for (const header of headers) {
+    for (const header of headers)
+    {
       let sticky = header.offsetTop;
       let logo = header.querySelector('.itgHeader__leftSide');
 
-      if (window.pageYOffset > sticky) {
+      if (window.pageYOffset > sticky)
+      {
         logo.classList.add("hide");
         header.classList.add("stickyHead");
-      } else {
+      } else
+      {
         logo.classList.remove("hide");
         header.classList.remove("stickyHead");
       }
     }
   };
+}
 
+function openPreHeaderBottomSide(key)
+{
+  let a = document.getElementById('#itg_a_button_' + key);
+  let bottom = document.querySelector('.itgPreHeader__bottomSide');
+  if (a.style.color == '#00a9e0') 
+  {
+    a.style.color = '#003478';
+    bottom.style.display = 'none';
+  }
+  else 
+  {
+    bottom.style.display = 'block';
+    a.style.color = '#00a9e0';
+  }
 }
 
 ItgFixHeader();
