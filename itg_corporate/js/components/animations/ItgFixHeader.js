@@ -2,7 +2,6 @@ export const ItgFixHeader = function ()
 {
 
   let headers = document.querySelectorAll('.itgHeader');
-  let a = document.querySelectorAll()
 
   window.onscroll = () =>
   {
@@ -25,7 +24,7 @@ export const ItgFixHeader = function ()
   };
 }
 
-export const ItgOpenPreHeaderBottomSide = function(key)
+export const ItgOpenPreHeaderBottomSide = function (key)
 {
   let a = document.getElementById('#itg_a_button_' + key);
   let bottom = document.querySelector('.itgPreHeader__bottomSide');

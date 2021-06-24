@@ -52,14 +52,36 @@
             $left_menu_item_title = $left_menu_item->title;
             $left_menu_item_url = $left_menu_item->url;
             $left_menu_item_target = $left_menu_item->target;
+            $left_menu_item_ID = $letf_menu_item->ID;
 
           ?>
-            <a onclick="openPreHeaderBottomSide($key)" target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16"><?php echo $left_menu_item_title; ?></a>
+            <div class="itg_a_container">
+              <?php
+              if (get_field('image', $left_menu_item->ID)) {
+              ?>
+
+              <?php } ?>
+              <div class="itg_a_image"></div>
+              <a onclick="openPreHeaderBottomSide($key)" target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16"><?php echo $left_menu_item_title; ?></a>
+            </div>
+            <div class="itg_divider"></div>
           <?php
           }
           ?>
+          <?php
+          if (get_field('news', $left_menu_item->news)) {
+          ?>
+            <a class="itgPreHeader--singleItem itg-mr-16">
+              Borsa
+              <!-- mettere il vero valore -->
+            </a>
+          <?php
+          }
+          ?>
+          ?>
         </div>
-        <div class="itgPreHeader__rightSide">
+        <div class=" itgPreHeader__rightSide">
+          <div class="itg_divider"></div>
           <?php
           $right_menu = wp_get_nav_menu_items('pre-header-right-side');
 
@@ -83,6 +105,17 @@
             <?php
             }
             ?>
+          <?php
+          }
+          ?>
+          <?php
+          if (get_field('language', $right_menu_item->language)) {
+          ?>
+            <div class="itg_divider"></div>
+            <a class="itgPreHeader--singleItem itg-mr-16">
+              English
+              <!-- mettere il vero valore -->
+            </a>
           <?php
           }
           ?>

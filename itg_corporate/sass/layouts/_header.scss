@@ -49,6 +49,25 @@
     .itg_preheader-left_label {
       color: $itg__blue-1 !important;
     }
+
+    .itg_a_image {
+      margin: 10px;
+      height: 20px;
+      width: 20px;
+      background-color: $itg__blue-1;
+    }
+    .itg_a_container {
+      display: flex;
+      width: auto;
+      flex-direction: row;
+      align-items: center;
+    }
+    .itg_divider {
+      height: 17px;
+      width: 1px;
+      border: 1px solid $itg__blue-1 !important;
+      box-sizing: border-box;
+    }
     a {
       color: $itg__blue-1 !important;
       font-size: 12px;
@@ -70,13 +89,14 @@
     height: 147px;
     width: 100%;
     background-color: $itg__blue-1;
-    position: fixed;
+    position: absolute;
     top: 40px;
     padding: 20px 50px;
     opacity: 0.95;
     color: white;
     z-index: 10000;
     font-family: $font__main;
+    display: none;
 
     .column {
       font-size: 13px;
