@@ -66,17 +66,27 @@
       font-family: $font__main;
     }
   }
-  &__bottomSide
-  {
-    height: 147px; 
+  &__bottomSide {
+    height: 147px;
     width: 100%;
-    background-color: $itg__blue-1; 
-    position: fixed; 
-    top: 40px; 
-    padding: 20px; 
+    background-color: $itg__blue-1;
+    position: fixed;
+    top: 40px;
+    padding: 20px 50px;
     opacity: 0.95;
     color: white;
     z-index: 10000;
+    font-family: $font__main;
+
+    .column {
+      font-size: 13px;
+      letter-spacing: 0;
+      line-height: 25px;
+
+      span {
+        font-weight: bold;
+      }
+    }
   }
   @include mobile {
     display: none;
