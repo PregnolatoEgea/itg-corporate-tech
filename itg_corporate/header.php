@@ -59,9 +59,9 @@
               <?php
               if (get_field('image', $left_menu_item->ID)) {
               ?>
-
+                <!-- Qui va l'immagine se esiste -->
               <?php } ?>
-              <div class="itg_a_image"></div>
+              <div class="itg_a_image"></div> <!--  immagine di placeholder in attesa di quella vera -->
               <a onclick="openPreHeaderBottomSide($key)" target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16"><?php echo $left_menu_item_title; ?></a>
             </div>
             <div class="itg_divider"></div>
