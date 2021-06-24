@@ -84,6 +84,7 @@
           <div class="itg_divider"></div>
           <?php
           $right_menu = wp_get_nav_menu_items('pre-header-right-side');
+          $links_menu = wp_get_nav_menu_items('links-menu');
 
           foreach ($right_menu as $key => $right_menu_item) {
             $right_menu_item_ID = $right_menu_item->ID;
@@ -91,21 +92,29 @@
             $right_menu_item_url = $right_menu_item->url;
             $right_menu_item_target = $right_menu_item->target;
 
+            foreach ($links_menu as $key => $links_menu_item) {
+              $links_menu_item_ID = $links_menu_item->ID;
+              $links_menu_item_title = $links_menu_item->post_title;
+              $links_menu_item_url = $links_menu_item->url;
+              $links_menu_item_target = $links_menu_item->target;
+
+
           ?>
-            <?php
-            if (get_field('image', $right_menu_item_ID)) {
-            ?>
-              <a target="<?php echo $right_menu_item_target; ?>" href="<?php echo $right_menu_item_url; ?>" class="itgPreHeader--singleItem">
-                <img class="itg-mr-16" src="<?php echo get_field('image', $right_menu_item_ID)['url']; ?>" alt="<?php echo $right_menu_item_title; ?>">
-              </a>
-            <?php
-            } else {
-            ?>
-              <p class="itgPreHeader--singleItem itg-mr-24"><?php echo $right_menu_item_title; ?></p>
-            <?php
-            }
-            ?>
+              <?php
+              if (get_field('image', $right_menu_item_ID)) {
+              ?>
+                <a target="<?php echo $right_menu_item_target; ?>" href="<?php echo $right_menu_item_url; ?>" class="itgPreHeader--singleItem">
+                  <img class="itg-mr-16" src="<?php echo get_field('image', $right_menu_item_ID)['url']; ?>" alt="<?php echo $right_menu_item_title; ?>">
+                </a>
+              <?php
+              } else {
+              ?>
+                <p class="itgPreHeader--singleItem itg-mr-24"><?php echo $right_menu_item_title; ?></p>
+              <?php
+              }
+              ?>
           <?php
+            }
           }
           ?>
           <?php
