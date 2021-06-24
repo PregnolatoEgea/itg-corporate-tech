@@ -52,22 +52,43 @@
             $left_menu_item_title = $left_menu_item->title;
             $left_menu_item_url = $left_menu_item->url;
             $left_menu_item_target = $left_menu_item->target;
+            $left_menu_item_ID = $letf_menu_item->ID;
 
           ?>
-            <a onclick="openPreHeaderBottomSide($key)" target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16"><?php echo $left_menu_item_title; ?></a>
+              <div class="itg_a_container">
+                <?php
+                if (get_field('image', $left_menu_item->ID)) {
+                ?>
+
+                <?php } ?>
+                <div class="itg_a_image"></div>
+                <a target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16"><?php echo $left_menu_item_title; ?></a>
+              </div>
+              <div class="itg_divider"></div>
           <?php
           }
+          ?>
+          <?php
+
           ?>
         </div>
         <div class="itgPreHeader__rightSide">
           <?php
           $right_menu = wp_get_nav_menu_items('pre-header-right-side');
+          $links_menu = wp_get_nav_menu_items('links-menu');
 
           foreach ($right_menu as $key => $right_menu_item) {
             $right_menu_item_ID = $right_menu_item->ID;
             $right_menu_item_title = $right_menu_item->post_title;
             $right_menu_item_url = $right_menu_item->url;
             $right_menu_item_target = $right_menu_item->target;
+            
+           foreach ($links_menu as $key =>$links_menu_item) {
+               $links_menu_item_ID = $links_menu_item->ID;
+               $links_menu_item_title = $links_menu_item->post_title;
+               $links_menu_item_url = $links_menu_item->url;
+               $links_menu_item_target = $links_menu_item->target;
+              
 
           ?>
             <?php
@@ -84,6 +105,7 @@
             }
             ?>
           <?php
+          }
           }
           ?>
         </div>
