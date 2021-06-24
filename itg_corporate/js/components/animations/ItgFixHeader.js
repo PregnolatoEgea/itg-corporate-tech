@@ -25,7 +25,7 @@ export const ItgFixHeader = function ()
   };
 }
 
-function openPreHeaderBottomSide(key)
+export const ItgOpenPreHeaderBottomSide = function(key)
 {
   let a = document.getElementById('#itg_a_button_' + key);
   let bottom = document.querySelector('.itgPreHeader__bottomSide');
@@ -40,5 +40,5 @@ function openPreHeaderBottomSide(key)
     a.style.color = '#00a9e0';
   }
 }
-
+ItgOpenPreHeaderBottomSide();
 ItgFixHeader();
