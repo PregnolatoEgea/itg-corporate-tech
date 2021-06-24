@@ -54,7 +54,7 @@
             $left_menu_item_target = $left_menu_item->target;
 
           ?>
-            <a id="itg_a_button_<?php echo $key; ?>" onclick="openPreHeaderBottomSide($key)" target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itgPreHeader--singleItem itg-mr-16"><?php echo $left_menu_item_title; ?></a>
+            <a onclick="openPreHeaderBottomSide($key)" target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16"><?php echo $left_menu_item_title; ?></a>
           <?php
           }
           ?>
