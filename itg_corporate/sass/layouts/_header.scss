@@ -273,7 +273,7 @@
       margin-right: 20px;
       border-radius: 5px;
 
-      p {
+      span {
         font-size: 16px;
         font-family: $font__main;
         line-height: 17px;
@@ -350,6 +350,7 @@
       &--icon {
         color: $itg__white;
         fill: $itg__white;
+        background-color: $itg__blue-2;
       }
       /*&.highlighted-are-hide {
         border-top-left-radius: 4px;
@@ -370,9 +371,11 @@
       border-width: 2px;
       width: 140px;
 
-      &--icon {
+      button {
         color: $itg__blue-2;
-        fill: $itg__blue-2;
+        height: 12px;
+        width: 12px;
+        margin: 10px;
       }
       /*&.highlighted-are-hide {
         border-top-right-radius: 4px;

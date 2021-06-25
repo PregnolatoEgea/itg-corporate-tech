@@ -198,7 +198,7 @@
             <div class="itgMainMenu__searchBox--overlay"></div>
           </div>
           <div class="itgMainMenu__toggle itg-pl-8 itg-pr-16">
-            <p>Servizi</p>
+            <span>Servizi</span>
             <button class="hamburger hamburger--squeeze" type="button" aria-label="Menu" aria-controls="navigation">
               <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
