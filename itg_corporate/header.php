@@ -63,7 +63,7 @@
                   <img class="itg-mr-16" src="<?php echo get_field('image', $left_menu_item_ID)['url']; ?>" alt="<?php echo $left_menu_item_title; ?>">
                 </a>
               <?php } ?>
-              <a onclick="openPreHeaderBottomSide($key)" target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16"><?php echo $left_menu_item_title; ?></a>
+              <a target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16"><?php echo $left_menu_item_title; ?></a>
             </div>
             <div class="itg_divider"></div>
           <?php
