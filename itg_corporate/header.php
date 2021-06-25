@@ -122,9 +122,8 @@
           ?>
             <div class="itg_divider"></div>
             <a class="itgPreHeader--singleItem itg-mr-16">
-              English
-              <!-- mettere il vero valore -->
-            </a>
+            <!-- Selettore Lingua WPML -->
+            <?php do_action('wpml_add_language_selector'); ?>
           <?php
           }
           ?>
