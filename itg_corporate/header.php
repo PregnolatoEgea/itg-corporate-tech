@@ -150,10 +150,12 @@
           <?php
           }
           ?>
-          <div class="itg_container">
-            <div>Chi siamo</div>
-            <div>Italgas people</div>
-            <div>Il futuro del gas</div>
+          <div class="tabs">
+            <ul>
+              <li class="is-active">Chi siamo</li>
+              <li>Italgas people</li>
+              <li>Il futuro del gas</li>
+            </ul>
           </div>
         </div>
         <div class="itgHeader__rightSide">
