@@ -95,9 +95,13 @@
           ?>
             <div class="itg_a_container">
               <a target="<?php echo $links_menu_item_target; ?>" href="<?php echo $links_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16"><?php echo $links_menu_item_title; ?></a>
-              <a target="<?php echo $links_menu_item_target; ?>" href="<?php echo $links_menu_item_url; ?>" class="itgPreHeader--singleItem">
-                <img class="itg-mr-16" src="<?php echo get_field('image', $links_menu_item_ID)['url']; ?>" alt="<?php echo $links_menu_item_title; ?>">
-              </a>
+              <?php
+              if (get_field('image', $links_menu_item->ID)) {
+              ?>
+                <a target="<?php echo $links_menu_item_target; ?>" href="<?php echo $links_menu_item_url; ?>" class="itgPreHeader--singleItem">
+                  <img class="itg-mr-16" src="<?php echo get_field('image', $links_menu_item_ID)['url']; ?>" alt="<?php echo $links_menu_item_title; ?>">
+                </a>
+              <?php } ?>
             </div>
           <?php
           }
