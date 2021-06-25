@@ -60,7 +60,8 @@
               if (get_field('image', $left_menu_item->ID)) {
               ?>
                 <a target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image">
-                  <img class="itg-mr-16" src="<?php echo get_field('image', $left_menu_item_ID)['url']; ?>" alt="<?php echo $left_menu_item_title; ?>">
+                  <!--<img class="itg-mr-16" src="<?php echo get_field('image', $left_menu_item_ID)['url']; ?>" alt="<?php echo $left_menu_item_title; ?>">-->
+                  <img class="itg-mr-16" src="./dist/src/images/icons/internal_page.svg" alt="<?php echo $left_menu_item_title; ?>">
                 </a>
               <?php } ?>
               <a target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16"><?php echo $left_menu_item_title; ?></a>
