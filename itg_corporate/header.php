@@ -65,7 +65,6 @@
               <?php } ?>
               <a target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16"><?php echo $left_menu_item_title; ?></a>
             </div>
-            <div class="itg_divider"></div>
           <?php
           }
           ?>
@@ -106,7 +105,6 @@
           <?php
           }
           ?>
-          <div class="itg_divider"></div>
           <?php
           $right_menu = wp_get_nav_menu_items('pre-header-right-side');
 
@@ -137,7 +135,6 @@
           <?php
           if (get_field('language', $right_menu_item->language)) {
           ?>
-            <div class="itg_divider"></div>
             <a class="itgPreHeader--singleItem itg-mr-16">
               <!-- Selettore Lingua WPML -->
               <?php do_action('wpml_add_language_selector'); ?>
