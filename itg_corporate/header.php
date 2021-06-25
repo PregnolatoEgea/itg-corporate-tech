@@ -74,7 +74,6 @@
           ?>
             <a class="itgPreHeader--singleItem itg-mr-16">
               <?php echo $$left_menu_item->news; ?>
-              <!-- mettere il vero valore -->
             </a>
           <?php
           }
