@@ -44,6 +44,14 @@
       line-height: 25.6px;
       font-family: $font__main;
     }
+    a {
+      color: $itg__blue-1 !important;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.17px;
+      line-height: 25.6px;
+      font-family: $font__main;
+    }
   }
   &__leftSide {
     .itg_preheader-left_label {
