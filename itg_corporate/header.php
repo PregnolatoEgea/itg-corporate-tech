@@ -153,7 +153,7 @@
           <div class="itg_container">
             <div>Chi siamo</div>
             <div>Italgas people</div>
-            <div> Il futuro del gas</div>
+            <div>Il futuro del gas</div>
           </div>
         </div>
         <div class="itgHeader__rightSide">
