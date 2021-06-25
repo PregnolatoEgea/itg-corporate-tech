@@ -62,6 +62,12 @@
       margin: 10px;
       height: 20px;
       width: 20px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        fill: $itg__blue-1;
+      }
     }
     .itg_a_container {
       display: flex;
