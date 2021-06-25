@@ -98,7 +98,7 @@
               <?php
               if (get_field('image', $links_menu_item->ID)) {
               ?>
-                <a target="<?php echo $links_menu_item_target; ?>" href="<?php echo $links_menu_item_url; ?>" class="itgPreHeader--singleItem">
+                <a target="<?php echo $links_menu_item_target; ?>" href="<?php echo $links_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image">
                   <img class="itg-mr-16" src="<?php echo get_field('image', $links_menu_item_ID)['url']; ?>" alt="<?php echo $links_menu_item_title; ?>">
                 </a>
               <?php } ?>
@@ -121,7 +121,7 @@
             <?php
             if (get_field('image', $right_menu_item_ID)) {
             ?>
-              <a target="<?php echo $right_menu_item_target; ?>" href="<?php echo $right_menu_item_url; ?>" class="itgPreHeader--singleItem">
+              <a target="<?php echo $right_menu_item_target; ?>" href="<?php echo $right_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image">
                 <img class="itg-mr-16" src="<?php echo get_field('image', $right_menu_item_ID)['url']; ?>" alt="<?php echo $right_menu_item_title; ?>">
               </a>
             <?php
