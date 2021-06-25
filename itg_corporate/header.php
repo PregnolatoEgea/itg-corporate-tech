@@ -73,12 +73,17 @@
           if (get_field('news', $left_menu_item->news)) {
           ?>
             <a class="itgPreHeader--singleItem itg-mr-16">
-              Borsa
+              <?php echo $$left_menu_item->news; ?>
               <!-- mettere il vero valore -->
             </a>
           <?php
-          }
+          } else {
           ?>
+            <a class="itgPreHeader--singleItem itg-mr-16">
+              Borsa
+              <!-- mettere il vero valore -->
+            </a>
+          <?php } ?>
         </div>
         <div class=" itgPreHeader__rightSide">
           <?php $links_menu = wp_get_nav_menu_items('links-menu');
