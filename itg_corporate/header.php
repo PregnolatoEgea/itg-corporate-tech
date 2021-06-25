@@ -135,7 +135,7 @@
             ?>
         </div>
       </div>
-      <div class="itgHeader itg-px-56 itg-py-32">
+      <div class="itgHeader itg-px-56">
         <div class="itgHeader__leftSide">
           <?php
           if (is_search()) {
