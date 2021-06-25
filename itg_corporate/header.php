@@ -79,7 +79,6 @@
           <?php
           }
           ?>
-          ?>
         </div>
         <div class=" itgPreHeader__rightSide">
           <?php $links_menu = wp_get_nav_menu_items('links-menu');
