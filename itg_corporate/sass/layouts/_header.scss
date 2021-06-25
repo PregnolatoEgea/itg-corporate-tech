@@ -52,6 +52,14 @@
       line-height: 25.6px;
       font-family: $font__main;
     }
+
+    .img_a_external {
+      background-image: url("../../src/images/icons/external_page.svg");
+    }
+
+    .img_a_internal {
+      background-image: url("../../src/images/icons/internal_page.svg");
+    }
   }
   &__leftSide {
     .itg_preheader-left_label {
