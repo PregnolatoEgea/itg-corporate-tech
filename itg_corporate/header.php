@@ -152,9 +152,18 @@
           ?>
           <div class="tabs">
             <ul>
-              <li class="is-active"><a>Chi siamo</a></li>
-              <li><a>Italgas people</a></li>
-              <li><a>Il futuro del gas</a></li>
+              <li class="is-active"><a>
+                  <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
+                  <span>Chi siamo</span>
+                </a></li>
+              <li><a>
+                  <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
+                  <span>Italgas people</span>
+                </a></li>
+              <li><a>
+                  <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
+                  <span>il futuro del gas</span>
+                </a></li>
             </ul>
           </div>
         </div>
