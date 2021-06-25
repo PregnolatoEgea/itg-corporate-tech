@@ -87,15 +87,9 @@
             $links_menu_item_target = $links_menu_item->target;
           ?>
             <div class="itg_a_container">
-              <a target="<?php echo $links_menu_item_target; ?>" href="<?php echo $links_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16"><?php echo $links_menu_item_title; ?></a>
-              <?php
-              if (get_field('image', $links_menu_item->ID)) {
-              ?>
-                <a target="<?php echo $links_menu_item_target; ?>" href="<?php echo $links_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image">
-                  <!--<img class="itg-mr-16" src="<?php echo get_field('image', $links_menu_item_ID)['url']; ?>" alt="<?php echo $links_menu_item_title; ?>">-->
-                  <img class="itg-mr-16" alt="<?php echo $left_menu_item_title; ?>">
-                </a>
-              <?php } ?>
+              <a target="<?php echo $links_menu_item_target; ?>" href="<?php echo $links_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16"><?php echo $links_menu_item_title; ?>
+                <img class="itg-mr-16" alt="<?php echo $left_menu_item_title; ?>">
+              </a>
             </div>
           <?php
           }

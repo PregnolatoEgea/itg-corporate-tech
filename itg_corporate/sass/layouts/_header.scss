@@ -51,14 +51,20 @@
       letter-spacing: 0.17px;
       line-height: 25.6px;
       font-family: $font__main;
+
+      img {
+        display: none;
+      }
     }
 
     .img_a_external {
       background-image: url("../../src/images/icons/external_page.svg");
+      display: block;
     }
 
     .img_a_internal {
       background-image: url("../../src/images/icons/internal_page.svg");
+      display: block;
     }
   }
   &__leftSide {
