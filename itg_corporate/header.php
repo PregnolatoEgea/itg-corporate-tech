@@ -34,10 +34,10 @@
           foreach ($arr as $a) {
           ?>
             <div class="column">
+              <span>Titolo</span>
               <?php
               foreach ($a as $i) {
               ?>
-                <span>Titolo</span>
                 <p>{{ $i }}</p>
               <?php } ?>
             </div>
@@ -152,9 +152,9 @@
           ?>
           <div class="tabs">
             <ul>
-              <li class="is-active">Chi siamo</li>
-              <li>Italgas people</li>
-              <li>Il futuro del gas</li>
+              <li class="is-active"><a>Chi siamo</a></li>
+              <li><a>Italgas people</a></li>
+              <li><a>Il futuro del gas</a></li>
             </ul>
           </div>
         </div>
