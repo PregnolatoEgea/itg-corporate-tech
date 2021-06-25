@@ -83,11 +83,11 @@
         <div class=" itgPreHeader__rightSide">
           <div class="itg_divider"></div>
           <?php $links_menu = wp_get_nav_menu_items('links-menu');
-          foreach ($links_menu as $key => $links_menu_item) {
-            $links_menu_item_ID = $links_menu_item->ID;
-            $links_menu_item_title = $links_menu_item->post_title;
-            $links_menu_item_url = $links_menu_item->url;
-            $links_menu_item_target = $links_menu_item->target;
+            foreach ($links_menu as $key => $links_menu_item) {
+              $links_menu_item_ID = $links_menu_item->ID;
+              $links_menu_item_title = $links_menu_item->post_title;
+              $links_menu_item_url = $links_menu_item->url;
+              $links_menu_item_target = $links_menu_item->target;
             ?>
           <div class="itg_divider"></div>
           <?php
