@@ -58,13 +58,17 @@
     }
 
     .img_a_external {
-      background-image: url("../../src/images/icons/external_page.svg");
-      display: block;
+      img {
+        display: block;
+        background-image: url("../../src/images/icons/external_page.svg");
+      }
     }
 
     .img_a_internal {
-      background-image: url("../../src/images/icons/internal_page.svg");
-      display: block;
+      img {
+        display: block;
+        background-image: url("../../src/images/icons/internal_page.svg");
+      }
     }
   }
   &__leftSide {
