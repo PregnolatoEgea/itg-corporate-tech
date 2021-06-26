@@ -159,10 +159,9 @@
 
               foreach ($tabs as $index => $tab) {
               ?>
-                <li id="itg_header_tab_<?php $index; ?>" onclick="ItgOpenPreHeaderMenu($index)">
+                <li id="itg_header_tab_<?php echo $index; ?>" onclick="ItgOpenPreHeaderMenu($index)">
                   <a>
-                    <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
-                    <span><?php $tab; ?></span>
+                    <span><?php echo $tab; ?></span>
                   </a>
                 </li>
               <?php } ?>

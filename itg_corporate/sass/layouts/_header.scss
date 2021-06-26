@@ -218,6 +218,18 @@
     }
   }
   &__leftSide {
+    .tabs {
+      span {
+        font-size: 16px;
+        font-family: $font__main;
+        color: $itg__blue-1;
+        letter-spacing: 0.2px;
+        text-align: right;
+        font-weight: 600;
+        line-height: 17px;
+      }
+    }
+
     opacity: 1;
     &.hide {
       @include desktop {
