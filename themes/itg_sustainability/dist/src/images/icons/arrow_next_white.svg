@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Button/outline/Gallery/Right/white</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.745098 0 0 0 0 0.839216 0 0 0 0 0.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <path d="M14.0037785,22.588553 C15.9170844,23.2351083 24.7182915,26.5971959 23.9529692,19.8730207 L23.9529692,20.0023318 C22.8049856,15.8643778 21.5294484,-2.75641486 12.7282412,0.347050592 L12.9833487,0.347050592 C12.4731338,0.993605894 12.34558,0.864294834 11.7078114,1.38153908 C10.049613,3.83844922 3.03415801,10.6919354 0.993298385,15.4764447 L0.993298385,15.4764447 L0.483083478,15.9936889 C-0.792453788,17.6747327 0.610637205,21.2954424 2.90660428,20.9075092 C3.79948037,20.6488871 4.05458782,20.519576 5.71278627,21.1661313 L4.81991018,21.2954424 C6.09544745,21.4247534 8.13630707,21.6833756 7.88119962,21.6833756 C7.88119962,21.6833756 12.0904726,21.9419977 14.0037785,22.588553 Z" id="path-2"></path>
+    </defs>
+    <g id="Button/outline/Gallery/Right/white" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" stroke="#FFFFFF" stroke-width="2" x="1" y="1" width="54" height="54" rx="4"></rect>
+        <g id="Arrow" transform="translate(16.000000, 16.000000)" filter="url(#filter-1)">
+            <g>
+                <rect id="Rectangle" x="0" y="-1.13686838e-13" width="24" height="24"></rect>
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <use id="Path" fill="#66C3D2" fill-rule="nonzero" transform="translate(12.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-12.000000, -12.000000) " xlink:href="#path-2"></use>
+            </g>
+        </g>
+    </g>
+</svg>

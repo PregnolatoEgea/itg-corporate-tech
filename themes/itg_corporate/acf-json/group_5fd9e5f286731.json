@@ -1,0 +1,91 @@
+{
+    "key": "group_5fd9e5f286731",
+    "title": "Component | Carousel Launches",
+    "fields": [
+        {
+            "key": "field_5fdb700f4c030",
+            "label": "allineamento immagini a destra?",
+            "name": "allineamento_immagini_a_destra",
+            "type": "true_false",
+            "instructions": "Il default è con l'immagine a sinistra, se vuoi invertire selezione questa checkbox. Vale per tutte le immagini dello slider.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "wpml_cf_preferences": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5fd9e606fd119",
+            "label": "Launches",
+            "name": "launches",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5fd9e635fd11b",
+                    "label": "Single Launch",
+                    "name": "single_launch",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "clone": [
+                        "field_5fc4c86678c64",
+                        "field_5fc4c88078c65",
+                        "field_5fc4c8cf78c66",
+                        "field_5fc4c71cd2a0c"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": ""
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1608216664
+}

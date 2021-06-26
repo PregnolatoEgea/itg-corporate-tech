@@ -1,0 +1,111 @@
+{
+    "key": "group_5fc3ca7ec8605",
+    "title": "Atom | CTA",
+    "fields": [
+        {
+            "key": "field_5fc3ca9807a9d",
+            "label": "CTA Link",
+            "name": "cta_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "return_format": "array"
+        },
+        {
+            "key": "field_5fc3caa407a9e",
+            "label": "CTA Font and Border Color",
+            "name": "cta_font_and_border_color",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "choices": {
+                "#FFFFFF": "White",
+                "#003478": "Blue"
+            },
+            "allow_null": 0,
+            "default_value": "#003478",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5fc3cb3b07a9f",
+            "label": "CTA Icon style",
+            "name": "cta_icon_style",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "choices": [
+                "Internal link (green)",
+                "Internal link (white)",
+                "External link",
+                "Rapid link"
+            ],
+            "allow_null": 0,
+            "default_value": 0,
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5fc8a5cbc02ad",
+            "label": "CTA Border style",
+            "name": "cta_border_style",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "choices": {
+                "solid": "solid",
+                "none": "none"
+            },
+            "allow_null": 0,
+            "default_value": "solid",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": ""
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1606988342
+}

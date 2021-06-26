@@ -211,3 +211,4 @@ out
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+themes/itg_corporate/sass
