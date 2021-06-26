@@ -39,7 +39,7 @@
               <?php
               foreach ($a as $i) {
               ?>
-                <p>{{ $i }}</p>
+                <p><?php echo $i; ?></p>
               <?php } ?>
             </div>
           <?php } ?>
