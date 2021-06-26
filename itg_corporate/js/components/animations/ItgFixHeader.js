@@ -27,9 +27,11 @@ export const ItgFixHeader = function ()
 export const ItgOpenPreHeaderBottomSide = function (key)
 {
   let a = document.getElementById('#itg_a_button_' + key);
+  let img = document.getElementById('#itg_a_image_' + key);
   let bottom = document.querySelector('.itgPreHeader__bottomSide');
   if (a.style.color == '#00a9e0') 
   {
+    img.style.fill = '#003478';
     a.style.color = '#003478';
     bottom.style.display = 'none';
   }
@@ -37,20 +39,24 @@ export const ItgOpenPreHeaderBottomSide = function (key)
   {
     bottom.style.display = 'block';
     a.style.color = '#00a9e0';
+    img.style.color = '#00a9e0';
   }
 }
 
 export const ItgOpenPreHeaderMenu = function (index)
 {
-  let a = document.getElementById('#itg_a_button_' + index);
+  let li = document.getElementById('#itg_header_tab_' + index);
+  let span = document.getElementById('#itg_header_tab_span_' + index);
 
-  if (a.classList.contains('is_active'))
+  if (li.classList.contains('is_active'))
   {
-    a.classList.remove('is_active');
+    span.style.color = '#00a9e0';
+    li.classList.remove('is_active');
   }
   else
   {
-    a.classList.add('is_active');
+    span.style.color = '#003478';
+    li.classList.add('is_active');
   }
 }
 

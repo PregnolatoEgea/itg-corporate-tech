@@ -63,10 +63,10 @@
               if (get_field('image', $left_menu_item->ID)) {
               ?>
                 <a target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image">
-                  <img class="itg-mr-16" src="<?php echo get_field('image', $left_menu_item_ID)['url']; ?>" alt="<?php echo $left_menu_item_title; ?>">
+                  <img id="itg_a_image_<?php echo $key; ?>" class="itg-mr-16" src="<?php echo get_field('image', $left_menu_item_ID)['url']; ?>" alt="<?php echo $left_menu_item_title; ?>">
                 </a>
               <?php } ?>
-              <a onclick="ItgOpenPreHeaderBottomSide($key)" target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16"><?php echo $left_menu_item_title; ?></a>
+              <a id="itg_a_button_<?php echo $key; ?>" onclick="ItgOpenPreHeaderBottomSide($key)" target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itgPreHeader--singleItem itg-mr-16"><?php echo $left_menu_item_title; ?></a>
             </div>
           <?php
           }
@@ -161,7 +161,7 @@
               ?>
                 <li id="itg_header_tab_<?php echo $index; ?>" onclick="ItgOpenPreHeaderMenu($index)">
                   <a>
-                    <span><?php echo $tab; ?></span>
+                    <span id="itg_header_tab_span_<?php echo $index; ?>"><?php echo $tab; ?></span>
                   </a>
                 </li>
               <?php } ?>
