@@ -1,0 +1,42 @@
+.itgBlock-icon-text-type23 {
+  .column {
+    max-width: 100%;
+  }
+  .no-swap-mobile {
+    @include until($desktop) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .swap-mobile {
+    @include until($desktop) {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    @include until($tablet) {
+      padding-top: 0;
+      padding-bottom: 0;
+      h2, h3, h4, h5, h6 {
+        @include h5(2rem !important, 2.75rem !important);
+        font-weight: 800 !important;
+      }
+    }
+    *{
+      margin-bottom: 0;
+    }
+  }
+
+  &__content{
+    @include until($tablet) {
+      .p1, .p2, .p3, .p4, .p5 {
+        @include p2(1.125rem !important, 1.75rem !important);
+      }
+    }
+  }
+
+}
