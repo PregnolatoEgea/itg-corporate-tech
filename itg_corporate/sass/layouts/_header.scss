@@ -271,7 +271,7 @@
       justify-content: center;
       align-items: center;
       margin-right: 20px;
-      border-radius: 5px;
+      border-radius: 4px;
 
       span {
         font-size: 16px;
@@ -343,23 +343,24 @@
       }
     }
     &__searchBox {
-      background-color: $itg__blue-2;
+      background-image: linear-gradient(
+        to right,
+        $itg__blue-3 30%,
+        $itg__blue-2 60%,
+        $itg__blue-1 100%
+      );
       color: $itg__white;
       width: 205px;
 
       &--icon {
-        color: $itg__white;
         fill: $itg__white;
-        background-color: $itg__blue-2;
       }
-      /*&.highlighted-are-hide {
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
+      &.highlighted-are-hide {
+        border-radius: 4px;
       }
       @include touch {
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
-      }*/
+        border-radius: 4px;
+      }
       .promagnifier {
         order: -1 !important;
       }
@@ -368,23 +369,22 @@
       background-color: $itg__white;
       border-color: $itg__blue-2;
       border-style: solid;
-      border-width: 2px;
+      border-width: 3px;
       width: 140px;
+      color: $itg__blue-1;
 
       button {
-        color: $itg__blue-2;
+        color: $itg__blue-1;
         height: 12px;
         width: 12px;
         margin: 10px;
       }
-      /*&.highlighted-are-hide {
-        border-top-right-radius: 4px;
-        border-bottom-right-radius: 4px;
+      &.highlighted-are-hide {
+        border-radius: 4px;
       }
       @include touch {
-        border-top-right-radius: 4px;
-        border-bottom-right-radius: 4px;
-      }*/
+        border-radius: 4px;
+      }
     }
     &__supContainer {
       position: absolute;
