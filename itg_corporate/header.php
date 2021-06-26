@@ -189,7 +189,7 @@
             ?>
           </div>
           <div id="itgMainMenu__searchBox" class="itgMainMenu__searchBox itg-px-8">
-            <p>Cerca nel sito</p>
+            <span class="itgMainMenu__searchBox--content">Cerca nel sito</span>
             <img class="itgMainMenu__searchBox--icon" id="main_search" src="<?php echo get_template_directory_uri() . '/src/images/icons/search.svg'; ?>" alt="Icona ricerca">
             <div class="itgMainMenu__searchBox--searchInput">
               <span id="itgMainMenu__searchBox--close" class="itgMainMenu__searchBox--close">
@@ -200,7 +200,7 @@
             <div class="itgMainMenu__searchBox--overlay"></div>
           </div>
           <div class="itgMainMenu__toggle itg-pl-8 itg-pr-16">
-            <span>Servizi</span>
+            <span class="itgMainMenu__searchBox--content">Servizi</span>
             <button class="hamburger hamburger--squeeze" type="button" aria-label="Menu" aria-controls="navigation">
               <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
