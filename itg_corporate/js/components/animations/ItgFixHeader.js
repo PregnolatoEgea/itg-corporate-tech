@@ -39,5 +39,21 @@ export const ItgOpenPreHeaderBottomSide = function (key)
     a.style.color = '#00a9e0';
   }
 }
-ItgOpenPreHeaderBottomSide();
+
+export const ItgOpenPreHeaderMenu = function (index)
+{
+  let a = document.getElementById('#itg_a_button_' + index);
+
+  if (a.classList.contains('is_active'))
+  {
+    a.classList.remove('is_active');
+  }
+  else
+  {
+    a.classList.add('is_active');
+  }
+}
+
+ItgOpenPreHeaderBottomSide(key);
+ItgOpenPreHeaderMenu(index)
 ItgFixHeader();

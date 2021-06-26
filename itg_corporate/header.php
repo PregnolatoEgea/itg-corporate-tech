@@ -28,6 +28,7 @@
   <div id="page" class="site">
     <header id="masthead" class="site-header">
       <div class="itgPreHeader__bottomSide">
+        <!-- mettere i veri testi -->
         <div class="columns">
           <?php
           $arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
@@ -65,7 +66,7 @@
                   <img class="itg-mr-16" src="<?php echo get_field('image', $left_menu_item_ID)['url']; ?>" alt="<?php echo $left_menu_item_title; ?>">
                 </a>
               <?php } ?>
-              <a target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16"><?php echo $left_menu_item_title; ?></a>
+              <a onclick="ItgOpenPreHeaderBottomSide($key)" target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16"><?php echo $left_menu_item_title; ?></a>
             </div>
           <?php
           }
@@ -152,18 +153,19 @@
           ?>
           <div class="tabs">
             <ul>
-              <li class="is-active"><a>
-                  <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
-                  <span>Chi siamo</span>
-                </a></li>
-              <li><a>
-                  <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
-                  <span>Italgas people</span>
-                </a></li>
-              <li><a>
-                  <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
-                  <span>il futuro del gas</span>
-                </a></li>
+              <!-- da mettere i veri testi -->
+              <?php
+              $tabs = ['Chi siamo', "Italgas people", "Il futuro del gas"];
+
+              foreach ($tabs as $index => $tab) {
+              ?>
+                <li id="itg_header_tab_<?php $index; ?>" onclick="ItgOpenPreHeaderMenu($index)">
+                  <a>
+                    <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
+                    <span><?php $tab; ?></span>
+                  </a>
+                </li>
+              <?php } ?>
             </ul>
           </div>
         </div>
