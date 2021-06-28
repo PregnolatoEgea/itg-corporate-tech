@@ -38,8 +38,19 @@ $footer_menu = wp_get_nav_menu_items('footer-menu');
                   $footer_menu_item_url = $footer_menu_item->url;
                   $footer_menu_item_target = $footer_menu_item->target;
                   ?>
-                  <a target="<?php echo $footer_menu_item_target; ?>" href="<?php echo $footer_menu_item_url; ?>" class="itgPreHeader--singleItem itg-mr-16"><?php echo $footer_menu_item_title; ?></a>
+                  <a target="<?php echo $footer_menu_item_target; ?>" href="<?php echo $footer_menu_item_url; ?>" class="itgFooter--singleItem itg-mr-16"><?php echo $footer_menu_item_title; ?></a>
                   <?php } } ?>
+            </div>
+            <div class="itgSubFooter__menu column is-7-desktop is-offset-1-desktop">
+                <?php
+                foreach ($footer_menu as $key => $footer_menu_item) {
+                    if ($footer_menu_item->menu_item_parent >= 1 ) {
+                        $footer_menu_item_title = $footer_menu_item->title;
+                        $footer_menu_item_url = $footer_menu_item->url;
+                        $footer_menu_item_target = $footer_menu_item->target;
+                        ?>
+                        <a target="<?php echo $footer_menu_item_target; ?>" href="<?php echo $footer_menu_item_url; ?>" class="itgSubFooter--singleItem itg-mr-16"><?php echo $footer_menu_item_title; ?></a>
+                    <?php } } ?>
             </div>
           </div>
           <?php
