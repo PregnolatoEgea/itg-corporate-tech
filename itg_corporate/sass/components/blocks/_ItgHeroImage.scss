@@ -1,9 +1,12 @@
 .itgBlock-hero-image {
   background-size: cover;
-  min-height: calc(100vh - 350px);
-  margin-bottom: 40px !important;
-  &.has_reduced_height{
-    min-height: 50vh;
+  background-repeat: no-repeat;
+  min-height: 697px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  &.has_reduced_height {
+    min-height: 416px;
   }
 
   #breadcrumbs {
@@ -17,18 +20,25 @@
   }
 
   &-container {
+    height: 100%;
+    width: 100%;
     @include touch {
-      min-height: 60vh;
+      //min-height: 60vh;
     }
     @include desktop {
-      min-height: 90vh;
-      .has_reduced_height &{
-        min-height: 50vh;
+      //min-height: 90vh;
+      .has_reduced_height & {
+        //min-height: 50vh;
       }
     }
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @include tablet {
       font-size: 5rem !important;
       font-weight: 700 !important;
@@ -91,12 +101,13 @@
     &-image {
       width: 23px;
       height: 34px;
-      background: url('src/images/icons/vertical_scroll.svg') center no-repeat;
+      background: url("src/images/icons/vertical_scroll.svg") center no-repeat;
       background-size: 23px 34px;
       @include until($desktop) {
         width: 26px;
         height: 67px;
-        background: url('src/images/icons/vertical_scroll_long.svg') center no-repeat;
+        background: url("src/images/icons/vertical_scroll_long.svg") center
+          no-repeat;
         background-size: 26px 67px;
       }
     }
