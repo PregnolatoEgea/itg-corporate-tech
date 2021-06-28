@@ -1,0 +1,10 @@
+.itgBlock__ItgImage {
+    &--image {
+        @include mobile{
+          padding: 0 0;
+        }
+        @include tablet{
+          padding: 0 56px;
+        }
+      }
+}

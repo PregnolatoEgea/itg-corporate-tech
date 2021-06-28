@@ -85,7 +85,11 @@ if( have_rows('layout_builder') ):
           ?>
             <img class="Itg__wavedBorder" src="<?php echo get_template_directory_uri() . '/dist/src/images/White.svg'; ?>" alt="Border">
           <?php
-        }      
+        }          
+
+        if(isset($is_event_page)){
+          require 'blocks/ItgEventHeader.php';
+        }
 
         // Loop through rows.
         while ( have_rows('layout', $acf_id) ) : the_row();
@@ -190,7 +194,7 @@ if( have_rows('layout_builder') ):
           case 'anchor_name':
             require 'blocks/ItgAnchorName.php';
           break;
-          case 'anchor_buttons_bar':
+          case 'anchors_buttons_bar':
             require 'blocks/ItgAnchorsButtonsBar.php';
           break;
           case 'focus_box':
@@ -207,9 +211,17 @@ if( have_rows('layout_builder') ):
           break;
           case 'notices_and_communications':
             require 'blocks/ItgNoticeCommunications.php';
+          break;      
+          case 'event_list':
+            require 'blocks/ItgEventList.php';
+          break;  
+          case 'image':
+            require 'blocks/ItgImage.php';
           break;
-
-                
+          case 'posts_filter':
+            require 'blocks/ItgPostsFilter.php';
+          break;
+          
           default:
 
           break;
@@ -245,15 +257,16 @@ if(is_single()) {
 
  foreach((get_the_category()) as $category){ 
  $cat_icon = get_field('upload_category_icon', 'term_' . $category->term_id ); 
+ $single_content = $post->post_content;
 
  ?>
 
 <?php if ( has_post_thumbnail() ) { ?>
 <header class="itg_detail_post_header itg__has_post_thumbnail <?php echo $category->slug; ?>" style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
- <div class="columns">
+ <div class="columns is-vcentered itg__post-height">
   <div class="column is-10 itg__single_wrapper is-offset-1 pt-5">
    <?php if ($cat_icon) : ?>
-   <span class="itg__single_category_img aligncenter itg-mt-92">
+   <span class="itg__single_category_img aligncente">
    <img src="<?php echo $cat_icon; ?>" width="70" height="70" alt="<?php echo $category->name; ?>" />
    </span>
    <?php endif; ?>
@@ -264,35 +277,39 @@ if(is_single()) {
   </div>
  </div>
 </header>
-<div class="columns">
- <div class="column is-10 is-offset-1">
-  <div class="itg__singlepost_share aligncenter itg--my-20">
+<div class="ItgLayoutSection container">
+<div class="columns is-centered is-mobile">
+ <div class="column is-8">
+  <div class="itg__singlepost_share aligncenter itg-mt-40 itg--my-20 mb-0">
          <!-- Twitter Social Share -->
-         <script src="https://platform.twitter.com/widgets.js" type="text/javascript"></script>
-         <a href="https://twitter.com/share" class="twitter-share-button"
+         <a href="https://twitter.com/share" target="_blank" class="twitter-share-button"
             data-url="<?php echo $url; ?>"
             data-via="italgas"
             data-text="<?php the_title(); ?>"
             data-related="Italgas"
             data-count="vertical">
-             <img src="./dist/src/images/icons/twitter_no_bg.svg">
+             <img src="<?php bloginfo('stylesheet_directory'); ?>/dist/src/images/icons/twitter_no_bg.svg">
          </a>
-         <!-- Linkedin Social Share -->
-         <a href="https://www.linkedin.com/cws/share?url=".<?php echo $url; ?>><img src="./dist/src/images/icons/linkedin.svg" /> </a>
+         <a href="https://www.linkedin.com/cws/share?url="<?php echo $url; ?>><img src="<?php bloginfo('stylesheet_directory'); ?>/dist/src/images/icons/Linkedin_no_bg.svg" /> </a>
      </div>
-  <div class="itg__singlepost_date aligncenter itg-mt-80">
+  <div class="itg__singlepost_date aligncenter ">
   <?php _e('Data di pubblicazione'); ?>: <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
   </div>
+  <div class="itg__post__content">
+		<?php	echo $single_content; ?>
  </div>
+ </div>
+ </div>
+  
 </div>
 <?php 
  } else {
 ?>
  <header class="itg_detail_post_header <?php echo $category->slug; ?>">
-   <div class="columns">
+   <div class="columns is-vcentered itg__post-height">
     <div class="column is-10 itg__single_wrapper is-offset-1 pt-5">
      <?php if ($cat_icon) : ?>
-      <span class="itg__single_category_img aligncenter itg-mt-92">
+      <span class="itg__single_category_img aligncenter">
       <img src="<?php echo $cat_icon; ?>" width="70" height="70" alt="<?php echo $category->name; ?>" />
       </span>
      <?php endif; ?>
@@ -303,12 +320,30 @@ if(is_single()) {
     </div>
    </div>
  </header>
- <div class="columns">
- <div class="column is-10 is-offset-1">
-  <div class="itg__singlepost_date aligncenter itg-mt-80">
+<div class="ItgLayoutSection container">
+<div class="columns is-centered is-mobile">
+ <div class="column is-8">
+  <div class="itg__singlepost_share aligncenter itg-mt-40 itg--my-20 mb-0">
+         <!-- Twitter Social Share -->
+         <a href="https://twitter.com/share" target="_blank" class="twitter-share-button"
+            data-url="<?php echo $url; ?>"
+            data-via="italgas"
+            data-text="<?php the_title(); ?>"
+            data-related="Italgas"
+            data-count="vertical">
+             <img src="<?php bloginfo('stylesheet_directory'); ?>/dist/src/images/icons/twitter_no_bg.svg">
+         </a>
+         <a href="https://www.linkedin.com/cws/share?url="<?php echo $url; ?>><img src="<?php bloginfo('stylesheet_directory'); ?>/dist/src/images/icons/Linkedin_no_bg.svg" /> </a>
+     </div>
+  <div class="itg__singlepost_date aligncenter ">
   <?php _e('Data di pubblicazione'); ?>: <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
   </div>
+  <div class="itg__post__content">
+		<?php	echo $single_content; ?>
  </div>
+ </div>
+ </div>
+  
 </div>
  <?php 
    }
@@ -477,7 +512,7 @@ if( have_rows('layout_builder_posts') ):
           case 'anchor_name':
             require 'blocks/ItgAnchorName.php';
           break;
-          case 'anchor_buttons_bar':
+          case 'anchors_buttons_bar':
             require 'blocks/ItgAnchorsButtonsBar.php';
           break;
           case 'focus_box':
@@ -491,6 +526,18 @@ if( have_rows('layout_builder_posts') ):
           break;
           case 'last_update':
             require 'blocks/ItgLastUpdate.php';
+          break;
+          case 'notices_and_communications':
+            require 'blocks/ItgNoticeCommunications.php';
+          break;      
+          case 'event_list':
+            require 'blocks/ItgEventList.php';
+          break;
+          case 'image':
+            require 'blocks/ItgImage.php';
+          break;
+          case 'posts_filter':
+            require 'blocks/ItgPostsFilter.php';
           break;
           
           default:
@@ -517,6 +564,5 @@ if( have_rows('layout_builder_posts') ):
 
 endif;
 
-
-
 ?>
+

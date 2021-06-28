@@ -1,0 +1,127 @@
+.itgBlock--ItgEventHeader {
+  background-color: $itg__light-blue;
+  color: $itg__blue-1;
+
+  &.expired {
+    background-color: $itg__grey-2; 
+  }
+
+  #breadcrumbs {
+    text-align: left;
+    a:visited {
+      color: inherit;
+    }
+    .breadcrumb_last {
+      font-weight: 500;
+    }
+  }
+
+  &-container {    
+  }
+
+  &--labels {
+    &-container {
+      color: $itg__blue-1;
+    }
+    &-online{
+      font-weight: bold;
+    }
+  }  
+
+  &--icon {
+    &-container{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items:center;
+    }
+    &-image {
+      align-self: center;
+      width: 66px;
+      height: 66px;
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-position: center;   
+
+      &.calendar {
+        background-image: url('src/images/icons/events/calendar.svg');
+      }
+      &.balloon {
+        background-image: url('src/images/icons/events/balloon.svg');
+      }
+      &.money {
+        background-image: url('src/images/icons/events/money.svg');
+      }
+      &.blackboard {
+        background-image: url('src/images/icons/events/blackboard.svg');
+      }
+      &.university-touch {
+        background-image: url('src/images/icons/events/university-touch.svg');
+      }
+      &.tree {
+        background-image: url('src/images/icons/events/tree.svg');
+      }
+    }
+  }
+
+  &--cta{
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+    
+    &.expired {
+      opacity: 0.4;
+    }
+    
+    &-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid $itg__blue-1;
+      color: $itg__blue-1 !important;
+      border-radius: 4px;
+      flex: none;
+      min-width: 186px;        
+      @include from($desktop) {          
+          width: 320px;
+      }        
+      span {
+        font-weight: 700;
+      }
+      &.expired{
+        cursor: pointer;        
+        border: 2px solid $itg__blue-1;
+        color: $itg__blue-1 !important;        
+      }
+
+    }
+  }
+
+  &--Description{
+  
+    &-container {    
+    }
+  }
+
+
+  &--Social{
+  
+    &-container {    
+      .columns {     
+        @include from($desktop) { 
+            height: 110px;
+        }        
+      }
+    }
+    &--icon {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      &:hover{
+        color: currentColor;
+      }
+    }
+  }
+  
+
+}

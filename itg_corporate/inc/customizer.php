@@ -59,3 +59,37 @@ function itg_sustainability_customize_preview_js() {
 	wp_enqueue_script( 'itg_sustainability-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
 }
 add_action( 'customize_preview_init', 'itg_sustainability_customize_preview_js' );
+
+function cptui_register_my_taxes_comunicati() {
+
+	/**
+	 * Taxonomy: Comunicato.
+	 */
+
+	$labels = [
+		"name" => __( "Comunicato", "itg_sustainability" ),
+		"singular_name" => __( "Comunicati", "itg_sustainability" ),
+	];
+
+	
+	$args = [
+		"label" => __( "Comunicato", "itg_sustainability" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'comunicati', 'with_front' => true,  'hierarchical' => true, ],
+		"show_admin_column" => true,
+		"show_in_rest" => true,
+		"rest_base" => "comunicati",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => true,
+		"show_in_graphql" => false,
+	];
+	register_taxonomy( "comunicati", [ "post" ], $args );
+}
+add_action( 'init', 'cptui_register_my_taxes_comunicati' );

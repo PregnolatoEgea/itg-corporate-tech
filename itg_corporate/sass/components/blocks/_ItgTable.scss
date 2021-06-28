@@ -1,24 +1,6 @@
 .itgBlock__ItgTable {
-  table {
-    border-color: $itg__grey-2;
-    margin-top: 1.5rem;
-    em {
-      font-size: 16px;
-    }
-  }
-  tr:first-of-type {
-    color: $itg__blue-2;
-    font-weight: bolder;
-  }
-  td:first-of-type {
-    color: $itg__blue-2;
-    font-weight: bolder;
-  }
   .itgBlock__ItgAccordion--inner-content {
     overflow-x: auto;
-  }
-  td {
-    font-size: 16px;
   }
   strong {
     font-weight: 500;
@@ -29,5 +11,30 @@
   .itgBlock__ItgAccordion--link a, .itgBlock__ItgAccordion--link a:visited{
     text-decoration: underline;
     color: $itg__blue-2;
+  }
+}
+
+.ItgLayoutSection{
+  table {
+    border-color: $itg__grey-2;
+    margin-top: 1.5rem;
+    em {
+      font-size: 16px;
+    }
+  }
+/*   tr:first-of-type {
+    color: $itg__blue-2;
+    font-weight: bolder;
+  }
+  td:first-of-type {
+    color: $itg__blue-2;
+    font-weight: bolder;
+  } */
+  td {
+    font-size: 16px;
+    vertical-align: middle !important;
+    p{
+      margin: 0;
+    }
   }
 }

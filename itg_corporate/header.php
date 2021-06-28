@@ -27,218 +27,254 @@
   <?php wp_body_open(); ?>
   <div id="page" class="site">
     <header id="masthead" class="site-header">
-      <div class="itgPreHeader__bottomSide">
-        <!-- mettere i veri testi -->
-        <div class="columns">
-          <?php
-          $arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-          foreach ($arr as $a) {
-          ?>
-            <div class="column">
-              <span>Titolo</span>
-              <?php
-              foreach ($a as $i) {
-              ?>
-                <p><?php echo $i; ?></p>
-              <?php } ?>
-            </div>
-          <?php } ?>
-        </div>
-      </div>
       <div class="itgPreHeader itg-px-56">
         <div class="itgPreHeader__leftSide">
           <?php
           $left_menu = wp_get_nav_menu_items('pre-header-left-side');
-          if ($left_menu) : echo '<span class="itg_preheader-left_label">In evidenza&nbsp;</span>';
-          endif;
           foreach ($left_menu as $key => $left_menu_item) {
-            $left_menu_item_title = $left_menu_item->title;
-            $left_menu_item_url = $left_menu_item->url;
-            $left_menu_item_target = $left_menu_item->target;
-            $left_menu_item_ID = $letf_menu_item->ID;
 
-          ?>
-            <div class="itg_a_container">
-              <?php
-              if (get_field('image', $left_menu_item->ID)) {
-              ?>
-                <a target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image">
-                  <img id="itg_a_image_<?php echo $key; ?>" class="itg-mr-16" src="<?php echo get_field('image', $left_menu_item_ID)['url']; ?>" alt="<?php echo $left_menu_item_title; ?>">
-                </a>
-              <?php } ?>
-              <a id="itg_a_button_<?php echo $key; ?>" onclick="ItgOpenPreHeaderBottomSide($key)" target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itgPreHeader--singleItem itg-mr-16"><?php echo $left_menu_item_title; ?></a>
-            </div>
-          <?php
-          }
-          ?>
-          <?php
-          if (get_field('news', $left_menu_item->news)) {
-          ?>
-            <a class="itgPreHeader--singleItem itg-mr-16">
-              <?php echo $$left_menu_item->news; ?>
-            </a>
-          <?php
-          }
-          ?>
-        </div>
-        <div class=" itgPreHeader__rightSide">
-          <?php $links_menu = wp_get_nav_menu_items('links-menu');
-          foreach ($links_menu as $key => $links_menu_item) {
-            $links_menu_item_ID = $links_menu_item->ID;
-            $links_menu_item_title = $links_menu_item->post_title;
-            $links_menu_item_url = $links_menu_item->url;
-            $links_menu_item_target = $links_menu_item->target;
-          ?>
-            <div class="itg_a_container">
-              <a target="<?php echo $links_menu_item_target; ?>" href="<?php echo $links_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16">
-                <?php echo $links_menu_item_title; ?>
-                <img class="itg-mr-16" alt="<?php echo $left_menu_item_title; ?>">
-              </a>
-            </div>
-          <?php
-          }
-          ?>
-          <?php
-          $right_menu = wp_get_nav_menu_items('pre-header-right-side');
-
-
-          foreach ($right_menu as $key => $right_menu_item) {
-            $right_menu_item_ID = $right_menu_item->ID;
-            $right_menu_item_title = $right_menu_item->post_title;
-            $right_menu_item_url = $right_menu_item->url;
-            $right_menu_item_target = $right_menu_item->target;
-
-          ?>
-            <?php
-            if (get_field('image', $right_menu_item_ID)) {
-            ?>
-              <a target="<?php echo $right_menu_item_target; ?>" href="<?php echo $right_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image">
-                <img class="itg-mr-16" src="<?php echo get_field('image', $right_menu_item_ID)['url']; ?>" alt="<?php echo $right_menu_item_title; ?>">
-              </a>
-            <?php
-            } else {
-            ?>
-              <p class="itgPreHeader--singleItem itg-mr-24"><?php echo $right_menu_item_title; ?></p>
-            <?php
+            if ($left_menu_item->menu_item_parent >= 1) {
             }
-            ?>
-          <?php
-          }
           ?>
-          <?php
-          if (get_field('language', $right_menu_item->language)) {
-          ?>
-            <a class="itgPreHeader--singleItem itg-mr-16">
-              <!-- Selettore Lingua WPML -->
-              <?php do_action('wpml_add_language_selector'); ?>
-            <?php
-          }
-            ?>
-        </div>
-      </div>
-      <div class="itgHeader itg-px-56">
-        <div class="itgHeader__leftSide">
-          <?php
-          if (is_search()) {
-          ?>
-            <img class="itgHeader--logo is-hidden-mobile" src="<?php echo get_template_directory_uri(); ?>/dist/src/images/ITG_logo_positivo.png" alt="Logo Italgas">
-            <img class="itgHeader--logo is-hidden-tablet" src="<?php echo get_template_directory_uri(); ?>/dist/src/images/ITG_logo_positivo.png" alt="Logo Italgas">
-          <?php
-          } else {
-          ?>
-            <img class="itgHeader--logo is-hidden-mobile" src="<?php echo get_template_directory_uri(); ?>/dist/src/images/Italgas_logo_negativo.png" alt="Logo Italgas">
-            <img class="itgHeader--logo is-hidden-tablet" src="<?php echo get_template_directory_uri(); ?>/dist/src/images/ITG_logo_positivo.png" alt="Logo Italgas">
-          <?php
-          }
-          ?>
-          <div class="tabs">
-            <ul>
-              <!-- da mettere i veri testi -->
+            <div id="Itg_PreHeaderData_<?php echo $key; ?>" class="itgPreHeader__bottomSide" data-menu-id="Itg_PreHeaderData_<?php echo $key; ?>">
+
+              <div class="columns">
+
+                <?php
+                $arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+                foreach ($arr as $a) {
+                ?>
+                  <div class="column">
+                    <span>Titolo</span>
+                    <?php
+                    foreach ($a as $i) {
+                    ?>
+                      <p><?php echo $i; ?></p>
+                    <?php } ?>
+                  </div>
+                <?php } ?>
+              </div>
+            </div>
+          <?php } ?>
+          <div class="itgPreHeader itg-px-56">
+            <div class="itgPreHeader__leftSide">
               <?php
-              $tabs = ['Chi siamo', "Italgas people", "Il futuro del gas"];
+              $left_menu = wp_get_nav_menu_items('pre-header-left-side');
+              if ($left_menu) : echo '<span class="itg_preheader-left_label">In evidenza&nbsp;</span>';
+              endif;
+              foreach ($left_menu as $key => $left_menu_item) {
+                if ($left_menu_item->menu_item_parent == 0) {
+                  $left_menu_item_title = $left_menu_item->title;
+                  $left_menu_item_url = $left_menu_item->url;
+                  $left_menu_item_target = $left_menu_item->target;
+                  $left_menu_item_ID = $letf_menu_item->ID;
 
-              foreach ($tabs as $index => $tab) {
               ?>
-                <li id="itg_header_tab_<?php echo $index; ?>" onclick="ItgOpenPreHeaderMenu($index)">
-                  <a>
-                    <span id="itg_header_tab_span_<?php echo $index; ?>"><?php echo $tab; ?></span>
-                  </a>
-                </li>
-              <?php } ?>
-            </ul>
-          </div>
-        </div>
-        <div class="itgHeader__rightSide">
-          <div class="itgMainMenu__highlightedItems is-hidden-touch is-flex">
-            <?php
-            $main_menu = wp_get_nav_menu_items('main-menu');
+                  <div class="itg_a_container">
+                    <?php
+                    if (get_field('image', $left_menu_item->ID)) {
+                    ?>
+                      <a target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image">
+                        <img id="itg_a_image_<?php echo $key; ?>" class="itg-mr-16" src="<?php echo get_field('image', $left_menu_item_ID)['url']; ?>" alt="<?php echo $left_menu_item_title; ?>">
+                      </a>
+                    <?php } ?>
+                    <a id="itg_a_button_<?php echo $key; ?>" onclick="ItgOpenPreHeaderBottomSide($key)" target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itgPreHeader--singleItem itg-mr-16"><?php echo $left_menu_item_title; ?></a>
+                  </div>
+                <?php
+                }
+                ?>
+            </div>
+            <div class="itgPreHeader__rightSide">
+              <?php
+                $left_menu_item_ID = $left_menu_item->ID;
 
-            foreach ($main_menu as $key => $main_menu_item) {
-              $main_menu_item_ID = $main_menu_item->ID;
-              $main_menu_item_title = $main_menu_item->title;
-              $main_menu_item_url = $main_menu_item->url;
-              $main_menu_item_target = $main_menu_item->target;
-
-              if (get_field('is_highlighted', $main_menu_item_ID)) {
-            ?>
-                <a class="itgMainMenu__highlightedItems--single p1 itg--color-blue-1 itg-py-16 itg-px-16" target="<?php echo $main_menu_item_target; ?>" href="<?php echo $main_menu_item_url; ?>"><?php echo $main_menu_item_title; ?></a>
+              ?>
+              <div class="itg_a_container">
+                <a id="itg_a_button_<?php echo $key; ?>" target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itgPreHeader--singleItem itg-mr-16" data-target="#Itg_PreHeaderData_<?php echo $key; ?>">
+                  <?php
+                  if (get_field('image', $left_menu_item->ID)) {
+                  ?>
+                    <img id="itg_a_image_<?php echo $key; ?>" class="itg-mr-10" src="<?php echo get_field('image', $left_menu_item_ID); ?>" alt="<?php echo $left_menu_item_title; ?>">
+                  <?php } ?>
+                  <?php echo $left_menu_item_title; ?></a>
+              </div>
             <?php
               }
+            ?>
+            <?php
+            if (get_field('news', $left_menu_item->news)) {
+            ?>
+              <a class="itgPreHeader--singleItem itg-mr-16">
+                <?php echo $left_menu_item->news; ?>
+              </a>
+            <?php
             }
             ?>
-          </div>
-          <div id="itgMainMenu__searchBox" class="itgMainMenu__searchBox itg-px-8">
-            <span class="itgMainMenu__searchBox--content">Cerca nel sito</span>
-            <img class="itgMainMenu__searchBox--icon" id="main_search" src="<?php echo get_template_directory_uri() . '/src/images/icons/search.svg'; ?>" alt="Icona ricerca">
-            <div class="itgMainMenu__searchBox--searchInput">
-              <span id="itgMainMenu__searchBox--close" class="itgMainMenu__searchBox--close">
-                <img src="<?php echo get_template_directory_uri(); ?>/dist/src/images/icons/close.svg" alt="Close">
-              </span>
-              <?php echo do_shortcode('[wd_asp id=1]'); ?>
             </div>
-            <div class="itgMainMenu__searchBox--overlay"></div>
-          </div>
-          <div class="itgMainMenu__toggle itg-pl-8 itg-pr-16">
-            <span class="itgMainMenu__searchBox--content">Servizi</span>
-            <button class="hamburger hamburger--squeeze" type="button" aria-label="Menu" aria-controls="navigation">
-              <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-              </span>
-            </button>
-          </div>
-          <div class="itgMainMenu__supContainer itg-px-32 itg-py-8 is-hide">
-            <a href="<?php echo get_home_url(); ?>">
-              <img src="<?php echo get_template_directory_uri(); ?>/dist/src/images/ITG_logo_positivo.png" alt="Logo Italgas">
-            </a>
-            <a href="<?php echo get_home_url(); ?>">
-              <img src="<?php echo get_template_directory_uri(); ?>/dist/src/images/icons/home.svg" alt="Home">
-            </a>
-          </div>
-          <div class="itgMainMenu__container itg-px-32 itg-py-8">
-            <?php
-            $main_menu = wp_get_nav_menu_items('main-menu');
+            <div class=" itgPreHeader__rightSide">
+              <?php $links_menu = wp_get_nav_menu_items('links-menu');
+              if ($links_menu) :
+                foreach ($links_menu as $key => $links_menu_item) {
+                  $links_menu_item_ID = $links_menu_item->ID;
+                  $links_menu_item_title = $links_menu_item->post_title;
+                  $links_menu_item_url = $links_menu_item->url;
+                  $links_menu_item_target = $links_menu_item->target;
+              ?>
+                  <div class="itg_a_container">
+                    <a target="<?php echo $links_menu_item_target; ?>" href="<?php echo $links_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16">
+                      <?php echo $links_menu_item_title; ?>
+                      <img class="itg-mr-16" alt="<?php echo $left_menu_item_title; ?>">
+                    </a>
+                  </div>
+              <?php
+                }
+              endif;
+              ?>
+              <?php
+              $right_menu = wp_get_nav_menu_items('pre-header-right-side');
 
-            /*echo '<pre>';
+
+              foreach ($right_menu as $key => $right_menu_item) {
+                $right_menu_item_ID = $right_menu_item->ID;
+                $right_menu_item_title = $right_menu_item->post_title;
+                $right_menu_item_url = $right_menu_item->url;
+                $right_menu_item_target = $right_menu_item->target;
+
+              ?>
+                <?php
+                if (get_field('image', $right_menu_item_ID)) {
+                ?>
+                  <a target="<?php echo $right_menu_item_target; ?>" href="<?php echo $right_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image">
+                    <img class="itg-mr-16" src="<?php echo get_field('image', $right_menu_item_ID)['url']; ?>" alt="<?php echo $right_menu_item_title; ?>">
+                  </a>
+                <?php
+                } else {
+                ?>
+                  <p class="itgPreHeader--singleItem itg-mr-24"><?php echo $right_menu_item_title; ?></p>
+                <?php
+                }
+                ?>
+              <?php
+              }
+              ?>
+              <?php
+              if (get_field('language', $right_menu_item->language)) {
+              ?>
+                <a class="itgPreHeader--singleItem itg-mr-16">
+                  <!-- Selettore Lingua WPML -->
+                  <?php do_action('wpml_add_language_selector'); ?>
+                <?php
+              }
+                ?>
+            </div>
+          </div>
+          <div class="itgHeader itg-px-56">
+            <div class="itgHeader__leftSide">
+              <?php
+              if (is_search()) {
+              ?>
+                <img class="itgHeader--logo is-hidden-mobile" src="<?php echo get_template_directory_uri(); ?>/dist/src/images/ITG_logo_positivo.png" alt="Logo Italgas">
+                <img class="itgHeader--logo is-hidden-tablet" src="<?php echo get_template_directory_uri(); ?>/dist/src/images/ITG_logo_positivo.png" alt="Logo Italgas">
+              <?php
+              } else {
+              ?>
+                <img class="itgHeader--logo is-hidden-mobile" src="<?php echo get_template_directory_uri(); ?>/dist/src/images/Italgas_logo_negativo.png" alt="Logo Italgas">
+                <img class="itgHeader--logo is-hidden-tablet" src="<?php echo get_template_directory_uri(); ?>/dist/src/images/ITG_logo_positivo.png" alt="Logo Italgas">
+              <?php
+              }
+              ?>
+              <div class="tabs">
+                <ul>
+                  <!-- da mettere i veri testi -->
+                  <?php
+                  $tabs = ['Chi siamo', "Italgas people", "Il futuro del gas"];
+
+                  foreach ($tabs as $index => $tab) {
+                  ?>
+                    <li id="itg_header_tab_<?php echo $index; ?>" onclick="ItgOpenPreHeaderMenu($index)">
+                      <a>
+                        <span id="itg_header_tab_span_<?php echo $index; ?>"><?php echo $tab; ?></span>
+                      </a>
+                    </li>
+                  <?php } ?>
+                </ul>
+              </div>
+            </div>
+            <div class="itgHeader__rightSide">
+              <div class="itgMainMenu__highlightedItems is-hidden-touch is-flex">
+                <?php
+                $main_menu = wp_get_nav_menu_items('main-menu');
+
+                foreach ($main_menu as $key => $main_menu_item) {
+                  $main_menu_item_ID = $main_menu_item->ID;
+                  $main_menu_item_title = $main_menu_item->title;
+                  $main_menu_item_url = $main_menu_item->url;
+                  $main_menu_item_target = $main_menu_item->target;
+
+                  if (get_field('is_highlighted', $main_menu_item_ID)) {
+                ?>
+                    <a class="itgMainMenu__highlightedItems--single p1 itg--color-blue-1 itg-py-16 itg-px-16" target="<?php echo $main_menu_item_target; ?>" href="<?php echo $main_menu_item_url; ?>"><?php echo $main_menu_item_title; ?></a>
+                <?php
+                  }
+                }
+                ?>
+              </div>
+              <div id="itgMainMenu__searchBox" class="itgMainMenu__searchBox itg-px-8">
+                <span class="itgMainMenu__searchBox--content">Cerca nel sito</span>
+                <img class="itgMainMenu__searchBox--icon" id="main_search" src="<?php echo get_template_directory_uri() . '/src/images/icons/search.svg'; ?>" alt="Icona ricerca">
+                <div class="itgMainMenu__searchBox--searchInput">
+                  <span id="itgMainMenu__searchBox--close" class="itgMainMenu__searchBox--close">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/src/images/icons/close.svg" alt="Close">
+                  </span>
+                  <?php echo do_shortcode('[wd_asp id=1]'); ?>
+                </div>
+                <div class="itgMainMenu__searchBox--overlay"></div>
+              </div>
+              <div class="itgMainMenu__toggle itg-pl-8 itg-pr-16">
+                <span class="itgMainMenu__searchBox--content">Servizi</span>
+                <button class="hamburger hamburger--squeeze" type="button" aria-label="Menu" aria-controls="navigation">
+                  <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                  </span>
+                </button>
+              </div>
+              <div class="itgMainMenu__supContainer itg-px-32 itg-py-8 is-hide">
+                <a href="<?php echo get_home_url(); ?>">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/src/images/ITG_logo_positivo.png" alt="Logo Italgas">
+                </a>
+                <a href="<?php echo get_home_url(); ?>">
+                  <img src="<?php echo get_template_directory_uri(); ?>/dist/src/images/icons/home.svg" alt="Home">
+                </a>
+              </div>
+              <div class="itgMainMenu__container itg-px-32 itg-py-8">
+                <?php
+                $main_menu = wp_get_nav_menu_items('main-menu');
+
+                /*echo '<pre>';
           var_dump($main_menu);
           echo '</pre>';
           
           */
-            foreach ($main_menu as $key => $main_menu_item) {
-              $main_menu_item_ID = $main_menu_item->ID;
-              $main_menu_item_parent = $main_menu_item->menu_item_parent;
-              $main_menu_item_title = $main_menu_item->title;
-              $main_menu_item_url = $main_menu_item->url;
-              $main_menu_item_target = $main_menu_item->target;
+                foreach ($main_menu as $key => $main_menu_item) {
+                  $main_menu_item_ID = $main_menu_item->ID;
+                  $main_menu_item_parent = $main_menu_item->menu_item_parent;
+                  $main_menu_item_title = $main_menu_item->title;
+                  $main_menu_item_url = $main_menu_item->url;
+                  $main_menu_item_target = $main_menu_item->target;
 
-            ?>
-              <div class="itgMainMenu__container--single itg-mt-16">
-                <?php echo $main_menu_item_title; ?>
+                ?>
+                  <div class="itgMainMenu__container--single itg-mt-16">
+                    <?php echo $main_menu_item_title; ?>
+                  </div>
+                <?php
+
+                }
+                ?>
               </div>
-            <?php
-
-            }
-            ?>
+            </div>
           </div>
-        </div>
-      </div>
     </header><!-- #masthead -->
+  </div>
+</body>
+
+</html>

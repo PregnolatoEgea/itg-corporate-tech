@@ -7,22 +7,28 @@ export const ItgMediaFilter = function () {
   let BlocksFilterResults = document.querySelector('.itg_tagfilterresults');
   let BlocksFilterDateresults = document.querySelector('.itg_tagdatefilterdateresults');
   
-  BlocksFilterBtn.onclick = function (event) { 
-
-   this.classList.toggle('active');
-   BlocksFilterResults.classList.toggle('showtagresults');
-   event.preventDefault();
-  };
   
-  BlocksFilterDateBtn.onclick = function (event) { 
+  if(BlocksFilterBtn){
 
-   this.classList.toggle('active');
-   BlocksFilterDateresults.classList.toggle('showtagdateresults');
-   event.preventDefault();
-  };
+   BlocksFilterBtn.onclick = function (event) { 
+ 
+    this.classList.toggle('active');
+    BlocksFilterResults.classList.toggle('showtagresults');
+    event.preventDefault();
+   };
+  
+  }
+  if(BlocksFilterDateBtn){
+   BlocksFilterDateBtn.onclick = function (event) { 
+
+    this.classList.toggle('active');
+    BlocksFilterDateresults.classList.toggle('showtagdateresults');
+    event.preventDefault();
+   };
+  }
   
   // activate date filter column
-  let DateFilterActivator = document.querySelectorAll('.itg_activecolumn');
+ // let DateFilterActivator = document.querySelectorAll('.itg_activecolumn');
   /*
   let dateFilterParent = document.querySelector(".itg_activecolumn").parentElement;
   var dateColelems = document.querySelectorAll(".itg_activecolumn");

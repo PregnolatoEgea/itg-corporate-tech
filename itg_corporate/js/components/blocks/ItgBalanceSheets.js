@@ -12,7 +12,6 @@ export const ItgBalanceSheets = function () {
         event.target.classList.add('is-active');
         // Get current year from tab and show its related content
         const selector = event.target.dataset.balanceselector;
-        console.log("selector ", selector);1
         Array.from(document.getElementsByClassName('itgBlock-ItgBalanceSheets__block')).forEach((block) => {
           if (selector === block.dataset.balanceyear || (selector == 'STOCK' && block.dataset.balancestockexchange == 1)) {
             anime({
