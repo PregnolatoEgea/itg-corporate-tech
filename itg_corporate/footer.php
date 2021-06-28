@@ -14,7 +14,7 @@
 $footer_logo = get_field('footer_logo', 'option');
 $sub_footer_left_copy = get_field('sub_footer_left_copy', 'option');
 $sub_footer_right_copy = get_field('sub_footer_right_copy', 'option');
-
+$footer_menu = wp_get_nav_menu_items('footer-menu');
 ?>
 
 <footer id="colophon" class="site-footer">
@@ -46,25 +46,32 @@ $sub_footer_right_copy = get_field('sub_footer_right_copy', 'option');
             </div>
           <?php
           }
-          if (have_rows('footer_menu', 'option')) :
-          ?>
-            <div class="itgFooter__menu column is-7-desktop is-offset-1-desktop">
-              <?php
-
-              while (have_rows('footer_menu', 'option')) : the_row();
-
-                $footer_menu_label = get_sub_field('label');
-                $footer_menu_link = get_sub_field('link');
-
-              ?>
-
-                <a class="itgFooter__menu--item itg-mb-16" href="<?php echo $footer_menu_link['url']; ?>"><?php echo $footer_menu_label; ?></a>
-
-            <?php
-
-              endwhile;
-
-            endif;
+            ?>
+              <div class="itgFooter__menu column is-7-desktop is-offset-1-desktop">
+                  <?php
+                  foreach ($footer_menu as $key => $footer_menu_item) {
+                  if ($footer_menu_item->menu_item_parent == 0 ) {
+                  $footer_menu_item_title = $footer_menu_item->title;
+                  $footer_menu_item_url = $footer_menu_item->url;
+                  $footer_menu_item_target = $footer_menu_item->target;
+                  ?>
+                  <a target="<?php echo $footer_menu_item_target; ?>" href="<?php echo $footer_menu_item_url; ?>" class="itgFooter--singleItem itg-mr-16"><?php echo $footer_menu_item_title; ?></a>
+                  <?php } } ?>
+            </div>
+            <div class="itgSubFooter__menu column is-7-desktop is-offset-1-desktop">
+                <?php
+                foreach ($footer_menu as $key => $footer_menu_item) {
+                    if ($footer_menu_item->menu_item_parent >= 1 ) {
+                        $footer_menu_item_title = $footer_menu_item->title;
+                        $footer_menu_item_url = $footer_menu_item->url;
+                        $footer_menu_item_target = $footer_menu_item->target;
+                        ?>
+                        <a target="<?php echo $footer_menu_item_target; ?>" href="<?php echo $footer_menu_item_url; ?>" class="itgSubFooter--singleItem itg-mr-16"><?php echo $footer_menu_item_title; ?></a>
+                    <?php } } ?>
+            </div>
+          </div>
+          <?php
+          if( have_rows('footer_social', 'option') ):
             ?>
             </div>
         </div>
