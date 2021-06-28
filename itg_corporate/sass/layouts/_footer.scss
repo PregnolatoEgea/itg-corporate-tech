@@ -1,10 +1,19 @@
 .itgFooter {
+  .menu-footer-menu-container {
+    ul {
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
   > div:first-child {
     width: 100%;
     margin-left: 0 !important;
   }
-  .Itg_FooterAccordion{
-	  display: none;
+  .Itg_FooterAccordion {
+    display: none;
   }
   @include mobile {
     padding: 24px !important;
@@ -66,24 +75,24 @@
     }
   }
 }
-.site-footer{
-	.Itg_FooterAccordion{
-		display: none;
-	}
+.site-footer {
+  .Itg_FooterAccordion {
+    display: none;
+  }
 }
 .itgSubFooter {
   a:nth-of-type(n + 2):before {
-    content: '|';
+    content: "|";
     display: inline-block;
     margin: 0 5px 0px 0;
   }
   @include touch {
     flex-direction: column;
     height: auto;
-    & > *{
+    & > * {
       margin: 8px 0;
     }
-    &__centerSide{
+    &__centerSide {
       order: -1;
     }
   }
