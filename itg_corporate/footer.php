@@ -20,7 +20,7 @@ $footer_menu = wp_get_nav_menu_items('footer-menu');
 <footer id="colophon" class="site-footer">
   <div class="section is-paddingless">
     <div class="itgFooter container itg-py-56">
-      <div class="itgFooter__left-container columns is-5-desktop is-4-tablet">
+      <div class="itgFooter__left-container is-5-desktop is-4-tablet">
         <?php
         if ($footer_logo) {
         ?>
@@ -33,30 +33,28 @@ $footer_menu = wp_get_nav_menu_items('footer-menu');
         <div class="itgFooter__menu is-7-desktop columns is-offset-1-desktop">
           <?php
           foreach ($footer_menu as $key => $footer_menu_item) {
-            if ($footer_menu_item->menu_item_parent == 0) {
-              $footer_menu_item_title = $footer_menu_item->title;
-              $footer_menu_item_url = $footer_menu_item->url;
-              $footer_menu_item_target = $footer_menu_item->target;
+            $footer_menu_item_title = $footer_menu_item->title;
+            $footer_menu_item_url = $footer_menu_item->url;
+            $footer_menu_item_target = $footer_menu_item->target;
           ?>
-              <div class="column">
+            <div class="column">
+              <?php
+              if ($footer_menu_item->menu_item_parent == 0) {
+              ?>
                 <a target="<?php echo $footer_menu_item_target; ?>" href="<?php echo $footer_menu_item_url; ?>" class="itgFooter--singleItem itg-mr-16"><?php echo $footer_menu_item_title; ?></a>
-              </div>
-          <?php }
-          } ?>
-        </div>
-        <div class="itgSubFooter__menu columns is-7-desktop is-offset-1-desktop">
-          <?php
-          foreach ($footer_menu as $key => $footer_menu_item) {
-            if ($footer_menu_item->menu_item_parent >= 1) {
-              $footer_menu_item_title = $footer_menu_item->title;
-              $footer_menu_item_url = $footer_menu_item->url;
-              $footer_menu_item_target = $footer_menu_item->target;
-          ?>
-              <div class="column">
+              <?php
+              } else {
+              ?>
+                <!-- altrimenti 
+                  foreach contenuto
+                    <a>content</a>
+                -->
+
+                <!-- Qui va il for -->
                 <a target="<?php echo $footer_menu_item_target; ?>" href="<?php echo $footer_menu_item_url; ?>" class="itgSubFooter--singleItem itg-mr-16"><?php echo $footer_menu_item_title; ?></a>
-              </div>
-          <?php }
-          } ?>
+            </div>
+        <?php }
+            } ?>
         </div>
       </div>
       <?php
