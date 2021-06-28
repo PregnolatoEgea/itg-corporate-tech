@@ -21,25 +21,63 @@ $wrap_count_first_level = 4;
 <footer id="colophon" class="site-footer">
     <div class="section is-paddingless">
         <div class="itgFooter container itg-py-56">
-            <div class="itgFooter__left-container columns is-5-desktop is-4-tablet">
-                <?php
-                if($footer_logo){
-                    ?>
-                    <div class="itgFooter__logo is-5-desktop">
-                        <img src="<?php echo $footer_logo['url']; ?>" alt="<?php echo $footer_logo['alt']; ?>">
-                    </div>
+            <div class="columns">
+                <div class="itgFooter__left-container columns is-5-desktop is-4-tablet">
                     <?php
-                }
-                ?>
-                <div class="itgFooter__menu is-7-desktop is-offset-1-desktop">
-                    <?php $navArgs = array('footer-menu' => new footer_menu_walker());
-                    wp_nav_menu($navArgs);
+                    if($footer_logo){
+                        ?>
+                        <div class="itgFooter__logo column is-5-desktop">
+                            <img src="<?php echo $footer_logo['url']; ?>" alt="<?php echo $footer_logo['alt']; ?>">
+                        </div>
+                        <?php
+                    }
                     ?>
+                    <div class="itgFooter__menu column is-7-desktop is-offset-1-desktop">
+                        <?php $navArgs = array('footer-menu' => new footer_menu_walker());
+                        wp_nav_menu($navArgs);
+                        ?>
+                    </div>
+                </div>
+                <?php
+                if( have_rows('footer_social', 'option') ):
+                ?>
+                <div class="itgFooter__social column is-7-desktop is-4-tablet is-offset-1-desktop">
+                    <?php
+
+                    while( have_rows('footer_social', 'option') ) : the_row();
+
+                    $footer_social_title = get_sub_field('title');
+                    $footer_social_copy = get_sub_field('copy');
+
+                    ?>
+
+                    <div class="itgFooter__social--title itg-mb-8"><?php echo $footer_social_title; ?></div>
+                    <div class="itgFooter__social--copy itg-mb-8"><?php echo $footer_social_copy; ?></div>
+                    <div class="itgFooter__social--icons">
+                        <?php
+                        if( have_rows('social_icons', 'option') ):
+                        ?>
+                        <div class="itgFooter__social--icon">
+                            <?php
+                            while( have_rows('social_icons', 'option') ) : the_row();
+                                $social_icon_link = get_sub_field('link');
+                                $social_icon_icon = get_sub_field('icon');
+                                ?>
+                                <a class="itg-mr-8" href="<?php echo $social_icon_link['url']; ?>"><img src="<?php echo $social_icon_icon['url']; ?>" alt="<?php echo $social_icon_icon['alt']; ?>"></a>
+                            <?php
+                            endwhile;
+                            endif;
+                            ?>
+                        </div>
+                        <?php
+
+                        endwhile;
+
+                        endif;
+                        ?>
+                    </div>
                 </div>
             </div>
-            <?php
-            if( have_rows('footer_social', 'option') ):
-            ?>
         </div>
         <div class="itgSubFooter itg-px-56">
             <?php
