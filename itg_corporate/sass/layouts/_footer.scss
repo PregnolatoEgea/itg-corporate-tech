@@ -1,11 +1,15 @@
 footer {
   background-color: $itg__blue-1 !important;
   margin-top: 40px;
-  .itgSubFooter * {
-    color: $itg__white;
-    background-color: $itg__blue-1;
+  .itgSubFooter__rightSide{
+    color: $itg__blue-1;
+    background-color: $itg__light-blue;
+    height: unset !important;
+    width: 100% !important;
+    text-align: center !important;
   }
 }
+
 .itgFooter {
   .menu-footer-menu-container {
     text-align: center;

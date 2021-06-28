@@ -58,7 +58,7 @@ $wrap_count_first_level = 4;
 
                     ?>
 
-                        <a href="<?php echo $sub_footer_menu_link['url']; ?>"><?php echo $sub_footer_menu_label; ?></a>
+                       <!-- <a href="<?php echo $sub_footer_menu_link['url']; ?>"><?php echo $sub_footer_menu_label; ?></a>
 
                     <?php
 
