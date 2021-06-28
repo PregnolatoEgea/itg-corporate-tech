@@ -6,6 +6,15 @@
       flex-direction: row;
       justify-content: space-between;
     }
+
+    .menu {
+      li {
+        ul {
+          margin: 0;
+          display: block;
+        }
+      }
+    }
   }
 
   > div:first-child {
