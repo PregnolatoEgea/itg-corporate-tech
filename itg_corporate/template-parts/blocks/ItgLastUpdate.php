@@ -1,17 +1,23 @@
 
 <?php 
 
-$last_update_color = get_sub_field("last_update_color_text_color"); 
-$last_update_force_date = get_sub_field("last_update_date_time");
+$last_update_color = get_sub_field("last_update_color_text_color"); //blue-3
+$last_update_force_date = get_sub_field("last_update_date_time"); //blue-3
+
 $u_modified_time = get_the_modified_time('U');
 $u_time = get_the_modified_time('U');
 
 
 if($u_modified_time > $u_time_time){
-    $updated_date = strftime('%e %B %Y - %H:%M %Z',$u_modified_time);
+    $updated_date = $u_modified_time;
 } else {    
-    $updated_date = strftime('%e %B %Y - %H:%M %Z',$u_time);
+    $updated_date = $u_time;
 }
+
+$year = gmstrftime('%e',$updated_date);
+$month = strtolower(__(gmstrftime('%B',$updated_date)));
+$rest = gmstrftime('%H:%M %Z',$updated_date);
+$updated_date = $year.' '.$month.' - '.$rest;
 
 if($last_update_force_date){
     $updated_date = $last_update_force_date.= " GMT";
@@ -27,7 +33,7 @@ if($last_update_force_date){
         </div>
         <div class="column is-narrow">
             <span class="itgBlock-lastUpdate__date itg--color-<?php echo $last_update_color; ?>">                    
-                <?php echo $updated_date; ?>
+                <?php echo $updated_date ?>
             </span>
         </div>        
   </div>

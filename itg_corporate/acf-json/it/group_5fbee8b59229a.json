@@ -1424,6 +1424,102 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_60ca05f085651": {
+                    "key": "layout_60ca05f085651",
+                    "name": "event_list",
+                    "label": "Event List",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60ca05f085652",
+                            "label": "Event List",
+                            "name": "event_list",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "clone": [
+                                "group_60ca055a3d3f9"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60c9d5da84349": {
+                    "key": "layout_60c9d5da84349",
+                    "name": "image",
+                    "label": "Image",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60c9d5da8434a",
+                            "label": "Image",
+                            "name": "image",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "clone": [
+                                "group_60c9d573ecca6"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60d39827e8d78": {
+                    "key": "layout_60d39827e8d78",
+                    "name": "posts_filter",
+                    "label": "Posts filter",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60d39827e8d79",
+                            "label": "Posts filter",
+                            "name": "posts_filter",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "clone": [
+                                "group_60d397286601d"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Aggiungi Layout",

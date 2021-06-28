@@ -26,10 +26,41 @@
 	<header id="masthead" class="site-header">
     <div class="itgPreHeader itg-px-56">
       <div class="itgPreHeader__leftSide">
-        <?php
+	    <?php 
+		    $left_menu = wp_get_nav_menu_items('pre-header-left-side');
+		    foreach ($left_menu as $key => $left_menu_item) { 
+
+			    if ($left_menu_item->menu_item_parent >=1 ) {
+				    			    				    
+				    }
+		    ?> 
+	      <div id="Itg_PreHeaderData_<?php echo $key; ?>" class="itgPreHeader__bottomSide" data-menu-id="Itg_PreHeaderData_<?php echo $key; ?>">
+
+	        <div class="columns">
+		        
+	          <?php
+	          $arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+	          foreach ($arr as $a) {
+	          ?>
+	            <div class="column">
+	              <span>Titolo</span>
+	              <?php
+	              foreach ($a as $i) {
+	              ?>
+	                <p><?php echo $i; ?></p>
+	              <?php } ?>
+	            </div>
+	          <?php } ?>
+	        </div>
+	      </div>
+	      <?php } ?>
+      <div class="itgPreHeader itg-px-56">
+        <div class="itgPreHeader__leftSide">
+          <?php
           $left_menu = wp_get_nav_menu_items('pre-header-left-side');
           if ($left_menu) : echo '<span class="itg_preheader-left_label">In evidenza&nbsp;</span>'; endif;
           foreach ($left_menu as $key => $left_menu_item) {
+	          if ($left_menu_item->menu_item_parent == 0 ) {
             $left_menu_item_title = $left_menu_item->title;
             $left_menu_item_url = $left_menu_item->url;
             $left_menu_item_target = $left_menu_item->target;
@@ -42,6 +73,54 @@
       </div>
       <div class="itgPreHeader__rightSide">
         <?php
+            $left_menu_item_ID = $left_menu_item->ID;
+												
+          ?>
+            <div class="itg_a_container">
+	            <a id="itg_a_button_<?php echo $key; ?>" target="<?php echo $left_menu_item_target; ?>" href="<?php echo $left_menu_item_url; ?>" class="itgPreHeader--singleItem itg-mr-16" data-target="#Itg_PreHeaderData_<?php echo $key; ?>">
+              <?php
+              if (get_field('image', $left_menu_item->ID)) {
+              ?>
+														<img id="itg_a_image_<?php echo $key; ?>" class="itg-mr-10" src="<?php echo get_field('image', $left_menu_item_ID); ?>" alt="<?php echo $left_menu_item_title; ?>">
+              <?php } ?>
+              <?php echo $left_menu_item_title; ?></a>
+            </div>
+            <?php
+          }
+          ?>
+          <?php
+          }
+          ?>
+          <?php
+          if (get_field('news', $left_menu_item->news)) {
+          ?>
+            <a class="itgPreHeader--singleItem itg-mr-16">
+              <?php echo $left_menu_item->news; ?>
+            </a>
+          <?php
+          }
+          ?>
+        </div>
+        <div class=" itgPreHeader__rightSide">
+          <?php $links_menu = wp_get_nav_menu_items('links-menu');
+	          if ($links_menu) : 
+          foreach ($links_menu as $key => $links_menu_item) {
+            $links_menu_item_ID = $links_menu_item->ID;
+            $links_menu_item_title = $links_menu_item->post_title;
+            $links_menu_item_url = $links_menu_item->url;
+            $links_menu_item_target = $links_menu_item->target;
+          ?>
+            <div class="itg_a_container">
+              <a target="<?php echo $links_menu_item_target; ?>" href="<?php echo $links_menu_item_url; ?>" class="itg_a_button_<?php echo $key; ?> itgPreHeader--singleItem itg-mr-16">
+                <?php echo $links_menu_item_title; ?>
+                <img class="itg-mr-16" alt="<?php echo $left_menu_item_title; ?>">
+              </a>
+            </div>
+          <?php
+          }
+          endif;
+          ?>
+          <?php
           $right_menu = wp_get_nav_menu_items('pre-header-right-side');
 
           foreach ($right_menu as $key => $right_menu_item) {

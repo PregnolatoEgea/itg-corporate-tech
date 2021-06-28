@@ -1,11 +1,11 @@
 {
-    "key": "group_60c888fb677ae",
-    "title": "Category icon",
+    "key": "group_60c9d573ecca6",
+    "title": "Atom | Image",
     "fields": [
         {
-            "key": "field_60c888fb677f5",
-            "label": "Upload category icon",
-            "name": "upload_category_icon",
+            "key": "field_60c9d57422a31",
+            "label": "Image",
+            "name": "image",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -15,9 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
-            "return_format": "url",
-            "preview_size": "medium",
+            "return_format": "array",
+            "preview_size": "large",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -25,16 +24,16 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ".svg, .png",
-            "wpml_cf_preferences": 0
+            "mime_types": "",
+            "wpml_cf_preferences": 2
         }
     ],
     "location": [
         [
             {
-                "param": "taxonomy",
+                "param": "block",
                 "operator": "==",
-                "value": "all"
+                "value": ""
             }
         ]
     ],
@@ -46,5 +45,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623767426
+    "modified": 1623931487
 }

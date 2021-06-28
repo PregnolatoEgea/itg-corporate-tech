@@ -17,6 +17,9 @@
       word-wrap: break-word;
       background-position: center center;
       background-size: cover;
+      .itg__post-height{
+       height: 100%;
+      }
       .itg__single_wrapper{
        position: relative;
        z-index: 2;
@@ -25,7 +28,6 @@
        margin-bottom: 0;
        line-height: 100%;
       }
-      
       &.itg__has_post_thumbnail{
        position: relative;
        overflow: hidden;

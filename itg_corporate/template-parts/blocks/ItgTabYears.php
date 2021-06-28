@@ -43,31 +43,35 @@
         endif;
       ?>
     </div>
-    <div class="itgBlock-tab-years__list-numbers column is-12">
       <?php
           if (have_rows('years')):
-            $counterYear = 0;
-            while( have_rows('years') ) : the_row();
-              $year = get_sub_field('year');
-              $counterYear++;
             ?>
-              <div data-year="<?php echo $year; ?>" class="itgBlock-tab-years__list-numbers-year is-variable is-flex is-6 is-multiline is-centered <?php echo ($counterYear !== 1) ? 'hidden' : ''; ?>">
+            <div class="itgBlock-tab-years__list-numbers column is-12">
+              <?php
+              $counterYear = 0;
+              while( have_rows('years') ) : the_row();
+                $year = get_sub_field('year');
+                $counterYear++;
+              ?>
+                <div data-year="<?php echo $year; ?>" class="itgBlock-tab-years__list-numbers-year is-variable is-flex is-6 is-multiline is-centered <?php echo ($counterYear !== 1) ? 'hidden' : ''; ?>">
+                  <?php
+                  while( have_rows('numbers') ) : the_row();
+                  ?>
+                    <div>
+                      <?php
+                        require 'atoms/ItgNumber.php';
+                      ?>
+                    </div>
                 <?php
-                while( have_rows('numbers') ) : the_row();
+                endwhile;
                 ?>
-                  <div>
-                    <?php
-                      require 'atoms/ItgNumber.php';
-                    ?>
-                  </div>
+                </div>
               <?php
               endwhile;
               ?>
-              </div>
-        <?php
-            endwhile;
+            </div>
+            <?php
           endif;
         ?>
-    </div>
   </div>
 </div>

@@ -2,7 +2,8 @@
 <div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-ItgBalanceSheets <?php echo $enviroment; ?> itg--background-color-blue-1">
 <?php 
 
-
+$balance_sheet_block_title = get_sub_field("balance_sheets_title");
+$balance_sheet_block_subtitle = get_sub_field("balance_sheets_subtitle");
 $currentYear = date("Y"); 
 $tabLabels = [];
 $tabLabels[] = $currentYear;
@@ -40,10 +41,19 @@ endif;
   <div class="container" >
     <div class="columns is-centered">
       <div class="column itgBlock-ItgBalanceSheets__container is-12">
-        <div class="h4 itgBlock-ItgBalanceSheets__title itg--color-white">
-            <h4>
-                <?php echo _e('Avvisi e comunicazioni'); ?>
-            </h4>
+        <div class="columns is-centered is-mobile is-multiline is-vcentered">
+            <div class="column is-12">
+                <div class="h3 itgBlock-ItgBalanceSheets__title itg--color-white itg-mt-48">
+                    <h3>
+                        <?php echo $balance_sheet_block_title ?>
+                    </h3>
+                </div>
+            </div>
+            <div class="column is-10">
+                <div class="p3 itgBlock-ItgBalanceSheets__subtitle itg--color-white itg-mt-24">
+                    <?php echo $balance_sheet_block_subtitle ?>
+                </div>
+            </div>
         </div>
         <div class="columns is-centered is-mobile is-vcentered">
             <div class="column itgBlock-ItgBalanceSheets__tab-list">
@@ -74,7 +84,7 @@ endif;
                     $balance_sheet_timestamp = strtotime($year . "-" . $month . "-" . $day);
                     $balance_sheet_year = date("Y", $balance_sheet_timestamp)
                 ?>
-                    <div class="itgBlock-ItgBalanceSheets__block itg-mt-24" 
+                    <div class="itgBlock-ItgBalanceSheets__block itg-mb-24" 
                                 data-balanceYear="<?php echo $balance_sheet_year ?>" 
                                 data-balanceStockExchange="<?php echo $balance_sheet_stock_exchange_listing ?>">
                         <div class="itgBlock-ItgBalanceSheets__block--title p2">
@@ -100,7 +110,7 @@ endif;
                                     }
 
                                 ?>
-                                <div class="column is-6-desktop is-12-tablet ">
+                                <div class="column is-6 is-12-touch ">
                                     <div class="itgBlock-ItgBalanceSheets__block__file itg-mb-24">
                                         <a href="<?php echo $balance_sheet_url; ?>" target="<?= $target; ?>">
                                             <div class="itgBlock-ItgBalanceSheets__block__file-icon-container">

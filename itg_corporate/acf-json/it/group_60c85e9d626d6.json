@@ -3,6 +3,46 @@
     "title": "Component | Balance Sheet",
     "fields": [
         {
+            "key": "field_60d2f4f3a9320",
+            "label": "Title",
+            "name": "balance_sheets_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "wpml_cf_preferences": 0
+        },
+        {
+            "key": "field_60d2f3b426c8f",
+            "label": "Subtitle",
+            "name": "balance_sheets_subtitle",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "wpml_cf_preferences": 0
+        },
+        {
             "key": "field_60c86b4b8dbcd",
             "label": "Balance Sheets",
             "name": "balance_sheets",

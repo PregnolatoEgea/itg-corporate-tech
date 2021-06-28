@@ -3,6 +3,9 @@
     width: 100%;
     margin-left: 0 !important;
   }
+  .Itg_FooterAccordion{
+	  display: none;
+  }
   @include mobile {
     padding: 24px !important;
   }
@@ -62,6 +65,11 @@
       }
     }
   }
+}
+.site-footer{
+	.Itg_FooterAccordion{
+		display: none;
+	}
 }
 .itgSubFooter {
   a:nth-of-type(n + 2):before {

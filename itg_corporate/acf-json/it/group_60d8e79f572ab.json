@@ -1,12 +1,12 @@
 {
-    "key": "group_60c888fb677ae",
-    "title": "Category icon",
+    "key": "group_60d8e79f572ab",
+    "title": "Menu icon",
     "fields": [
         {
-            "key": "field_60c888fb677f5",
-            "label": "Upload category icon",
-            "name": "upload_category_icon",
-            "type": "image",
+            "key": "field_60d8e7b8edafc",
+            "label": "Add menu icon",
+            "name": "image",
+            "type": "file",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -17,24 +17,18 @@
             },
             "wpml_cf_preferences": 0,
             "return_format": "url",
-            "preview_size": "medium",
             "library": "all",
-            "min_width": "",
-            "min_height": "",
             "min_size": "",
-            "max_width": "",
-            "max_height": "",
             "max_size": "",
-            "mime_types": ".svg, .png",
-            "wpml_cf_preferences": 0
+            "mime_types": ""
         }
     ],
     "location": [
         [
             {
-                "param": "taxonomy",
+                "param": "nav_menu_item",
                 "operator": "==",
-                "value": "all"
+                "value": "4"
             }
         ]
     ],
@@ -46,5 +40,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623767426
+    "modified": 1624852293
 }

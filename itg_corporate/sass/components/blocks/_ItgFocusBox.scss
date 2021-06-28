@@ -60,7 +60,7 @@
 
         &--text-box {
             flex-grow: 1;
-            p{ word-break: break-all; }
+            p{ word-break: break-word; }
         }
 
         &--cta-box{
