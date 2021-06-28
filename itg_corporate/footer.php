@@ -21,25 +21,25 @@ $wrap_count_first_level = 4;
 <footer id="colophon" class="site-footer">
     <div class="section is-paddingless">
         <div class="itgFooter container itg-py-56">
-                <div class="itgFooter__left-container columns is-5-desktop is-4-tablet">
-                    <?php
-                    if($footer_logo){
-                        ?>
-                        <div class="itgFooter__logo column is-5-desktop">
-                            <img src="<?php echo $footer_logo['url']; ?>" alt="<?php echo $footer_logo['alt']; ?>">
-                        </div>
-                        <?php
-                    }
-                    ?>
-                    <div class="itgFooter__menu column is-7-desktop is-offset-1-desktop">
-                        <?php $navArgs = array('footer-menu' => new footer_menu_walker());
-                        wp_nav_menu($navArgs);
-                        ?>
-                    </div>
-                </div>
+            <div class="itgFooter__left-container columns is-5-desktop is-4-tablet">
                 <?php
-                if( have_rows('footer_social', 'option') ):
+                if($footer_logo){
+                    ?>
+                    <div class="itgFooter__logo is-5-desktop">
+                        <img src="<?php echo $footer_logo['url']; ?>" alt="<?php echo $footer_logo['alt']; ?>">
+                    </div>
+                    <?php
+                }
                 ?>
+                <div class="itgFooter__menu is-7-desktop is-offset-1-desktop">
+                    <?php $navArgs = array('footer-menu' => new footer_menu_walker());
+                    wp_nav_menu($navArgs);
+                    ?>
+                </div>
+            </div>
+            <?php
+            if( have_rows('footer_social', 'option') ):
+            ?>
         </div>
         <div class="itgSubFooter itg-px-56">
             <?php
