@@ -28,7 +28,7 @@ if ($background_image) {
                                                                                     echo 'has_reduced_height';
                                                                                   } ?>" style="background-image: url(<?php echo $background_image; ?>); background-color: <?php echo $background_color; ?>">
   <div class="columns is-12-desktop is-hidden-touch is-multiline <?php echo $title_alignment; ?>">
-    <div class="column is-12 itg-mt-116 <?php echo $title_align; ?>">
+    <div class="column is-12 <?php echo $title_align; ?>">
       <?php
       if (get_field("stampare_breadcrumbs") && $block_id === 0) {
         $breadcrumbs_color = get_field("colore_breadcrumbs") == "nero" ? "#000" : "#fff";
