@@ -308,7 +308,8 @@
 					<section id="Itg-hero-menu__<?php echo $main_menu_item_ID ?>" class="hero is-link is-fullheight-with-navbar">
 						<!--<div class="hero-body">
 							<p class="title">
-								<?php echo $main_menu_item_title; ?>
+								<?php //echo $main_menu_item_title; 
+								?>
 							</p>
 						</div>-->
 						<div class="Itg-hero-menu-upper is-flex is-flex-direction-row is-justify-content-space-around is-align-items-center">
