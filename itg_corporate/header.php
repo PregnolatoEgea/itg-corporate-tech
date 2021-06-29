@@ -320,7 +320,7 @@
 							<div class="Itg-hero-menu-upper-right">Prova</div>
 						</div>
 						<div class="columns Itg-hero-menu-lower">
-							<div class="column">
+							<div class="column is-3">
 								<?php
 								$tabs = ["Il nostro gruppo", "Investitori", "Media", "Sostenibilità", "Governance"];
 
@@ -332,7 +332,7 @@
 									</div>
 								<?php } ?>
 							</div>
-							<div class="column Itg-hero-menu-lower-central">
+							<div class="column is-5 Itg-hero-menu-lower-central">
 								<span>Il nostro gruppo</span>
 								<div class="divider-x"></div>
 								<div class="columns">
@@ -396,7 +396,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="column">
+							<div class="column is-3">
 								<div class="is-flex is-flex-direction-row is-align-items-center">
 									<a>Scopri anche</a>
 									<img src="src/images/icons/Arrow_left.svg" alt="">
