@@ -701,6 +701,12 @@ header.site-header {
   width: 100%;
   color: $itg__white;
 
+  &-central {
+    .column {
+      padding: 0;
+    }
+  }
+
   &-left-tabs {
     img {
       fill: $itg__white;

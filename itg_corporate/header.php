@@ -332,7 +332,7 @@
 									</div>
 								<?php } ?>
 							</div>
-							<div class="column">
+							<div class="column Itg-hero-menu-lower-central">
 								<span>Il nostro gruppo</span>
 								<div class="divider-x"></div>
 								<div class="columns">
