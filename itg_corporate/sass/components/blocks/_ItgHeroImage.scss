@@ -1,14 +1,14 @@
 .itgBlock-hero-image {
   margin: 0;
-  padding: 0;
+  padding: 100px 116px;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 697px;
-  height: 697px;
+  height: auto;
+  min-height: auto;
   width: 100%;
   max-width: 100%;
   &.has_reduced_height {
-    min-height: 416px;
+    //min-height: 416px;
   }
 
   #breadcrumbs {
