@@ -241,4 +241,3 @@ add_editor_style();
  * ADD SEARCH SIZE
  */
 add_image_size( 'search_cut', 200, 150, array('center', 'center') );
-

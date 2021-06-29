@@ -23,23 +23,29 @@ $wrap_count_first_level = 4;
     <div class="section is-paddingless">
         <div class="itgFooter container itg-py-56">
             <div class="itgFooter__left-container is-5-desktop is-4-tablet">
-                <?php
-                if ($footer_logo) {
-                ?>
-                    <div class="itgFooter__logo is-5-desktop">
-                        <img src="<?php echo $footer_logo['url']; ?>" alt="<?php echo $footer_logo['alt']; ?>">
-                    </div>
-                <?php
-                }
-                ?>
+                
                 <div class="itgFooter__menu is-7-desktop is-offset-1-desktop">
                     <?php $navArgs = array('footer-menu' => new footer_menu_walker());
                     wp_nav_menu($navArgs);
                     ?>
                 </div>
+                <a class="ItgFooter__toggleBtn menu-item-has-children" href="#"><img src="<?php echo get_template_directory_uri(); ?>/dist/src/images/icons/rapid_link.svg" /></a>
             </div>
+            
         </div>
-        <div class="itgSubFooter itg-px-56">
+        <div class="container itg-py-56">
+	            <?php
+                if ($footer_logo) {
+                ?>
+                    <div class="itgFooter__logo is-5-desktop">
+                        <img src="<?php echo $footer_logo['url']; ?>" alt="<?php echo $footer_logo['alt']; ?>" width="143" height="49">
+                    </div>
+                <?php
+                }
+                ?>
+         </div>
+        <div class="itgSubFooter container itg-py-56">
+	        
             <?php
             if ($sub_footer_left_copy) {
             ?>
@@ -58,7 +64,7 @@ $wrap_count_first_level = 4;
 
                     ?>
 
-                       <!-- <a href="<?php echo $sub_footer_menu_link['url']; ?>"><?php echo $sub_footer_menu_label; ?></a>
+                        <a href="<?php echo $sub_footer_menu_link['url']; ?>"><?php echo $sub_footer_menu_label; ?></a>
 
                     <?php
 

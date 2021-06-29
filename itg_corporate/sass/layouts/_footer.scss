@@ -3,25 +3,19 @@ footer {
   margin-top: 40px;
   .itgSubFooter__rightSide{
     color: $itg__blue-1;
-    background-color: $itg__light-blue;
     height: unset !important;
-    width: 100% !important;
     text-align: center !important;
   }
 }
 
 .itgFooter {
+	border-bottom: 1px solid $itg__blue-3;
   .menu-footer-menu-container {
     text-align: center;
     color: $itg__white !important;
-    height: 385px;
     background-color: $itg__blue-1;
     a {
       color: $itg__white !important;
-      font-size: 14px !important;
-      &:nth-child(1) {
-        font-size: 12px !important;
-      }
     }
     ul {
       margin: 0;
@@ -34,7 +28,6 @@ footer {
       li {
         ul {
           margin: 0;
-          display: block !important;
           font-size: 12px !important;
           font-family:$font__main;
           letter-spacing: 0 !important;
@@ -43,8 +36,43 @@ footer {
         }
       }
     }
+    .menu-item-has-children{
+	    margin: 0 auto;
+	    & > a{
+		    font-size: 14px;
+		    }
+		    .sub-menu{
+			    display: none;
+			    li{
+				    display: block;
+								width: 100%!important;
+								clear: both;
+								text-align: center;
+				    a{
+				    	font-size: 12px!important;
+			    	}
+			   	}
+			   	&.is-show {
+								    display: block;
+								}
+	    }
+   }
   }
-
+		a.ItgFooter__toggleBtn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 35px;
+    height: 35px;
+    background-color: $itg__white;
+    border-radius: 5px;
+    bottom: -17px;
+    img{
+	    margin: 8px auto;
+	    display: block;
+    }
+		}
   > div:first-child {
     width: 100% !important;
     margin-left: 0 !important;

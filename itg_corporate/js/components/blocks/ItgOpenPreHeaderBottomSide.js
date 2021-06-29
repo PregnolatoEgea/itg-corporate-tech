@@ -2,44 +2,42 @@
 export const ItgOpenPreHeaderBottomSide = function (key) 
 {
 
-let ItgTopHeaderLinks = document.querySelectorAll('.itgPreHeader--singleItem');
-let ItgBottomMenu = document.querySelectorAll('.itgPreHeader__bottomSide');
-
-const subMenu = document.querySelector('.itgPreHeader__bottomSide');
-
-
-ItgTopHeaderLinks.forEach(el => {
-    el.addEventListener('click', showBottomMenu);
-    el.addEventListener('click', addActiveMenu);
-    
-});
-
-function showBottomMenu(event) {
-    event.preventDefault();
-				
-			
-    var menuId = event.currentTarget.getAttribute('data-target');
-    var dataIdLinks = (menuId.charAt(0) === '#') ? menuId.slice(1) : menuId;
-    var itgPreHeader__bottomSideEl = document.querySelector("div[data-menu-id=" + dataIdLinks + "]");    
-				var elems = document.querySelector(".show");
-				
-				itgPreHeader__bottomSideEl.classList.toggle('show');
-
-				if(elems !==null){
-			   elems.classList.remove("show");
-			 }
-
-}
-
 function addActiveMenu(e) {
   var elems = document.querySelector(".active");
 		
   if(elems !==null){
    elems.classList.remove("active");
   }
-  e.target.className = "active";
+  //e.target.className = "active";
 
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Get all "navbar-burger" elements
+  var $navbarTriggers = Array.prototype.slice.call(document.querySelectorAll('.itgPreHeader--singleItem'), 0);
+
+  // Check if there are any nav burgers
+  if ($navbarTriggers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarTriggers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});	
 	
 }
 ItgOpenPreHeaderBottomSide();
+

@@ -37,6 +37,7 @@
               $itg_postsdate = $itg_postfilter->post_date;
               $itg_poststhumbnail = get_the_post_thumbnail_url( $itg_postfilter->ID, 'thumbnail' );
               $itg_postexcerpt = $itg_postfilter->post_content;
+              
           ?>
           <div class="columns itgitem is-multiline">
              <div class="column is-2 itgcatdatecol"> 
@@ -96,7 +97,7 @@
                     <span class='overlap'></span>
             </a></h3>
                     <span class="itg_excerpt">
-                        <?php echo wp_trim_words( $itg_postexcerpt, 150 );  ?>
+                        <?php echo wp_trim_words( $itg_postexcerpt, 50,  '...' );  ?>
                     </span>
            </div>
             <?php } else { ?>
@@ -106,7 +107,8 @@
                     <span class='overlap'></span>
             </a></h3>
                     <span class="itg_excerpt">
-                        <?php echo wp_trim_words( $itg_postexcerpt, 130 );  ?>
+                        <?php echo wp_trim_words( $itg_postexcerpt, 50,  '...' );  ?>
+                        
                     </span>
             </div>
             <?php } ?>
