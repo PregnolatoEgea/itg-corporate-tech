@@ -19,14 +19,16 @@ if ($paragraph_alignment === 'is-centered') {
 }
 
 $background_color = '#d3f4ff';
+$color = '#003478';
 
 if ($background_image) {
   $background_color = 'transparent';
+  $color = 'white';
 }
 ?>
-<div id="itg_block_<?php echo $block_id; ?>" class="container itgBlock-hero-image <?php if (get_sub_field('has_reduced_height')) {
-                                                                                    echo 'has_reduced_height';
-                                                                                  } ?>" style="background-color: <?php echo $background_color; ?>; background-image: url(<?php echo $background_image; ?>)">
+<div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-hero-image <?php if (get_sub_field('has_reduced_height')) {
+                                                                          echo 'has_reduced_height';
+                                                                        } ?>" style="color: <?php echo $color; ?>; background-color: <?php echo $background_color; ?>; background-image: url(<?php echo $background_image; ?>)">
 
   <div class="<?php echo $title_alignment; ?>">
     <div class="<?php echo $title_align; ?>">
