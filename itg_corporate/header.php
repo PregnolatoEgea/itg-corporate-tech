@@ -326,7 +326,7 @@
 
 								foreach ($tabs as $tab) {
 								?>
-									<div class="Itg-hero-menu-left-tabs is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center">
+									<div class="Itg-hero-menu-lower-left-tabs is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center">
 										<p><?php echo $tab; ?></p>
 										<p> > </p>
 									</div>

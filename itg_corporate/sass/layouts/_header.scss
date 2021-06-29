@@ -701,6 +701,17 @@ header.site-header {
   width: 100%;
   color: $itg__white;
 
+  &-left-tabs
+  {
+    &:hover{
+      color: $itg__blue-3;
+    }
+
+    &:active{
+      color: $itg__blue-3;
+    }
+  }
+
   .divider-x {
     height: 100%;
     width: 1px;

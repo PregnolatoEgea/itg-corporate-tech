@@ -5,7 +5,7 @@ export const ItgMegaMenuLowerSide = function (key)
     {
 
         // Get all "navbar-burger" elements
-        var $leftTabs = Array.prototype.slice.call(document.querySelectorAll('.Itg-hero-menu-left-tabs'));
+        var $leftTabs = Array.prototype.slice.call(document.querySelectorAll('.Itg-hero-menu-lower-left-tabs'));
 
         // Check if there are any nav burgers
         if ($leftTabs.length > 0)
