@@ -729,6 +729,14 @@ header.site-header {
       letter-spacing: 0;
       line-height: 30px;
       font-family: $font__main;
+
+      &:hover {
+        color: $itg__blue-3;
+      }
+
+      &:active {
+        color: $itg__blue-3;
+      }
     }
 
     a {
