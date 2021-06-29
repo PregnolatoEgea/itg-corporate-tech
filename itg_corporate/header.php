@@ -328,7 +328,7 @@
 								?>
 									<div class="Itg-hero-menu-lower-left-tabs is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center">
 										<p><?php echo $tab; ?></p>
-										<p> > </p>
+										<img src="src/images/icons/Arrow_left.svg" alt="">
 									</div>
 								<?php } ?>
 							</div>
@@ -399,7 +399,7 @@
 							<div class="column">
 								<div class="is-flex is-flex-direction-row is-align-items-center">
 									<a>Scopri anche</a>
-									<div> > </div>
+									<img src="src/images/icons/Arrow_left.svg" alt="">
 								</div>
 								<?php
 								$lanci = ["Lancio 1", "Lancio 2", "Lancio 3", "Lancio 4", "Lancio 5"];

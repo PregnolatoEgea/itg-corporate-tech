@@ -701,14 +701,24 @@ header.site-header {
   width: 100%;
   color: $itg__white;
 
-  &-left-tabs
-  {
-    &:hover{
-      color: $itg__blue-3;
+  &-left-tabs {
+    img {
+      fill: $itg__white;
     }
 
-    &:active{
+    &:hover {
       color: $itg__blue-3;
+
+      img {
+        fill: $itg__blue-3;
+      }
+    }
+
+    &:active {
+      color: $itg__blue-3;
+      img {
+        fill: $itg__blue-3;
+      }
     }
   }
 
