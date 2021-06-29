@@ -22,3 +22,4 @@ import ItgEventList from './components/blocks/ItgEventList'
 import ItgOpenPreHeaderBottomSide from './components/blocks/ItgOpenPreHeaderBottomSide'
 import ItgOpenMegaMenu from './components/blocks/ItgOpenMegaMenu'
 import ItgFooter from './components/animations/ItgFooter'
+import ItgMegaMenuLowerSide from './components/blocks/ItgMegaMenuLowerSide';
