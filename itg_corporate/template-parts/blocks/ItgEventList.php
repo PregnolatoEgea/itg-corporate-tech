@@ -34,7 +34,7 @@ if( have_rows('event_list_events') ):
           $day = strftime('%e',$event_start_date_ts);
           $month = strtolower(__(strftime('%B',$event_start_date_ts)));
           $year = strftime('%Y',$event_start_date_ts);
-          $event_start_date_string = $year.' '.$month.' '.$day;
+          $event_start_date_string = $day.' '.$month.' '.$year;
 
           $event_start_time_string = ucwords(strftime('%H:%M',$event_start_date_ts));
           
@@ -44,7 +44,7 @@ if( have_rows('event_list_events') ):
           $day = strftime('%e',$event_end_date_ts);
           $month = strtolower(__(strftime('%B',$event_end_date_ts)));
           $year = strftime('%Y',$event_end_date_ts);
-          $event_end_date_string = $year.' '.$month.' '.$day;
+          $event_end_date_string = $day.' '.$month.' '.$year;
 
           $event_end_time_string = ucwords(strftime('%H:%M',$event_end_date_ts));
 
@@ -147,9 +147,14 @@ if( have_rows('event_list_events') ):
         $eventObj["google_url"] = $gCalendarUrl;;
         
 
-        $eventList[] = $eventObj;
+        $eventList[$event_start_date_ts][] = $eventObj;
     endwhile;
 endif;
+
+// reverse event list
+if (count($eventList)>0) {
+	krsort($eventList);	
+}
 
 
 $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/events/rapid_link.svg';
@@ -211,7 +216,8 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
       </div>
       <div class="column is-12 ">       
         <div class="columns is-marginless is-mobile is-vcentered is-multiline">
-        <?php foreach ( $eventList as $key => $eventObj ): ?>
+      <?php foreach ( $eventList as $eventListkey => $eventListItems ): ?>
+        <?php foreach ( $eventListItems as $key => $eventObj ): ?>
           <div id="event-card-<?php echo $key ?>" class="column is-12 itg-mb-48 itgBlock-ItgEventList__block <?php if($eventObj["event_year"] != $currentYear){ echo 'hidden' ;} ?>"
             data-eventyear="<?php echo $eventObj["event_year"] ?>"
             data-eventtime="<?php if($eventObj["is_event_past"]){ echo 'past' ;} else { echo "future";} ?>"
@@ -422,6 +428,7 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
 
 
           </div>
+          <?php endforeach; ?>
         <?php endforeach; ?>
         </div>
       </div>
