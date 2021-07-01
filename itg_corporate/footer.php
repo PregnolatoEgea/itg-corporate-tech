@@ -22,8 +22,6 @@ $wrap_count_first_level = 4;
 <footer id="colophon" class="site-footer">
     <div class="section is-paddingless">
         <div class="itgFooter container itg-py-56">
-            <div class="itgFooter__left-container is-5-desktop is-4-tablet">
-                
             <!-- Tablet and up version -->
             <div class="itgFooter__left-container is-5-desktop is-4-tablet is-hidden-mobile">
                 <div class="itgFooter__menu is-7-desktop is-offset-1-desktop">
@@ -47,26 +45,26 @@ $wrap_count_first_level = 4;
 
         </div>
         <div class="container itg-py-56">
-	            <?php
-                if ($footer_logo) {
+            <?php
+            if ($footer_logo) {
                 ?>
-                    <div class="itgFooter__logo is-5-desktop">
-                        <img src="<?php echo $footer_logo['url']; ?>" alt="<?php echo $footer_logo['alt']; ?>" width="143" height="49">
-                    </div>
+                <div class="itgFooter__logo is-5-desktop">
+                    <img src="<?php echo $footer_logo['url']; ?>" alt="<?php echo $footer_logo['alt']; ?>" width="143" height="49">
+                </div>
                 <?php
-                }
-                ?>
-         </div>
+            }
+            ?>
+        </div>
         <div class="itgSubFooter container itg-py-56">
-	        
+
             <?php
             if ($sub_footer_left_copy) {
-            ?>
+                ?>
                 <div class="itgSubFooter__leftSide"><?php echo $sub_footer_left_copy; ?></div>
-            <?php
+                <?php
             }
             if (have_rows('sub_footer_menu', 'option')) :
-            ?>
+                ?>
                 <div class="itgSubFooter__centerSide">
                     <?php
 
@@ -75,7 +73,7 @@ $wrap_count_first_level = 4;
                         $sub_footer_menu_label = get_sub_field('label');
                         $sub_footer_menu_link = get_sub_field('link');
 
-                    ?>
+                        ?>
 
                         <a href="<?php echo $sub_footer_menu_link['url']; ?>"><?php echo $sub_footer_menu_label; ?></a>
 
@@ -87,9 +85,9 @@ $wrap_count_first_level = 4;
             <?php
             endif;
             if ($sub_footer_right_copy) {
-            ?>
+                ?>
                 <div class="itgSubFooter__rightSide"><?php echo $sub_footer_right_copy; ?></div>
-            <?php
+                <?php
             }
             ?>
         </div>
