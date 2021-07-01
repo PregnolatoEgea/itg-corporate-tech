@@ -30,7 +30,7 @@ if ($background_image) {
   $background = 'linear-gradient(297.44deg, rgba(2, 28, 61, 0.5) 0%, #021c3d 100%)';
 }
 ?>
-<section class="section">
+<section class="section is-paddingless">
   <div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-hero-image swiper-container is-marginless <?php if (get_sub_field('has_reduced_height')) {
                                                                                                             echo 'has_reduced_height';
                                                                                                           } ?>" style="background: <?php echo $background; ?>; opacity: <?php echo $opacity; ?>;color: <?php echo $color; ?>; background-color: <?php echo $background_color; ?>; background-image: url(<?php echo $background_image; ?>)">
