@@ -7,14 +7,12 @@ export const ItgHeroImageSwiper = function ()
     for (const carousel of ItgCarouselHeroImageContainers)
     {
         let mySwiper = new Swiper(carousel, {
-            simulateTouch: false,
-            watchOverflow: true,
             pagination: {
                 clickable: true,
                 el: ".swiper-pagination",
                 renderBullet: function (index, className)
                 {
-                    return '<div class="' + className + '">' + "</div>";
+                    return '<span class="' + className + '">' + "</span>";
                 },
             },
         });
