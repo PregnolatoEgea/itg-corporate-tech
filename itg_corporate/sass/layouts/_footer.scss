@@ -36,6 +36,20 @@ footer {
         }
       }
     }
+
+    @include mobile {
+      .menu {
+        flex-direction: column;
+
+        li {
+          ul {
+            padding-bottom:20px !important;
+            padding-top:0 !important;
+          }
+        }
+      }
+    }
+
     .menu-item-has-children{
 	    margin: 0 auto;
 	    & > a{
