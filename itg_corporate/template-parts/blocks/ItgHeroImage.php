@@ -20,16 +20,20 @@ if ($paragraph_alignment === 'is-centered') {
 
 $background_color = '#d3f4ff';
 $color = '#003478';
+$background = 'none';
+$opacity = '1';
 
 if ($background_image) {
   $background_color = 'transparent';
   $color = 'white';
+  $opacity = '0.8';
+  $background = 'linear-gradient(297.44deg, rgba(2, 28, 61, 0.5) 0%, #021c3d 100%)';
 }
 ?>
 <section class="section">
   <div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-hero-image swiper-container <?php if (get_sub_field('has_reduced_height')) {
                                                                                               echo 'has_reduced_height';
-                                                                                            } ?>" style="color: <?php echo $color; ?>; background-color: <?php echo $background_color; ?>; background-image: url(<?php echo $background_image; ?>)">
+                                                                                            } ?>" style="background: <?php echo $background; ?>; opacity: <?php echo $opacity; ?>;color: <?php echo $color; ?>; background-color: <?php echo $background_color; ?>; background-image: url(<?php echo $background_image; ?>)">
 
     <div class="swiper-item columns is-variable is-12-desktop is-10-touch is-multiline is-marginless">
       <div class="column itgBlock-hero-image-container is-paddingless">
