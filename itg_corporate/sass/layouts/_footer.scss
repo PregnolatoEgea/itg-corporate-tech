@@ -1,10 +1,84 @@
+footer {
+  background-color: $itg__blue-1 !important;
+  margin-top: 40px;
+  .itgSubFooter__rightSide{
+    color: $itg__blue-1;
+    height: unset !important;
+    text-align: center !important;
+  }
+}
+
 .itgFooter {
+	border-bottom: 1px solid $itg__blue-3;
+  .menu-footer-menu-container {
+    text-align: center;
+    color: $itg__white !important;
+    background-color: $itg__blue-1;
+    a {
+      color: $itg__white !important;
+    }
+    ul {
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .menu {
+      li {
+        ul {
+          margin: 0;
+          font-size: 12px !important;
+          font-family:$font__main;
+          letter-spacing: 0 !important;
+          line-height: 30px !important;
+          padding-top:20px !important;
+        }
+      }
+    }
+    .menu-item-has-children{
+	    margin: 0 auto;
+	    & > a{
+		    font-size: 14px;
+		    }
+		    .sub-menu{
+			    display: none;
+			    li{
+				    display: block;
+								width: 100%!important;
+								clear: both;
+								text-align: center;
+				    a{
+				    	font-size: 12px!important;
+			    	}
+			   	}
+			   	&.is-show {
+								    display: block;
+								}
+	    }
+   }
+  }
+		a.ItgFooter__toggleBtn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 35px;
+    height: 35px;
+    background-color: $itg__white;
+    border-radius: 5px;
+    bottom: -17px;
+    img{
+	    margin: 8px auto;
+	    display: block;
+    }
+		}
   > div:first-child {
-    width: 100%;
+    width: 100% !important;
     margin-left: 0 !important;
   }
-  .Itg_FooterAccordion{
-	  display: none;
+  .Itg_FooterAccordion {
+    display: none;
   }
   @include mobile {
     padding: 24px !important;
@@ -66,24 +140,24 @@
     }
   }
 }
-.site-footer{
-	.Itg_FooterAccordion{
-		display: none;
-	}
+.site-footer {
+  .Itg_FooterAccordion {
+    display: none;
+  }
 }
 .itgSubFooter {
   a:nth-of-type(n + 2):before {
-    content: '|';
+    content: "|";
     display: inline-block;
     margin: 0 5px 0px 0;
   }
   @include touch {
     flex-direction: column;
     height: auto;
-    & > *{
+    & > * {
       margin: 8px 0;
     }
-    &__centerSide{
+    &__centerSide {
       order: -1;
     }
   }
