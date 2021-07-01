@@ -31,7 +31,7 @@ if ($background_image) {
                                                                                               echo 'has_reduced_height';
                                                                                             } ?>" style="color: <?php echo $color; ?>; background-color: <?php echo $background_color; ?>; background-image: url(<?php echo $background_image; ?>)">
 
-    <div class="swiper-item columns is-variable is-12-desktop is-10-touch is-multiline">
+    <div class="swiper-item columns is-variable is-12-desktop is-10-touch is-multiline is-marginless">
       <div class="column itgBlock-hero-image-container">
         <div class="columns is-12-desktop is-hidden-touch is-multiline <?php echo $title_alignment; ?>">
           <div class="<?php echo $title_align; ?>">
