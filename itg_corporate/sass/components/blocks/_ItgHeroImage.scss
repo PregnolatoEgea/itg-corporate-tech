@@ -50,7 +50,7 @@
   h6 {
     font-family: $font__main;
     letter-spacing: 0;
-    font-weight: 600;
+    font-weight: 500 !important;
 
     @include tablet {
       font-size: 5rem !important;
