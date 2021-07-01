@@ -24,14 +24,27 @@ $wrap_count_first_level = 4;
         <div class="itgFooter container itg-py-56">
             <div class="itgFooter__left-container is-5-desktop is-4-tablet">
                 
+            <!-- Tablet and up version -->
+            <div class="itgFooter__left-container is-5-desktop is-4-tablet is-hidden-mobile">
                 <div class="itgFooter__menu is-7-desktop is-offset-1-desktop">
                     <?php $navArgs = array('footer-menu' => new footer_menu_walker());
                     wp_nav_menu($navArgs);
                     ?>
                 </div>
-                <a class="ItgFooter__toggleBtn menu-item-has-children" href="#"><img src="<?php echo get_template_directory_uri(); ?>/dist/src/images/icons/rapid_link.svg" /></a>
+                <a class="ItgFooter__toggleBtn menu-item-has-children" href="#">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/src/images/icons/rapid_link.svg" />
+                </a>
             </div>
-            
+
+            <!-- Mobile version -->
+            <div class="itgFooter__left-container is-12 is-hidden-tablet itgFooter__mobile-flavour">
+                <div class="itgFooter__menu is-12 text-left">
+                    <?php $navArgs = array('footer-menu' => new footer_menu_walker());
+                    wp_nav_menu($navArgs);
+                    ?>
+                </div>
+            </div>
+
         </div>
         <div class="container itg-py-56">
 	            <?php
