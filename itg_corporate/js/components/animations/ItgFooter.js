@@ -26,6 +26,38 @@ export const ItgFooter = function () {
 		}
 	});
 
+	// Mobile-only logic
+	const menuEntries = document.querySelectorAll('.itgFooter__mobile-flavour .menu-item');
+	const subMenuEntries = Array
+		.from(
+			menuEntries,
+			function (menuItem) {
+				return menuItem.querySelector('.menu-item-has-children .sub-menu');
+			}
+		)
+		.filter(function (element) {
+			return element;
+		});
+
+	menuEntries
+		.forEach(function (element) {
+			element
+				.addEventListener('click', function (event) {
+					event.preventDefault();
+					// Capture clicked element
+					const clickedEntrySubMenu = event.target.parentElement.querySelector('.sub-menu');
+					const isClickedElementShown = clickedEntrySubMenu.classList.contains('is-show');
+					// Hide all entries
+					subMenuEntries.forEach(function (element) {
+						element.classList.remove('is-show');
+					});
+					// Then show/hide clicked one
+					if (!isClickedElementShown) {
+						clickedEntrySubMenu.classList.add('is-show');
+						clickedEntrySubMenu.classList.add('pl-2');
+					}
+				});
+		});
 };
 
 ItgFooter();
