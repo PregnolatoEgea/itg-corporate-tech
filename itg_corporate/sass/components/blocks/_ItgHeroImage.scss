@@ -11,6 +11,16 @@
   word-wrap: normal;
   width: 100% !important;
   max-width: 100% !important;
+
+  @include mobile {
+    padding: 20px 107px !important;
+    max-height: 601px !important;
+  }
+  @include tablet {
+    max-height: 1035px !important;
+    padding: 116px 128px !important;
+  }
+
   &.has_reduced_height {
     //min-height: 416px;
   }
@@ -30,6 +40,15 @@
 
       &:hover {
         opacity: 1;
+      }
+
+      @include mobile {
+        height: 12px;
+        width: 55px;
+      }
+      @include tablet {
+        height: 12.39px;
+        width: 52.25px;
       }
     }
   }
@@ -69,14 +88,18 @@
     font-family: $font__main;
     letter-spacing: 0;
     font-weight: 500 !important;
+    line-height: 95px !important;
+    font-size: 80px !important;
 
     @include tablet {
-      font-size: 5rem !important;
-      line-height: 6rem !important;
+      font-size: 80px !important;
+      line-height: 95px !important;
+      font-weight: 800 !important;
     }
     @include mobile {
-      font-size: 2.5rem !important;
-      line-height: 3rem !important;
+      font-size: 40px !important;
+      line-height: 48px !important;
+      font-weight: 800 !important;
     }
     * {
       margin-bottom: 0;
@@ -87,13 +110,16 @@
     &--mobile-style {
       font-family: $font__main;
       letter-spacing: 0;
+      font-size: 24px !important;
+      line-height: 33.6px !important;
 
       @include mobile {
-        @include p1;
+        font-size: 18px !important;
+        line-height: 28.8px !important;
       }
       @include tablet {
-        font-size: 1.5rem !important;
-        line-height: 2.1rem !important;
+        font-size: 24px !important;
+        line-height: 33.6px !important;
       }
     }
     p {
