@@ -50,34 +50,18 @@ class footer_menu_walker extends Walker_Nav_menu {
     }
 }
 
-add_filter( 'wp_nav_menu_objects', 'submenu_limit', 10, 2 );
-
-function submenu_limit( $items, $args ) {
-
-    if ( empty($args->submenu) ) {
-        return $items;
-    }
-
-    $parent_id = array_pop( wp_filter_object_list( $items, array( 'title' => $args->submenu ), 'and', 'ID' ) );
-    $children  = submenu_get_children_ids( $parent_id, $items );
-
-    foreach ( $items as $key => $item ) {
-
-        if ( ! in_array( $item->ID, $children ) ) {
-            unset($items[$key]);
-        }
-    }
-
-    return $items;
-}
-
-function submenu_get_children_ids( $id, $items ) {
-
-    $ids = wp_filter_object_list( $items, array( 'menu_item_parent' => $id ), 'and', 'ID' );
-
-    foreach ( $ids as $id ) {
-        $ids = array_merge( $ids, submenu_get_children_ids( $id, $items ) );
-    }
-
-    return $ids;
+add_filter('wp_nav_menu_objects' , 'my_menu_class');
+function my_menu_class($menu) {
+    $level = 0;
+    $stack = array('0');
+    foreach($menu as $key => $item) {
+        while($item->menu_item_parent != array_pop($stack)) {
+            $level--;
+        }   
+        $level++;
+        $stack[] = $item->menu_item_parent;
+        $stack[] = $item->ID;
+        $menu[$key]->classes[] = 'level-'. ($level - 1);
+    }                    
+    return $menu;        
 }

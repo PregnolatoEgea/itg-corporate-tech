@@ -3,10 +3,10 @@ export const ItgNavTabs = function () {
 window.addEventListener("load", function() {
 
 	// store tabs variable
-	var myTabs = document.querySelectorAll("ul#menu-main-mega-menu > li");
-
+	var myTabs = document.querySelectorAll("ul.menu-main-mega-menu-container > li");
+console.log(myTabs);
 	function myTabClicks(tabClickEvent) {
-
+console.log('click');
 		for (var i = 0; i < myTabs.length; i++) {
 			myTabs[i].classList.remove("active");
 		}

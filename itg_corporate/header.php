@@ -285,7 +285,6 @@
 									<?php echo $main_menu_item_title; ?>
 								</div>
 							<?php
-
 							}
 							?>
 						</div>
@@ -294,7 +293,7 @@
 			</div>
 			<?php
 			$main_menu = wp_get_nav_menu_items('main-mega-menu');
-		
+			my_menu_class($main_menu);
 				foreach ($main_menu as $key => $main_menu_item) {
 					$main_menu_item_ID = $main_menu_item->ID;
 					$main_menu_item_title = $main_menu_item->title;
@@ -358,39 +357,63 @@
 									
 									<div class="column is-3 ItgLeftTabs">										
 											<div class="Itg-hero-menu-lower-left-tabs is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center">
+											<ul class="menu-main-mega-menu-container">
 												<?php 
-													$args = array(
-															    'menu'    => 'main-mega-menu',
-															    'submenu' => 'Chi siamo',
-															);
-															
-															wp_nav_menu( $args );
-															$main_menu_tabs_link = wp_get_nav_menu_items($args['submenu']);
-															$main_menu_tabs = wp_get_nav_menu_items('main-mega-menu');
-															foreach ($main_menu_tabs as $key => $main_menu_item) {
-															$main_mega_menu_url = $main_menu_item->url;
+													$main_menu = wp_get_nav_menu_items('main-mega-menu');
+													my_menu_class($main_menu);
+													foreach ($main_menu as $key => $main_menu_item) {
+														$main_menu_item_ID = $main_menu_item->ID;
+														$main_menu_item_title = $main_menu_item->title;
+														$main_menu_item_url = $main_menu_item->url;
+														$main_menu_item_target = $main_menu_item->target;
+														$main_menu_item_class = $main_menu_item->classes[0];
+														$main_menu_item_level_class = $main_menu_item->classes[1];
+														if ($main_menu_item_level_class == 'level-1' ) :
+													
+												?>
+												
+												<li><a href="<?php echo $main_menu_item_url; ?>"><?php echo $main_menu_item_title; ?></a></li>
 
-															}
-															?>	
 
-											</div>
-									</div>
-									
-									<div class="column is-5 Itg-hero-menu-lower-central tab-content">
-										<?php 
-											$main_menu_tabs = wp_get_nav_menu_items('main-mega-menu');
+
+															<?php endif; ?>
+													
+													<?php } ?>
+												
+												</ul>
+
+												
+												<div class="column is-5 Itg-hero-menu-lower-central tab-content">
+												<?php
+													// Check rows exists.
+														if( have_rows('tabs_links', $main_menu_item_ID) ):
+														
+														    // Loop through rows.
+														    while( have_rows('tabs_links', $main_menu_item_ID) ) : the_row(); 
+																		//$tabs_megamenu_title =  get_sub_field('tab_link', $main_menu_item_ID);
+																	 $tabs_megamenu_link	= get_sub_field('tab_link', $main_menu_item_ID);
+																		?>
+																		<?php if ($tabs_megamenu_link) : ?>
+																		
+																		
+																		<div id="<?php echo $main_menu_name; ?>" class="tab-pane active"> 
+																			<li><?php echo $tabs_megamenu_link; ?></li>
+																		</div>
+																		
+																		<?php endif; ?>
+																		<?php  // End loop.
+														    endwhile;
+														
+														// No value.
+														else :
+														    // Do something...
+														endif;
+														?>
+													
+												</div>
+
 										
-
-											foreach ($main_menu_tabs as $key => $main_menu_item) {
-												$main_menu_item_ID = $main_menu_item->ID;
-												$main_menu_item_title = $main_menu_item->title;	
-												$main_mega_menu_url = $main_menu_item->url;
-
-											?>
-										<div id="<?php echo $main_mega_menu_url; ?>" class="tab-pane active"> 
-											<?php// echo $main_menu_item_title; ?>
-										</div>
-										<?php } ?>
+											</div>
 									</div>
 									
 							
@@ -399,14 +422,6 @@
 											<a>Scopri anche</a>
 											<img src="<?php echo get_template_directory_uri() . '/dist/src/images/icons/internal_page.svg'; ?>" alt="">
 										</div>
-										<?php
-										$lanci = ["Lancio 1", "Lancio 2", "Lancio 3", "Lancio 4", "Lancio 5"];
-		
-										foreach ($lanci as $l) {
-										?>
-											<p><?php echo $l; ?></p>
-										<?php } ?>
-									</div>
 								</div>
 								<div>
 							</div>
@@ -418,4 +433,4 @@
 				?>
 			
 		</header><!-- #masthead -->
-		
+	
