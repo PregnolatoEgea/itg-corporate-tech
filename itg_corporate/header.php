@@ -256,6 +256,7 @@
 								</span>
 							</button>
 						</div>
+						<!--
 						<div id="itgMainMenu__searchBox" class="itgMainMenu__searchBox itg-px-8">
 							<span class="itgMainMenu__searchBox--content">Cerca nel sito</span>
 							<img class="itgMainMenu__searchBox--icon" id="main_search" src="<?php echo get_template_directory_uri() . '/src/images/icons/search_icon-white.svg'; ?>" alt="Icona ricerca">
@@ -267,6 +268,7 @@
 							</div>
 							<div class="itgMainMenu__searchBox--overlay"></div>
 						</div>
+						-->
 
 						<div class="itgMainMenu__supContainer itg-px-32 itg-py-8 is-hide">
 							<a href="<?php echo get_home_url(); ?>">

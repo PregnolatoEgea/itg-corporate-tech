@@ -3,7 +3,7 @@ export const ItgNavTabs = function () {
 window.addEventListener("load", function() {
 
 	// store tabs variable
-	var myTabs = document.querySelectorAll("ul.itg_nav-tabs > li");
+	var myTabs = document.querySelectorAll("ul#menu-main-mega-menu > li");
 
 	function myTabClicks(tabClickEvent) {
 

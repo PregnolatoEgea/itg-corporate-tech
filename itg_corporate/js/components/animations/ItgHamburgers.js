@@ -14,12 +14,13 @@ export const ItgHamburgers = function () {
     hamburger.addEventListener('click', function () {
       menuToggler(hamburger)
     })
+    /*
     mainSearch.addEventListener('click', function () {
       if(hamburger.classList.contains('is-active')){
         menuToggler(hamburger)
       }
     })
-
+				*/
     function menuToggler(that) {
       that.classList.toggle('is-active');
       that.getElementsByClassName('hamburger-box')[0].classList.toggle('is-active');
@@ -64,6 +65,7 @@ export const ItgHamburgers = function () {
       }, 100);
     }
   }
+  /*
   mainSearch.addEventListener('click', function () {
     body.classList.add('search-is-active')
 
@@ -73,6 +75,7 @@ export const ItgHamburgers = function () {
       body.classList.remove('search-is-active')
     }, 100);
   })
+  */
 }
 
 ItgHamburgers();
