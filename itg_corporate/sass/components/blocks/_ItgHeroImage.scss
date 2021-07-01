@@ -13,7 +13,7 @@
   max-width: 100% !important;
 
   @include mobile {
-    padding: 107px 20px !important;
+    padding: 107px 20px 31px 20px !important;
     max-height: 601px !important;
   }
   @include tablet {

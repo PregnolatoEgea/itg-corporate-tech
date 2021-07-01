@@ -37,7 +37,7 @@ if ($background_image) {
 
     <div class="swiper-wrapper itgBlock__ItgHeroImage--sliderWrapper columns is-variable is-12-desktop is-10-touch is-multiline is-marginless">
       <div class="swiper-slide column itgBlock-hero-image-container is-paddingless">
-        <div class="columns is-12-desktop is-hidden-touch is-multiline px-3">
+        <div class="columns is-12-desktop is-multiline px-3">
           <?php
           if (get_field("stampare_breadcrumbs") && $block_id === 0) {
             $breadcrumbs_color = get_field("colore_breadcrumbs") == "nero" ? "#000" : "#fff";
@@ -54,7 +54,7 @@ if ($background_image) {
         <?php
         if ($paragraph) {
         ?>
-          <div class="itgBlock-hero-image__subtitle column is-10 px-0">
+          <div class="itgBlock-hero-image__subtitle column is-10-desktop px-0">
             <div class="<?php echo $paragraph_style ?> itgBlock-hero-image__subtitle--mobile-style">
               <?php echo $paragraph ?>
             </div>
