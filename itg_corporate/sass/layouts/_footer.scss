@@ -94,7 +94,8 @@ footer {
   .Itg_FooterAccordion {
     display: none;
   }
-  @include mobile {
+
+  @include tablet {
     padding: 24px !important;
   }
   &__left-container {
