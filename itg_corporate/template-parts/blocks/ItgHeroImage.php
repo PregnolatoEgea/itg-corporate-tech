@@ -44,18 +44,15 @@ if ($background_image) {
               }
             }
             ?>
-            <div class="<?php echo $heading_style ?>">
-              <<?php echo $heading_style ?>>
-                <?php echo $title ?>
-              </<?php echo $heading_style ?>>
-            </div>
+            <h1>
+              <?php echo $title ?>
+              <?php echo $heading_style ?>
+            </h1>
           </div>
         </div>
-        <div class="<?php echo $paragraph_alignment; ?>">
-          <div class="itgBlock-hero-image__subtitle <?php echo $paragraph_align; ?>">
-            <div class="<?php echo $paragraph_style ?> itgBlock-hero-image__subtitle--mobile-style">
-              <?php echo $paragraph ?>
-            </div>
+        <div class="itgBlock-hero-image__subtitle">
+          <div class="<?php echo $paragraph_style ?> itgBlock-hero-image__subtitle--mobile-style">
+            <?php echo $paragraph ?>
           </div>
         </div>
         <div class="itgBlock-hero-image__cta-list column is-5">
