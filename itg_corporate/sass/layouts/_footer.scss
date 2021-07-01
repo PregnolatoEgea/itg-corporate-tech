@@ -80,15 +80,31 @@ footer {
           padding: 12px 24px;
         }
 
-        li.menu-item {
+        & li.menu-item {
           margin: 0;
 
-          ul.sub-menu {
+          & a:first-of-type::after {
+            content: '+';
+            float: right;
+          }
+
+          &.expanded {
+            a:first-of-type::after {
+              content: 'x';
+              float: right;
+            }
+          }
+
+          & ul.sub-menu {
             background: $itg__blue-3;
             padding: 0 !important;
 
-            li.menu-item {
+            & li.menu-item {
               text-align: left;
+
+              a:first-of-type::after {
+                content: '';
+              }
             }
           }
         }
