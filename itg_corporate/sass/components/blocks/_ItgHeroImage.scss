@@ -1,17 +1,17 @@
 @import "../../abstracts/abstracts";
 
 .itgBlock-hero-image {
-  margin: 0;
-  padding: 100px 116px;
+  margin: 0 !important;
+  padding: 100px 116px !important;
   background-size: cover;
   background-repeat: no-repeat;
-  height: auto;
+  height: auto !important;
   min-height: auto;
-  max-height: 697px;
-  text-align: left;
+  max-height: 697px !important;
+  text-align: left !important;
   word-wrap: normal;
-  width: 100%;
-  max-width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
   &.has_reduced_height {
     //min-height: 416px;
   }
