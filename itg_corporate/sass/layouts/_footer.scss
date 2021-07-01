@@ -72,7 +72,34 @@ footer {
 	    }
    }
   }
-		a.ItgFooter__toggleBtn {
+
+  &__mobile-flavour {
+    @include mobile {
+      ul.menu {
+        flex-direction: column !important;
+        text-align: left !important;
+
+        a {
+          padding: 12px 24px;
+        }
+
+        li.menu-item {
+          margin: 0;
+
+          ul.sub-menu {
+            background: $itg__blue-3;
+            padding: 0 !important;
+
+            li.menu-item {
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  a.ItgFooter__toggleBtn {
     position: absolute;
     left: 0;
     right: 0;
