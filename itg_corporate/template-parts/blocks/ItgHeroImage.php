@@ -33,21 +33,19 @@ if ($background_image) {
 
     <div class="swiper-item columns is-variable is-12-desktop is-10-touch is-multiline is-marginless">
       <div class="column itgBlock-hero-image-container">
-        <div class="columns is-12-desktop is-hidden-touch is-multiline <?php echo $title_alignment; ?>">
-          <div class="<?php echo $title_align; ?>">
-            <?php
-            if (get_field("stampare_breadcrumbs") && $block_id === 0) {
-              $breadcrumbs_color = get_field("colore_breadcrumbs") == "nero" ? "#000" : "#fff";
+        <div class="columns is-12-desktop is-hidden-touch is-multiline">
+          <?php
+          if (get_field("stampare_breadcrumbs") && $block_id === 0) {
+            $breadcrumbs_color = get_field("colore_breadcrumbs") == "nero" ? "#000" : "#fff";
 
-              if (function_exists('yoast_breadcrumb')) {
-                yoast_breadcrumb('<p id="breadcrumbs" style="color: ' . $breadcrumbs_color . '">', '</p>');
-              }
+            if (function_exists('yoast_breadcrumb')) {
+              yoast_breadcrumb('<p id="breadcrumbs" style="color: ' . $breadcrumbs_color . '">', '</p>');
             }
-            ?>
-            <h1>
-              <?php echo $title ?>
-            </h1>
-          </div>
+          }
+          ?>
+          <h1>
+            <?php echo $title ?>
+          </h1>
         </div>
         <?php
         if ($paragraph) {
