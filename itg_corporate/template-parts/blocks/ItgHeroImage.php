@@ -50,7 +50,7 @@ if ($background_image) {
         <?php
         if ($paragraph) {
         ?>
-          <div class="itgBlock-hero-image__subtitle column is-10">
+          <div class="itgBlock-hero-image__subtitle column is-10 px-0">
             <div class="<?php echo $paragraph_style ?> itgBlock-hero-image__subtitle--mobile-style">
               <?php echo $paragraph ?>
             </div>
