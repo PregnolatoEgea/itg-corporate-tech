@@ -2,9 +2,9 @@ import Swiper from 'swiper';
 
 export const ItgHeroImageSwiper = function ()
 {
-    let ItgCarouselHeroImageContainers = document.querySelectorAll('.itgBlock-hero-image .swiper-container');
+    let ItgHeroImageContainers = document.querySelectorAll('.itgBlock-hero-image .swiper-container');
 
-    for (const carousel of ItgCarouselHeroImageContainers)
+    for (const carousel of ItgHeroImageContainers)
     {
         let mySwiper = new Swiper(carousel, {
             pagination: {

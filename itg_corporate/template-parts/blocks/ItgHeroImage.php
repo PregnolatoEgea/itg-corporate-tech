@@ -75,6 +75,8 @@ if ($background_image) {
           </div>
         <?php } ?>
       </div>
+      <div class="swiper-slide">Slide2</div>
+      <div class="swiper-slide">Slide3</div>
     </div>
     <div class="swiper-pagination itgBlock__ItgHeroImage--pagination"></div>
   </div>
