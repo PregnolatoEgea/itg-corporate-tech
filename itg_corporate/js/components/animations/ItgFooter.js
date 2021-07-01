@@ -47,6 +47,9 @@ export const ItgFooter = function () {
 					// Capture clicked element
 					const clickedEntrySubMenu = event.target.parentElement.querySelector('.sub-menu');
 					const isClickedElementShown = clickedEntrySubMenu.classList.contains('is-show');
+
+					event.target.parentElement.classList.toggle('expanded');
+
 					// Hide all entries
 					subMenuEntries.forEach(function (element) {
 						element.classList.remove('is-show');
