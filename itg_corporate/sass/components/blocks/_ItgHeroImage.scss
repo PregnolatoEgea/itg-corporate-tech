@@ -93,26 +93,4 @@
       }
     }
   }
-
-  &__arrow-down {
-    @include from($desktop) {
-      position: absolute;
-    }
-    width: 100%;
-    left: 0;
-    bottom: 64px;
-    &-image {
-      width: 23px;
-      height: 34px;
-      background: url("src/images/icons/vertical_scroll.svg") center no-repeat;
-      background-size: 23px 34px;
-      @include until($desktop) {
-        width: 26px;
-        height: 67px;
-        background: url("src/images/icons/vertical_scroll_long.svg") center
-          no-repeat;
-        background-size: 26px 67px;
-      }
-    }
-  }
 }
