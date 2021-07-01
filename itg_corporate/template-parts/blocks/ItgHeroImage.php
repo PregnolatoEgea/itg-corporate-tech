@@ -46,29 +46,30 @@ if ($background_image) {
             ?>
             <h1>
               <?php echo $title ?>
-              <?php echo $heading_style ?>
             </h1>
           </div>
         </div>
-        <div class="itgBlock-hero-image__subtitle">
-          <div class="<?php echo $paragraph_style ?> itgBlock-hero-image__subtitle--mobile-style">
-            <?php echo $paragraph ?>
+        <?php
+        if ($paragraph) {
+        ?>
+          <div class="itgBlock-hero-image__subtitle">
+            <div class="<?php echo $paragraph_style ?> itgBlock-hero-image__subtitle--mobile-style">
+              <?php echo $paragraph ?>
+            </div>
           </div>
-        </div>
-        <div class="itgBlock-hero-image__cta-list column is-5">
-          <div class="itgBlock-hero-image__cta-list-inner columns">
-            <?php
-            while (have_rows('cta_list')) : the_row();
-              $is_offset = 'is-offset-0';
-              require 'atoms/ItgAtomCta.php';
-            endwhile;
-            ?>
-          </div>
-        </div>
-        <?php if ($arrow_down_centered) { ?>
-          <div class="itgBlock-hero-image__arrow-down is-flex is-justify-content-center">
-            <a class="itgBlock-hero-image__arrow-down-image" href="#itg_block_<?php echo $block_id + 1; ?>">
-            </a>
+        <?php } ?>
+        <?php
+        if (have_rows('cta_list')) {
+        ?>
+          <div class="itgBlock-hero-image__cta-list column is-5">
+            <div class="itgBlock-hero-image__cta-list-inner columns">
+              <?php
+              while (have_rows('cta_list')) : the_row();
+                $is_offset = 'is-offset-0';
+                require 'atoms/ItgAtomCta.php';
+              endwhile;
+              ?>
+            </div>
           </div>
         <?php } ?>
       </div>
