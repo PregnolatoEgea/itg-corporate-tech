@@ -32,8 +32,8 @@ if ($background_image) {
                                                                                             } ?>" style="color: <?php echo $color; ?>; background-color: <?php echo $background_color; ?>; background-image: url(<?php echo $background_image; ?>)">
 
     <div class="swiper-item columns is-variable is-12-desktop is-10-touch is-multiline is-marginless">
-      <div class="column itgBlock-hero-image-container">
-        <div class="columns is-12-desktop is-hidden-touch is-multiline">
+      <div class="column itgBlock-hero-image-container is-paddingless">
+        <div class="columns is-12-desktop is-hidden-touch is-multiline px-3">
           <?php
           if (get_field("stampare_breadcrumbs") && $block_id === 0) {
             $breadcrumbs_color = get_field("colore_breadcrumbs") == "nero" ? "#000" : "#fff";
@@ -50,7 +50,7 @@ if ($background_image) {
         <?php
         if ($paragraph) {
         ?>
-          <div class="itgBlock-hero-image__subtitle">
+          <div class="itgBlock-hero-image__subtitle column is-10">
             <div class="<?php echo $paragraph_style ?> itgBlock-hero-image__subtitle--mobile-style">
               <?php echo $paragraph ?>
             </div>
