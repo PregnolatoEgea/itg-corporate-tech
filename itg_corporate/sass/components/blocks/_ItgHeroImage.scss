@@ -5,6 +5,7 @@
   background-repeat: no-repeat;
   height: auto;
   min-height: auto;
+  max-height: 697px;
   width: 100%;
   max-width: 100%;
   &.has_reduced_height {
@@ -95,8 +96,6 @@
     @include from($desktop) {
       position: absolute;
     }
-    display: flex;
-    justify-content: center;
     width: 100%;
     left: 0;
     bottom: 64px;

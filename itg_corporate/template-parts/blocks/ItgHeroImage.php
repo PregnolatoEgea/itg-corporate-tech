@@ -69,7 +69,7 @@ if ($background_image) {
           </div>
         </div>
         <?php if ($arrow_down_centered) { ?>
-          <div class="itgBlock-hero-image__arrow-down">
+          <div class="itgBlock-hero-image__arrow-down is-flex is-justify-content-center">
             <a class="itgBlock-hero-image__arrow-down-image" href="#itg_block_<?php echo $block_id + 1; ?>">
             </a>
           </div>
