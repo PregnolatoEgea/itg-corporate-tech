@@ -70,41 +70,6 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_600877ad52d40",
-            "label": "Wave border type",
-            "name": "wave_border_type",
-            "type": "radio",
-            "instructions": "Default is set to waved border. Otherwise choose another type from the list below",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5fc93b0d8add2",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": [
-                "Ellipse Blue",
-                "Ellipse Dark Blue",
-                "Ellipse Light Azure",
-                "Ellipse White"
-            ],
-            "allow_null": 1,
-            "other_choice": 0,
-            "default_value": "",
-            "layout": "vertical",
-            "return_format": "value",
-            "wpml_cf_preferences": 2,
-            "save_other_choice": 0
-        }, 
-        {
             "key": "field_5fd507bc0209c",
             "label": "Has blobs",
             "name": "has_blue_blobs",
@@ -1555,6 +1520,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_60df05f396c09": {
+                    "key": "layout_60df05f396c09",
+                    "name": "hero_image_slider",
+                    "label": "Hero Image Slider",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60df05fe96c0a",
+                            "label": "Hero Image Slider",
+                            "name": "hero_image_slider",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "clone": [
+                                "group_60df05264c290"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Aggiungi Layout",
@@ -1581,5 +1578,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1624479821
+    "modified": 1625236483
 }

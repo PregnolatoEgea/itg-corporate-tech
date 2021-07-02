@@ -15,12 +15,12 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
             "collapsed": "",
             "min": 0,
             "max": 0,
-            "layout": "table",
+            "layout": "block",
             "button_label": "",
-            "wpml_cf_preferences": 0,
             "sub_fields": [
                 {
                     "key": "field_60df0541a4039",
@@ -37,7 +37,7 @@
                     },
                     "wpml_cf_preferences": 0,
                     "clone": [
-                        "group_60df04686b646"
+                        "group_5fc7bb4576c02"
                     ],
                     "display": "seamless",
                     "layout": "block",
@@ -50,9 +50,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "post_template",
                 "operator": "==",
-                "value": "post"
+                "value": "default"
             }
         ]
     ],
@@ -64,5 +64,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1625229707
+    "modified": 1625237475
 }
