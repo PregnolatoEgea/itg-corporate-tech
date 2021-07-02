@@ -31,13 +31,12 @@ if ($background_image) {
 }
 ?>
 <section class="section is-paddingless">
-    <pre> <?php var_dump($fields); ?></pre>
   <div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-hero-image-slider swiper-container is-marginless <?php if (get_sub_field('has_reduced_height')) {
-                                                                                                            echo 'has_reduced_height';
-                                                                                                          } ?>" style="background: <?php echo $background; ?>; opacity: <?php echo $opacity; ?>;color: <?php echo $color; ?>; background-color: <?php echo $background_color; ?>; background-image: url(<?php echo $background_image; ?>)">
+                                                                                                                  echo 'has_reduced_height';
+                                                                                                                } ?>" style="background: <?php echo $background; ?>; opacity: <?php echo $opacity; ?>;color: <?php echo $color; ?>; background-color: <?php echo $background_color; ?>; background-image: url(<?php echo $background_image; ?>)">
 
-    <div class="swiper-wrapper itgBlock__ItgHeroImage--sliderWrapper columns is-variable is-12-desktop is-10-touch is-multiline is-marginless">
-      <div class="swiper-slide column itgBlock-hero-image-container is-paddingless">
+    <div class="swiper-wrapper itgBlock__ItgHeroImageSlider--sliderWrapper columns is-variable is-12-desktop is-10-touch is-multiline is-marginless">
+      <div class="swiper-slide column itgBlock-hero-image-slider-container is-paddingless">
         <div class="columns is-12-desktop is-multiline px-3">
           <?php
           if (get_field("stampare_breadcrumbs") && $block_id === 0) {
@@ -55,7 +54,7 @@ if ($background_image) {
         <?php
         if ($paragraph) {
         ?>
-          <div class="itgBlock-hero-image__subtitle column is-10-desktop px-0">
+          <div class="itgBlock-hero-image-slider__subtitle column is-10-desktop px-0">
             <div class="<?php echo $paragraph_style ?> itgBlock-hero-image__subtitle--mobile-style">
               <?php echo $paragraph ?>
             </div>
@@ -64,8 +63,8 @@ if ($background_image) {
         <?php
         if (have_rows('cta_list')) {
         ?>
-          <div class="itgBlock-hero-image__cta-list column is-5">
-            <div class="itgBlock-hero-image__cta-list-inner columns">
+          <div class="itgBlock-hero-image-slider__cta-list column is-5">
+            <div class="itgBlock-hero-image-slider__cta-list-inner columns">
               <?php
               while (have_rows('cta_list')) : the_row();
                 $is_offset = 'is-offset-0';
@@ -76,9 +75,7 @@ if ($background_image) {
           </div>
         <?php } ?>
       </div>
-      <div class="swiper-slide">Slide2</div>
-      <div class="swiper-slide">Slide3</div>
     </div>
-    <div class="swiper-pagination itgBlock__ItgHeroImage--pagination"></div>
+    <div class="swiper-pagination itgBlock__ItgHeroImageSlider--pagination"></div>
   </div>
 </section>

@@ -3,7 +3,7 @@ import Swiper from 'swiper';
 export const ItgHeroImageSwiper = function ()
 {
     console.log("Swiper Hero");
-    let ItgHeroImageContainers = document.querySelector('.itgBlock-hero-image');
+    let ItgHeroImageContainers = document.querySelector('.itgBlock-hero-image-slider');
     console.log(ItgHeroImageContainers);
 
     let mySwiper = new Swiper(ItgHeroImageContainers, {
