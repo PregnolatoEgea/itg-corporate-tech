@@ -24,8 +24,8 @@
             "sub_fields": [
                 {
                     "key": "field_60df0541a4039",
-                    "label": "Slider",
-                    "name": "slider",
+                    "label": "Image Slider",
+                    "name": "image_slider",
                     "type": "clone",
                     "instructions": "",
                     "required": 0,
@@ -35,14 +35,14 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 0,
                     "clone": [
                         "group_60df04686b646"
                     ],
                     "display": "seamless",
                     "layout": "block",
                     "prefix_label": 0,
-                    "prefix_name": 0,
-                    "wpml_cf_preferences": 0
+                    "prefix_name": 0
                 }
             ]
         }
@@ -64,5 +64,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1625228649
+    "modified": 1625229707
 }
