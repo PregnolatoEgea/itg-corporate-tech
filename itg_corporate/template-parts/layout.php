@@ -539,6 +539,9 @@ if( have_rows('layout_builder_posts') ):
           case 'posts_filter':
             require 'blocks/ItgPostsFilter.php';
           break;
+            case 'hero_image_slider':
+                require 'blocks/ItgHeroImageSlider.php';
+            break;
           
           default:
 
