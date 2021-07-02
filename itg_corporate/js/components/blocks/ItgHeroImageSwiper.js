@@ -7,6 +7,8 @@ export const ItgHeroImageSwiper = function ()
     for (const carousel of ItgHeroImageContainers)
     {
         let mySwiper = new Swiper(carousel, {
+            direction: 'horizontal',
+            loop: true,
             pagination: {
                 clickable: true,
                 el: ".swiper-pagination",
