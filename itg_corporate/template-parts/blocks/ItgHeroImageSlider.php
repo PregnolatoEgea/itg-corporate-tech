@@ -42,7 +42,7 @@ $opacity = '1';
             <div class="itgBlock-hero-image-slider__cta-list-inner columns">
               <?php
               while (have_rows('image_sldier')) : the_row();
-                var_dump('$fields');
+                var_dump( $fields );
               endwhile;
               ?>
             </div>

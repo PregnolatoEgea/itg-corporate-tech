@@ -221,6 +221,9 @@ if( have_rows('layout_builder') ):
           case 'posts_filter':
             require 'blocks/ItgPostsFilter.php';
           break;
+            case 'hero_image':
+                require 'blocks/ItgHeroImageSlider.php';
+            break;
           
           default:
 
