@@ -1,7 +1,8 @@
 footer {
   background-color: $itg__blue-1 !important;
   margin-top: 40px;
-  .itgSubFooter__rightSide{
+
+  .itgSubFooter__rightSide {
     color: $itg__blue-1;
     height: unset !important;
     text-align: center !important;
@@ -15,9 +16,11 @@ footer {
     text-align: center;
     color: $itg__white !important;
     background-color: $itg__blue-1;
+
     a {
       color: $itg__white !important;
     }
+
     ul {
       margin: 0;
       display: flex;
@@ -77,31 +80,15 @@ footer {
           padding: 12px 24px;
         }
 
-        & li.menu-item {
+        li.menu-item {
           margin: 0;
 
-          & a:first-of-type::after {
-            content: '+';
-            float: right;
-          }
-
-          &.expanded {
-            a:first-of-type::after {
-              content: 'x';
-              float: right;
-            }
-          }
-
-          & ul.sub-menu {
+          ul.sub-menu {
             background: $itg__blue-3;
             padding: 0 !important;
 
-            & li.menu-item {
+            li.menu-item {
               text-align: left;
-
-              a:first-of-type::after {
-                content: '';
-              }
             }
           }
         }
@@ -110,50 +97,21 @@ footer {
   }
 
   a.ItgFooter__toggleBtn {
-										 position: absolute;
-							    left: 0;
-							    right: 0;
-							    margin: 0 auto;
-							    width: 35px;
-							    height: 35px;
-							    background-color: $itg__white;
-							    border-radius: 5px;
-							    bottom: -17px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 35px;
+    height: 35px;
+    background-color: $itg__white;
+    border-radius: 5px;
+    bottom: -17px;
 
-          font-family:$font__main;
-          letter-spacing: 0 !important;
-          line-height: 30px !important;
-          padding-top:20px !important;
-        }
-      }
-    .menu-item-has-children{
-	    margin: 0 auto;
-	    & > a{
-		    font-size: 14px;
-		    }
-		    .sub-menu{
-			    display: none;
-			    li{
-				    display: block;
-								width: 100%!important;
-								clear: both;
-								text-align: center;
-				    a{
-				    	font-size: 12px!important;
-			    	}
-			   	}
-			   	&.is-show {
-								    display: block;
-								}
-	    }
-   
-  
-   
     img {
       margin: 8px auto;
       display: block;
     }
-  
+  }
 
   > div:first-child {
     width: 100% !important;
@@ -233,4 +191,29 @@ footer {
       }
     }
   }
+}
+
+.site-footer {
+  .Itg_FooterAccordion {
+    display: none;
   }
+}
+
+.itgSubFooter {
+  a:nth-of-type(n + 2):before {
+    content: "|";
+    display: inline-block;
+    margin: 0 5px 0px 0;
+  }
+
+  @include touch {
+    flex-direction: column;
+    height: auto;
+    & > * {
+      margin: 8px 0;
+    }
+    &__centerSide {
+      order: -1;
+    }
+  }
+}
