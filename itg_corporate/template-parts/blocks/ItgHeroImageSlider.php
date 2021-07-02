@@ -32,7 +32,7 @@ if ($background_image) {
 ?>
 <section class="section is-paddingless">
     <pre> <?php var_dump($fields); ?></pre>
-  <div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-hero-image swiper-container is-marginless <?php if (get_sub_field('has_reduced_height')) {
+  <div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-hero-image-slider swiper-container is-marginless <?php if (get_sub_field('has_reduced_height')) {
                                                                                                             echo 'has_reduced_height';
                                                                                                           } ?>" style="background: <?php echo $background; ?>; opacity: <?php echo $opacity; ?>;color: <?php echo $color; ?>; background-color: <?php echo $background_color; ?>; background-image: url(<?php echo $background_image; ?>)">
 
