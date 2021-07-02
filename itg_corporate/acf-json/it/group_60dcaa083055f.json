@@ -1,11 +1,33 @@
 {
-    "key": "group_60dcabfd518ef",
-    "title": "Layout Builder",
+    "key": "group_60dcaa083055f",
+    "title": "Component | Carousel Numbers",
     "fields": [
         {
-            "key": "field_60dcabfd5190d",
-            "label": "Layout builder",
-            "name": "layout_builder",
+            "key": "field_60dcaa0830579",
+            "label": "Text Color",
+            "name": "text_color",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_60dca97f17572"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0,
+            "wpml_cf_preferences": 0
+        },
+        {
+            "key": "field_60dcaa0830586",
+            "label": "Numbers",
+            "name": "numbers",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -15,17 +37,17 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
             "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "row",
-            "button_label": "Aggiungi Layout Builder",
+            "min": 2,
+            "max": 4,
+            "layout": "block",
+            "button_label": "Add Number",
+            "wpml_cf_preferences": 0,
             "sub_fields": [
                 {
-                    "key": "field_60dcabfd5bd10",
-                    "label": "Layout",
-                    "name": "layout_builder",
+                    "key": "field_60dcaa084115c",
+                    "label": "Number",
+                    "name": "number",
                     "type": "clone",
                     "instructions": "",
                     "required": 0,
@@ -37,7 +59,7 @@
                     },
                     "wpml_cf_preferences": 0,
                     "clone": [
-                        "group_60dcfdb551820"
+                        "group_60dca977dcf29"
                     ],
                     "display": "seamless",
                     "layout": "block",
@@ -50,9 +72,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "block",
                 "operator": "==",
-                "value": "page"
+                "value": ""
             }
         ]
     ],
@@ -64,5 +86,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1625154193
+    "modified": 1625156231
 }
