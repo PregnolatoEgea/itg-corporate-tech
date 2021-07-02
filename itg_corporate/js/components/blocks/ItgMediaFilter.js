@@ -28,7 +28,7 @@ export const ItgMediaFilter = function () {
   }
   
   // activate date filter column
- // let DateFilterActivator = document.querySelectorAll('.itg_activecolumn');
+ let DateFilterActivator = document.querySelectorAll('.itg_activecolumn');
   /*
   let dateFilterParent = document.querySelector(".itg_activecolumn").parentElement;
   var dateColelems = document.querySelectorAll(".itg_activecolumn");
@@ -63,6 +63,6 @@ export const ItgMediaFilter = function () {
    event.preventDefault();
   };
   */
-};
+}
 
 ItgMediaFilter();

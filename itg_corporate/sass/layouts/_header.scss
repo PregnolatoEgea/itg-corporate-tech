@@ -741,6 +741,9 @@ header.site-header {
  position: relative;
  nav.navbar{
 	 padding: 0 55px;
+	 @media (max-width: $tablet){
+		 padding: 0;
+	 }
 	 .navbar-brand {
    margin-right: 10px;
 		}
@@ -1029,10 +1032,13 @@ header.site-header {
 				  }
 				  .tab-pane {
 							display: none;
-							max-width: 500px;
+							max-width: 580px;
 							padding: 0 40px;
 							&.active {
 								display: block;
+							}
+							hr{
+								background-color: $itg__blue-3;
 							}
 						}
 				  .divider-x {
@@ -1163,6 +1169,11 @@ header.site-header {
 
    & > .tab-pane {
      display: none;
+     hr{
+								background-color: $itg__blue-2;
+								height: 2px;
+								margin-bottom: 0;
+							}
      &.active {
        display: block;
      }

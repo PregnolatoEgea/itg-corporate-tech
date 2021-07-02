@@ -16,10 +16,12 @@ if( have_rows('balance_sheets') ):
         $balance_sheet_title = get_sub_field("balance_sheet_title");
         $balance_sheet_date = get_sub_field("balance_sheet_date");
 
-        /* extract year */
-        list($day, $month, $year) = explode("/", $balance_sheet_date);
-        $balance_sheet_timestamp = strtotime($year . "-" . $month . "-" . $day);
-        $tabLabels[] = date("Y", $balance_sheet_timestamp);
+        if($balance_sheet_date){
+            /* extract year */
+            list($day, $month, $year) = explode("/", $balance_sheet_date);
+            $balance_sheet_timestamp = strtotime($year . "-" . $month . "-" . $day);
+            $tabLabels[] = date("Y", $balance_sheet_timestamp);
+        }
         
         /* check if there is one stock exchange*/ 
         $balance_sheet_stock_exchange_listing = get_sub_field("balance_sheet_stock_exchange_listing");

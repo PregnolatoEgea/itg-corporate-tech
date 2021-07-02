@@ -119,7 +119,7 @@
 							<?php
 							} else if (get_field('link_tipology', $links_menu_item_ID) === 'linblank') {
 							?>
-								<a target="<?php echo $links_menu_item_target; ?>" href="<?php echo $links_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image itg_linblank">
+								<a target="_blank" href="<?php echo $links_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image itg_linblank">
 									<?php echo $links_menu_item_title; ?>
 									<img class="itg-mr-10" src="<?php echo get_template_directory_uri(); ?>/dist/src/images/external_page_blue.svg" alt="<?php echo $links_menu_item_title; ?>">
 								</a>
@@ -157,16 +157,16 @@
 						<?php
 						} else if (get_field('link_tipology', $right_menu_item_ID) === 'linblank') {
 						?>
-							<a target="<?php echo $right_menu_item_target; ?>" href="<?php echo $right_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image itg_linblank">
+							<a target="<?php echo $right_menu_item_target; ?>" href="<?php echo $right_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image itg_linblank" target="_blank">
 								<?php echo $right_menu_item_title; ?>
-								<img class="itg-mr-10" src="<?php echo get_template_directory_uri(); ?>/dist/src/images/external_page_blue.svg" alt="<?php echo $right_menu_item_title; ?>">
+								<img class="itg-mr-10" src="<?php echo get_template_directory_uri() . '/dist/src/images/external_page_blue.svg' ?>" alt="<?php echo $right_menu_item_title; ?>">
 							</a>
 						<?php
 						} else if (get_field('link_tipology', $right_menu_item_ID) === 'linkself') {
 						?>
 							<a target="<?php echo $right_menu_item_target; ?>" href="<?php echo $right_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image itg_linkself">
 								<?php echo $right_menu_item_title; ?>
-								<img class="itg-mr-10" src="<?php echo get_template_directory_uri(); ?>/dist/src/images/internal_page_blue.svg" alt="<?php echo $right_menu_item_title; ?>">
+								<img class="itg-mr-10" src="<?php echo get_template_directory_uri() . '/dist/src/images/internal_page_blue.svg' ?>" alt="<?php echo $right_menu_item_title; ?>">
 							</a>
 						<?php } else { ?>
 							<p class="itgPreHeader--singleItem itg-mr-10"><?php echo $right_menu_item_title; ?></p>
@@ -193,14 +193,14 @@
 																			<img class="itgHeader--logo" src="<?php echo get_template_directory_uri(); ?>/dist/src/images/ITG_logo_positivo.png" alt="Logo Italgas">
 									</a>
 						
-								 <button class="button navbar-burger is-active" data-target="mega-menu" aria-controls="mega-menu" aria-haspopup="true" aria-label="Menu Button" aria-pressed="false">
+								 <button class="button navbar-burger" data-target="mega-menu" aria-controls="mega-menu" aria-haspopup="true" aria-label="Menu Button" aria-pressed="false">
 									 <span aria-hidden="true"></span>
 									 <span aria-hidden="true"></span>
 									 <span aria-hidden="true"></span>
 								 </button>
 						 </div>
 				
-						 <div id="mega-menu" class="navbar-menu is-active Itg-hero-menu-lower">
+						 <div id="mega-menu" class="navbar-menu Itg-hero-menu-lower">
 							 <div class="navbar-start">
 								 <?php
 								$main_mega_menu = wp_get_nav_menu_items('main-mega-menu');
@@ -362,10 +362,32 @@
 																													 $cta_megamenu_tabslink	= get_sub_field('tab_link', $main_menu_item_ID); 
 																													 $cta_megamenu_tabscontent	= get_sub_field('tab_content', $main_menu_item_ID); 
 																													 $cta_megamenu_tabsid	= get_sub_field('tab_id', $main_menu_item_ID); 
+																													 $cta_megamenu_tabstitle	= get_sub_field('title_content', $main_menu_item_ID); 
+																													 $cta_megamenu_tabsscdncolumn	= get_sub_field('tab_content_2ndcolumn', $main_menu_item_ID); 
 																													 
 																													 ?>																	  
 																														<div id="<?php echo $cta_megamenu_tabsid; ?>" class="tab-pane <?php if($i==0) { $i=1; echo 'active'; } ?>"  role="tabpanel" aria-labelledby="<?php echo $cta_megamenu_tabsid; ?>">
-																														<?php echo $cta_megamenu_tabscontent; ?>
+																															<div class="columns is-multiline">
+																																<div class="column is-12">
+																																	<?php if($cta_megamenu_tabstitle) :  ?>
+																																	<p><strong><?php echo $cta_megamenu_tabstitle; ?></strong></p>
+																																	<hr>
+																																	<?php endif; ?>
+																																</div>
+																																<?php if($cta_megamenu_tabsscdncolumn) {  ?>
+																																<div class="column is-6">
+																																	<?php echo $cta_megamenu_tabscontent; ?>
+																																</div>
+																																<div class="column is-6">
+																																	<?php echo $cta_megamenu_tabsscdncolumn; ?>
+																																</div>
+																																<?php } else { ?>
+																																<div class="column is-12">
+																																	<?php echo $cta_megamenu_tabscontent; ?>
+																																</div>
+																																<?php } ?>
+																															</div>
+																														
 																														</div>
 																																					<?php  // End loop.
 																													    endwhile;

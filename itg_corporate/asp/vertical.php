@@ -31,37 +31,36 @@ defined('ABSPATH') or die("You can't access this file directly.");
  */
 // $terms = get_the_terms( get_the_ID() );
 ?>
-<div class='itgitem itg_aspcontent columns column is-12-mobile is-10-desktop is-offset-1-desktop'>
- <div class='column is-2 itgcatdatecol is-flex is-justify-content-space-between is-flex-direction-column'>
-         <?php
+<div class='itgitem itg_aspcontent columns'>        
+ <div class='column is-2 itgcatdatecol'>
+         <?php  
             $itgcatname = get_the_category($r->id);
-            foreach($itgcatname as $itgpost){
+            foreach($itgcatname as $itgpost){ 
              $itgcatname = $itgpost->cat_name;
              $itglowcatname = strtolower($itgcatname);
              $itgpostid = $itgpost->term_id;
              $itgcaticon = get_field('upload_category_icon', 'term_' . $itgpost->term_id );
             ?>
-         <span class="itgmediacat is-size-4">
+         <span class="itgmediacat">
              <?php echo $itgcatname; ?>
-
+         
          </span>
-
+         
          <?php if ($itgcaticon) :?>
 	         <div class="itgcatimage-<?php echo $itglowcatname ?>">
 	          <img src="<?php echo $itgcaticon; ?>" width="60" height="70" border="0" alt="<?php echo $itgcatname; ?>" />
 	         </div>
          <?php endif; ?>
-         <?php
+         <?php 
              }
            ?>
-         <div class="is-clearfix"></div>
+         <div class="is-clearfix"></div>           
             <?php if ( $s_options['showdate'] == 1 && !empty($r->date) ): ?>
-            <span class='itg_asp_date'><?php echo explode(',', $r->date)[0] . ', '. date_format(new \Datetime($r->post_date), 'Y'); ?></span>
-            <span class='itg_asp_date has-text-weight-light is-size-7'><?php echo date_format(new \DateTime($r->post_date), 'H.i e'); ?></span>
+            <span class='itg_asp_date'><?php echo $r->date; ?></span>
             <?php endif; ?>
 
         </div>
-
+        
          <?php if (!empty($r->image)): ?>
          <div class="column is-3">
                 <a class='itg_aspres_image_url' href='<?php echo $r->link; ?>'<?php echo ($s_options['results_click_blank'])?" target='_blank'":""; ?>>
@@ -84,6 +83,5 @@ defined('ABSPATH') or die("You can't access this file directly.");
                      <?php echo $r->content; ?>
                  </span>
 
-        </div>
+        </div>      
     </div>
-</div>

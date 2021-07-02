@@ -1,6 +1,9 @@
 
 <?php 
 
+$show_past_future_filter = get_sub_field("event_list_show_past_future_filter");
+$show_categories_filter = get_sub_field("event_list_show_categories_filter");
+$show_years_filter = get_sub_field("event_list_show_years_filter");
 
 $currentYear = date("Y"); 
 $yearOptions = [];
@@ -174,7 +177,7 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
 <div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-ItgEventList <?php echo $enviroment; ?> itg--background-color-blue-1">
   <div class="container" >
     <div class="columns is-centered is-multiline is-marginless">
-      <div class="column itgBlock-ItgEventList__container is-12 itgBlock-ItgEventList__tab-list">       
+      <div class="column itgBlock-ItgEventList__container is-12 itgBlock-ItgEventList__tab-list <?php if(!$show_past_future_filter){ echo 'hidden' ;} ?>">       
         <div class="columns is-marginless is-mobile is-vcentered first">                      
             <div class="column is-narrow">
                 <div class="itgBlock-ItgEventList__tab-selector itgBlock-ItgEventList__tab-selector-time  " data-eventtimeselector="future">
@@ -189,8 +192,8 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
         </div>
       </div>
       <div class="column itgBlock-ItgEventList__container is-12 itgBlock-ItgEventList__tab-list">       
-        <div class="columns is-marginless is-mobile is-vcentered itgBlock-ItgEventList__tab-list-multiline-mobile-only">   
-            <div class="itgBlock-ItgEventList__tab-list-mobile-only-wrapper">
+        <div class="columns is-marginless is-mobile is-vcentered itgBlock-ItgEventList__tab-list-multiline-mobile-only  ">   
+            <div class="itgBlock-ItgEventList__tab-list-mobile-only-wrapper <?php if(!$show_categories_filter){ echo 'hidden' ;} ?>">
               <div class="column is-narrow-desktop is-narrow-widescreen is-narrow-fullhd is-3-tablet is-narrow-mobile">
                   <div class="itgBlock-ItgEventList__tab-selector itgBlock-ItgEventList__tab-selector-category  " data-eventcategoryselector="finance">
                       <?php echo _e('Finance'); ?>
@@ -214,7 +217,7 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
             </div>    
             <div class="column is-hidden-touch"></div>       
             <div class="column is-narrow-desktop is-narrow-widescreen is-narrow-fullhd is-12-touch itgBlock-ItgEventList__tab-list-center-flex">
-              <div class="itgBlock-ItgEventList__tab-select">
+              <div class="itgBlock-ItgEventList__tab-select <?php if(!$show_years_filter){ echo 'hidden' ;} ?>">
                 <select class="itgBlock-ItgEventList__tab-select-element">                  
                   <?php foreach ($yearOptions as $year):  ?>                      
                       <option><?php echo $year; ?></option>
@@ -227,7 +230,7 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
       <div class="column is-12 ">       
         <div class="columns is-marginless is-mobile is-vcentered is-multiline">
       <?php foreach ( $eventList as $eventListkey => $eventObj ): ?>
-          <div id="event-card-<?php echo $eventListkey ?>" class="column is-12 itg-mb-48 itgBlock-ItgEventList__block <?php if($eventObj["event_year"] != $currentYear){ echo 'hidden' ;} ?>"
+          <div id="event-card-<?php echo $eventListkey ?>" class="column is-12 itg-mb-48 itgBlock-ItgEventList__block <?php if(($eventObj["event_year"] != $currentYear) && $show_years_filter){ echo 'hidden' ;} ?>"
             data-eventyear="<?php echo $eventObj["event_year"] ?>"
             data-eventtime="<?php if($eventObj["is_event_past"]){ echo 'past' ;} else { echo "future";} ?>"
             data-eventcategory="<?php echo $eventObj["event_category"] ?>"
