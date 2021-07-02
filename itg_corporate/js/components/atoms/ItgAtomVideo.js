@@ -21,7 +21,10 @@ export const ItgAtomVideo = function () {
         if (VideoElement[0]) {
           VideoElement[0].classList.toggle('active');
         }else if(IframeElement[0]){
+          let IframeElementSrc = IframeElement[0].getAttribute('src')
           IframeElement[0].classList.toggle('active');
+          IframeElement[0].setAttribute('src', '')
+          IframeElement[0].setAttribute('src', IframeElementSrc)
         }
         VideoOverlay.classList.toggle('active');
       });

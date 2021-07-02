@@ -9,7 +9,8 @@ footer {
 }
 
 .itgFooter {
-	border-bottom: 1px solid $itg__blue-3;
+  border-bottom: 1px solid $itg__blue-3;
+
   .menu-footer-menu-container {
     text-align: center;
     color: $itg__white !important;
@@ -29,13 +30,102 @@ footer {
         ul {
           margin: 0;
           font-size: 12px !important;
+          font-family: $font__main;
+          letter-spacing: 0 !important;
+          line-height: 30px !important;
+          padding-top: 20px !important;
+        }
+      }
+    }
+
+    .menu-item-has-children {
+      margin: 0 auto;
+
+      & > a {
+        font-size: 14px;
+      }
+
+      .sub-menu {
+        display: none;
+
+        li {
+          display: block;
+          width: 100% !important;
+          clear: both;
+          text-align: center;
+
+          a {
+            font-size: 12px !important;
+          }
+        }
+
+        &.is-show {
+          display: block;
+        }
+      }
+    }
+
+  }
+
+  &__mobile-flavour {
+    @include mobile {
+      ul.menu {
+        flex-direction: column !important;
+        text-align: left !important;
+
+        a {
+          padding: 12px 24px;
+        }
+
+        & li.menu-item {
+          margin: 0;
+
+          & a:first-of-type::after {
+            content: '+';
+            float: right;
+          }
+
+          &.expanded {
+            a:first-of-type::after {
+              content: 'x';
+              float: right;
+            }
+          }
+
+          & ul.sub-menu {
+            background: $itg__blue-3;
+            padding: 0 !important;
+
+            & li.menu-item {
+              text-align: left;
+
+              a:first-of-type::after {
+                content: '';
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  a.ItgFooter__toggleBtn {
+										 position: absolute;
+							    left: 0;
+							    right: 0;
+							    margin: 0 auto;
+							    width: 35px;
+							    height: 35px;
+							    background-color: $itg__white;
+							    border-radius: 5px;
+							    bottom: -17px;
+
           font-family:$font__main;
           letter-spacing: 0 !important;
           line-height: 30px !important;
           padding-top:20px !important;
         }
       }
-    }
     .menu-item-has-children{
 	    margin: 0 auto;
 	    & > a{
@@ -56,33 +146,28 @@ footer {
 								    display: block;
 								}
 	    }
-   }
-  }
-		a.ItgFooter__toggleBtn {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 35px;
-    height: 35px;
-    background-color: $itg__white;
-    border-radius: 5px;
-    bottom: -17px;
-    img{
-	    margin: 8px auto;
-	    display: block;
+   
+  
+   
+    img {
+      margin: 8px auto;
+      display: block;
     }
-		}
+  
+
   > div:first-child {
     width: 100% !important;
     margin-left: 0 !important;
   }
+
   .Itg_FooterAccordion {
     display: none;
   }
-  @include mobile {
+
+  @include tablet {
     padding: 24px !important;
   }
+
   &__left-container {
     @include mobile {
       margin-left: 0px;
@@ -94,11 +179,13 @@ footer {
       margin-right: 5px;
     }
   }
+
   &__logo {
     @include mobile {
       max-width: 180px;
     }
   }
+
   &__menu {
     * {
       @include p1;
@@ -106,11 +193,13 @@ footer {
       color: $itg__blue-2 !important;
       display: block;
     }
+
     @include mobile {
       display: flex;
       flex-direction: column;
     }
   }
+
   &__social {
     @include tablet-only {
       align-self: center;
@@ -119,46 +208,29 @@ footer {
       margin-left: 5px;
     }
     @include p1;
+
     &--title {
       font-weight: 600;
+
       * {
         margin-bottom: 0;
       }
     }
+
     &--copy {
       * {
         margin-bottom: 0;
       }
     }
+
     &--icon {
       @include mobile {
         margin-top: 16px;
       }
+
       * {
         display: inline-block;
       }
     }
   }
-}
-.site-footer {
-  .Itg_FooterAccordion {
-    display: none;
   }
-}
-.itgSubFooter {
-  a:nth-of-type(n + 2):before {
-    content: "|";
-    display: inline-block;
-    margin: 0 5px 0px 0;
-  }
-  @include touch {
-    flex-direction: column;
-    height: auto;
-    & > * {
-      margin: 8px 0;
-    }
-    &__centerSide {
-      order: -1;
-    }
-  }
-}

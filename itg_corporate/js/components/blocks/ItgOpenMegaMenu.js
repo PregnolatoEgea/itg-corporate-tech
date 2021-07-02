@@ -1,32 +1,38 @@
 
 export const ItgOpenMegaMenu = function (key) 
 {
+window.addEventListener("load", function() {
 
-document.addEventListener('DOMContentLoaded', function () {
+const tabs = Array.from(document.querySelectorAll(".navbar-trigger"));
 
-  // Get all "navbar-burger" elements
-  var $navbarTriggers = Array.prototype.slice.call(document.querySelectorAll('.navbar-trigger'), 0);
+const tabContents = document.querySelectorAll(".navbar-dropdown");
 
-  // Check if there are any nav burgers
-  if ($navbarTriggers.length > 0) {
+tabs.forEach(function(tab){
+  tab.addEventListener("click", switchClass);
+  event.preventDefault();
+});
 
-    // Add a click event on each of them
-    $navbarTriggers.forEach(function ($el) {
-      $el.addEventListener('click', function () {
+let priorActive = null; 
 
-        // Get the target from the "data-target" attribute
-        var target = $el.dataset.target;
-        var $target = document.getElementById(target);
-
-        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-        $el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
-
-      });
-    });
+function switchClass() {
+  // Loop over the tabs
+  tabs.forEach(function(tab, index){
+    tab.classList.remove("is-active");            
+    tabContents[index].classList.add("is-hide");
+  });
+  
+  if(priorActive === this){
+    this.classList.remove("is-active");  
+    tabContents[tabs.indexOf(this)].classList.add("is-hide");
+    priorActive = null;
+  } else {
+    this.classList.add("is-active");  
+    tabContents[tabs.indexOf(this)].classList.remove("is-hide");  
+    priorActive = this;
   }
+}
 
-});	
+})
 }
 
 

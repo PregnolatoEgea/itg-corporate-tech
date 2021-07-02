@@ -1,27 +1,24 @@
 export const ItgFixHeader = function ()
 {
 
-  let headers = document.querySelectorAll('.itgHeader');
+function stickyElement(e) {
+  
+  var header = document.querySelector('.site-header');
+  var headerHeight = getComputedStyle(header).height.split('px')[0];
+  var navbar = document.querySelector('.site-header');  
+  var scrollValue = window.scrollY;
+  
+  if (scrollValue > headerHeight){
+    navbar.classList.add('is-fixed');
+    
+  } else if (scrollValue < headerHeight){
+    navbar.classList.remove('is-fixed');
+    
+  }
 
-  window.onscroll = () =>
-  {
+}
 
-    for (const header of headers)
-    {
-      let sticky = header.offsetTop;
-      let logo = header.querySelector('.itgHeader__leftSide');
-
-      if (window.pageYOffset > sticky)
-      {
-        logo.classList.add("hide");
-        header.classList.add("stickyHead");
-      } else
-      {
-        logo.classList.remove("hide");
-        header.classList.remove("stickyHead");
-      }
-    }
-  };
+window.addEventListener('scroll', stickyElement);
 }
 
 
