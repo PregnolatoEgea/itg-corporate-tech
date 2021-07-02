@@ -1,9 +1,37 @@
+@import "../../abstracts/abstracts";
+
 .itgBlock-hero-image {
+  padding: 100px 116px !important;
   background-size: cover;
-  min-height: calc(100vh - 350px);
-  margin-bottom: 40px !important;
-  &.has_reduced_height{
-    min-height: 50vh;
+  background-repeat: no-repeat;
+  height: auto !important;
+  min-height: auto;
+  max-height: 697px !important;
+  text-align: left !important;
+  word-wrap: normal;
+  width: 100% !important;
+  max-width: 100% !important;
+  &.has_reduced_height {
+    //min-height: 416px;
+  }
+
+  .swiper-slide {
+    .swiper-pagination-bullet {
+      height: 12.39px;
+      width: 52.25px;
+      margin: 10px;
+      border-radius: 28px;
+      opacity: 0.3;
+      background-color: $itg__white;
+
+      &:active {
+        opacity: 1;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 
   #breadcrumbs {
@@ -17,26 +45,37 @@
   }
 
   &-container {
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    min-width: 100%;
     @include touch {
-      min-height: 60vh;
+      //min-height: 60vh;
     }
     @include desktop {
-      min-height: 90vh;
-      .has_reduced_height &{
-        min-height: 50vh;
+      //min-height: 90vh;
+      .has_reduced_height & {
+        //min-height: 50vh;
       }
     }
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font__main;
+    letter-spacing: 0;
+    font-weight: 500 !important;
+
     @include tablet {
       font-size: 5rem !important;
-      font-weight: 700 !important;
       line-height: 6rem !important;
     }
     @include mobile {
       font-size: 2.5rem !important;
-      font-weight: 700 !important;
       line-height: 3rem !important;
     }
     * {
@@ -46,6 +85,9 @@
 
   &__subtitle {
     &--mobile-style {
+      font-family: $font__main;
+      letter-spacing: 0;
+
       @include mobile {
         @include p1;
       }
@@ -75,29 +117,6 @@
             max-width: 80%;
           }
         }
-      }
-    }
-  }
-
-  &__arrow-down {
-    @include from($desktop) {
-      position: absolute;
-    }
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    left: 0;
-    bottom: 64px;
-    &-image {
-      width: 23px;
-      height: 34px;
-      background: url('src/images/icons/vertical_scroll.svg') center no-repeat;
-      background-size: 23px 34px;
-      @include until($desktop) {
-        width: 26px;
-        height: 67px;
-        background: url('src/images/icons/vertical_scroll_long.svg') center no-repeat;
-        background-size: 26px 67px;
       }
     }
   }

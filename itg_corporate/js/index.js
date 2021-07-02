@@ -6,6 +6,7 @@ import ItgTabYears from './components/blocks/ItgTabYears'
 import ItgMetaballs from './components/animations/ItgMetaballs'
 //import ItgHamburgers from './components/animations/ItgHamburgers'
 import ItgCarouselLaunches from './components/blocks/ItgCarouselLaunches'
+import ItgHeroImageSwiper from './components/blocks/ItgHeroImageSwiper'
 import ItgLogoWall from './components/blocks/ItgLogoWall'
 import ItgContentCarousel from './components/blocks/ItgContentCarousel'
 import ItgMatrix from './components/blocks/ItgMatrix'
@@ -23,3 +24,4 @@ import ItgOpenPreHeaderBottomSide from './components/blocks/ItgOpenPreHeaderBott
 import ItgOpenMegaMenu from './components/blocks/ItgOpenMegaMenu'
 import ItgFooter from './components/animations/ItgFooter'
 import ItgNavTabs from './components/atoms/ItgNavTabs'
+import ItgMegaMenuLowerSide from './components/blocks/ItgMegaMenuLowerSide';

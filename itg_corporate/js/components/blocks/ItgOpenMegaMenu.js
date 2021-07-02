@@ -5,7 +5,7 @@ window.addEventListener("load", function() {
 
 const tabs = Array.from(document.querySelectorAll(".navbar-trigger"));
 
-const tabContents = document.querySelectorAll(".hero.is-link");
+const tabContents = document.querySelectorAll(".navbar-dropdown");
 
 tabs.forEach(function(tab){
   tab.addEventListener("click", switchClass);
