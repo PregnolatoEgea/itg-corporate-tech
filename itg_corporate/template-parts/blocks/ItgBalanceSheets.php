@@ -4,12 +4,10 @@
 
 $balance_sheet_block_title = get_sub_field("balance_sheets_title");
 $balance_sheet_block_subtitle = get_sub_field("balance_sheets_subtitle");
-$currentYear = date("Y"); 
+
+
 $tabLabels = [];
-$tabLabels[] = $currentYear;
-for ($i = 1; $i <= 5; $i++) {
-    $tabLabels[] = $currentYear - $i;
-}
+$has_stock_exchange_data = false;
 
 
 if( have_rows('balance_sheets') ):
@@ -17,10 +15,18 @@ if( have_rows('balance_sheets') ):
     while( have_rows('balance_sheets') ) : the_row();
         $balance_sheet_title = get_sub_field("balance_sheet_title");
         $balance_sheet_date = get_sub_field("balance_sheet_date");
-        
-        /*print("<pre>".print_r($balance_sheet_title)."</pre>");
-        print("<pre>".print_r($balance_sheet_date)."</pre>");    */
 
+        /* extract year */
+        list($day, $month, $year) = explode("/", $balance_sheet_date);
+        $balance_sheet_timestamp = strtotime($year . "-" . $month . "-" . $day);
+        $tabLabels[] = date("Y", $balance_sheet_timestamp);
+        
+        /* check if there is one stock exchange*/ 
+        $balance_sheet_stock_exchange_listing = get_sub_field("balance_sheet_stock_exchange_listing");
+        if($balance_sheet_stock_exchange_listing == true){
+            $has_stock_exchange_data = true;
+        }
+        
         if( have_rows('balance_sheet_items') ):
             while( have_rows('balance_sheet_items') ) : the_row();
 
@@ -28,6 +34,7 @@ if( have_rows('balance_sheets') ):
                 $balance_sheet_item_label = get_sub_field("balance_sheet_items_label");
                 $balance_sheet_item_external_link = get_sub_field("balance_sheet_external_link");
                 $balance_sheet_item_download_file = get_sub_field("balance_sheet_download_file");
+                
                 
                 /*print("<pre>".print_r($balance_sheet_item_typology)."</pre>");
                 print("<pre>".print_r($balance_sheet_item_label)."</pre>");    
@@ -37,6 +44,11 @@ if( have_rows('balance_sheets') ):
         endif;
     endwhile;
 endif;
+
+/* clean and sort ta array */
+$tabLabels = array_unique($tabLabels);
+rsort($tabLabels);
+
 ?>
   <div class="container" >
     <div class="columns is-centered">
@@ -58,18 +70,20 @@ endif;
         <div class="columns is-centered is-mobile is-vcentered">
             <div class="column itgBlock-ItgBalanceSheets__tab-list">
                 <div class="columns is-marginless is-mobile is-vcentered">
-                    <?php foreach ($tabLabels as $tabLabel):  ?>
+                    <?php foreach ($tabLabels as $index => $tabLabel):  ?>
                         <div class="column is-narrow">
-                            <div class="itgBlock-ItgBalanceSheets__tab-selector" data-balanceSelector="<?php echo $tabLabel ?>">
+                            <div class="itgBlock-ItgBalanceSheets__tab-selector <?php if($index == 0){ echo 'is-active' ;} ?>" data-balanceSelector="<?php echo $tabLabel ?>">
                                 <?php echo $tabLabel ?>
                             </div>                            
                         </div>
                     <?php endforeach; ?>
-                    <div class="column is-narrow">
-                        <div class="itgBlock-ItgBalanceSheets__tab-selector itg-px-48 " data-balanceSelector="STOCK">
-                             <?php echo _e('Quotazione in borsa'); ?>
-                        </div>                            
-                    </div>
+                    <?php if($has_stock_exchange_data): ?>
+                        <div class="column is-narrow">
+                            <div class="itgBlock-ItgBalanceSheets__tab-selector itg-px-48 " data-balanceSelector="STOCK">
+                                <?php echo _e('Quotazione in borsa'); ?>
+                            </div>                            
+                        </div>
+                    <?php endif; ?>
                 </div>                           
             </div>
         </div>
@@ -82,13 +96,15 @@ endif;
                     /* extract year*/
                     list($day, $month, $year) = explode("/", $balance_sheet_date);
                     $balance_sheet_timestamp = strtotime($year . "-" . $month . "-" . $day);
-                    $balance_sheet_year = date("Y", $balance_sheet_timestamp)
+                    $balance_sheet_year = date("Y", $balance_sheet_timestamp);
+
+                    $first_balance_year = $tabLabels[0];
                 ?>
-                    <div class="itgBlock-ItgBalanceSheets__block itg-mb-24" 
+                    <div class="itgBlock-ItgBalanceSheets__block itg-mb-24  <?php if($balance_sheet_year != $first_balance_year){ echo 'hidden' ;} ?>" 
                                 data-balanceYear="<?php echo $balance_sheet_year ?>" 
                                 data-balanceStockExchange="<?php echo $balance_sheet_stock_exchange_listing ?>">
                         <div class="itgBlock-ItgBalanceSheets__block--title p2">
-                            <?php echo $balance_sheet_title ?> 
+                            <?php echo $balance_sheet_title ?>
                         </div>
                         <div class="itgBlock-ItgBalanceSheets__block--list"> 
                             <div class="columns is-multiline">

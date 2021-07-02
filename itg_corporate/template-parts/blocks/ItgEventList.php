@@ -10,8 +10,9 @@ for ($i = 1; $i <= 5; $i++) {
 }
 
 $eventList = [];
+$futureEventList = [];
+$pastEventList = [];
 
-setlocale(LC_ALL, 'it_IT');
 if( have_rows('event_list_events') ):
     while( have_rows('event_list_events') ) : the_row();
         $eventObj = [];
@@ -146,16 +147,25 @@ if( have_rows('event_list_events') ):
         $gCalendarUrl .= '&dates='.$dateStart->format('Ymd\THis').'/'.$dateEnd->format('Ymd\THis');
         $eventObj["google_url"] = $gCalendarUrl;;
         
-
-        $eventList[$event_start_date_ts][] = $eventObj;
+        if($eventObj["is_event_past"]){
+          $pastEventList[] = $eventObj;
+        } else {
+          $futureEventList[] = $eventObj;
+        }
     endwhile;
 endif;
 
-// reverse event list
-if (count($eventList)>0) {
-	krsort($eventList);	
+if (count($futureEventList)>0) {
+  usort($futureEventList, function($a, $b){
+      return $a['event_start_date_ts'] - $b['event_start_date_ts'];
+  });
 }
-
+if (count($pastEventList)>0) {
+	usort($pastEventList, function($a, $b){
+      return $b['event_start_date_ts'] - $a['event_start_date_ts'];
+  });
+}
+$eventList = array_merge($futureEventList, $pastEventList);
 
 $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/events/rapid_link.svg';
 
@@ -216,9 +226,8 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
       </div>
       <div class="column is-12 ">       
         <div class="columns is-marginless is-mobile is-vcentered is-multiline">
-      <?php foreach ( $eventList as $eventListkey => $eventListItems ): ?>
-        <?php foreach ( $eventListItems as $key => $eventObj ): ?>
-          <div id="event-card-<?php echo $key ?>" class="column is-12 itg-mb-48 itgBlock-ItgEventList__block <?php if($eventObj["event_year"] != $currentYear){ echo 'hidden' ;} ?>"
+      <?php foreach ( $eventList as $eventListkey => $eventObj ): ?>
+          <div id="event-card-<?php echo $eventListkey ?>" class="column is-12 itg-mb-48 itgBlock-ItgEventList__block <?php if($eventObj["event_year"] != $currentYear){ echo 'hidden' ;} ?>"
             data-eventyear="<?php echo $eventObj["event_year"] ?>"
             data-eventtime="<?php if($eventObj["is_event_past"]){ echo 'past' ;} else { echo "future";} ?>"
             data-eventcategory="<?php echo $eventObj["event_category"] ?>"
@@ -276,8 +285,8 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
                     </div>
                   <?php endif; ?>
                   <div class="itgBlock-ItgEventList--center-bottom">
-                      <div class="itgBlock-ItgEventList--center-bottom-arrow-container" data-cardkey="<?php echo $key ?>">
-                            <div class="arrow down" data-cardkey="<?php echo $key ?>"></div>
+                      <div class="itgBlock-ItgEventList--center-bottom-arrow-container" data-cardkey="<?php echo $eventListkey ?>">
+                            <div class="arrow down" data-cardkey="<?php echo $eventListkey ?>"></div>
                       </div>                                            
                   </div>                
                 </div>
@@ -294,7 +303,21 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
                           <?php endif; ?>
                       </div>
                       <div class="itgBlock-ItgEventList--right-hour p2">
-                      <?php echo $eventObj["event_start_time_string"] ?>-<?php echo $eventObj["event_end_time_string"] ?>                       
+                        <?php if($eventObj["event_start_date_string"] == $eventObj["event_end_date_string"]): ?> <!-- SAME DAY -->
+                          <?php if(($eventObj["event_start_time_string"] != '00:00') || ($eventObj["event_end_time_string"] != '00:00')): ?> 
+                              <?php if($eventObj["event_start_time_string"] == $eventObj["event_end_time_string"]): ?>
+                                  <?php echo $eventObj["event_start_time_string"] ?>
+                              <?php endif; ?>
+                              <?php if($eventObj["event_start_time_string"] != $eventObj["event_end_time_string"]): ?>
+                                  <?php echo $eventObj["event_start_time_string"] ?>-<?php echo $eventObj["event_end_time_string"] ?>
+                              <?php endif; ?>
+                          <?php endif; ?>
+                        <?php endif; ?>                        
+                        <?php if($eventObj["event_start_date_string"] != $eventObj["event_end_date_string"]): ?>  <!-- DIFFERENT DAY -->
+                          <?php if(($eventObj["event_start_time_string"] != '00:00') && ($eventObj["event_end_time_string"] != '00:00')): ?>
+                              <?php echo $eventObj["event_start_time_string"] ?>-<?php echo $eventObj["event_end_time_string"] ?>
+                          <?php endif; ?>
+                        <?php endif; ?>
                       </div>
                     </div>
                     <div class="itgBlock-ItgEventList--right-container-events itg-mt-24 itgBlock-ItgEventList--only-expanded">
@@ -415,8 +438,8 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
                       </div>
                     </div>                    
                     <div class="itgBlock-ItgEventList--center-bottom">
-                        <div class="itgBlock-ItgEventList--center-bottom-arrow-container" data-cardkey="<?php echo $key ?>">
-                              <div class="arrow down" data-cardkey="<?php echo $key ?>"></div>
+                        <div class="itgBlock-ItgEventList--center-bottom-arrow-container" data-cardkey="<?php echo $eventListkey ?>">
+                              <div class="arrow down" data-cardkey="<?php echo $eventListkey ?>"></div>
                         </div>                                            
                     </div>   
                   </div>
@@ -429,7 +452,6 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
 
           </div>
           <?php endforeach; ?>
-        <?php endforeach; ?>
         </div>
       </div>
     </div>

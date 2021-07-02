@@ -1,39 +1,22 @@
 export const ItgNavTabs = function () {
 
-window.addEventListener("load", function() {
+document.addEventListener('DOMContentLoaded', function(e){
+    var list = document.querySelectorAll('.itg_navtabs a');
+    list = Array.prototype.slice.call(list, 0); 
+  
+    list.forEach(function(el) {
+        el.addEventListener('click', function(event){
+            e.preventDefault();
+            var tab = document.querySelector(el.getAttribute('href'));
+            document.querySelector('.itg_navtabs .active').classList.remove('active');
+            document.querySelector('.tab-content .active').classList.remove('active');
 
-	// store tabs variable
-	var myTabs = document.querySelectorAll("ul.menu-main-mega-menu-container > li");
-console.log(myTabs);
-	function myTabClicks(tabClickEvent) {
-console.log('click');
-		for (var i = 0; i < myTabs.length; i++) {
-			myTabs[i].classList.remove("active");
-		}
-
-		var clickedTab = tabClickEvent.currentTarget; 
-
-		clickedTab.classList.add("active");
-
-		tabClickEvent.preventDefault();
-
-		var myContentPanes = document.querySelectorAll(".tab-pane");
-
-		for (i = 0; i < myContentPanes.length; i++) {
-			myContentPanes[i].classList.remove("active");
-		}
-
-		var anchorReference = tabClickEvent.target;
-		var activePaneId = anchorReference.getAttribute("href");
-		var activePane = document.querySelector(activePaneId);
-
-		activePane.classList.add("active");
-
-	}
-
-	for (i = 0; i < myTabs.length; i++) {
-		myTabs[i].addEventListener("click", myTabClicks)
-	}
-});
+            el.classList.add('active');
+            tab.classList.add('active');
+        })
+    })
+})
 
 }
+
+ItgNavTabs();

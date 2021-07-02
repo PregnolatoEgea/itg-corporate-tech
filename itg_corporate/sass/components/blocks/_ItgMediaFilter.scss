@@ -167,10 +167,7 @@
        }
        &:last-child{
         border-radius: 12px!important;
-       }
-        .column{
-         padding: .75rem!important;
-        }
+       }       
         .itgcatdatecol{
          background-color: $itg__light-blue;
          text-align: center;
@@ -238,10 +235,14 @@
          display: block;
          margin: 0 auto;
          text-align: center;
+         padding: 0 25px;
         }
        } 
      }
     }
+  }
+  .itg_mediafilter_excerpt{
+	  padding-left: 40px!important;
   }
  }
  div#itg_tagfilterresults {

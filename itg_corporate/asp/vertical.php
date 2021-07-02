@@ -43,10 +43,14 @@ defined('ABSPATH') or die("You can't access this file directly.");
             ?>
          <span class="itgmediacat">
              <?php echo $itgcatname; ?>
+         
          </span>
-         <div class="itgcatimage-<?php echo $itglowcatname ?>">
-          <img src="<?php echo $itgcaticon; ?>" width="60" height="70" border="0" alt="<?php echo $itgcatname; ?>" />
-         </div>
+         
+         <?php if ($itgcaticon) :?>
+	         <div class="itgcatimage-<?php echo $itglowcatname ?>">
+	          <img src="<?php echo $itgcaticon; ?>" width="60" height="70" border="0" alt="<?php echo $itgcatname; ?>" />
+	         </div>
+         <?php endif; ?>
          <?php 
              }
            ?>
@@ -68,7 +72,7 @@ defined('ABSPATH') or die("You can't access this file directly.");
          </div>
 
         <?php endif; ?>
-        <div class="column is-6">
+        <div class="column is-6 itg_mediafilter_excerpt">
          <h3><a class="itg_aspres_url" href='<?php echo $r->link; ?>'<?php echo ($s_options['results_click_blank'])?" target='_blank'":""; ?>>
                  <?php echo $r->title; ?>
                  <?php if ($s_options['resultareaclickable'] == 1): ?>

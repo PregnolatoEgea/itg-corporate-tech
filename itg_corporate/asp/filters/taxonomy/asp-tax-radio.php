@@ -22,36 +22,37 @@
             <div class="column is-2 itgtag-filter is-pulled-right">
               <a id="itg_tagfilterbtn" class="itg_tagfilterbtn" href="#">Argomento</a>
             </div>
-            <div class="column is-2 itgtag-filter is-pulled-right">
+            <div class="column is-2 itgtag-filter is-pulled-right ">
               <a id="itg_datefilterbtn" class="itg_tagdatefilterbtn" href="#">Periodo</a>
             </div>
-            <div class="is-clearfix"></div>
-            <div class="container">
-             <div id="itg_tagfilterresults" class="columns pt-5 is-mobile is-centered itg_tagfilterresults">
-              <div class="column is-12">
-               <div class="columns is-mobile is-centered">
-                 <?php foreach ($filter->get() as $kk => $term): ?>
-                   <div class="itg_asp_label aligncenter <?php echo $taxonomy; ?>_filter_box itgtagfilter column is-3">
-                    <input id="itg_<?php echo $ch_class; ?>_sub-<?php echo $term->id; ?>" type="checkbox" class="asp_checkbox"
-                          value="<?php echo $term->id; ?>"
-                       <?php echo $term->default ? 'data-origvalue="1"' : ''; ?>
-                          name='<?php echo $filter->isMixed() ? "termset_single" : "termset[" . $taxonomy . "][]"; ?>'
-                       <?php echo $term->selected ? ' checked="checked"' : ''; ?>  aria-hidden="true">
-                   
-                       <label for="itg_<?php echo $ch_class; ?>_sub-<?php echo $term->id; ?>"><?php echo $term->label; ?></label>
-                     </div>
-                  <?php endforeach; ?>
-               </div>
-              </div>
-              <div class="columns is-mobile is-centered itg-mt-32">
-                <div class="column is-narrow itg_applyfilters aligncenter">
-                 <a href="#">Applica filtri</a>
-                </div>
-                <div class="column is-narrow itg_resetfilters aligncenter">
-                 <a href="#">Azzera filtri <img src="<?php bloginfo('template_directory'); ?>/dist/src/images/icons/burger_menu_close.svg" width="18" height="18" border="0" /></a>
-                </div>
-               </div>
-             </div>
+												<div class="container">
+	            <div class="columns">
+		             <div id="itg_tagfilterresults" class="columns pt-5 is-mobile is-centered itg_tagfilterresults">
+		              <div class="column is-12">
+		               <div class="columns is-mobile is-centered">
+		                 <?php foreach ($filter->get() as $kk => $term): ?>
+		                   <div class="itg_asp_label aligncenter <?php echo $taxonomy; ?>_filter_box itgtagfilter column is-3">
+		                    <input id="itg_<?php echo $ch_class; ?>_sub-<?php echo $term->id; ?>" type="checkbox" class="asp_checkbox"
+		                          value="<?php echo $term->id; ?>"
+		                       <?php echo $term->default ? 'data-origvalue="1"' : ''; ?>
+		                          name='<?php echo $filter->isMixed() ? "termset_single" : "termset[" . $taxonomy . "][]"; ?>'
+		                       <?php echo $term->selected ? ' checked="checked"' : ''; ?>  aria-hidden="true">
+		                   
+		                       <label for="itg_<?php echo $ch_class; ?>_sub-<?php echo $term->id; ?>"><?php echo $term->label; ?></label>
+		                     </div>
+		                  <?php endforeach; ?>
+		               </div>
+		              </div>
+	              <div class="columns is-mobile is-centered itg-mt-32">
+	                <div class="column is-narrow itg_applyfilters aligncenter">
+	                 <a href="#">Applica filtri</a>
+	                </div>
+	                <div class="column is-narrow itg_resetfilters aligncenter">
+	                 <a href="#">Azzera filtri <img src="<?php bloginfo('template_directory'); ?>/dist/src/images/icons/burger_menu_close.svg" width="18" height="18" border="0" /></a>
+	                </div>
+	               </div>
+	             </div>
+	            </div>
             </div>
             
             
