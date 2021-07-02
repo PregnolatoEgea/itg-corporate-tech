@@ -2,21 +2,24 @@ import Swiper from 'swiper';
 
 export const ItgHeroImageSwiper = function ()
 {
-    let ItgHeroImageContainers = document.querySelectorAll('.itgBlock-hero-image .swiper-container');
+    console.log("Swiper Hero");
+    let ItgHeroImageContainers = document.querySelector('.itgBlock-hero-image-slider');
+    console.log(ItgHeroImageContainers);
 
-    for (const carousel of ItgHeroImageContainers)
-    {
-        let mySwiper = new Swiper(carousel, {
-            pagination: {
-                clickable: true,
-                el: ".swiper-pagination",
-                renderBullet: function (index, className)
-                {
-                    return '<span class="' + className + '">' + "</span>";
-                },
+    let mySwiper = new Swiper(ItgHeroImageContainers, {
+        direction: 'horizontal',
+        loop: true,
+        navigation: false,
+        pagination: {
+            clickable: true,
+            el: ".swiper-pagination",
+            renderBullet: function (index, className)
+            {
+                console.log("Render bullet");
+                return '<span class="' + className + '">' + "</span>";
             },
-        });
-    }
+        },
+    });
 };
 
 ItgHeroImageSwiper();

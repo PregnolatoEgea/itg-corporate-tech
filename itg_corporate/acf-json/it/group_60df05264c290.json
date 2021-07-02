@@ -1,11 +1,11 @@
 {
-    "key": "group_60dcabfd518ef",
-    "title": "Layout Builder",
+    "key": "group_60df05264c290",
+    "title": "Block | Image Slider",
     "fields": [
         {
-            "key": "field_60dcabfd5190d",
-            "label": "Layout builder",
-            "name": "layout_builder",
+            "key": "field_60df0533a4038",
+            "label": "Image Slider",
+            "name": "image_slider",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -19,13 +19,13 @@
             "collapsed": "",
             "min": 0,
             "max": 0,
-            "layout": "row",
-            "button_label": "Aggiungi Layout Builder",
+            "layout": "block",
+            "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_60dcabfd5bd10",
-                    "label": "Layout",
-                    "name": "layout_builder",
+                    "key": "field_60df0541a4039",
+                    "label": "Image Slider",
+                    "name": "image_slider",
                     "type": "clone",
                     "instructions": "",
                     "required": 0,
@@ -37,7 +37,7 @@
                     },
                     "wpml_cf_preferences": 0,
                     "clone": [
-                        "group_60dcfdb551820"
+                        "group_5fc7bb4576c02"
                     ],
                     "display": "seamless",
                     "layout": "block",
@@ -50,9 +50,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "post_template",
                 "operator": "==",
-                "value": "page"
+                "value": "default"
             }
         ]
     ],
@@ -64,5 +64,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1625154193
+    "modified": 1625237475
 }

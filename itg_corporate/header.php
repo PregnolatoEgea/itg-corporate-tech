@@ -29,38 +29,63 @@
 		<header id="masthead" class="site-header">
 			<?php
 			$left_menu = wp_get_nav_menu_items('pre-header-left-side');
-			if ($left_menu_item->menu_item_parent == 0) {
+			$reshape_menu = pre_header_menu_reshape($left_menu);
 
-				foreach ($left_menu as $key => $left_menu_item) {
-					$left_menu_item_ID = $left_menu_item->ID;
+			/*
+            foreach(menu)
+            {
+                <div class="bottom">
+                    <div class="columns">
+                        foreach(sottomenu)
+                        {
+                            foreach(sottomenu-values)
+                            {
+                                <div class="column">
+                                    if(values-count == 0)
+                                    {
+                                        <div>Titolo</div>
+                                    }
+                                    foreach(sottomenu-values-content)
+                                    {
+                                        <div>Content</div>
+                                    }
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+        */
 
+			foreach ($reshape_menu as $key => $item) {
 			?>
-					<div id="Itg_PreHeaderData_<?php echo $left_menu_item_ID; ?>" class="itgPreHeader__bottomSide" data-menu-id="Itg_PreHeaderData_<?php echo $key; ?>">
-						<div class="columns">
-							<div class="column">
-								<ul class="Itg_PreHeaderData_submenu">
-									<?php
-									foreach ($left_menu as $key => $left_menu_item) {
-										if ($left_menu_item->menu_item_parent >= 1) {
-											$left_menu_item_title = $left_menu_item->title;
-											$left_menu_item_url = $left_menu_item->url;
-											$left_menu_item_target = $left_menu_item->target;
-											$left_menu_item_ID = $left_menu_item->ID;
-											$itg_submenu_label = get_field('label_submenu', $left_menu_item_ID);
+				<div id="Itg_PreHeaderData_<?php echo $key; ?>" class="itgPreHeader__bottomSide" data-menu-id="Itg_PreHeaderData_<?php echo $key; ?>">
+					<div class="columns">
+						<?php
+						foreach ($item as $label => $content) {
+							foreach ($content as $c => $data) {
+						?>
+								<div class="column">
+									<ul class="Itg_PreHeaderData_submenu">
+										<?php
+										foreach ($data as $d => $data_info) {
+											$reshape_menu_item_title = $data_info->title;
+											$reshape_menu_item_url = $data_info->url;
+											$reshape_menu_item_target = $data_info->target;
+											$reshape_menu_item_ID = $data_info->ID;
 
-									?>
-											<?php if ($itg_submenu_label) { ?>
-												<li class="itg_submenulabel"><span><?php echo $left_menu_item_title; ?></span></li>
-											<?php } else { ?>
-												<li><a href="<?php echo $left_menu_item_url; ?>"><?php echo $left_menu_item_title; ?></a></li>
+										?>
+											<?php if ($d == 0) { ?>
+												<li class="itg_submenulabel"><span><?php echo $label; ?></span></li>
 											<?php } ?>
+											<li><a href="<?php echo $reshape_menu_item_url; ?>"><?php echo $reshape_menu_item_title; ?></a></li>
 										<?php } ?>
-									<?php } ?>
-								</ul>
-							</div>
-						</div>
+									</ul>
+								</div>
+						<?php }
+						} ?>
 					</div>
-				<?php } ?>
+				</div>
 			<?php } ?>
 			<div class="itgPreHeader itg-px-56">
 				<div class="itgPreHeader__leftSide">

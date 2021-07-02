@@ -167,18 +167,18 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
             "collapsed": "",
             "min": 0,
             "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "wpml_cf_preferences": 0,
+            "layout": "block",
+            "button_label": "Add tab",
             "sub_fields": [
                 {
-                    "key": "field_60ddc6c681471",
-                    "label": "Tab link",
-                    "name": "tab_link",
-                    "type": "link",
+                    "key": "field_60de632129283",
+                    "label": "Tab ID",
+                    "name": "tab_id",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -187,7 +187,51 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
+                    "wpml_cf_preferences": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_60ddc6c681471",
+                    "label": "Tab link",
+                    "name": "tab_link",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "wpml_cf_preferences": 0
+                },
+                {
+                    "key": "field_60de5c1a72ea4",
+                    "label": "Tab content",
+                    "name": "tab_content",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
                     "wpml_cf_preferences": 0
                 }
             ]
@@ -198,7 +242,7 @@
             {
                 "param": "nav_menu_item",
                 "operator": "==",
-                "value": "23"
+                "value": "80"
             }
         ]
     ],
@@ -210,5 +254,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1625147107
+    "modified": 1625187126
 }
