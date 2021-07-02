@@ -76,13 +76,13 @@ function pre_header_menu_reshape($menu)
 {
     $reshape_data = [];
 
-    foreach ($menu as $key => $item) {
-        if (empty($item->menu_item_parent)) {
+    foreach ($menu as $m1) {
+        if (empty($m1->menu_item_parent)) {
 
             $child_menu_first_level = [];
 
             foreach ($menu as $m2) {
-                if ($m2->menu_item_parent == $item->ID) {
+                if ($m2->menu_item_parent == $m1->ID) {
 
                     $child_menu = [];
                     $child_menu_aux = [];
@@ -90,19 +90,24 @@ function pre_header_menu_reshape($menu)
                     foreach ($menu as $m3) {
                         if ($m3->menu_item_parent == $m2->ID) {
                             array_push($child_menu_aux, $m3);
-                        }
 
-                        if (count($child_menu_aux) >= 3) {
-                            array_push($child_menu, $child_menu_aux);
-                            $child_menu_aux = [];
+                            if (count($child_menu_aux) >= 3) {
+                                array_push($child_menu, $child_menu_aux);
+                                $child_menu_aux = [];
+                            }
                         }
                     }
 
-                    array_push($child_menu_first_level, [$m2->title => $child_menu]);
+                    if (empty($child_menu) || (count($child_menu_aux) > 0 && count($child_menu_aux) < 3)) {
+                        array_push($child_menu, $child_menu_aux);
+                    }
+
+
+                    $child_menu_first_level[$m2->title] = $child_menu;
                 }
             }
 
-            array_push($reshape_data, [$item->title => $child_menu_first_level]);
+            $reshape_data[$m1->ID] = $child_menu_first_level;
         }
     }
 
