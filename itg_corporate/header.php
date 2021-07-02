@@ -27,11 +27,11 @@
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
 		<header id="masthead" class="site-header">
-			<!--<?php
-				$left_menu = wp_get_nav_menu_items('pre-header-left-side');
-				$reshape_menu = pre_header_menu_reshape($left_menu);
+			<?php
+			$left_menu = wp_get_nav_menu_items('pre-header-left-side');
+			$reshape_menu = pre_header_menu_reshape($left_menu);
 
-				/*
+			/*
 				foreach(menu)
 				{
 					<div class="bottom">
@@ -57,8 +57,8 @@
 				}
 			*/
 
-				foreach ($reshape_menu as $key => $item) {
-				?>
+			foreach ($reshape_menu as $key => $item) {
+			?>
 				<div id="Itg_PreHeaderData_<?php echo $$key; ?>" class="itgPreHeader__bottomSide" data-menu-id="Itg_PreHeaderData_<?php echo $key; ?>">
 					<div class="columns">
 						<?php
@@ -86,7 +86,7 @@
 						} ?>
 					</div>
 				</div>
-			<?php } ?>-->
+			<?php } ?>
 			<div class="itgPreHeader itg-px-56">
 				<div class="itgPreHeader__leftSide">
 					<?php
