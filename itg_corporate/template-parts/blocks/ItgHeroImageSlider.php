@@ -57,4 +57,4 @@ $opacity = '1';
         </div>
         <div class="swiper-pagination itgBlock__ItgHeroImageSlider--pagination"></div>
     </div>
-</section>
+</section>  
