@@ -141,6 +141,16 @@
         }
 
         .itgAtom__ItgCTA {
+          height: 56px;
+          width: 272px;
+
+          @include mobile {
+            width: 274px;
+          }
+          @include tablet {
+            width: 267px;
+          }
+
           @include until($desktop) {
             max-width: 80%;
           }
