@@ -40,7 +40,6 @@ if ($bg_imge) {
                             ?>
                             <h1>
                                 <?php echo $hero_slider_title; ?>
-                                <?php echo $bg_imge ?>
                             </h1>
                         </div>
                         <div class="itgBlock-hero-image-slider__subtitle column is-10-desktop px-0">
