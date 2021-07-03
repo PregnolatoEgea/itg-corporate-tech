@@ -31,12 +31,12 @@ if ($background_image) {
 }
 ?>
 <section class="section is-paddingless">
-  <div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-hero-image swiper-container is-marginless <?php if (get_sub_field('has_reduced_height')) {
-                                                                                                            echo 'has_reduced_height';
-                                                                                                          } ?>" style="background: <?php echo $background; ?>; opacity: <?php echo $opacity; ?>;color: <?php echo $color; ?>; background-color: <?php echo $background_color; ?>; background-image: url(<?php echo $background_image; ?>)">
+  <div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-hero-image is-marginless <?php if (get_sub_field('has_reduced_height')) {
+                                                                                          echo 'has_reduced_height';
+                                                                                        } ?>" style="background: <?php echo $background; ?>; opacity: <?php echo $opacity; ?>;color: <?php echo $color; ?>; background-color: <?php echo $background_color; ?>; background-image: url(<?php echo $background_image; ?>)">
 
-    <div class="swiper-wrapper itgBlock__ItgHeroImage--sliderWrapper columns is-variable is-12-desktop is-10-touch is-multiline is-marginless">
-      <div class="swiper-slide column itgBlock-hero-image-container is-paddingless">
+    <div class="itgBlock__ItgHeroImage--sliderWrapper columns is-variable is-12-desktop is-10-touch is-multiline is-marginless">
+      <div class="column itgBlock-hero-image-container is-paddingless">
         <div class="columns is-12-desktop is-multiline px-3">
           <?php
           if (get_field("stampare_breadcrumbs") && $block_id === 0) {
@@ -76,6 +76,5 @@ if ($background_image) {
         <?php } ?>
       </div>
     </div>
-    <div class="swiper-pagination itgBlock__ItgHeroImage--pagination"></div>
   </div>
 </section>
