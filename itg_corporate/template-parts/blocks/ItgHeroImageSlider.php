@@ -31,15 +31,6 @@ $opacity = '1';
                                 }
                             }
                             ?>
-                            <?php
-                            // Load sub field value.
-                            // Ti stampo tutti i campi.
-                            echo $hero_slider_cta_link;
-                            echo $hero_slider_img;
-                            echo $hero_slider_paragraph;
-
-                            // Do something...
-                            ?>
                             <h1>
                                 <?php echo $title ?>
                             </h1>
@@ -51,7 +42,6 @@ $opacity = '1';
                         </div>
                         <div class="itgBlock-hero-image-slider__cta-list column is-5">
                             <div class="itgBlock-hero-image-slider__cta-list-inner columns">
-
                                 <img src="<?php echo ($hero_slider_img); ?>">
                             </div>
                         </div>
