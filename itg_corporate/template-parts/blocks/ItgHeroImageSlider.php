@@ -22,7 +22,6 @@ if ($bg_imge) {
 
                 // Loop through rows.
                 while (have_rows('hero_image_slider')) : the_row();
-                    $hero_slider_cta_link = get_sub_field('link_cta');
                     $hero_slider_paragraph = get_sub_field('slide_paragraph');
                     $hero_slider_title = get_sub_field('slide_title');
 
