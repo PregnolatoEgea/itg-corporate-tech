@@ -1,37 +1,5 @@
 @import "../../abstracts/abstracts";
 
-.swiper-container {
-  width: 100% !important;
-  max-width: 100% !important;
-  .swiper-slide {
-    .swiper-pagination-bullet {
-      height: 12.39px;
-      width: 52.25px;
-      margin: 10px;
-      border-radius: 28px;
-      opacity: 0.3;
-      background-color: $itg__white;
-
-      &:active {
-        opacity: 1;
-      }
-
-      &:hover {
-        opacity: 1;
-      }
-
-      @include mobile {
-        height: 12px;
-        width: 55px;
-      }
-      @include tablet {
-        height: 12.39px;
-        width: 52.25px;
-      }
-    }
-  }
-}
-
 .itgBlock-hero-image {
   padding: 100px 116px !important;
   background-size: cover;
