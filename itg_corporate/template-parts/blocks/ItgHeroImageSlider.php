@@ -49,7 +49,12 @@ if ($bg_imge) {
                         </div>
                         <div class="itgBlock-hero-image-slider__cta-list column is-5">
                             <div class="itgBlock-hero-image-slider__cta-list-inner columns">
-                                <img src="<?php echo ($hero_slider_cta_link); ?>">
+                                <?php
+                                while (have_rows('cta_list')) : the_row();
+                                    $is_offset = 'is-offset-0';
+                                    require 'atoms/ItgAtomCta.php';
+                                endwhile;
+                                ?>
                             </div>
                         </div>
                     <?php
