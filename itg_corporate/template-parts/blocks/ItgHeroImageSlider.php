@@ -3,6 +3,7 @@ $background_color = '#d3f4ff';
 $color = '#003478';
 $background = 'none';
 $opacity = '1';
+$bg_imge = get_sub_field('slide_background_image');
 
 if ($background_image) {
     $background_color = 'transparent';
@@ -39,6 +40,7 @@ if ($background_image) {
                             ?>
                             <h1>
                                 <?php echo $hero_slider_title; ?>
+                                <?php echo $bg_imge ?>
                             </h1>
                         </div>
                         <div class="itgBlock-hero-image-slider__subtitle column is-10-desktop px-0">
