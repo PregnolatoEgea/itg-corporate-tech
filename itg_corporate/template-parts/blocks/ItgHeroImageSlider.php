@@ -5,7 +5,7 @@ $background = 'none';
 $opacity = '1';
 $bg_imge = get_sub_field('slide_background_image');
 
-if ($background_image) {
+if ($bg_imge) {
     $background_color = 'transparent';
     $color = 'white';
     $opacity = '0.8';
@@ -15,7 +15,7 @@ if ($background_image) {
 <section class="section is-paddingless">
     <div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-hero-image-slider swiper-container is-marginless <?php if (get_sub_field('has_reduced_height')) {
                                                                                                                         echo 'has_reduced_height';
-                                                                                                                    } ?>" style="background: <?php echo $background; ?>; opacity: <?php echo $opacity; ?>;color: <?php echo $color; ?>; background-color: <?php echo $background_color; ?>; background-image: url(<?php echo $background_image; ?>)">
+                                                                                                                    } ?>" style="background: <?php echo $background; ?>; opacity: <?php echo $opacity; ?>;color: <?php echo $color; ?>; background-color: <?php echo $background_color; ?>; background-image: url(<?php echo $bg_imge; ?>)">
 
         <div class="swiper-wrapper itgBlock__ItgHeroImageSlider--sliderWrapper columns is-variable is-12-desktop is-10-touch is-multiline is-marginless">
             <?php if (have_rows('hero_image_slider')) {
