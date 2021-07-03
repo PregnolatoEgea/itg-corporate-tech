@@ -3,6 +3,13 @@ $background_color = '#d3f4ff';
 $color = '#003478';
 $background = 'none';
 $opacity = '1';
+
+if ($background_image) {
+    $background_color = 'transparent';
+    $color = 'white';
+    $opacity = '0.8';
+    $background = 'linear-gradient(297.44deg, rgba(2, 28, 61, 0.5) 0%, #021c3d 100%)';
+}
 ?>
 <section class="section is-paddingless">
     <div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-hero-image-slider swiper-container is-marginless <?php if (get_sub_field('has_reduced_height')) {
