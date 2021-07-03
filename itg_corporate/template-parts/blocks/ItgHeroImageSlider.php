@@ -38,20 +38,20 @@ $opacity = '1';
                 ?>
                 <div class="itgBlock-hero-image-slider__cta-list column is-5">
                     <div class="itgBlock-hero-image-slider__cta-list-inner columns">
-                        <?php if( have_rows('image_slider') ):
+                        <?php if( have_rows('hero_image_slider') ):
 
                         // Loop through rows.
-                        while( have_rows('image_slider') ) : the_row();
+                        while( have_rows('hero_image_slider') ) : the_row();
 							$hero_slider_img = get_sub_field('slide_image');
 							$hero_slider_cta_link = get_sub_field('link_cta');
 							$hero_sldier_paragraph = get_subfield('slide_paragraph');
                         // Load sub field value.
                         //var_dump($hero_slider_img);
-                        // Ti stampo tutti i campi. 
+                        // Ti stampo tutti i campi.
                         echo $hero_slider_cta_link;
                         echo $hero_slider_img;
                         echo $hero_slider_paragraph;
-                        
+
                         // Do something...
                         ?>
                         <img src="<?php echo($hero_slider_img); ?>"
