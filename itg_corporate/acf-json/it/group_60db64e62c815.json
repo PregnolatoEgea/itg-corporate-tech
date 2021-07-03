@@ -215,8 +215,28 @@
                     "wpml_cf_preferences": 0
                 },
                 {
+                    "key": "field_60df2a91c82a0",
+                    "label": "Content title",
+                    "name": "title_content",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_60de5c1a72ea4",
-                    "label": "Tab content",
+                    "label": "Tab content 1rst column",
                     "name": "tab_content",
                     "type": "wysiwyg",
                     "instructions": "",
@@ -227,12 +247,32 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 0,
                     "default_value": "",
                     "tabs": "all",
                     "toolbar": "full",
                     "media_upload": 1,
-                    "delay": 0,
-                    "wpml_cf_preferences": 0
+                    "delay": 0
+                },
+                {
+                    "key": "field_60df2a7dc829f",
+                    "label": "Tab content 2nd column",
+                    "name": "tab_content_2ndcolumn",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
                 }
             ]
         }
@@ -242,7 +282,7 @@
             {
                 "param": "nav_menu_item",
                 "operator": "==",
-                "value": "80"
+                "value": "23"
             }
         ]
     ],
@@ -254,5 +294,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1625187126
+    "modified": 1625259891
 }

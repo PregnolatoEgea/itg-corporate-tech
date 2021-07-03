@@ -3,6 +3,66 @@
     "title": "Component | Event List",
     "fields": [
         {
+            "key": "field_60df2341814ae",
+            "label": "Show Past\/Future Filter",
+            "name": "event_list_show_past_future_filter",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_60df2362814af",
+            "label": "Show Categories Filter",
+            "name": "event_list_show_categories_filter",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_60df2375814b0",
+            "label": "Show Years Filter",
+            "name": "event_list_show_years_filter",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_60ca0bc7f36ca",
             "label": "Events",
             "name": "event_list_events",
@@ -256,5 +316,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1624304050
+    "modified": 1625237356
 }
