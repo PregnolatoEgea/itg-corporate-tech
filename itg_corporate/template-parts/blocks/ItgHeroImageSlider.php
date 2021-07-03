@@ -5,7 +5,6 @@ $background = 'none';
 $opacity = '1';
 ?>
 <section class="section is-paddingless">
-    ddd
     <div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-hero-image-slider swiper-container is-marginless <?php if (get_sub_field('has_reduced_height')) {
                                                                                                                         echo 'has_reduced_height';
                                                                                                                     } ?>" style="background: <?php echo $background; ?>; opacity: <?php echo $opacity; ?>;color: <?php echo $color; ?>; background-color: <?php echo $background_color; ?>; background-image: url(<?php echo $background_image; ?>)">
@@ -15,7 +14,6 @@ $opacity = '1';
 
                 // Loop through rows.
                 while (have_rows('hero_image_slider')) : the_row();
-                    $hero_slider_img = get_sub_field('slide_image');
                     $hero_slider_cta_link = get_sub_field('link_cta');
                     $hero_slider_paragraph = get_sub_field('slide_paragraph');
                     $hero_slider_title = get_sub_field('slide_title');
@@ -43,8 +41,7 @@ $opacity = '1';
                         </div>
                         <div class="itgBlock-hero-image-slider__cta-list column is-5">
                             <div class="itgBlock-hero-image-slider__cta-list-inner columns">
-
-                                <img src="<?php echo ($hero_slider_img); ?>">
+                                <img src="<?php echo ($hero_slider_cta_link); ?>">
                             </div>
                         </div>
                     <?php
