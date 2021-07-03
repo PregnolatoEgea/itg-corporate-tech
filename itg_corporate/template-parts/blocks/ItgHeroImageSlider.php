@@ -7,8 +7,8 @@ $opacity = '1';
 <section class="section is-paddingless">
 
     <div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-hero-image-slider swiper-container is-marginless <?php if (get_sub_field('has_reduced_height')) {
-        echo 'has_reduced_height';
-    } ?>" style="background: <?php echo $background; ?>; opacity: <?php echo $opacity; ?>;color: <?php echo $color; ?>; background-color: <?php echo $background_color; ?>; background-image: url(<?php echo $background_image; ?>)">
+                                                                                                                        echo 'has_reduced_height';
+                                                                                                                    } ?>" style="background: <?php echo $background; ?>; opacity: <?php echo $opacity; ?>;color: <?php echo $color; ?>; background-color: <?php echo $background_color; ?>; background-image: url(<?php echo $background_image; ?>)">
 
         <div class="swiper-wrapper itgBlock__ItgHeroImageSlider--sliderWrapper columns is-variable is-12-desktop is-10-touch is-multiline is-marginless">
             <div class="swiper-slide column itgBlock-hero-image-slider-container is-paddingless">
@@ -31,38 +31,36 @@ $opacity = '1';
                         <?php echo $paragraph ?>
                     </div>
                 </div>
-                <?php } ?>
-                
+
                 <?php
-                if ( have_rows('image_slider')) {
+                if (have_rows('image_slider')) {
                 ?>
-                <div class="itgBlock-hero-image-slider__cta-list column is-5">
-                    <div class="itgBlock-hero-image-slider__cta-list-inner columns">
-                        <?php if( have_rows('hero_image_slider') ):
+                    <div class="itgBlock-hero-image-slider__cta-list column is-5">
+                        <div class="itgBlock-hero-image-slider__cta-list-inner columns">
+                            <?php if (have_rows('hero_image_slider')) :
 
-                        // Loop through rows.
-                        while( have_rows('hero_image_slider') ) : the_row();
-							$hero_slider_img = get_sub_field('slide_image');
-							$hero_slider_cta_link = get_sub_field('link_cta');
-							$hero_sldier_paragraph = get_subfield('slide_paragraph');
-                        // Load sub field value.
-                        //var_dump($hero_slider_img);
-                        // Ti stampo tutti i campi.
-                        echo $hero_slider_cta_link;
-                        echo $hero_slider_img;
-                        echo $hero_slider_paragraph;
+                                // Loop through rows.
+                                while (have_rows('hero_image_slider')) : the_row();
+                                    $hero_slider_img = get_sub_field('slide_image');
+                                    $hero_slider_cta_link = get_sub_field('link_cta');
+                                    $hero_sldier_paragraph = get_subfield('slide_paragraph');
+                                endwhile;
+                                // Load sub field value.
+                                //var_dump($hero_slider_img);
+                                // Ti stampo tutti i campi.
+                                echo $hero_slider_cta_link;
+                                echo $hero_slider_img;
+                                echo $hero_slider_paragraph;
 
-                        // Do something...
-                        ?>
-                        <img src="<?php echo($hero_slider_img); ?>"
+                            // Do something...
+                            endif;
+                            ?>
+                            <img src="<?php echo ($hero_slider_img); ?>">
+                        </div>
                     </div>
-                </div>
-                <?php
-                endwhile;
-                ?>
+                <?php } ?>
             </div>
-            <?php } ?>
         </div>
         <div class="swiper-pagination itgBlock__ItgHeroImageSlider--pagination"></div>
     </div>
-</section>  
+</section>
