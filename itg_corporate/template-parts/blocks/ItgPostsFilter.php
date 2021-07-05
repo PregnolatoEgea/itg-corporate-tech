@@ -33,7 +33,7 @@
               $title = get_the_title( $itg_postfilter->ID );
               $custom_field = get_field( 'field_name', $itg_postfilter->ID );
               $itg_postsdate = $itg_postfilter->post_date;
-              $itg_poststhumbnail = get_the_post_thumbnail_url( $itg_postfilter->ID, 'thumbnail' );
+              $itg_poststhumbnail = get_the_post_thumbnail_url($itg_postfilter->ID);
               $itg_postexcerpt = $itg_postfilter->post_content;
               
           ?>
