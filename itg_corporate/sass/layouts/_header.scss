@@ -13,6 +13,17 @@
     margin-bottom: 0;
   }
   &__leftSide {
+	  .Itg_stock_update{
+		  color: $itg__blue-1!important;
+		  font-size: 12px;
+		  div{
+			  float: left;
+			  display: flex;
+			  color: $itg__blue-1!important;
+					font-size: 12px;
+					margin-right: 3px;
+		  }
+	  }
     @include tablet-only {
       width: 50%;
       text-align: center;
@@ -1081,9 +1092,8 @@ header.site-header {
 				  }
 				  .tab-pane {
 							display: none;
-							max-width: 580px;
 							padding: 0 40px 50px;
-							overflow: scroll;
+							overflow: auto;
 							max-height: 400px;
 							.column{
 								padding-bottom: 0!important;

@@ -220,10 +220,7 @@ if( have_rows('layout_builder') ):
           break;
           case 'posts_filter':
             require 'blocks/ItgPostsFilter.php';
-          break;
-          case 'hero_image_slider':
-            require 'blocks/ItgHeroImageSlider.php';
-          break;
+          break;          
           
           default:
 
@@ -530,6 +527,9 @@ if( have_rows('layout_builder_posts') ):
           case 'last_update':
             require 'blocks/ItgLastUpdate.php';
           break;
+          case 'last_update':
+            require 'blocks/ItgLastUpdate.php';
+          break;
           case 'notices_and_communications':
             require 'blocks/ItgNoticeCommunications.php';
           break;      
@@ -541,10 +541,7 @@ if( have_rows('layout_builder_posts') ):
           break;
           case 'posts_filter':
             require 'blocks/ItgPostsFilter.php';
-          break;
-          case 'hero_image_slider':
-            require 'blocks/ItgHeroImageSlider.php';
-          break;
+          break;          
           
           default:
 
