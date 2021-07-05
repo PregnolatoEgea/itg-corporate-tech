@@ -38,16 +38,16 @@
               
           ?>
           <div class="columns itgitem is-multiline">
-             <div class="column is-2 itgcatdatecol"> 
+             <div class="column is-2 itgcatdatecol is-flex is-justify-content-space-between is-flex-direction-column">
               <div class="columns is-multiline">
-               <?php  
+               <?php
                $itgcatname = get_the_category($itg_postfilter->ID);
-               foreach($itgcatname as $itgpost){ 
+               foreach($itgcatname as $itgpost){
                 $itgcatname = $itgpost->cat_name;
                 $itglowcatname = strtolower($itgcatname);
                 $itgpostid = $itgpost->term_id;
                 $itgcaticon = get_field('upload_category_icon', 'term_' . $itgpost->term_id );
-                
+
                ?>
                <?php if ($itgcaticon) : ?>
                 <div class="column is-12-desktop is-one-quarter-mobile is-hidden-desktop is-hidden-tablet">
@@ -57,7 +57,7 @@
                 </div>
                  <?php endif; ?>
                 <div class="column is-12 is-three-quarter-mobile ">
-                 <span class="itgmediacat">
+                 <span class="itgmediacat is-size-4">
                      <?php echo $itgcatname; ?>
                  </span>
                 </div>
