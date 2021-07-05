@@ -21,21 +21,21 @@
 
 <section>
   <div id="itg_block_<?php echo $block_id; ?>" class="container itgBlock-posts-filter">
-    <div class="columns is-12-desktop is-10-touch is-multiline">
+    <div class="columns column is-12-desktop is-12-touch is-multiline">
       <div class="itgBlock-posts-filter-container">
        <?php
        $itg_postsfilter = get_sub_field('posts_filter');
        if( $itg_postsfilter ):
-       
+
         ?>
-        <?php foreach( $itg_postsfilter as $itg_postfilter ): 
+        <?php foreach( $itg_postsfilter as $itg_postfilter ):
               $permalink = get_permalink( $itg_postfilter->ID );
               $title = get_the_title( $itg_postfilter->ID );
               $custom_field = get_field( 'field_name', $itg_postfilter->ID );
               $itg_postsdate = $itg_postfilter->post_date;
               $itg_poststhumbnail = get_the_post_thumbnail_url($itg_postfilter->ID);
               $itg_postexcerpt = $itg_postfilter->post_content;
-              
+
           ?>
           <div class="columns itgitem is-multiline">
              <div class="column is-2 itgcatdatecol is-flex is-justify-content-space-between is-flex-direction-column">
@@ -112,13 +112,13 @@
                     </span>
             </div>
             <?php } ?>
-           
+
           </div>
            <?php endforeach; ?>
           <?php endif; ?>
 
         </div>
-      </div>      
+      </div>
     </div>
   </div>
 </section>
