@@ -13,7 +13,11 @@ export const ItgHeroImageSwiper = function ()
             el: ".swiper-pagination",
             renderBullet: function (index, className)
             {
+<<<<<<< HEAD:itg_corporate/js/components/blocks/ItgHeroImageSlider.js
                return '<span class="' + className + '">' + "</span>";
+=======
+                return '<span class="' + className + '">' + "</span>";
+>>>>>>> 70f39e7a32b975b4099337765747233fd9e61d00:itg_corporate/js/components/blocks/ItgHeroImageSwiper.js
             },
         },
     });

@@ -71,8 +71,11 @@ function pre_header_menu_reshape($menu)
     $reshape_data = [];
 
     foreach ($menu as $m1) {
+<<<<<<< HEAD
 	   $reshape_label = get_field('label_submenu', $m1);
 	   
+=======
+>>>>>>> 70f39e7a32b975b4099337765747233fd9e61d00
         if (empty($m1->menu_item_parent)) {
 
             $child_menu_first_level = [];
@@ -87,14 +90,22 @@ function pre_header_menu_reshape($menu)
                         if ($m3->menu_item_parent == $m2->ID) {
                             array_push($child_menu_aux, $m3);
 
+<<<<<<< HEAD
                             if (count($child_menu_aux) >= 1) {
+=======
+                            if (count($child_menu_aux) >= 3) {
+>>>>>>> 70f39e7a32b975b4099337765747233fd9e61d00
                                 array_push($child_menu, $child_menu_aux);
                                 $child_menu_aux = [];
                             }
                         }
                     }
 
+<<<<<<< HEAD
                     if (empty($child_menu) || (count($child_menu_aux) > 0 && count($child_menu_aux) < 1)) {
+=======
+                    if (empty($child_menu) || (count($child_menu_aux) > 0 && count($child_menu_aux) < 3)) {
+>>>>>>> 70f39e7a32b975b4099337765747233fd9e61d00
                         array_push($child_menu, $child_menu_aux);
                     }
 
