@@ -19,9 +19,7 @@
 ?>
 
 
-    
-        
-<section class="section">
+<section>
   <div id="itg_block_<?php echo $block_id; ?>" class="container itgBlock-posts-filter">
     <div class="columns is-12-desktop is-10-touch is-multiline">
       <div class="itgBlock-posts-filter-container">
