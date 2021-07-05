@@ -17,3 +17,18 @@
     <input type="hidden" class="asp_datepicker_hidden" name="<?php echo esc_attr($date->name); ?>" value="">
     </div>
 <?php endforeach; ?>
+
+<div class="columns is-mobile is-centered itg-mt-32">
+                <div class="column is-narrow itg_applyfilters aligncenter">
+									            <button type='submit'
+									                   aria-hidden="true"
+									                   aria-label="<?php echo esc_html(asp_icl_t('Hidden button', 'Hidden button')); ?>"
+									                  >
+									                   Applica filtri
+									            </button>
+                </div>
+                <div class="column is-narrow aligncenter itg_resetfilters">
+                 <button onclick="clearForm()" value="clear form">Azzera filtri 
+                 <img src="<?php bloginfo('template_directory'); ?>/dist/src/images/icons/burger_menu_close.svg" width="18" height="18" border="0" /></button>
+                </div>
+               </div>

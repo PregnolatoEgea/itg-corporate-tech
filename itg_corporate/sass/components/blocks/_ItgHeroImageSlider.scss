@@ -1,7 +1,6 @@
 @import "../../abstracts/abstracts";
 
 .itgBlock-hero-image-slider {
-  padding: 100px 116px !important;
   background-size: cover;
   background-repeat: no-repeat;
   height: auto !important;
@@ -10,22 +9,16 @@
   text-align: left !important;
   word-wrap: normal;
   width: 100% !important;
-  max-width: 100% !important;
-
-  @include mobile {
-    padding: 107px 20px 31px 20px !important;
-    max-height: 601px !important;
-  }
-  @include tablet {
-    max-height: 1035px !important;
-    padding: 128px 116px !important;
-  }
+  max-width: 100% !important; 
 
   &.has_reduced_height {
     //min-height: 416px;
   }
 
   .swiper-slide {
+	  background-position: center center;
+	  background-size: cover;
+	  min-height: 416px;
     .swiper-pagination-bullet {
       height: 12.39px;
       width: 52.25px;

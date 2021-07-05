@@ -10,6 +10,10 @@
   }
 
   &__tab-list {
+
+    &.hidden {
+      display: none !important;
+    }
     
     .columns {
         @include from($desktop) {
@@ -36,6 +40,9 @@
     }
     &-mobile-only-wrapper {
       display: flex;
+      &.hidden {
+        display: none !important;
+      }
       @include tablet-only {
         width: 100%;
       }
@@ -45,7 +52,7 @@
         overflow-x: scroll;
       }
     }
-    &-multiline-mobile-only {
+    &-multiline-mobile-only {      
       @include mobile {
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -86,6 +93,11 @@
   }
 
   &__tab-select {
+
+    
+    &.hidden {
+      display: none !important;
+    }
 
     grid-template-areas: "select";
     display: grid;

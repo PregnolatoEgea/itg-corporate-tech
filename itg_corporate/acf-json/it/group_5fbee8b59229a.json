@@ -1521,15 +1521,15 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_60df05f396c09": {
-                    "key": "layout_60df05f396c09",
+                "layout_60e2aa476b71e": {
+                    "key": "layout_60e2aa476b71e",
                     "name": "hero_image_slider",
-                    "label": "Hero Image Slider",
+                    "label": "Hero image slider",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_60df05fe96c0a",
-                            "label": "Hero Image Slider",
+                            "key": "field_60e2aa476b71f",
+                            "label": "Hero image slider",
                             "name": "hero_image_slider",
                             "type": "clone",
                             "instructions": "",
@@ -1542,7 +1542,7 @@
                             },
                             "wpml_cf_preferences": 0,
                             "clone": [
-                                "group_60df05264c290"
+                                "group_60dffd9d9884c"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -1578,5 +1578,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1625236483
+    "modified": 1625467536
 }

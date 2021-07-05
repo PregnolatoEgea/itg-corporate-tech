@@ -1,39 +1,34 @@
 export const ItgNavTabs = function () {
 
-window.addEventListener("load", function() {
-
-	// store tabs variable
-	var myTabs = document.querySelectorAll("ul.menu-main-mega-menu-container > li");
-console.log(myTabs);
-	function myTabClicks(tabClickEvent) {
-console.log('click');
-		for (var i = 0; i < myTabs.length; i++) {
-			myTabs[i].classList.remove("active");
-		}
-
-		var clickedTab = tabClickEvent.currentTarget; 
-
-		clickedTab.classList.add("active");
-
-		tabClickEvent.preventDefault();
-
-		var myContentPanes = document.querySelectorAll(".tab-pane");
-
-		for (i = 0; i < myContentPanes.length; i++) {
-			myContentPanes[i].classList.remove("active");
-		}
-
-		var anchorReference = tabClickEvent.target;
-		var activePaneId = anchorReference.getAttribute("href");
-		var activePane = document.querySelector(activePaneId);
-
-		activePane.classList.add("active");
-
-	}
-
-	for (i = 0; i < myTabs.length; i++) {
-		myTabs[i].addEventListener("click", myTabClicks)
-	}
-});
-
+function initTab(elem){
+    document.addEventListener('click', function (e) {
+        if (!e.target.matches(elem+' .itg_navtabs span')) return;
+        else{
+            if(!e.target.classList.contains('active')){
+                findActiveElementAndRemoveIt(elem+' .itg_navtabs span');
+                findActiveElementAndRemoveIt(elem+' .tab-pane');
+                e.target.classList.add('active');  
+                setTimeout(function(){                 
+                    var panel = document.querySelectorAll(elem+' .tab-pane.'+e.target.dataset.name);
+                    Array.prototype.forEach.call(panel, function (el) {
+                        el.classList.add('active');
+                    });
+                }, 200);
+            }
+        }
+    });
 }
+
+function findActiveElementAndRemoveIt(elem){
+    var elementList = document.querySelectorAll(elem);
+    Array.prototype.forEach.call(elementList, function (e) {
+        e.classList.remove('active');
+    });
+}
+initTab('.ItgLeftTabs');
+}
+
+ItgNavTabs();
+
+
+

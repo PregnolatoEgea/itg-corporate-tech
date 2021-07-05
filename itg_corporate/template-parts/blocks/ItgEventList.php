@@ -1,6 +1,9 @@
 
 <?php 
 
+$show_past_future_filter = get_sub_field("event_list_show_past_future_filter");
+$show_categories_filter = get_sub_field("event_list_show_categories_filter");
+$show_years_filter = get_sub_field("event_list_show_years_filter");
 
 $currentYear = date("Y"); 
 $yearOptions = [];
@@ -10,8 +13,9 @@ for ($i = 1; $i <= 5; $i++) {
 }
 
 $eventList = [];
+$futureEventList = [];
+$pastEventList = [];
 
-setlocale(LC_ALL, 'it_IT');
 if( have_rows('event_list_events') ):
     while( have_rows('event_list_events') ) : the_row();
         $eventObj = [];
@@ -146,16 +150,25 @@ if( have_rows('event_list_events') ):
         $gCalendarUrl .= '&dates='.$dateStart->format('Ymd\THis').'/'.$dateEnd->format('Ymd\THis');
         $eventObj["google_url"] = $gCalendarUrl;;
         
-
-        $eventList[$event_start_date_ts][] = $eventObj;
+        if($eventObj["is_event_past"]){
+          $pastEventList[] = $eventObj;
+        } else {
+          $futureEventList[] = $eventObj;
+        }
     endwhile;
 endif;
 
-// reverse event list
-if (count($eventList)>0) {
-	krsort($eventList);	
+if (count($futureEventList)>0) {
+  usort($futureEventList, function($a, $b){
+      return $a['event_start_date_ts'] - $b['event_start_date_ts'];
+  });
 }
-
+if (count($pastEventList)>0) {
+	usort($pastEventList, function($a, $b){
+      return $b['event_start_date_ts'] - $a['event_start_date_ts'];
+  });
+}
+$eventList = array_merge($futureEventList, $pastEventList);
 
 $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/events/rapid_link.svg';
 
@@ -164,7 +177,7 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
 <div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-ItgEventList <?php echo $enviroment; ?> itg--background-color-blue-1">
   <div class="container" >
     <div class="columns is-centered is-multiline is-marginless">
-      <div class="column itgBlock-ItgEventList__container is-12 itgBlock-ItgEventList__tab-list">       
+      <div class="column itgBlock-ItgEventList__container is-12 itgBlock-ItgEventList__tab-list <?php if(!$show_past_future_filter){ echo 'hidden' ;} ?>">       
         <div class="columns is-marginless is-mobile is-vcentered first">                      
             <div class="column is-narrow">
                 <div class="itgBlock-ItgEventList__tab-selector itgBlock-ItgEventList__tab-selector-time  " data-eventtimeselector="future">
@@ -179,8 +192,8 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
         </div>
       </div>
       <div class="column itgBlock-ItgEventList__container is-12 itgBlock-ItgEventList__tab-list">       
-        <div class="columns is-marginless is-mobile is-vcentered itgBlock-ItgEventList__tab-list-multiline-mobile-only">   
-            <div class="itgBlock-ItgEventList__tab-list-mobile-only-wrapper">
+        <div class="columns is-marginless is-mobile is-vcentered itgBlock-ItgEventList__tab-list-multiline-mobile-only  ">   
+            <div class="itgBlock-ItgEventList__tab-list-mobile-only-wrapper <?php if(!$show_categories_filter){ echo 'hidden' ;} ?>">
               <div class="column is-narrow-desktop is-narrow-widescreen is-narrow-fullhd is-3-tablet is-narrow-mobile">
                   <div class="itgBlock-ItgEventList__tab-selector itgBlock-ItgEventList__tab-selector-category  " data-eventcategoryselector="finance">
                       <?php echo _e('Finance'); ?>
@@ -204,7 +217,7 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
             </div>    
             <div class="column is-hidden-touch"></div>       
             <div class="column is-narrow-desktop is-narrow-widescreen is-narrow-fullhd is-12-touch itgBlock-ItgEventList__tab-list-center-flex">
-              <div class="itgBlock-ItgEventList__tab-select">
+              <div class="itgBlock-ItgEventList__tab-select <?php if(!$show_years_filter){ echo 'hidden' ;} ?>">
                 <select class="itgBlock-ItgEventList__tab-select-element">                  
                   <?php foreach ($yearOptions as $year):  ?>                      
                       <option><?php echo $year; ?></option>
@@ -216,9 +229,8 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
       </div>
       <div class="column is-12 ">       
         <div class="columns is-marginless is-mobile is-vcentered is-multiline">
-      <?php foreach ( $eventList as $eventListkey => $eventListItems ): ?>
-        <?php foreach ( $eventListItems as $key => $eventObj ): ?>
-          <div id="event-card-<?php echo $key ?>" class="column is-12 itg-mb-48 itgBlock-ItgEventList__block <?php if($eventObj["event_year"] != $currentYear){ echo 'hidden' ;} ?>"
+      <?php foreach ( $eventList as $eventListkey => $eventObj ): ?>
+          <div id="event-card-<?php echo $eventListkey ?>" class="column is-12 itg-mb-48 itgBlock-ItgEventList__block <?php if(($eventObj["event_year"] != $currentYear) && $show_years_filter){ echo 'hidden' ;} ?>"
             data-eventyear="<?php echo $eventObj["event_year"] ?>"
             data-eventtime="<?php if($eventObj["is_event_past"]){ echo 'past' ;} else { echo "future";} ?>"
             data-eventcategory="<?php echo $eventObj["event_category"] ?>"
@@ -276,8 +288,8 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
                     </div>
                   <?php endif; ?>
                   <div class="itgBlock-ItgEventList--center-bottom">
-                      <div class="itgBlock-ItgEventList--center-bottom-arrow-container" data-cardkey="<?php echo $key ?>">
-                            <div class="arrow down" data-cardkey="<?php echo $key ?>"></div>
+                      <div class="itgBlock-ItgEventList--center-bottom-arrow-container" data-cardkey="<?php echo $eventListkey ?>">
+                            <div class="arrow down" data-cardkey="<?php echo $eventListkey ?>"></div>
                       </div>                                            
                   </div>                
                 </div>
@@ -294,7 +306,21 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
                           <?php endif; ?>
                       </div>
                       <div class="itgBlock-ItgEventList--right-hour p2">
-                      <?php echo $eventObj["event_start_time_string"] ?>-<?php echo $eventObj["event_end_time_string"] ?>                       
+                        <?php if($eventObj["event_start_date_string"] == $eventObj["event_end_date_string"]): ?> <!-- SAME DAY -->
+                          <?php if(($eventObj["event_start_time_string"] != '00:00') || ($eventObj["event_end_time_string"] != '00:00')): ?> 
+                              <?php if($eventObj["event_start_time_string"] == $eventObj["event_end_time_string"]): ?>
+                                  <?php echo $eventObj["event_start_time_string"] ?>
+                              <?php endif; ?>
+                              <?php if($eventObj["event_start_time_string"] != $eventObj["event_end_time_string"]): ?>
+                                  <?php echo $eventObj["event_start_time_string"] ?>-<?php echo $eventObj["event_end_time_string"] ?>
+                              <?php endif; ?>
+                          <?php endif; ?>
+                        <?php endif; ?>                        
+                        <?php if($eventObj["event_start_date_string"] != $eventObj["event_end_date_string"]): ?>  <!-- DIFFERENT DAY -->
+                          <?php if(($eventObj["event_start_time_string"] != '00:00') && ($eventObj["event_end_time_string"] != '00:00')): ?>
+                              <?php echo $eventObj["event_start_time_string"] ?>-<?php echo $eventObj["event_end_time_string"] ?>
+                          <?php endif; ?>
+                        <?php endif; ?>
                       </div>
                     </div>
                     <div class="itgBlock-ItgEventList--right-container-events itg-mt-24 itgBlock-ItgEventList--only-expanded">
@@ -415,8 +441,8 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
                       </div>
                     </div>                    
                     <div class="itgBlock-ItgEventList--center-bottom">
-                        <div class="itgBlock-ItgEventList--center-bottom-arrow-container" data-cardkey="<?php echo $key ?>">
-                              <div class="arrow down" data-cardkey="<?php echo $key ?>"></div>
+                        <div class="itgBlock-ItgEventList--center-bottom-arrow-container" data-cardkey="<?php echo $eventListkey ?>">
+                              <div class="arrow down" data-cardkey="<?php echo $eventListkey ?>"></div>
                         </div>                                            
                     </div>   
                   </div>
@@ -429,7 +455,6 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
 
           </div>
           <?php endforeach; ?>
-        <?php endforeach; ?>
         </div>
       </div>
     </div>

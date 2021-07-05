@@ -1,26 +1,25 @@
 <?php foreach ($filter->get() as $kk => $term): ?>
     <?php if ($term->id == 0): ?>
-        <div class="aligncenter itg_option_cat is-narrow">
-            <div class="itg_option_inner">
-              
-                <input id="itg_<?php echo $ch_class; ?>_all<?php echo $id; ?>"
+        <div class="asp_option_cat asp_option asp_option asp_option_cat_level-0 asp_option_selectall itg_option_cat is-narrow itg_asp_label">
+            <div class="asp_option_inner">
+                <input id="asp_<?php echo $ch_class; ?>_all<?php echo $id; ?>"
                        aria-label="<?php echo asp_icl_t("Select all text [" . $taxonomy . "]" . " ($real_id)", $term->label, true); ?>"
                        type="checkbox" data-targetclass="asp_<?php echo $ch_class; ?>_checkbox"
                     <?php echo $term->default ? 'data-origvalue="1"' : ''; ?>
-                    <?php echo($term->selected ? 'checked="checked"' : ''); ?>  aria-hidden="true"/>
-               <label aria-hidden="true"
-                       for="itg_<?php echo $ch_class; ?>_all<?php echo $id; ?>">
-                       <?php echo asp_icl_t("Select all text [" . $taxonomy . "]" . " ($real_id)", $term->label); ?>
+                    <?php echo($term->selected ? 'checked="checked"' : ''); ?>/>
+                <label aria-hidden="true"
+                       for="asp_<?php echo $ch_class; ?>_all<?php echo $id; ?>">
+                    <?php echo asp_icl_t('Hidden label', 'Hidden label'); ?>
                 </label>
             </div>
+            <div class="asp_option_label"><?php echo asp_icl_t("Select all text [" . $taxonomy . "]" . " ($real_id)", $term->label); ?></div>
         </div>
         <div class="asp_select_spacer"></div>
     <?php else: ?>
-        <div class="itg_option_cat aligncenter"
+        <div class="asp_option_cat asp_option asp_option asp_option_cat_level-<?php echo $term->level; ?> itg_option_cat is-narrow itg_asp_label"
              data-lvl="<?php echo $term->level; ?>"
              asp_cat_parent="<?php echo $term->parent; ?>">
-            <div class="itg_option_inner">
-                
+            <div class="asp_option_inner">
                 <input type="checkbox" value="<?php echo $term->id; ?>" class="asp_<?php echo $ch_class; ?>_checkbox"
                        aria-label="<?php echo esc_html($term->label); ?>"
                     <?php if (isset($filter->data['custom_name'])): ?>
@@ -30,12 +29,16 @@
                     <?php endif; ?>
                        id="<?php echo $id; ?>termset_<?php echo $term->id; ?>"
                     <?php echo $term->default ? 'data-origvalue="1"' : ''; ?>
-                    <?php echo($term->selected ? 'checked="checked"' : ''); ?>  aria-hidden="true"/>
-                <label class="itg_option_label" aria-hidden="true"
+                    <?php echo($term->selected ? 'checked="checked"' : ''); ?>/>
+                <label aria-hidden="true"
                        for="<?php echo $id; ?>termset_<?php echo $term->id; ?>">
-                       <?php echo $term->label; ?>
+                    <?php echo asp_icl_t('Hidden label', 'Hidden label'); ?>
                 </label>
-            </div>            
+            </div>
+            <div class="asp_option_label">
+                <?php echo $term->label; ?>
+            </div>
         </div>
     <?php endif; ?>
 <?php endforeach; ?>
+

@@ -14,6 +14,8 @@ export const ItgMediaFilter = function () {
  
     this.classList.toggle('active');
     BlocksFilterResults.classList.toggle('showtagresults');
+    BlocksFilterDateresults.classList.remove('showtagdateresults');
+				BlocksFilterDateBtn.classList.remove('active');
     event.preventDefault();
    };
   
@@ -23,28 +25,40 @@ export const ItgMediaFilter = function () {
 
     this.classList.toggle('active');
     BlocksFilterDateresults.classList.toggle('showtagdateresults');
+    BlocksFilterResults.classList.remove('showtagresults');
+    BlocksFilterBtn.classList.remove('active');
     event.preventDefault();
    };
   }
   
-  // activate date filter column
- // let DateFilterActivator = document.querySelectorAll('.itg_activecolumn');
-  /*
-  let dateFilterParent = document.querySelector(".itg_activecolumn").parentElement;
-  var dateColelems = document.querySelectorAll(".itg_activecolumn");
-  DateFilterActivator.forEach(function (DateFilterActivator) {
-  	console.log(dateFilterParent);
-  	DateFilterActivator.onclick = function (event) { 
-    this.classList.toggle('activerange');
-    element.classList.toggleClass(classItem);
+ 
+			
+			document.addEventListener("DOMContentLoaded", function(event) { // <-- add this wrapper
+				var element = document.querySelectorAll('.itg_columndaterange');
+				
+				
+				    if (element) {
+				    
+				      element.forEach(function(el, key){
+				        
+				         el.addEventListener('click', function () {
+				            console.log(key);
+				         
+				            el.classList.toggle("activecolumn");
+				            
+				             element.forEach(function(ell, els){
+				                 if(key !== els) {
+				                     ell.classList.remove('activecolumn');
+				                 }
+				                  console.log(els);
+				             });
+				         });
+				      });
+				    }
+				});
+				
 
-    //this.dateFilterParent.classList.toggle('activerangecol');
-    event.preventDefault();
-   };
-   
-   
-   
-  
+  /*
   document.querySelectorAll(".itg_activecolumn").forEach(element => {
    element.onclick = (e) => {
      const elm = document.getElementsByClassName('itg_activecolumn');
@@ -52,8 +66,8 @@ export const ItgMediaFilter = function () {
      console.log(elm);
    };
   });
-   */
-  /*
+   
+  
   var dateFilterParent = document.querySelector(".itg_activecolumn").parentElement;
   
   DateFilterActivator.onclick = function (event) { 
@@ -62,7 +76,51 @@ export const ItgMediaFilter = function () {
    BlocksFilterDateresults.classList.toggle('activerangecol');
    event.preventDefault();
   };
+  
+  })
   */
-};
+  var scrollArrowRight = document.getElementById("scroll-arrow-right");
+		var scrollArrowLeft = document.getElementById("scroll-arrow-left");
+		
+		var rangeselector = document.querySelectorAll(".itg_option_cff");
+	
+
+		var slider = rangeselector;
+		var currentIndex = -1;
+		if(scrollArrowLeft){
+		//On load, show the first slide
+		loadPage(0);
+		
+		function loadPage(i) {
+		  //Check if index is valid
+		  if (slider[i]) {
+		    slider[i].removeAttribute('hidden');
+		  } else {
+		    return;
+		  }
+		
+		  //Hide previous slide
+		  if (slider[currentIndex]) {
+		    slider[currentIndex].setAttribute('hidden', '');
+		  }
+		
+		  currentIndex = i;
+		}
+		
+		scrollArrowRight.onclick = function() {
+		  loadPage(currentIndex + 1);
+		}
+		
+		scrollArrowLeft.onclick = function() {
+		  loadPage(currentIndex - 1);
+		}
+ // form reset 
+ function clearForm() {
+	   document.getElementById("options").reset();
+	}
+ 
+
+}
+}
 
 ItgMediaFilter();

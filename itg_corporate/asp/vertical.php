@@ -31,7 +31,9 @@ defined('ABSPATH') or die("You can't access this file directly.");
  */
 // $terms = get_the_terms( get_the_ID() );
 ?>
-<div class='itgitem itg_aspcontent columns'>        
+<div class='itgitem itg_aspcontent columns'> 
+	    <?php do_action('asp_res_vertical_begin_item'); ?>
+       
  <div class='column is-2 itgcatdatecol'>
          <?php  
             $itgcatname = get_the_category($r->id);
@@ -40,13 +42,26 @@ defined('ABSPATH') or die("You can't access this file directly.");
              $itglowcatname = strtolower($itgcatname);
              $itgpostid = $itgpost->term_id;
              $itgcaticon = get_field('upload_category_icon', 'term_' . $itgpost->term_id );
+             $termscomunicati = get_terms('comunicati', $args);
+             $getcomunicaticati = $termscomunicati[0]->name;
+             $getcomunicaticatips = $termscomunicati[1]->name;
             ?>
          <span class="itgmediacat">
-             <?php echo $itgcatname; ?>
+         <?php if ($getcomunicaticati ) { ?>
+         					<?php echo $getcomunicaticati; ?>
+         					<?php echo $getcomunicaticatips; ?>
+         				<?php } else if ($getcomunicaticatips) { ?>
+         					<?php echo $getcomunicaticatips; ?>
+         				<?php } else { ?>
+															<?php echo $itgcatname; ?>
+         <?php } ?>
          </span>
-         <div class="itgcatimage-<?php echo $itglowcatname ?>">
-          <img src="<?php echo $itgcaticon; ?>" width="60" height="70" border="0" alt="<?php echo $itgcatname; ?>" />
-         </div>
+         
+         <?php if ($itgcaticon) :?>
+	         <div class="itgcatimage-<?php echo $itglowcatname ?>">
+	          <img src="<?php echo $itgcaticon; ?>" width="60" height="70" border="0" alt="<?php echo $itgcatname; ?>" />
+	         </div>
+         <?php endif; ?>
          <?php 
              }
            ?>
@@ -68,7 +83,7 @@ defined('ABSPATH') or die("You can't access this file directly.");
          </div>
 
         <?php endif; ?>
-        <div class="column is-6">
+        <div class="column is-6 itg_mediafilter_excerpt">
          <h3><a class="itg_aspres_url" href='<?php echo $r->link; ?>'<?php echo ($s_options['results_click_blank'])?" target='_blank'":""; ?>>
                  <?php echo $r->title; ?>
                  <?php if ($s_options['resultareaclickable'] == 1): ?>
@@ -79,5 +94,10 @@ defined('ABSPATH') or die("You can't access this file directly.");
                      <?php echo $r->content; ?>
                  </span>
 
-        </div>      
+        </div>     
+        <?php do_action('asp_res_vertical_after_content'); ?>
+
+    <div class='clear'></div>
+
+    <?php do_action('asp_res_vertical_end_item'); ?> 
     </div>

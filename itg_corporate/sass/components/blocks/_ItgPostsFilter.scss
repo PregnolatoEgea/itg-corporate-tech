@@ -1,5 +1,4 @@
  .itgBlock-posts-filter{
-  padding-top: 100px;
   .itgBlock-posts-filter-title{
    color: $itg__white;
   }
@@ -223,6 +222,7 @@
         display: block;
         width: 100%;
         height: 100%;
+        padding: 15px;
         .itg_aspimage{
          width: 100%;
          height: auto;
@@ -249,12 +249,14 @@
         font-size: 24px;
         font-weight: bold;
         line-height: 33.6px;
+        padding-top: 15px;
         a{
          color: $itg__blue-1;
          font-family: $font__main;
          font-size: 24px;
          font-weight: bold;
-         line-height: 33.6px;
+         line-height: 130%;
+         display: inline-block;
         }
        }
        .itg_excerpt{
