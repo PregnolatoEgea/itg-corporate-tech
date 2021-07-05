@@ -91,7 +91,7 @@
                        </div>
                    </a>
             </div>
-            <div class="column is-6">
+            <div class="column is-5">
             <h3><a class="itg_aspres_url" href='<?php echo $permalink; ?>' target='_blank'>
                     <?php echo $title; ?>
                     <span class='overlap'></span>
@@ -101,7 +101,7 @@
                     </span>
            </div>
             <?php } else { ?>
-            <div class="column is-10">
+            <div class="column is-9 post_excerpt_container">
             <h3><a class="itg_aspres_url" href='<?php echo $permalink; ?>' target='_blank'>
                     <?php echo $title; ?>
                     <span class='overlap'></span>
