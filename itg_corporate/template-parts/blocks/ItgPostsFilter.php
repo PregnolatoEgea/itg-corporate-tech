@@ -97,7 +97,7 @@
                     <span class='overlap'></span>
             </a></h3>
                     <span class="itg_excerpt">
-                        <?php echo wp_trim_words( $itg_postexcerpt, 50,  '...' );  ?>
+                        <?php echo wp_trim_words( $itg_postexcerpt, 20,  '...' );  ?>
                     </span>
            </div>
             <?php } else { ?>
@@ -107,8 +107,8 @@
                     <span class='overlap'></span>
             </a></h3>
                     <span class="itg_excerpt">
-                        <?php echo wp_trim_words( $itg_postexcerpt, 50,  '...' );  ?>
-                        
+                        <?php echo wp_trim_words( $itg_postexcerpt, 35,  '...' );  ?>
+
                     </span>
             </div>
             <?php } ?>
