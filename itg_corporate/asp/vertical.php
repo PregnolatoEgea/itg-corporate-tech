@@ -31,7 +31,9 @@ defined('ABSPATH') or die("You can't access this file directly.");
  */
 // $terms = get_the_terms( get_the_ID() );
 ?>
-<div class='itgitem itg_aspcontent columns'>        
+<div class='itgitem itg_aspcontent columns'> 
+	    <?php do_action('asp_res_vertical_begin_item'); ?>
+       
  <div class='column is-2 itgcatdatecol'>
          <?php  
             $itgcatname = get_the_category($r->id);
@@ -40,10 +42,19 @@ defined('ABSPATH') or die("You can't access this file directly.");
              $itglowcatname = strtolower($itgcatname);
              $itgpostid = $itgpost->term_id;
              $itgcaticon = get_field('upload_category_icon', 'term_' . $itgpost->term_id );
+             $termscomunicati = get_terms('comunicati', $args);
+             $getcomunicaticati = $termscomunicati[0]->name;
+             $getcomunicaticatips = $termscomunicati[1]->name;
             ?>
          <span class="itgmediacat">
-             <?php echo $itgcatname; ?>
-         
+         <?php if ($getcomunicaticati ) { ?>
+         					<?php echo $getcomunicaticati; ?>
+         					<?php echo $getcomunicaticatips; ?>
+         				<?php } else if ($getcomunicaticatips) { ?>
+         					<?php echo $getcomunicaticatips; ?>
+         				<?php } else { ?>
+															<?php echo $itgcatname; ?>
+         <?php } ?>
          </span>
          
          <?php if ($itgcaticon) :?>
@@ -83,5 +94,10 @@ defined('ABSPATH') or die("You can't access this file directly.");
                      <?php echo $r->content; ?>
                  </span>
 
-        </div>      
+        </div>     
+        <?php do_action('asp_res_vertical_after_content'); ?>
+
+    <div class='clear'></div>
+
+    <?php do_action('asp_res_vertical_end_item'); ?> 
     </div>

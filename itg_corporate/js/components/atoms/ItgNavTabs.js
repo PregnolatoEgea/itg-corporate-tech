@@ -1,22 +1,34 @@
 export const ItgNavTabs = function () {
 
-document.addEventListener('DOMContentLoaded', function(e){
-    var list = document.querySelectorAll('.itg_navtabs a');
-    list = Array.prototype.slice.call(list, 0); 
-  
-    list.forEach(function(el) {
-        el.addEventListener('click', function(event){
-            e.preventDefault();
-            var tab = document.querySelector(el.getAttribute('href'));
-            document.querySelector('.itg_navtabs .active').classList.remove('active');
-            document.querySelector('.tab-content .active').classList.remove('active');
+function initTab(elem){
+    document.addEventListener('click', function (e) {
+        if (!e.target.matches(elem+' .itg_navtabs span')) return;
+        else{
+            if(!e.target.classList.contains('active')){
+                findActiveElementAndRemoveIt(elem+' .itg_navtabs span');
+                findActiveElementAndRemoveIt(elem+' .tab-pane');
+                e.target.classList.add('active');  
+                setTimeout(function(){                 
+                    var panel = document.querySelectorAll(elem+' .tab-pane.'+e.target.dataset.name);
+                    Array.prototype.forEach.call(panel, function (el) {
+                        el.classList.add('active');
+                    });
+                }, 200);
+            }
+        }
+    });
+}
 
-            el.classList.add('active');
-            tab.classList.add('active');
-        })
-    })
-})
-
+function findActiveElementAndRemoveIt(elem){
+    var elementList = document.querySelectorAll(elem);
+    Array.prototype.forEach.call(elementList, function (e) {
+        e.classList.remove('active');
+    });
+}
+initTab('.ItgLeftTabs');
 }
 
 ItgNavTabs();
+
+
+

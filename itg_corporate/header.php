@@ -29,38 +29,37 @@
 		<header id="masthead" class="site-header">
 			<?php
 			$left_menu = wp_get_nav_menu_items('pre-header-left-side');
-			if ($left_menu_item->menu_item_parent == 0) {
+			$reshape_menu = pre_header_menu_reshape($left_menu);
 
-				foreach ($left_menu as $key => $left_menu_item) {
-					$left_menu_item_ID = $left_menu_item->ID;
-
+			foreach ($reshape_menu as $key => $item) {
 			?>
-					<div id="Itg_PreHeaderData_<?php echo $left_menu_item_ID; ?>" class="itgPreHeader__bottomSide" data-menu-id="Itg_PreHeaderData_<?php echo $key; ?>">
-						<div class="columns">
-							<div class="column">
-								<ul class="Itg_PreHeaderData_submenu">
-									<?php
-									foreach ($left_menu as $key => $left_menu_item) {
-										if ($left_menu_item->menu_item_parent >= 1) {
-											$left_menu_item_title = $left_menu_item->title;
-											$left_menu_item_url = $left_menu_item->url;
-											$left_menu_item_target = $left_menu_item->target;
-											$left_menu_item_ID = $left_menu_item->ID;
-											$itg_submenu_label = get_field('label_submenu', $left_menu_item_ID);
-
-									?>
-											<?php if ($itg_submenu_label) { ?>
-												<li class="itg_submenulabel"><span><?php echo $left_menu_item_title; ?></span></li>
-											<?php } else { ?>
-												<li><a href="<?php echo $left_menu_item_url; ?>"><?php echo $left_menu_item_title; ?></a></li>
+				<div id="Itg_PreHeaderData_<?php echo $key; ?>" class="itgPreHeader__bottomSide" data-menu-id="Itg_PreHeaderData_<?php echo $key; ?>">
+					<div class="columns">
+						<?php
+						foreach ($item as $label => $content) {
+							foreach ($content as $c => $data) {
+						?>
+								<div class="column">
+									<ul class="Itg_PreHeaderData_submenu">
+										<?php
+										foreach ($data as $d => $data_info) {
+											$reshape_menu_item_title = $data_info->title;
+											$reshape_menu_item_url = $data_info->url;
+											$reshape_menu_item_target = $data_info->target;
+											$reshape_menu_item_ID = $data_info->ID;
+											$reshape_label = get_field('label_submenu', $left_menu_item_ID);
+										?>
+											<?php if ($d == 0) { ?>
+												<li class="itg_submenulabel"><span><?php echo $label; ?></span></li>
 											<?php } ?>
+											<li><a href="<?php echo $reshape_menu_item_url; ?>"><?php echo $reshape_menu_item_title; ?></a></li>
 										<?php } ?>
-									<?php } ?>
-								</ul>
-							</div>
-						</div>
+									</ul>
+								</div>
+						<?php }
+						} ?>
 					</div>
-				<?php } ?>
+				</div>
 			<?php } ?>
 			<div class="itgPreHeader itg-px-56">
 				<div class="itgPreHeader__leftSide">
@@ -74,17 +73,17 @@
 							$left_menu_item_url = $left_menu_item->url;
 							$left_menu_item_target = $left_menu_item->target;
 							$left_menu_item_ID = $left_menu_item->ID;
-
+							$left_menu_icon_image = get_field('image', $left_menu_item_ID);
 					?>
 							<div class="itg_a_container">
-								<a id="itg_a_button_<?php echo $key; ?>" data-target="Itg_PreHeaderData_<?php echo $left_menu_item_ID; ?>" href="#" class="itgPreHeader--singleItem itg-mr-10">
+								<a id="itg_a_button_<?php echo $key; ?>" data-target="Itg_PreHeaderData_<?php echo $left_menu_item_ID; ?>" class="itgPreHeader--singleItem itg-mr-10">
 									<?php
-									if (get_field('image', $left_menu_item->ID)) {
+									if ($left_menu_icon_image) {
 									?>
 										<img id="itg_a_image_<?php echo $key; ?>" class="itg-mr-10" src="<?php echo get_field('image', $left_menu_item_ID); ?>" alt="<?php echo $left_menu_item_title; ?>">
 									<?php } ?>
 									<?php echo $left_menu_item_title; ?></a>
-							</div>
+							</div> 
 						<?php
 						}
 						?>
@@ -113,7 +112,7 @@
 							<?php
 							if (get_field('image', $links_menu_item_ID)) {
 							?>
-								<a target="<?php echo $links_menu_item_target; ?>" href="<?php echo $links_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image">
+								<a target="_blank" href="<?php echo $links_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image">
 									<img class="itg-mr-10" src="<?php echo get_field('image', $links_menu_item_ID); ?>" alt="<?php echo $links_menu_item_title; ?>">
 								</a>
 							<?php
@@ -126,7 +125,7 @@
 							<?php
 							} else if (get_field('link_tipology', $links_menu_item_ID) === 'linkself') {
 							?>
-								<a target="<?php echo $links_menu_item_target; ?>" href="<?php echo $links_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image itg_linkself">
+								<a href="<?php echo $links_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image itg_linkself">
 									<?php echo $links_menu_item_title; ?>
 									<img class="itg-mr-10" src="<?php echo get_template_directory_uri(); ?>/dist/src/images/internal_page_blue.svg" alt="<?php echo $links_menu_item_title; ?>">
 								</a>
@@ -157,7 +156,7 @@
 						<?php
 						} else if (get_field('link_tipology', $right_menu_item_ID) === 'linblank') {
 						?>
-							<a target="<?php echo $right_menu_item_target; ?>" href="<?php echo $right_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image itg_linblank" target="_blank">
+							<a target="_blank" href="<?php echo $right_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image itg_linblank">
 								<?php echo $right_menu_item_title; ?>
 								<img class="itg-mr-10" src="<?php echo get_template_directory_uri() . '/dist/src/images/external_page_blue.svg' ?>" alt="<?php echo $right_menu_item_title; ?>">
 							</a>
@@ -179,9 +178,8 @@
 					<?php
 					if (get_field('language', $right_menu_item->language)) {
 					?>
-						<a class="itgPreHeader--singleItem itg-mr-10">
 							<!-- Selettore Lingua WPML -->
-							<?php do_action('wpml_add_language_selector'); ?>
+							<?php do_action( 'wpml_add_language_selector' ); ?>
 						<?php
 					}
 						?>
@@ -333,11 +331,11 @@
 
 																								 ?>
 																								
-																									 <li class="<?php if($i==0) { $i=1; echo 'active'; } ?>">
-																											<a href="#<?php echo $cta_megamenu_tabsid; ?>" class="is-narrow <?php if($i==0) { $i=1; echo 'active'; } ?>"  data-toggle="tab" aria-controls="<?php echo $cta_megamenu_tabsid; ?>">
+																									 <li class="">
+																											<span href="" data-name="<?php echo $cta_megamenu_tabsid; ?>" class="is-narrow <?php if($i==0) { $i=1; echo 'active'; } ?>"  data-toggle="tab" aria-controls="<?php echo $cta_megamenu_tabsid; ?>">
 																												<?php echo $cta_megamenu_tabslink; ?>
 
-																											</a>
+																											</span>
 																									 </li>
 																								 
 																									<?php  // End loop.
@@ -366,7 +364,7 @@
 																													 $cta_megamenu_tabsscdncolumn	= get_sub_field('tab_content_2ndcolumn', $main_menu_item_ID); 
 																													 
 																													 ?>																	  
-																														<div id="<?php echo $cta_megamenu_tabsid; ?>" class="tab-pane <?php if($i==0) { $i=1; echo 'active'; } ?>"  role="tabpanel" aria-labelledby="<?php echo $cta_megamenu_tabsid; ?>">
+																														<div class="tab-pane <?php echo $cta_megamenu_tabsid; ?> <?php if($i==0) { $i=1; echo 'active'; } ?>"  role="tabpanel" aria-labelledby="<?php echo $cta_megamenu_tabsid; ?>">
 																															<div class="columns is-multiline">
 																																<div class="column is-12">
 																																	<?php if($cta_megamenu_tabstitle) :  ?>

@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="columns is-centered">
-          <div class="column is-12">
+          <div class="column is-10">
             <div>
               <?php echo do_shortcode ( $filter_settings ); ?>
             </div>
@@ -22,8 +22,8 @@
         </div>
       </div>
         <div class="container">
-	        <div class="columns">
-	          <div class="column is-12">
+	        <div class="columns columns is-centered">
+	          <div id="Itg_media_results" class="column is-10 ">
 	            <div>
 	              <?php echo do_shortcode ( $filter_results ); ?>
 	            </div>

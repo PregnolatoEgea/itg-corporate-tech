@@ -3,10 +3,7 @@
   .itgBlock-media-filter-title{
    color: $itg__white;
   }
- .ajaxsearchpro{
-   legend{
-    display: none;
-   }
+ .ajaxsearchpro{   
    .itg_asp_label{
     display: flex;
     color: $itg__white;
@@ -27,7 +24,10 @@
     }
     .asp_option_inner{
      input{
-      display: none;
+      height: 0;
+       width: 0;
+       position: absolute;
+       z-index: -1;
       &:checked{
        + label{
          background-color: $itg__blue-3;
@@ -45,8 +45,10 @@
      font-size: 16px;
     }  
    input[type=radio]{
-    position: absolute;
-    opacity: 0;
+    height: 0;
+       width: 0;
+       position: absolute;
+       z-index: -1;
     &:checked + .itg_option_cat{
          background-color: $itg__blue-3;
          text-align: center;
@@ -62,14 +64,14 @@
      color: $itg__white;
      position: relative;
      margin: 0 3% 0 0;
-     .itg_option_label{
+     .asp_option_label{
       width: 100%!important;
       cursor: pointer;
       line-height: 24px;
       text-align: center;
       padding-top: 4px;
      }
-     .itg_option_inner{
+     .asp_option_inner{
       width: 100%;
       left: 0;
       top: 0;
@@ -79,7 +81,7 @@
        right: 0;
        top: 0;
        height: 100%;
-       background-color: $itg__white-20;
+       background-color: $itg__white-20!important;
        width: 100%;
        display: block;
        cursor: pointer;
@@ -89,8 +91,10 @@
        text-align: center;
       }
       input{
-       visibility: hidden;
-       display: none;
+       height: 0;
+       width: 0;
+       position: absolute;
+       z-index: -1;
       }
       input:checked + label{
        background-color: $itg__blue-3;
@@ -111,6 +115,7 @@
    margin: 0 5px!important;
    position: relative;
    overflow: hidden;
+   max-height: 56px;
    a{
     color: $itg__white;
     font-size: 16px;
@@ -255,7 +260,10 @@
      overflow: hidden;
      padding: 0;
      input{
-      visibility: hidden;
+      	height: 0;
+       width: 0;
+       position: absolute;
+       z-index: -1;
        &:checked + label{
         background-color: $itg__blue-3;
        }
@@ -270,7 +278,7 @@
     display: block;
    }
    .itg_applyfilters{
-    a{
+    button{
      color: $itg__white;
      font-weight: 600;
      padding: 10px 20px;
@@ -280,13 +288,15 @@
      border: 2px solid $itg__white;
      text-align: center;
      border-radius: 8px;
+     cursor: pointer;
+     background: transparent;
      &:hover{
       font-weight: 600;
      }
     }
    }
    .itg_resetfilters{
-     a{
+     button{
       color: $itg__white;
       font-weight: 600;
       padding: 10px 20px;
@@ -295,6 +305,8 @@
       margin: 0 auto;
       text-align: center;
       color: $itg__white;
+      cursor: pointer;
+      background: transparent;
       img{
         margin-left: 10px;
         vertical-align: middle;
@@ -312,7 +324,7 @@
    display: block;
   }
   .itg_applyfilters{
-    a{
+    button{
      color: $itg__white;
      font-weight: 600;
      padding: 10px 20px;
@@ -322,13 +334,15 @@
      border: 2px solid $itg__white;
      text-align: center;
      border-radius: 8px;
+     cursor: pointer;
+     background: transparent;
      &:hover{
       font-weight: 600;
      }
     }
    }
    .itg_resetfilters{
-     a{
+     button{
       color: $itg__white;
       font-weight: 600;
       padding: 10px 20px;
@@ -337,6 +351,8 @@
       margin: 0 auto;
       text-align: center;
       color: $itg__white;
+      cursor: pointer;
+      background: transparent;
      img{
        margin-left: 10px;
        vertical-align: middle;
@@ -346,43 +362,105 @@
      }
     }
    }
-   a.itg_activecolumn {
-    color: #fff;
-    position: relative;
-    &:before{
-     content: "";
-     display: inline-block;
-     width: 40px;
-     height: 40px;
-     line-height: 40px;
-     border-radius: 50%;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border: 2px solid $itg__white;
-     vertical-align: middle;
-     margin-right: 10px;
-     background-color: $itg__blue-1;
-    }
-    &.activerange{
-     &:before{
-      background-color: $itg__blue-1;
-     }
-     &:after{
-      content: "";
-      display: block;
-      background-color: $itg__blue-3;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      -moz-border-radius: 50%;
-      -webkit-border-radius: 50%;
-      position: absolute;
-      left: 5px;
-		    right: 0;
-		    top: -6px;
-		    bottom: 0;
-     }
-    }
+   .itg_columndaterange{
+	   &.activecolumn{
+		     &:before{
+			      background-color: $itg__blue-1;
+			     }
+			     &:after{
+			      content: "";
+			      display: block;
+			      background-color: $itg__blue-3;
+			      width: 28px;
+			      height: 28px;
+			      border-radius: 50%;
+			      -moz-border-radius: 50%;
+			      -webkit-border-radius: 50%;
+			      position: absolute;
+			      left: 8px;
+					    right: 0;
+					    top: -3px;
+					    bottom: 0;
+			     }
+   	}
    }
  }
+}
+
+.itg_columndaterange{
+	 width: 220px!important;
+	 height: 50px;
+	 border-radius: 55px!important;
+	 display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  color: $itg__white;
+ }
+  .columnmediafilters{
+	  width: 220px!important;
+		 height: 50px;
+		 border-radius: 55px!important;
+		 overflow: hidden;
+		 display: flex;
+	  justify-content: center;
+	  align-content: center;
+	  align-items: center;
+	  flex-direction: row;
+	  position: relative;
+	  color: $itg__white;
+	  background-color: hsla(0,0%,100%,.2);
+			.itg_option_cff{
+				min-width: 200px;
+				padding: 0;
+				cursor: pointer;
+				.asp_option_inner{
+					background: none!important;
+				}
+				.asp_option_label{
+						 width: 100%!important;
+						 text-align: center;
+						 position: relative;
+						 top: -10px;
+					}
+				label{
+					background: none!important;
+					&:after{
+						background: none!important;
+					}
+				}
+			}
+  .scroll-arrow {
+		  cursor: pointer;
+		  margin: 0 0.6em;
+		  font-size: 1.4em;
+		  position: absolute;
+		}
+		span#scroll-arrow-left{
+			display: block;
+			background-image: url(src/images/icons/Arrow_left_white.svg);
+			background-position: center center;
+			background-size: contain;
+			width: 20px;
+			height: 20px;
+			left: 15px;
+			z-index:999;
+			transform: rotate(45deg);
+		}
+		span#scroll-arrow-right{
+			display: block;
+			background-image: url(src/images/icons/Arrow_left_white.svg);
+			background-position: center center;
+			background-size: contain;
+			width: 20px;
+			height: 20px;
+			right: 15px;
+			transform: rotate(-135deg);
+		}
+}
+
+.asp_option_cat.asp_option.asp_option.asp_option_cat_level-.itg_option_cat.aligncenter {
+    margin-right: 32px;
 }

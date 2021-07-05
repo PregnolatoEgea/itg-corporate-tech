@@ -29,6 +29,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    span.wpml-ls-native {
+	    color: #003478!important;
+	    font-size: 14px;
+	    font-weight: 500;
+				}
   }
 }
 
@@ -153,8 +158,10 @@
         margin-right: 6px;
         max-width: 18px;
       }
-      &.active {
+      &.is-active {
         color: $itg__blue-3 !important;
+        font-weight: 600;
+        outline: none;
         img {
           fill: $itg__blue-3 !important;
         }
@@ -191,6 +198,11 @@
       li {
         a {
           color: $itg__white;
+          line-height: 14px;
+										display: inline-block;
+										&:hover{
+											color: $itg__blue-3;
+										}
         }
       }
     }
@@ -775,10 +787,36 @@ header.site-header {
      &.is-active:not(.menu-servizi){
 	     color: $itg__blue-3;
 	     border-bottom: 5px solid $itg__blue-3;
+	     transition: all 0.1s linear;
+	     &:not(.is-arrowless):before{
+		     border: 3px solid transparent;
+		     transition: all 0.1s linear;
+			    border-radius: 2px;
+			    border-right: 0;
+			    border-top: 0;
+			    content: " ";
+			    display: block;
+			    height: .625em;
+			    pointer-events: none;
+			    position: absolute;
+			    top: 50%;
+			    -webkit-transform: rotate(	-135deg);
+			    transform: rotate(135deg);
+			    -webkit-transform-origin: center;
+			    transform-origin: center;
+			    width: .625em;
+			    /* border-right: 3px solid #00a9e0; */
+			    border-color: #00a9e0 #00a9e0 #00a9e0;
+			    /* border-top: 5px solid #00a9e0; */
+			    margin-top: -.05em;
+			    right: 1.125em;
+     	}
 	     &:not(.is-arrowless):after{
 		     border-color: $itg__blue-3;
-	     }
-     }
+		     margin-top: -.6em;
+		     transition: all 0.1s linear;
+	     }     
+	    }
      img{
       transform: rotate(90deg);
 						margin-left: 5px;
@@ -867,7 +905,8 @@ header.site-header {
 	    height: 100vw;
 	    .itg__rowtitle{
 		    width: 100%;
-		    padding-bottom: 30px;
+		    padding-bottom: 0px;
+		    max-height: 210px;
 		    .Itg-hero-menu-upper-left {
 						    padding-right: 60px;
 						}
@@ -914,7 +953,6 @@ header.site-header {
 				  height: 230px;
 				  width: 100%;
 				  color: $itg__white;
-						padding-top: 50px;
 						margin: 0 auto;
 				  &-left {
 				    span {
@@ -946,11 +984,17 @@ header.site-header {
 						.Itg_mega_menu_cta {
 							background-color: $itg__blue-1;
 							height: 100vw;
-							padding-top: 40px;
+							padding-top: 25px;
 						}
 						.Itg-hero-menu-lower-central{
 						  background-color: $itg__blue-1-75;
-						  padding-top: 40px;
+						  padding-top: 25px;
+						  a{
+							  color: $itg__white!important;
+							  &:hover{
+								  color: $itg__blue-3;
+							  }
+						  }
 					  }
 				  .launchlinks{
 							padding: 30px;
@@ -963,6 +1007,9 @@ header.site-header {
 									}
 							a{
 								font-weight: 600;
+								&:hover{
+								  color: $itg__blue-3;
+							  }
 							}
 							p{
 								line-height: 150%;
@@ -1025,15 +1072,27 @@ header.site-header {
 				    }
 						  a{
 							  color: $itg__white;
+							  font-size: 14px!important;
+									font-weight: 600;
 							  &:hover{
-								  color: $itg__blue-3;
+								  color: $itg__blue-3!important;
 							  }
 						  }				    
 				  }
 				  .tab-pane {
 							display: none;
 							max-width: 580px;
-							padding: 0 40px;
+							padding: 0 40px 50px;
+							overflow: scroll;
+							max-height: 400px;
+							.column{
+								padding-bottom: 0!important;
+								padding-right: 0;
+								strong {
+										    font-weight: 800;
+										    font-size: 14px;
+										}
+							}
 							&.active {
 								display: block;
 							}
@@ -1052,14 +1111,15 @@ header.site-header {
 				
 				  .column {				
 				    span {
-				      font-weight: bold;
-				      line-height: 40px;
+				      line-height: 120%;
 				      letter-spacing: 0;
 				      font-size: 16px;
 				      font-family: $font__main;
 				      margin-top: 10px;
 				      margin-bottom: 10px;
 				      display: block;
+				      font-weight: 500;
+				      max-width: 80%;
 				    }
 				
 				    p {
@@ -1090,10 +1150,12 @@ header.site-header {
 			max-width: 75%;
    left: 20%;
 			li{
-				margin-bottom: 10px;
+				margin-bottom: 20px;
 				position: relative;
-				a{
+				span{
 					color: $itg__white!important;
+					transition: all 0.3s ease-in-out;
+					cursor: pointer;
 					&:after {
 		    border: 3px solid transparent;
 		    border-radius: 2px;
@@ -1121,16 +1183,13 @@ header.site-header {
 								}
 						}
 			}
-			&.active{
-							color: $itg__blue-3!important;
-							a{
+							span.active{
 								color: $itg__blue-3!important;
 								&:after {
 									border-color: $itg__blue-3;
 								}
 							}
 								
-						}
   }
 }
 .menu-servizi{
@@ -1166,16 +1225,19 @@ header.site-header {
   }
   .tab-content {
    float: left;
-
+			transition: all 0.3s ease-in-out;
    & > .tab-pane {
      display: none;
+     transition: all 0.3s ease-in-out;
      hr{
 								background-color: $itg__blue-2;
 								height: 2px;
 								margin-bottom: 0;
+								margin-top: 15px;
 							}
      &.active {
        display: block;
+       transition: all 0.3s ease-in-out;
      }
    }
    }
