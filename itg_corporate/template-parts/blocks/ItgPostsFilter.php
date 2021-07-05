@@ -70,18 +70,20 @@
                   </div>
                 </div>
                  <?php endif; ?>
-                 <?php 
+                 <?php
                   }
                  ?>
-                
+
                 <div class="column is-three-quarter-mobile is-hidden-desktop is-hidden-tablet itg_date_wrapper">
-                 <span class='itg_asp_date'><?php echo $itg_postsdate ?></span>
+                    <span class='itg_asp_date'><?php echo explode(',', $itg_postsdate)[0] . ', '. date_format(new \Datetime($itg_postsdate), 'Y'); ?></span>
+                    <span class='itg_asp_date has-text-weight-light is-size-7'><?php echo date_format(new \DateTime($itg_postsdate), 'H.i e'); ?></span>
                 </div>
                 </div>
                 <div class="column is-12 is-half-mobile is-hidden-mobile itg_date_wrapper">
-                 <span class='itg_asp_date'><?php echo $itg_postsdate ?></span>
+                    <span class='itg_asp_date'><?php echo explode(',', $itg_postsdate)[0] . ', '. date_format(new \Datetime($itg_postsdate), 'Y'); ?></span>
+                    <span class='itg_asp_date has-text-weight-light is-size-7'><?php echo date_format(new \DateTime($itg_postsdate), 'H.i e'); ?></span>
                 </div>
-              
+
            </div>
            <?php if ( $itg_poststhumbnail ) { ?>
             <div class="column is-4">
