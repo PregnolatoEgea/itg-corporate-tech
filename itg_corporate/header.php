@@ -54,8 +54,6 @@
 											<?php } ?>
 											<li><a href="<?php echo $reshape_menu_item_url; ?>"><?php echo $reshape_menu_item_title; ?></a></li>
 										<?php } ?>
-										
-										
 									</ul>
 								</div>
 						<?php }

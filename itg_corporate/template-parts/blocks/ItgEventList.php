@@ -191,7 +191,11 @@ $subscribe_icon = get_template_directory_uri(  ) . '/dist/src/images/icons/event
             </div>
         </div>
       </div>
+<<<<<<< HEAD
       <div class="column itgBlock-ItgEventList__container is-12 itgBlock-ItgEventList__tab-list <?php if(!$show_categories_filter && !$show_years_filter){ echo 'hidden' ;} ?>">       
+=======
+      <div class="column itgBlock-ItgEventList__container is-12 itgBlock-ItgEventList__tab-list">       
+>>>>>>> 1c0f57ef3db213b3b4549380b570270ccc76a159
         <div class="columns is-marginless is-mobile is-vcentered itgBlock-ItgEventList__tab-list-multiline-mobile-only  ">   
             <div class="itgBlock-ItgEventList__tab-list-mobile-only-wrapper <?php if(!$show_categories_filter){ echo 'hidden' ;} ?>">
               <div class="column is-narrow-desktop is-narrow-widescreen is-narrow-fullhd is-3-tablet is-narrow-mobile">
