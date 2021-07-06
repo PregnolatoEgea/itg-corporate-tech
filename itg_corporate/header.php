@@ -54,6 +54,8 @@
 											<?php } ?>
 											<li><a href="<?php echo $reshape_menu_item_url; ?>"><?php echo $reshape_menu_item_title; ?></a></li>
 										<?php } ?>
+										
+										
 									</ul>
 								</div>
 						<?php }
@@ -90,6 +92,23 @@
 					<?php
 					}
 					?>
+					<div class="Itg_stock_update">
+					<div id="title-perc"></div> 
+					<div class="lastprice">
+				<?php _e('Ultimo prezzo'); ?>
+					</div>
+															<div id="title-price"></div> €
+															<script type="text/javascript">
+																			jQuery.ajax({
+																						url: "https://syndication.teleborsa.it/Italgas/Feeds/jsonValues", 
+																						method: "get",		
+																						success: function(result){
+																				        	jQuery("#title-perc").text(result.percentChange);
+																							jQuery("#title-price").text(result.lastTrade);
+																						}
+									    				});
+										</script>
+					</div>
 					<?php
 					if (get_field('news', $left_menu_item->news)) {
 					?>
@@ -309,7 +328,7 @@
 																					
 																						<div class="columns">
 																							
-																								<div class="Itg_mega_menu_cta column is-4">
+																								<div class="Itg_mega_menu_cta column is-3">
 																									 <ul class="itg_navtabs">
 																									<?php // Check rows exists.
 																										$main_menu_item_ID = $main_menu_item->ID;
@@ -350,7 +369,7 @@
 																								</ul>
 																								</div>			
 
-																								<div class="Itg-hero-menu-lower-central column is-8 tab-content">
+																								<div class="Itg-hero-menu-lower-central column is-9 tab-content">
 																								
 																								<?php // Check rows exists.
 																										if( have_rows('tabs_links', $main_menu_item_ID) ):

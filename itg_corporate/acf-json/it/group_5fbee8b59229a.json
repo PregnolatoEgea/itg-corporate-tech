@@ -69,7 +69,7 @@
             "ui_on_text": "",
             "ui_off_text": ""
         },
-        {
+                {
             "key": "field_600877ad52d40",
             "label": "Wave border type",
             "name": "wave_border_type",
@@ -1555,6 +1555,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_60e2aa476b71e": {
+                    "key": "layout_60e2aa476b71e",
+                    "name": "hero_image_slider",
+                    "label": "Hero image slider",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60e2aa476b71f",
+                            "label": "Hero image slider",
+                            "name": "hero_image_slider",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "clone": [
+                                "group_60dffd9d9884c"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Aggiungi Layout",
@@ -1581,5 +1613,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1624479821
+    "modified": 1625467536
 }
