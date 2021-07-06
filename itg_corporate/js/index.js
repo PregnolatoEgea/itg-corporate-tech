@@ -6,11 +6,7 @@ import ItgTabYears from './components/blocks/ItgTabYears'
 import ItgMetaballs from './components/animations/ItgMetaballs'
 //import ItgHamburgers from './components/animations/ItgHamburgers'
 import ItgCarouselLaunches from './components/blocks/ItgCarouselLaunches'
-<<<<<<< HEAD
 import ItgHeroImageSwiper from './components/blocks/ItgHeroImageSlider'
-=======
-//import ItgHeroImageSwiper from './components/blocks/ItgHeroImageSwiper'
->>>>>>> 1c0f57ef3db213b3b4549380b570270ccc76a159
 import ItgLogoWall from './components/blocks/ItgLogoWall'
 import ItgContentCarousel from './components/blocks/ItgContentCarousel'
 import ItgMatrix from './components/blocks/ItgMatrix'
