@@ -9,7 +9,20 @@ export const ItgOpenMegaMenu = function (key)
 
     const tabContents = document.querySelectorAll(".navbar-dropdown");
 
-    const narrow = document.querySelectorAll(".is-narrow");
+    const narrow = document.querySelectorAll('.is-narrow');
+
+    let narrowelems = [];
+
+    narrow.forEach(function (elem, index)
+    {
+      if (elem.classList.contains('active') && elem.classList.contains('is-active'))
+      {
+        if (!narrowelems.includes(index))
+        {
+          narrowelems.push(index);
+        }
+      }
+    });
 
     tabs.forEach(function (tab)
     {
@@ -27,11 +40,20 @@ export const ItgOpenMegaMenu = function (key)
         {
           tab.classList.remove('is-active');
         }
+
+        if (tab.classList.contains('active'))
+        {
+          tab.classList.remove('active');
+        }
       });
 
-      if (narrow[0])
+      for (let i = 0; i < narrowelems.length; i++)
       {
-        narrow[0].classList.add('is-active');
+        if (narrow[narrowelems[i]])
+        {
+          narrow[narrowelems[i]].classList.add('active');
+          narrow[narrowelems[i]].classList.add('is-active');
+        }
       }
       // Loop over the tabs
       tabs.forEach(function (tab, index)

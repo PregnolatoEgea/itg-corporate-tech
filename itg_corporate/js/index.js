@@ -23,5 +23,5 @@ import ItgEventList from './components/blocks/ItgEventList'
 import ItgOpenPreHeaderBottomSide from './components/blocks/ItgOpenPreHeaderBottomSide'
 import ItgOpenMegaMenu from './components/blocks/ItgOpenMegaMenu'
 import ItgFooter from './components/animations/ItgFooter'
-import ItgNavTabs from './components/atoms/ItgNavTabs'
 import ItgSectionClosePreheader from './components/blocks/ItgSectionClosePreheader';
+import ItgNavTabs from './components/atoms/ItgNavTabs'
