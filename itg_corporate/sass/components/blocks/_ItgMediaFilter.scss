@@ -186,7 +186,13 @@
           font-weight: 400;
           display: block;
           margin: 20px 0 20px;
-         }
+          span.ItgCatClass_2 {
+										    display: none;
+									}
+									span.ItgCatClass_1 {
+										    display: none;
+									}         
+								}
         }
         .itg_aspres_image_url{
          display: block;

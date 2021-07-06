@@ -199,13 +199,18 @@
         }
         .itgmediacat{
          font-size: 13px;
-         line-height: 28.8px;
          text-align: center;
          text-transform: uppercase;
          color: $itg__blue-1;
          font-weight: 600;
          display: block;
-         margin: 20px 0 20px;
+         margin: 10px 0 0;
+         span.ItgCatClass_2 {
+										    display: none;
+									}
+									span.ItgCatClass_1 {
+										    display: none;
+									}
          @media(max-width: 767px) {margin:0;}
         }
         .itg_date_wrapper{

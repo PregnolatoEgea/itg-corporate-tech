@@ -795,7 +795,7 @@ header.site-header {
      &:not(.is-arrowless):after{
 	     border-color: $itg__blue-1;
      }
-     &.is-active:not(.menu-servizi){
+     &.is-active{
 	     color: $itg__blue-3;
 	     border-bottom: 5px solid $itg__blue-3;
 	     transition: all 0.1s linear;
@@ -853,7 +853,6 @@ header.site-header {
       background-color: $itg__white;
 		    border: 3px solid $itg__blue-2;
 		    width: 140px;
-		    color: $itg__blue-1;
 		    margin-right: 10px;
 		    display: -webkit-box;
 		    display: -ms-flexbox;
@@ -865,21 +864,23 @@ header.site-header {
 		    border-radius: 7px;
 		    padding: 0;
 		    top: 15px;
-		    
-		    span{
-			    margin: 0 auto 0 33px;
-			    display: block;
-		    }
-		    a{
-			    height: 37px!important;
-			    margin: 0 auto!important;
-			    &:hover{
-				    border: none!important;
+		    &.is-active{
+					    border: 3px solid $itg__blue-3;
+					    span{
+						    color: $itg__blue-3;
+					    }
+					 }
+			   	span{
+				    margin: 0 auto 0 33px;
+				    display: block;
 			    }
-			    &.is-active{
-				    border: none!important;
-			    }
-		    }
+			    a{
+				    height: 37px!important;
+				    margin: 0 auto!important;
+				    &:hover{
+					    border: none!important;
+				    }
+				   }
      }
 	  	}
 		  .is-mega-menu-title {

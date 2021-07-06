@@ -47,24 +47,46 @@
                 $itglowcatname = strtolower($itgcatname);
                 $itgpostid = $itgpost->term_id;
                 $itgcaticon = get_field('upload_category_icon', 'term_' . $itgpost->term_id );
-
+                
+                $itg_customcatname = get_the_terms( $itg_postfilter->ID, 'comunicati' );
+																$itgcustomcaticon = get_field('upload_category_icon', 'term_' . $itg_customcatname[0]->term_id );
+																$itgcat_custom_name = $itg_customcatname[0]->name;
                ?>
                <?php if ($itgcaticon) : ?>
                 <div class="column is-12-desktop is-one-quarter-mobile is-hidden-desktop is-hidden-tablet">
                   <div class="itgcatimage-<?php echo $itglowcatname ?>">
-                   <img src="<?php echo $itgcaticon; ?>" width="60" height="70" border="0" alt="<?php echo $itgcatname; ?>" />
+                   <img src="<?php echo $itgcaticon; ?>" width="60" height="70" border="0" alt="<?php echo $itgcat_custom_name; ?>" />
+                  </div>
+                </div>
+                 <?php endif; ?>
+                 <?php if ($itgcustomcaticon) : ?>
+                <div class="column is-12-desktop is-one-quarter-mobile is-hidden-desktop is-hidden-tablet">
+                  <div class="itgcatimage-<?php echo $itgcat_custom_name ?>">
+                   <img src="<?php echo $itgcustomcaticon; ?>" width="60" height="70" border="0" alt="<?php echo $itgcustomcaticon; ?>" />
                   </div>
                 </div>
                  <?php endif; ?>
                 <div class="column is-12 is-three-quarter-mobile ">
                  <span class="itgmediacat is-size-4">
-                     <?php echo $itgcatname; ?>
+                 <?php if ($itgcatname) : ?>
+                     <span class="ItgCatClass_<?php echo $itgpostid ?>"><?php echo $itgcatname; ?></span>
+                 <?php endif; ?>
+                 <?php if ($itg_customcatname) : ?>
+                     <?php echo $itgcat_custom_name; ?>
+                 <?php endif; ?>
                  </span>
                 </div>
                 <?php if ($itgcaticon) : ?>
                 <div class="column is-12 is-hidden-mobile itg_imgcat_wrapper">
                   <div class="itgcatimage-<?php echo $itglowcatname ?>">
                    <img src="<?php echo $itgcaticon; ?>" width="60" height="70" border="0" alt="<?php echo $itgcatname; ?>" />
+                  </div>
+                </div>
+                 <?php endif; ?>
+                 <?php if ($itgcustomcaticon) : ?>
+                <div class="column is-12 is-hidden-mobile itg_imgcat_wrapper">
+                  <div class="itgcatimage-<?php echo $itglowcatname ?>">
+                   <img src="<?php echo $itgcustomcaticon; ?>" width="60" height="70" border="0" alt="<?php echo $itg_customcatname; ?>" />
                   </div>
                 </div>
                  <?php endif; ?>
@@ -97,7 +119,8 @@
                     <span class='overlap'></span>
             </a></h3>
                     <span class="itg_excerpt">
-                        <?php echo wp_trim_words( $itg_postexcerpt, 20,  '...' );  ?>
+                        <?php echo wp_trim_words( $itg_postexcerpt, 20,  '...' );  
+                        ?>                        
                     </span>
            </div>
             <?php } else { ?>
@@ -107,7 +130,8 @@
                     <span class='overlap'></span>
             </a></h3>
                     <span class="itg_excerpt">
-                        <?php echo wp_trim_words( $itg_postexcerpt, 35,  '...' );  ?>
+                        <?php echo wp_trim_words( $itg_postexcerpt, 35,  '...' ); ?>
+                        
 
                     </span>
             </div>
