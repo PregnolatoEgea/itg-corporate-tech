@@ -1,10 +1,8 @@
 .single-post {
  .site-main{
-  margin-top: 90px;
     .itg_detail_post_header {
      display: block;
       background-color: $itg__light-blue;
-      margin-top: 120px;
       height: 368px;
       text-align: center;
       min-height: 270px;
@@ -52,7 +50,7 @@
         color: $itg__white;
         position: relative;
         z-index: 1;
-        line-height: 10px!important;
+        line-height: 130%!important;
         display: inline-block;
        }
       }

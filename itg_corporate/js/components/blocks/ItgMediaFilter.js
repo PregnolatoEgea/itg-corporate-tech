@@ -84,7 +84,7 @@ export const ItgMediaFilter = function () {
 		
 		var rangeselector = document.querySelectorAll(".itg_option_cff");
 	
-		console.log(rangeselector);
+
 		var slider = rangeselector;
 		var currentIndex = -1;
 		if(scrollArrowLeft){

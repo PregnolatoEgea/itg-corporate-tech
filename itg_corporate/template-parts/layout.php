@@ -220,7 +220,7 @@ if( have_rows('layout_builder') ):
           break;
           case 'posts_filter':
             require 'blocks/ItgPostsFilter.php';
-          break;
+          break;                   
           
           default:
 
@@ -254,6 +254,9 @@ endif;
 if(is_single()) { 
  $url=get_permalink();
  $categories = get_the_category( $post->ID );
+	$itg_customcatname = get_the_terms( $post->ID, 'comunicati' );
+	$itgcustomcaticon = get_field('upload_category_icon', 'term_' . $itg_customcatname[0]->term_id );
+	$itgcat_custom_name = $itg_customcatname[0]->name;
 
  foreach((get_the_category()) as $category){ 
  $cat_icon = get_field('upload_category_icon', 'term_' . $category->term_id ); 
@@ -265,14 +268,21 @@ if(is_single()) {
 <header class="itg_detail_post_header itg__has_post_thumbnail <?php echo $category->slug; ?>" style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
  <div class="columns is-vcentered itg__post-height">
   <div class="column is-10 itg__single_wrapper is-offset-1 pt-5">
-   <?php if ($cat_icon) : ?>
+   <?php if ($cat_icon) { ?>
    <span class="itg__single_category_img aligncente">
    <img src="<?php echo $cat_icon; ?>" width="70" height="70" alt="<?php echo $category->name; ?>" />
    </span>
-   <?php endif; ?>
    <span class="itg__single_category aligncenter">
-    <?php echo $category->name; ?>
+       <?php echo $category->name; ?>
+      </span>
+   <?php } else if ($itgcustomcaticon) { ?>
+   <span class="itg__single_category aligncenter">
+    <img src="<?php echo $itgcustomcaticon; ?>" width="70" height="70" alt="<?php echo $itgcat_custom_name ?>" />
    </span>
+   <span class="itg__single_category aligncenter">
+      <?php echo $itgcat_custom_name; ?>
+    </span>
+   <?php } ?>
    <h1 class="itg_detail_post_title"><?php the_title(); ?></h1>
   </div>
  </div>
@@ -308,14 +318,22 @@ if(is_single()) {
  <header class="itg_detail_post_header <?php echo $category->slug; ?>">
    <div class="columns is-vcentered itg__post-height">
     <div class="column is-10 itg__single_wrapper is-offset-1 pt-5">
-     <?php if ($cat_icon) : ?>
-      <span class="itg__single_category_img aligncenter">
-      <img src="<?php echo $cat_icon; ?>" width="70" height="70" alt="<?php echo $category->name; ?>" />
-      </span>
-     <?php endif; ?>
-      <span class="itg__single_category aligncenter">
+     <?php if ($cat_icon) { ?>
+			   <span class="itg__single_category_img aligncente">
+			   <img src="<?php echo $cat_icon; ?>" width="70" height="70" alt="<?php echo $category->name; ?>" />
+			   </span>
+			   <span class="itg__single_category aligncenter">
        <?php echo $category->name; ?>
       </span>
+			   <?php } else if ($itgcustomcaticon) { ?>
+			   <span class="itg__single_category aligncenter">
+			    <img src="<?php echo $itgcustomcaticon; ?>" width="70" height="70" alt="<?php echo $itgcat_custom_name; ?>" />
+			   </span>
+			   <span class="itg__single_category aligncenter">
+       <?php echo $itgcat_custom_name; ?>
+      </span>
+			   <?php } ?>
+      
      <h1 class="itg_detail_post_title"><?php the_title(); ?></h1>
     </div>
    </div>
@@ -527,6 +545,9 @@ if( have_rows('layout_builder_posts') ):
           case 'last_update':
             require 'blocks/ItgLastUpdate.php';
           break;
+          case 'last_update':
+            require 'blocks/ItgLastUpdate.php';
+          break;
           case 'notices_and_communications':
             require 'blocks/ItgNoticeCommunications.php';
           break;      
@@ -538,8 +559,8 @@ if( have_rows('layout_builder_posts') ):
           break;
           case 'posts_filter':
             require 'blocks/ItgPostsFilter.php';
-          break;
-          
+          break;          
+         
           default:
 
           break;
