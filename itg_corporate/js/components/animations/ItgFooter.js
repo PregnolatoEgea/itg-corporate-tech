@@ -13,8 +13,9 @@ export const ItgFooter = function () {
 
 			for (var i = 0; i < itgSubmenus.length; i++) {
 				itgSubmenus[i].classList.toggle("is-show");
+				
 			}
-
+			itgSubmenusToggler.classList.add("is-active");
 		});
 	});
 
@@ -24,6 +25,7 @@ export const ItgFooter = function () {
 		for (var i = 0; i < itgSubmenus.length; i++) {
 			itgSubmenus[i].classList.toggle("is-show");
 		}
+		itgSubmenusToggler.classList.toggle("is-active");
 	});
 
 	// Mobile-only logic
@@ -58,6 +60,7 @@ export const ItgFooter = function () {
 					if (!isClickedElementShown) {
 						clickedEntrySubMenu.classList.add('is-show');
 						clickedEntrySubMenu.classList.add('pl-2');
+						itgSubmenusToggler.classList.remove("is-active");
 					}
 				});
 		});

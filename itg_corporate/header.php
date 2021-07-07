@@ -75,14 +75,14 @@
 							$left_menu_item_url = $left_menu_item->url;
 							$left_menu_item_target = $left_menu_item->target;
 							$left_menu_item_ID = $left_menu_item->ID;
-							$left_menu_icon_image = get_field('image', $left_menu_item_ID);
+							$left_menu_icon_image = get_field('image_icon', $left_menu_item_ID);
 					?>
 							<div class="itg_a_container">
 								<a id="itg_a_button_<?php echo $key; ?>" data-target="Itg_PreHeaderData_<?php echo $left_menu_item_ID; ?>" class="itgPreHeader--singleItem itg-mr-10">
 									<?php
 									if ($left_menu_icon_image) {
 									?>
-										<img id="itg_a_image_<?php echo $key; ?>" class="itg-mr-10" src="<?php echo get_field('image', $left_menu_item_ID); ?>" alt="<?php echo $left_menu_item_title; ?>">
+										<img id="itg_a_image_<?php echo $key; ?>" class="itg-mr-10" src="<?php echo $left_menu_icon_image; ?>" alt="<?php echo $left_menu_item_title; ?>">
 									<?php } ?>
 									<?php echo $left_menu_item_title; ?></a>
 							</div> 
@@ -129,10 +129,10 @@
 							$links_menu_item_target = $links_menu_item->target;
 					?>
 							<?php
-							if (get_field('image', $links_menu_item_ID)) {
+							if (get_field('image_icon', $links_menu_item_ID)) {
 							?>
 								<a target="_blank" href="<?php echo $links_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image">
-									<img class="itg-mr-10" src="<?php echo get_field('image', $links_menu_item_ID); ?>" alt="<?php echo $links_menu_item_title; ?>">
+									<img class="itg-mr-10" src="<?php echo get_field('image_icon', $links_menu_item_ID); ?>" alt="<?php echo $links_menu_item_title; ?>">
 								</a>
 							<?php
 							} else if (get_field('link_tipology', $links_menu_item_ID) === 'linblank') {
@@ -194,14 +194,8 @@
 					<?php
 					}
 					?>
-					<?php
-					if (get_field('language', $right_menu_item->language)) {
-					?>
 							<!-- Selettore Lingua WPML -->
-							<?php do_action( 'wpml_add_language_selector' ); ?>
-						<?php
-					}
-						?>
+							<?php do_action( 'wpml_add_language_selector' ); ?>						
 				</div>
 			</div>
 					<nav class="navbar" aria-label="main navigation">

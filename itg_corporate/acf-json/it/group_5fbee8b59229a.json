@@ -1577,7 +1577,39 @@
                             },
                             "wpml_cf_preferences": 0,
                             "clone": [
-                                "group_60dffd9d9884c"
+                            "group_60dffd9d9884c"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60c31ef3e0fcf": {
+                    "key": "layout_60c31ef3e0fcf",
+                    "name": "last_update",
+                    "label": "Last Update",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60c31ef4e0fd0",
+                            "label": "Last Update",
+                            "name": "last_update",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "clone": [
+                                "group_60c31ca17a0c9"
                             ],
                             "display": "seamless",
                             "layout": "block",

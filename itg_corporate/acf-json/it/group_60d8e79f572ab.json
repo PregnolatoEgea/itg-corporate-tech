@@ -5,7 +5,7 @@
         {
             "key": "field_60d8e7b8edafc",
             "label": "Add menu icon",
-            "name": "image",
+            "name": "image_icon",
             "type": "file",
             "instructions": "",
             "required": 0,
@@ -108,5 +108,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1624876176
+    "modified": 1625648527
 }

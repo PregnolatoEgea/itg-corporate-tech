@@ -11,7 +11,7 @@ export const ItgOpenPreHeaderBottomSide = function (key)
     var $bottomContent = document.querySelectorAll('.itgPreHeader__bottomSide');
 
     let priorActive = null;
-
+				
     // Check if there are any nav burgers
     if ($navbarTriggers.length > 0)
     {
@@ -21,13 +21,16 @@ export const ItgOpenPreHeaderBottomSide = function (key)
         if ($el)
         {
           $el.addEventListener('click', addActiveMenu);
+          
           event.preventDefault();
-         
+										
         }
       });
 
       function addActiveMenu(e)
       {
+	      	     
+
         // Loop over the nav-triggers
         $navbarTriggers.forEach(function ($el, index)
         {
@@ -62,11 +65,9 @@ export const ItgOpenPreHeaderBottomSide = function (key)
           }
           priorActive = this;
         }
-								event.preventDefault();
-									
+        									
 
       }
-      event.preventDefault();
     }
 
   });

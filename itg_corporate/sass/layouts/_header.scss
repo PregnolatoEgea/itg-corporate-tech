@@ -40,11 +40,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    span.wpml-ls-native {
-	    color: #003478!important;
-	    font-size: 14px;
-	    font-weight: 500;
-				}
   }
 }
 
@@ -78,7 +73,40 @@
       line-height: 25.6px;
       font-family: $font__main;
     }
-
+    .itgPreHeader--singleItem{
+	    span.wpml-ls-native{
+	    	display: none!important;
+    	}
+    }
+				.wpml-ls{
+					list-style-type: none;
+					margin: 0;
+					padding: 0;
+					ul{
+						line-height: 10px;
+					}
+	    a{
+					color: #003478!important;
+	    font-size: 14px;
+	    font-weight: 500;
+	    margin: 0;
+	    padding: 0;
+		    &:hover{
+			    color: $itg__blue-3;
+		    }
+		    .wpml-ls-display{
+			    display: none;
+		    }
+			  }
+			  span.wpml-ls-native {
+	    color: #003478!important;
+	    font-size: 14px;
+	    font-weight: 500;
+				}
+				.wpml-ls-current-language {
+					display: none;
+				}
+    }
     .img_a_external {
       img {
         display: block;
