@@ -9,25 +9,21 @@
   max-width: 100% !important;
 
   @include mobile {
-    min-height: 356px !important;
+    min-height: auto !important;
   }
-  /*@include tablet {
-    min-height: 266px !important;
-  }*/
-
-  &.has_reduced_height {
-    //min-height: 416px;
+  @include tablet-only {
+    min-height: auto !important;
   }
 
   .swiper-pagination {
     width: auto !important;
-    padding: 50px 116px !important;
+    padding: 110px 116px !important;
 
     @include mobile {
-      padding: 30px 20px !important;
+      padding: 21px 20px !important;
     }
-    @include tablet {
-      //padding: 75px 116px !important;
+    @include tablet-only {
+      padding: 73px 116px !important;
     }
 
     .swiper-pagination-bullet {
@@ -56,10 +52,10 @@
         height: 12px !important;
         width: 55px !important;
       }
-      /*@include tablet {
+      @include tablet-only {
         height: 12.39px !important;
         width: 52.25px !important;
-      }*/
+      }
     }
   }
 
@@ -74,10 +70,10 @@
       width: calc(100% - 232px) !important;
       max-width: calc(100% - 232px) !important;
 
-      min-height: 316px !important;
+      min-height: 416px !important;
       max-height: 697px !important;
 
-      padding: 100px 116px !important;
+      padding: 100px 116px 186px 116px !important;
 
       text-align: left !important;
       word-wrap: normal;
@@ -89,16 +85,16 @@
         width: calc(100% - 40px) !important;
         max-width: calc(100% - 40px) !important;
 
-        padding: 107px 20px 50px 20px !important;
+        padding: 107px 20px 100px 20px !important;
       }
-      /*@include tablet {
+      @include tablet-only {
         min-height: auto !important;
         max-height: 1035px !important;
-        padding: 128px 116px !important;
+        padding: 128px 116px 194px 116px !important;
 
-            width: calc(100% - 232px) !important;
-    max-width: calc(100% - 232px) !important;
-      }*/
+        width: calc(100% - 232px) !important;
+        max-width: calc(100% - 232px) !important;
+      }
     }
   }
 
@@ -124,11 +120,11 @@
     line-height: 95px !important;
     font-size: 80px !important;
 
-    /*@include tablet {
+    @include tablet {
       font-size: 80px !important;
       line-height: 95px !important;
       font-weight: 800 !important;
-    }*/
+    }
     @include mobile {
       font-size: 40px !important;
       line-height: 48px !important;
@@ -150,10 +146,10 @@
         font-size: 18px !important;
         line-height: 28.8px !important;
       }
-      /*@include tablet {
+      @include tablet {
         font-size: 24px !important;
         line-height: 33.6px !important;
-      }*/
+      }
     }
     p {
       margin-bottom: 0 !important;
