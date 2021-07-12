@@ -18,7 +18,8 @@
 					$hero_slider_title = get_sub_field('slide_title');
 					$hero_cta = get_sub_field('cta_link');
 					$bg_image = get_sub_field('slide_image');
-					if ($bg_imge) {
+
+					if ($bg_image) {
 						$background_color = 'transparent';
 						$color = 'white';
 						$opacity = '0.8';
