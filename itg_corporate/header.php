@@ -49,13 +49,11 @@
 											$reshape_menu_item_ID = $data_info->ID;
 											$reshape_label = get_field('label_submenu', $left_menu_item_ID);
 										?>
-											<?php if ($d == 0) { ?>
+											<?php if ($label && $c == 0 && $d == 0 && is_string($label)) { ?>
 												<li class="itg_submenulabel"><span><?php echo $label; ?></span></li>
 											<?php } ?>
 											<li><a href="<?php echo $reshape_menu_item_url; ?>"><?php echo $reshape_menu_item_title; ?></a></li>
 										<?php } ?>
-										
-										
 									</ul>
 								</div>
 						<?php }
@@ -85,7 +83,7 @@
 										<img id="itg_a_image_<?php echo $key; ?>" class="itg-mr-10" src="<?php echo $left_menu_icon_image; ?>" alt="<?php echo $left_menu_item_title; ?>">
 									<?php } ?>
 									<?php echo $left_menu_item_title; ?></a>
-							</div> 
+							</div>
 						<?php
 						}
 						?>
@@ -93,21 +91,21 @@
 					}
 					?>
 					<div class="Itg_stock_update">
-					<div id="title-perc"></div> 
-					<div class="lastprice">
-				<?php _e('Ultimo prezzo'); ?>
-					</div>
-															<div id="title-price"></div> €
-															<script type="text/javascript">
-																			jQuery.ajax({
-																						url: "https://syndication.teleborsa.it/Italgas/Feeds/jsonValues", 
-																						method: "get",		
-																						success: function(result){
-																				        	jQuery("#title-perc").text(result.percentChange);
-																							jQuery("#title-price").text(result.lastTrade);
-																						}
-									    				});
-										</script>
+						<div id="title-perc"></div>
+						<div class="lastprice">
+							<?php _e('Ultimo prezzo'); ?>
+						</div>
+						<div id="title-price"></div> €
+						<script type="text/javascript">
+							jQuery.ajax({
+								url: "https://syndication.teleborsa.it/Italgas/Feeds/jsonValues",
+								method: "get",
+								success: function(result) {
+									jQuery("#title-perc").text(result.percentChange);
+									jQuery("#title-price").text(result.lastTrade);
+								}
+							});
+						</script>
 					</div>
 					<?php
 					if (get_field('news', $left_menu_item->news)) {
@@ -194,232 +192,240 @@
 					<?php
 					}
 					?>
-							<!-- Selettore Lingua WPML -->
-							<?php do_action( 'wpml_add_language_selector' ); ?>						
+					<!-- Selettore Lingua WPML -->
+					<?php do_action('wpml_add_language_selector'); ?>
 				</div>
 			</div>
-					<nav class="navbar" aria-label="main navigation">
-								<div class="navbar-brand">
-									<a class="navbar-item" href="<?php echo esc_url( home_url( '/' ) );?>">
-																			<img class="itgHeader--logo" src="<?php echo get_template_directory_uri(); ?>/dist/src/images/ITG_logo_positivo.png" alt="Logo Italgas">
-									</a>
-						
-								 <button class="button navbar-burger" data-target="mega-menu" aria-controls="mega-menu" aria-haspopup="true" aria-label="Menu Button" aria-pressed="false">
-									 <span aria-hidden="true"></span>
-									 <span aria-hidden="true"></span>
-									 <span aria-hidden="true"></span>
-								 </button>
-						 </div>
-				
-						 <div id="mega-menu" class="navbar-menu Itg-hero-menu-lower">
-							 <div class="navbar-start">
-								 <?php
-								$main_mega_menu = wp_get_nav_menu_items('main-mega-menu');
-								$itg_submenu_label = get_field('label_submenu', $left_menu_item_ID);
-								
-								
+			<nav class="navbar" aria-label="main navigation">
+				<div class="navbar-brand">
+					<a class="navbar-item" href="<?php echo esc_url(home_url('/')); ?>">
+						<img class="itgHeader--logo" src="<?php echo get_template_directory_uri(); ?>/dist/src/images/ITG_logo_positivo.png" alt="Logo Italgas">
+					</a>
 
-								foreach ($main_mega_menu as $key => $main_menu_item) {
+					<button class="button navbar-burger" data-target="mega-menu" aria-controls="mega-menu" aria-haspopup="true" aria-label="Menu Button" aria-pressed="false">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</button>
+				</div>
 
-											$main_menu_item_ID = $main_menu_item->ID;
-											$main_menu_item_title = $main_menu_item->title;
-											$main_menu_item_url = $main_menu_item->url;
-											$main_menu_item_target = $main_menu_item->target;
-											$main_menu_item_class = $main_menu_item->classes[1];
-											$itg_megamenu_bgimage = get_field('background_image', $main_menu_item_ID);
-											$itg_megamenu_title = get_field('title_menu', $main_menu_item_ID);
-											$itg_megamenu_subtitle = get_field('subtitle_menu', $main_menu_item_ID);
-											$itg_megamenu_cta = get_field('cta_link', $main_menu_item_ID);
-											$itg_megamenu_cta_name = $main_menu_item->post_name;
-								?>
-								<div class="navbar-item has-dropdown is-mega">
-										<div class="navbar-trigger navbar-link flex <?php echo $main_menu_item_class; ?>">
-											<span id="itg_header_tab_span_<?php echo $main_menu_item_ID; ?>"><?php echo $main_menu_item_title; ?></span>
-										</div>
-									<div id="Itg-hero-menu__<?php echo $main_menu_item_ID; ?>Dropdown" class="<?php echo $main_menu_item_class; ?> navbar-dropdown is-link is-hide" style="background-image: url(' <?php echo $itg_megamenu_bgimage; ?>');" data-style="width: 18rem;">
-						
-														<div class="itg_bg_heromenu is-fluid">
-															
-															<div class="itg__rowtitle">
-																<div class="Itg-hero-menu-upper columns is-flex is-vcentered is-multiline">
-																		<div class="Itg-hero-menu-upper-left column is-6">
-																			<span><?php echo $itg_megamenu_title; ?></span>
-																			<p><?php echo $itg_megamenu_subtitle; ?></p>
-																		</div>
-																		<div class="Itg-hero-menu-upper-right column is-6">
-								
-																		<?php if ($itg_megamenu_cta_name == 'servizi') { ?>
-																		<div class="columns">
+				<div id="mega-menu" class="navbar-menu Itg-hero-menu-lower">
+					<div class="navbar-start">
+						<?php
+						$main_mega_menu = wp_get_nav_menu_items('main-mega-menu');
+						$itg_submenu_label = get_field('label_submenu', $left_menu_item_ID);
 
-																		<?php
-																			// Check rows exists.
-																				if( have_rows('launch_megamenu', $main_menu_item_ID) ):
-																				
-																				    // Loop through rows.
-																				    while( have_rows('launch_megamenu', $main_menu_item_ID) ) : the_row(); 
-																								$cta_megamenu_title =  get_sub_field('cta_title', $main_menu_item_ID);
-																							 $cta_megamenu_link	= get_sub_field('cta_link', $main_menu_item_ID);
-																								$cta_megamenu_image = get_sub_field('cta_image', $main_menu_item_ID); ?>
-																					<div class="column is-6">
-																								<div class="Itg_mega_menu_cta">
-																									<a href="<?php echo $cta_megamenu_link; ?>"><div class="img_cta_megamnu"><img src="<?php echo $cta_megamenu_image; ?>" width="80" height="80" /></div>
-																				     <p><?php echo $cta_megamenu_title; ?></p>
-																				     <img class="linkIcon" src="<?php echo get_template_directory_uri() . '/dist/src/images/icons/internal_page.svg'; ?>" alt="">
-																									</a>
-																								</div>
-																					</div>
-																				
-																				  <?php  // End loop.
-																				    endwhile;
-																				
-																				// No value.
-																				else :
-																				    // Do something...
-																				endif;
-																				?>
-																		</div>
-																		<?php } else { ?>
-																		<?php
-																			// Check rows exists.
-																				if( have_rows('launch_megamenu', $main_menu_item_ID) ):
-																				
-																				    // Loop through rows.
-																				    while( have_rows('launch_megamenu', $main_menu_item_ID) ) : the_row(); 
-																								$cta_megamenu_title =  get_sub_field('cta_title', $main_menu_item_ID);
-																							 $cta_megamenu_link	= get_sub_field('cta_link', $main_menu_item_ID);
-																								$cta_megamenu_image = get_sub_field('cta_image', $main_menu_item_ID); ?>
-																				
-																								<div class="Itg_mega_menu_cta">
-																									<a href="<?php echo $cta_megamenu_link; ?>"><div class="img_cta_megamnu"><img src="<?php echo $cta_megamenu_image; ?>" width="80" height="80" /></div>
-																				     <p><?php echo $cta_megamenu_title; ?></p>
-																				     <img class="linkIcon" src="<?php echo get_template_directory_uri() . '/dist/src/images/icons/internal_page.svg'; ?>" alt="">
-																									</a>
-																								</div>
-																								
-																				
-																				  <?php  // End loop.
-																				    endwhile;
-																				
-																				// No value.
-																				else :
-																				    // Do something...
-																				endif;
-																				?>
-																		
-																		<?php } ?>
-																											
+
+
+						foreach ($main_mega_menu as $key => $main_menu_item) {
+
+							$main_menu_item_ID = $main_menu_item->ID;
+							$main_menu_item_title = $main_menu_item->title;
+							$main_menu_item_url = $main_menu_item->url;
+							$main_menu_item_target = $main_menu_item->target;
+							$main_menu_item_class = $main_menu_item->classes[1];
+							$itg_megamenu_bgimage = get_field('background_image', $main_menu_item_ID);
+							$itg_megamenu_title = get_field('title_menu', $main_menu_item_ID);
+							$itg_megamenu_subtitle = get_field('subtitle_menu', $main_menu_item_ID);
+							$itg_megamenu_cta = get_field('cta_link', $main_menu_item_ID);
+							$itg_megamenu_cta_name = $main_menu_item->post_name;
+						?>
+							<div class="navbar-item has-dropdown is-mega">
+								<div class="navbar-trigger navbar-link flex <?php echo $main_menu_item_class; ?>">
+									<span id="itg_header_tab_span_<?php echo $main_menu_item_ID; ?>"><?php echo $main_menu_item_title; ?></span>
+								</div>
+								<div id="Itg-hero-menu__<?php echo $main_menu_item_ID; ?>Dropdown" class="<?php echo $main_menu_item_class; ?> navbar-dropdown is-link is-hide" style="background-image: url(' <?php echo $itg_megamenu_bgimage; ?>');" data-style="width: 18rem;">
+
+									<div class="itg_bg_heromenu is-fluid">
+
+										<div class="itg__rowtitle">
+											<div class="Itg-hero-menu-upper columns is-flex is-vcentered is-multiline">
+												<div class="Itg-hero-menu-upper-left column is-6">
+													<span><?php echo $itg_megamenu_title; ?></span>
+													<p><?php echo $itg_megamenu_subtitle; ?></p>
+												</div>
+												<div class="Itg-hero-menu-upper-right column is-6">
+
+													<?php if ($itg_megamenu_cta_name == 'servizi') { ?>
+														<div class="columns">
+
+															<?php
+															// Check rows exists.
+															if (have_rows('launch_megamenu', $main_menu_item_ID)) :
+
+																// Loop through rows.
+																while (have_rows('launch_megamenu', $main_menu_item_ID)) : the_row();
+																	$cta_megamenu_title =  get_sub_field('cta_title', $main_menu_item_ID);
+																	$cta_megamenu_link	= get_sub_field('cta_link', $main_menu_item_ID);
+																	$cta_megamenu_image = get_sub_field('cta_image', $main_menu_item_ID); ?>
+																	<div class="column is-6">
+																		<div class="Itg_mega_menu_cta">
+																			<a href="<?php echo $cta_megamenu_link; ?>">
+																				<div class="img_cta_megamnu"><img src="<?php echo $cta_megamenu_image; ?>" width="80" height="80" /></div>
+																				<p><?php echo $cta_megamenu_title; ?></p>
+																				<img class="linkIcon" src="<?php echo get_template_directory_uri() . '/dist/src/images/icons/internal_page.svg'; ?>" alt="">
+																			</a>
 																		</div>
 																	</div>
-															</div>
-															
-															
-															<div class="itg_bg_herocolumnsmenu">
-																	<div class="itg__columns-menus">
-																		<div class="columns Itg-hero-menu-lower">
-																			
-																			<div class="column is-12 ItgLeftTabs">										
-																					<div class="Itg-hero-menu-lower-left-tabs is-flex-direction-row is-justify-content-space-between is-align-items-center">
-																					
-																						<div class="columns">
-																							
-																								<div class="Itg_mega_menu_cta column is-3">
-																									 <ul class="itg_navtabs">
-																									<?php // Check rows exists.
-																										$main_menu_item_ID = $main_menu_item->ID;
-																							$main_menu_item_title = $main_menu_item->title;
-																							$main_menu_item_url = $main_menu_item->url;
-																							$main_menu_item_target = $main_menu_item->target;
-																							$main_menu_item_class = $main_menu_item->classes[1];
-																							$itg_megamenu_cta = get_field('cta_link', $main_menu_item_ID);
-																							
-																					if( have_rows('tabs_links', $main_menu_item_ID) ):
-																					$i=0;
-																					    // Loop through rows.
-																					    while( have_rows('tabs_links', $main_menu_item_ID) ) : the_row(); 
-																								 $cta_megamenu_tabslink	= get_sub_field('tab_link', $main_menu_item_ID); 
-																								 $cta_megamenu_tabscontent	= get_sub_field('tab_content', $main_menu_item_ID); 
-																								 $cta_megamenu_tabsid	= get_sub_field('tab_id', $main_menu_item_ID); 
-																								 $fields = get_fields($main_menu_item_ID);
-																								 
 
-																								 ?>
-																								
-																									 <li class="">
-																											<span href="" data-name="<?php echo $cta_megamenu_tabsid; ?>" class="is-narrow <?php if($i==0) { $i=1; echo 'active'; } ?>"  data-toggle="tab" aria-controls="<?php echo $cta_megamenu_tabsid; ?>">
-																												<?php echo $cta_megamenu_tabslink; ?>
+															<?php  // End loop.
+																endwhile;
 
-																											</span>
-																									 </li>
-																								 
-																									<?php  // End loop.
-																								    endwhile;
-																								
-																								// No value.
-																								else :
-																								    // Do something...
-																								endif;
-																								?>
+															// No value.
+															else :
+															// Do something...
+															endif;
+															?>
+														</div>
+													<?php } else { ?>
+														<?php
+														// Check rows exists.
+														if (have_rows('launch_megamenu', $main_menu_item_ID)) :
 
-																								</ul>
-																								</div>			
+															// Loop through rows.
+															while (have_rows('launch_megamenu', $main_menu_item_ID)) : the_row();
+																$cta_megamenu_title =  get_sub_field('cta_title', $main_menu_item_ID);
+																$cta_megamenu_link	= get_sub_field('cta_link', $main_menu_item_ID);
+																$cta_megamenu_image = get_sub_field('cta_image', $main_menu_item_ID); ?>
 
-																								<div class="Itg-hero-menu-lower-central column is-9 tab-content">
-																								
-																								<?php // Check rows exists.
-																										if( have_rows('tabs_links', $main_menu_item_ID) ):
-																										$i=0;
-																										    // Loop through rows.
-																										    while( have_rows('tabs_links', $main_menu_item_ID) ) : the_row(); 
-																													 $cta_megamenu_tabslink	= get_sub_field('tab_link', $main_menu_item_ID); 
-																													 $cta_megamenu_tabscontent	= get_sub_field('tab_content', $main_menu_item_ID); 
-																													 $cta_megamenu_tabsid	= get_sub_field('tab_id', $main_menu_item_ID); 
-																													 $cta_megamenu_tabstitle	= get_sub_field('title_content', $main_menu_item_ID); 
-																													 $cta_megamenu_tabsscdncolumn	= get_sub_field('tab_content_2ndcolumn', $main_menu_item_ID); 
-																													 
-																													 ?>																	  
-																														<div class="tab-pane <?php echo $cta_megamenu_tabsid; ?> <?php if($i==0) { $i=1; echo 'active'; } ?>"  role="tabpanel" aria-labelledby="<?php echo $cta_megamenu_tabsid; ?>">
-																															<div class="columns is-multiline">
-																																<div class="column is-12">
-																																	<?php if($cta_megamenu_tabstitle) :  ?>
-																																	<p><strong><?php echo $cta_megamenu_tabstitle; ?></strong></p>
-																																	<hr>
-																																	<?php endif; ?>
-																																</div>
-																																<?php if($cta_megamenu_tabsscdncolumn) {  ?>
-																																<div class="column is-6">
-																																	<?php echo $cta_megamenu_tabscontent; ?>
-																																</div>
-																																<div class="column is-6">
-																																	<?php echo $cta_megamenu_tabsscdncolumn; ?>
-																																</div>
-																																<?php } else { ?>
-																																<div class="column is-12">
-																																	<?php echo $cta_megamenu_tabscontent; ?>
-																																</div>
-																																<?php } ?>
-																															</div>
-																														
-																														</div>
-																																					<?php  // End loop.
-																													    endwhile;
-																													
-																													// No value.
-																													else :
-																													    // Do something...
-																													endif;
-																													?>						
-																										</div>
-		
-																								</div>
-																							
-																								
+																<div class="Itg_mega_menu_cta">
+																	<a href="<?php echo $cta_megamenu_link; ?>">
+																		<div class="img_cta_megamnu"><img src="<?php echo $cta_megamenu_image; ?>" width="80" height="80" /></div>
+																		<p><?php echo $cta_megamenu_title; ?></p>
+																		<img class="linkIcon" src="<?php echo get_template_directory_uri() . '/dist/src/images/icons/internal_page.svg'; ?>" alt="">
+																	</a>
+																</div>
+
+
+														<?php  // End loop.
+															endwhile;
+
+														// No value.
+														else :
+														// Do something...
+														endif;
+														?>
+
+													<?php } ?>
+
+												</div>
+											</div>
+										</div>
+
+
+										<div class="itg_bg_herocolumnsmenu">
+											<div class="itg__columns-menus">
+												<div class="columns Itg-hero-menu-lower">
+
+													<div class="column is-12 ItgLeftTabs">
+														<div class="Itg-hero-menu-lower-left-tabs is-flex-direction-row is-justify-content-space-between is-align-items-center">
+
+															<div class="columns">
+
+																<div class="Itg_mega_menu_cta column is-3">
+																	<ul class="itg_navtabs">
+																		<?php // Check rows exists.
+																		$main_menu_item_ID = $main_menu_item->ID;
+																		$main_menu_item_title = $main_menu_item->title;
+																		$main_menu_item_url = $main_menu_item->url;
+																		$main_menu_item_target = $main_menu_item->target;
+																		$main_menu_item_class = $main_menu_item->classes[1];
+																		$itg_megamenu_cta = get_field('cta_link', $main_menu_item_ID);
+
+																		if (have_rows('tabs_links', $main_menu_item_ID)) :
+																			$i = 0;
+																			// Loop through rows.
+																			while (have_rows('tabs_links', $main_menu_item_ID)) : the_row();
+																				$cta_megamenu_tabslink	= get_sub_field('tab_link', $main_menu_item_ID);
+																				$cta_megamenu_tabscontent	= get_sub_field('tab_content', $main_menu_item_ID);
+																				$cta_megamenu_tabsid	= get_sub_field('tab_id', $main_menu_item_ID);
+																				$fields = get_fields($main_menu_item_ID);
+
+
+																		?>
+
+																				<li class="">
+																					<span href="" data-name="<?php echo $cta_megamenu_tabsid; ?>" class="is-narrow <?php if ($i == 0) {
+																																										$i = 1;
+																																										echo 'active is-active';
+																																									} ?>" data-toggle="tab" aria-controls="<?php echo $cta_megamenu_tabsid; ?>">
+																						<?php echo $cta_megamenu_tabslink; ?>
+
+																					</span>
+																				</li>
+
+																		<?php  // End loop.
+																			endwhile;
+
+																		// No value.
+																		else :
+																		// Do something...
+																		endif;
+																		?>
+
+																	</ul>
+																</div>
+
+																<div class="Itg-hero-menu-lower-central column is-9 tab-content">
+
+																	<?php // Check rows exists.
+																	if (have_rows('tabs_links', $main_menu_item_ID)) :
+																		$i = 0;
+																		// Loop through rows.
+																		while (have_rows('tabs_links', $main_menu_item_ID)) : the_row();
+																			$cta_megamenu_tabslink	= get_sub_field('tab_link', $main_menu_item_ID);
+																			$cta_megamenu_tabscontent	= get_sub_field('tab_content', $main_menu_item_ID);
+																			$cta_megamenu_tabsid	= get_sub_field('tab_id', $main_menu_item_ID);
+																			$cta_megamenu_tabstitle	= get_sub_field('title_content', $main_menu_item_ID);
+																			$cta_megamenu_tabsscdncolumn	= get_sub_field('tab_content_2ndcolumn', $main_menu_item_ID);
+
+																	?>
+																			<div class="tab-pane <?php echo $cta_megamenu_tabsid; ?> <?php if ($i == 0) {
+																																			$i = 1;
+																																			echo 'active';
+																																		} ?>" role="tabpanel" aria-labelledby="<?php echo $cta_megamenu_tabsid; ?>">
+																				<div class="columns is-multiline">
+																					<div class="column is-12">
+																						<?php if ($cta_megamenu_tabstitle) :  ?>
+																							<p><strong><?php echo $cta_megamenu_tabstitle; ?></strong></p>
+																							<hr>
+																						<?php endif; ?>
 																					</div>
-																					
+																					<?php if ($cta_megamenu_tabsscdncolumn) {  ?>
+																						<div class="column is-6">
+																							<?php echo $cta_megamenu_tabscontent; ?>
+																						</div>
+																						<div class="column is-6">
+																							<?php echo $cta_megamenu_tabsscdncolumn; ?>
+																						</div>
+																					<?php } else { ?>
+																						<div class="column is-12">
+																							<?php echo $cta_megamenu_tabscontent; ?>
+																						</div>
+																					<?php } ?>
+																				</div>
+
 																			</div>
-																			
-																			</div>
-																			
-																	<!--
+																	<?php  // End loop.
+																		endwhile;
+
+																	// No value.
+																	else :
+																	// Do something...
+																	endif;
+																	?>
+																</div>
+
+															</div>
+
+
+														</div>
+
+													</div>
+
+												</div>
+
+												<!--
 																								<div class="column is-3 launchlinks">
 																									<div class="is-flex is-flex-direction-row is-align-items-center">
 																										<a>Scopri anche</a>
@@ -427,28 +433,27 @@
 																										</div>
 																							</div>
 																							-->
-																		<div>
-																			
-																	</div>
-																	
-														</div>
-														
-																	</div>
-																	
-															</div>
-															
-														</div>
+												<div>
+
+												</div>
+
+											</div>
+
+										</div>
+
 									</div>
 
-									<?php } ?>
-								
-							 </div>
-						</div>
-					</nav>
-			</div>
+								</div>
+							</div>
+
+						<?php } ?>
+
+					</div>
+				</div>
+			</nav>
+	</div>
 
 
-							
-			
-		</header><!-- #masthead -->
-	
+
+
+	</header><!-- #masthead -->
