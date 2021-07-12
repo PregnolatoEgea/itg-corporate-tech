@@ -47,9 +47,9 @@ if ($background_image) {
             }
           }
           ?>
-          <h1>
+          <h3>
             <?php echo $title ?>
-          </h1>
+          </h3>
         </div>
         <?php
         if ($paragraph) {

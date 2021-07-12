@@ -2,11 +2,18 @@
 
 .itgBlock-hero-image-slider {
   height: auto !important;
-  min-height: 416px !important;
+  min-height: 316px !important;
   max-height: 697px !important;
 
   width: 100% !important;
   max-width: 100% !important;
+
+  @include mobile {
+    min-height: 356px !important;
+  }
+  /*@include tablet {
+    min-height: 266px !important;
+  }*/
 
   &.has_reduced_height {
     //min-height: 416px;
@@ -49,31 +56,28 @@
         height: 12px !important;
         width: 55px !important;
       }
-      @include tablet {
+      /*@include tablet {
         height: 12.39px !important;
         width: 52.25px !important;
-      }
+      }*/
     }
   }
 
   .swiper-wrapper {
-    &:not(:first-child) {
-      padding-left: 0px !important;
-    }
-
+    height: auto !important;
     .swiper-slide {
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
 
       height: auto !important;
-      width: 100% !important;
-      max-width: 100% !important;
+      width: calc(100% - 232px) !important;
+      max-width: calc(100% - 232px) !important;
 
-      min-height: 416px !important;
+      min-height: 316px !important;
       max-height: 697px !important;
 
-      padding: 100px 0px 100px 116px !important;
+      padding: 100px 116px !important;
 
       text-align: left !important;
       word-wrap: normal;
@@ -81,13 +85,20 @@
       @include mobile {
         min-height: auto !important;
         max-height: 601px !important;
-        padding: 107px 0px 50px 20px !important;
+
+        width: calc(100% - 40px) !important;
+        max-width: calc(100% - 40px) !important;
+
+        padding: 107px 20px 50px 20px !important;
       }
-      @include tablet {
+      /*@include tablet {
         min-height: auto !important;
         max-height: 1035px !important;
-        //padding: 128px 0px 128px 116px !important;
-      }
+        padding: 128px 116px !important;
+
+            width: calc(100% - 232px) !important;
+    max-width: calc(100% - 232px) !important;
+      }*/
     }
   }
 
@@ -99,13 +110,6 @@
     .breadcrumb_last {
       font-weight: 500;
     }
-  }
-
-  &-container {
-    height: 100%;
-    width: 100%;
-    min-height: 100%;
-    min-width: 100%;
   }
 
   h1,
@@ -120,11 +124,11 @@
     line-height: 95px !important;
     font-size: 80px !important;
 
-    @include tablet {
+    /*@include tablet {
       font-size: 80px !important;
       line-height: 95px !important;
       font-weight: 800 !important;
-    }
+    }*/
     @include mobile {
       font-size: 40px !important;
       line-height: 48px !important;
@@ -146,10 +150,10 @@
         font-size: 18px !important;
         line-height: 28.8px !important;
       }
-      @include tablet {
+      /*@include tablet {
         font-size: 24px !important;
         line-height: 33.6px !important;
-      }
+      }*/
     }
     p {
       margin-bottom: 0 !important;

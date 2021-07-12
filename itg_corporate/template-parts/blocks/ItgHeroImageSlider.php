@@ -36,20 +36,32 @@
 								}
 							}
 							?>
-							<h3>
-								<?php echo $hero_slider_title; ?>
-							</h3>
+							<?php
+							if ($hero_slider_title) {
+							?>
+								<h3>
+									<?php echo $hero_slider_title; ?>
+								</h3>
+							<?php } ?>
 						</div>
-						<div class="itgBlock-hero-image-slider__subtitle column is-10-desktop px-0">
-							<div class="<?php echo $paragraph_style ?> itgBlock-hero-image__subtitle--mobile-style">
-								<?php echo $hero_slider_paragraph ?>
+						<?php
+						if ($hero_slider_paragraph) {
+						?>
+							<div class="itgBlock-hero-image-slider__subtitle column is-10-desktop px-0">
+								<div class="<?php echo $paragraph_style ?> itgBlock-hero-image__subtitle--mobile-style">
+									<?php echo $hero_slider_paragraph ?>
+								</div>
 							</div>
-						</div>
-						<div class="itgBlock-hero-image-slider__cta-list column is-5">
-							<div class="itgBlock-hero-image-slider__cta-list-inner columns">
-								<?php require 'atoms/ItgAtomCta.php'; ?>
+						<?php } ?>
+						<?php
+						if ($hero_cta) {
+						?>
+							<div class="itgBlock-hero-image-slider__cta-list column is-5">
+								<div class="itgBlock-hero-image-slider__cta-list-inner columns">
+									<?php require 'atoms/ItgAtomCta.php'; ?>
+								</div>
 							</div>
-						</div>
+						<?php } ?>
 					</div>
 				<?php
 				endwhile;
