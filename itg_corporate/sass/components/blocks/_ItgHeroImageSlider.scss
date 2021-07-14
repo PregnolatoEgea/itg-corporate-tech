@@ -1,47 +1,99 @@
 @import "../../abstracts/abstracts";
 
 .itgBlock-hero-image-slider {
-  background-size: cover;
-  background-repeat: no-repeat;
   height: auto !important;
-  min-height: auto;
+  min-height: 316px !important;
   max-height: 697px !important;
-  text-align: left !important;
-  word-wrap: normal;
-  width: 100% !important;
-  max-width: 100% !important; 
 
-  &.has_reduced_height {
-    //min-height: 416px;
+  width: 100% !important;
+  max-width: 100% !important;
+
+  @include mobile {
+    min-height: auto !important;
+  }
+  @include tablet-only {
+    min-height: auto !important;
   }
 
-  .swiper-slide {
-	  background-position: center center;
-	  background-size: cover;
-	  min-height: 416px;
+  .swiper-pagination {
+    width: auto !important;
+    padding: 110px 116px !important;
+
+    @include mobile {
+      padding: 21px 20px !important;
+    }
+    @include tablet-only {
+      padding: 73px 116px !important;
+    }
+
     .swiper-pagination-bullet {
-      height: 12.39px;
-      width: 52.25px;
-      margin: 10px;
-      border-radius: 28px;
-      opacity: 0.3;
-      background-color: $itg__white;
+      height: 12.39px !important;
+      width: 52.25px !important;
+      border-radius: 28px !important;
+      opacity: 0.3 !important;
+      background-color: $itg__white !important;
+
+      &-active {
+        background-color: $itg__white !important;
+        opacity: 1 !important;
+      }
 
       &:active {
-        opacity: 1;
+        background-color: $itg__white !important;
+        opacity: 1 !important;
       }
 
       &:hover {
-        opacity: 1;
+        background-color: $itg__white !important;
+        opacity: 1 !important;
       }
 
       @include mobile {
-        height: 12px;
-        width: 55px;
+        height: 12px !important;
+        width: 55px !important;
       }
-      @include tablet {
-        height: 12.39px;
-        width: 52.25px;
+      @include tablet-only {
+        height: 12.39px !important;
+        width: 52.25px !important;
+      }
+    }
+  }
+
+  .swiper-wrapper {
+    height: auto !important;
+    .swiper-slide {
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      height: auto !important;
+      width: calc(100% - 232px) !important;
+      max-width: calc(100% - 232px) !important;
+
+      min-height: 316px !important;
+      max-height: 697px !important;
+
+      padding: 100px 116px 186px 116px !important;
+
+      text-align: left !important;
+      word-wrap: normal;
+
+      @include mobile {
+        min-height: auto !important;
+        max-height: 601px !important;
+
+        width: calc(100% - 40px) !important;
+        max-width: calc(100% - 40px) !important;
+
+        padding: 107px 20px 100px 20px !important;
+      }
+      @include tablet-only {
+        min-height: auto !important;
+        max-height: 1035px !important;
+        padding: 128px 116px 194px 116px !important;
+
+        width: calc(100% - 232px) !important;
+        max-width: calc(100% - 232px) !important;
       }
     }
   }
@@ -53,22 +105,6 @@
     }
     .breadcrumb_last {
       font-weight: 500;
-    }
-  }
-
-  &-container {
-    height: 100%;
-    width: 100%;
-    min-height: 100%;
-    min-width: 100%;
-    @include touch {
-      //min-height: 60vh;
-    }
-    @include desktop {
-      //min-height: 90vh;
-      .has_reduced_height & {
-        //min-height: 50vh;
-      }
     }
   }
 

@@ -551,9 +551,12 @@ if (have_rows('layout_builder_posts')) :
             case 'posts_filter':
               require 'blocks/ItgPostsFilter.php';
               break;
+<<<<<<< HEAD
             case 'hero_image_slider':
               require 'blocks/ItgHeroImageSlider.php';
               break;
+=======
+>>>>>>> 309746154108ebec04db8c485f61896a97d6c66a
 
             default:
 

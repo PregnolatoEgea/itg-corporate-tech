@@ -2,6 +2,7 @@
 	<div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-hero-image-slider swiper-container is-paddingless <?php if (get_sub_field('has_reduced_height')) {
 																														echo 'has_reduced_height';
 																													} ?>">
+<<<<<<< HEAD
 
 		<div class="swiper-wrapper itgBlock__ItgHeroImageSlider--sliderWrapper is-12-desktop">
 			<?php if (have_rows('hero_image_slider')) {
@@ -19,6 +20,26 @@
 					$hero_cta = get_sub_field('cta_link');
 					$bg_image = get_sub_field('slide_image');
 					if ($bg_imge) {
+=======
+
+		<div class="swiper-wrapper itgBlock__ItgHeroImageSlider--sliderWrapper is-12-desktop">
+			<?php if (have_rows('hero_image_slider')) {
+
+				$background_color = '#d3f4ff';
+				$color = '#003478';
+				$background = 'none';
+				$opacity = '1';
+
+				// Loop through rows.
+				while (have_rows('hero_image_slider')) : the_row();
+					$hero_slider_cta_link = get_sub_field('link_cta');
+					$hero_slider_paragraph = get_sub_field('slide_paragraph');
+					$hero_slider_title = get_sub_field('slide_title');
+					$hero_cta = get_sub_field('cta_link');
+					$bg_image = get_sub_field('slide_image');
+
+					if ($bg_image) {
+>>>>>>> 309746154108ebec04db8c485f61896a97d6c66a
 						$background_color = 'transparent';
 						$color = 'white';
 						$opacity = '0.8';
@@ -36,6 +57,7 @@
 								}
 							}
 							?>
+<<<<<<< HEAD
 							<h3>
 								<?php echo $hero_slider_title; ?>
 							</h3>
@@ -50,6 +72,34 @@
 								<?php require 'atoms/ItgAtomCta.php'; ?>
 							</div>
 						</div>
+=======
+							<?php
+							if ($hero_slider_title) {
+							?>
+								<h3>
+									<?php echo $hero_slider_title; ?>
+								</h3>
+							<?php } ?>
+						</div>
+						<?php
+						if ($hero_slider_paragraph) {
+						?>
+							<div class="itgBlock-hero-image-slider__subtitle column is-10-desktop px-0">
+								<div class="<?php echo $paragraph_style ?> itgBlock-hero-image__subtitle--mobile-style">
+									<?php echo $hero_slider_paragraph ?>
+								</div>
+							</div>
+						<?php } ?>
+						<?php
+						if ($hero_cta) {
+						?>
+							<div class="itgBlock-hero-image-slider__cta-list column is-5">
+								<div class="itgBlock-hero-image-slider__cta-list-inner columns">
+									<?php require 'atoms/ItgAtomCta.php'; ?>
+								</div>
+							</div>
+						<?php } ?>
+>>>>>>> 309746154108ebec04db8c485f61896a97d6c66a
 					</div>
 				<?php
 				endwhile;
