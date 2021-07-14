@@ -169,6 +169,9 @@
       background-color: $itg__white;
       overflow: hidden;
       position: relative;
+      &:last-child{
+	      margin-bottom: 0;
+      }
       @media(max-width:767px){
        padding-bottom: 20px!important;
       }

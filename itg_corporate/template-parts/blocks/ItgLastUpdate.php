@@ -1,11 +1,10 @@
-
 <?php 
 
 $last_update_color = get_sub_field("last_update_color_text_color"); //blue-3
 $last_update_force_date = get_sub_field("last_update_date_time"); //blue-3
 
 $u_modified_time = get_the_modified_time('U');
-$u_time = get_the_modified_time('U');
+$u_time = get_the_time('U');
 
 
 if($u_modified_time > $u_time_time){
@@ -14,10 +13,12 @@ if($u_modified_time > $u_time_time){
     $updated_date = $u_time;
 }
 
-$year = gmstrftime('%e',$updated_date);
+$day = gmstrftime('%e',$updated_date);
+$year = gmstrftime('%Y',$updated_date);
 $month = strtolower(__(gmstrftime('%B',$updated_date)));
 $rest = gmstrftime('%H:%M %Z',$updated_date);
-$updated_date = $year.' '.$month.' - '.$rest;
+
+$updated_date = $day.' '.$month.' '.$year.' - '.$rest;
 
 if($last_update_force_date){
     $updated_date = $last_update_force_date.= " GMT";

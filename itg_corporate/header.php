@@ -73,14 +73,14 @@
 							$left_menu_item_url = $left_menu_item->url;
 							$left_menu_item_target = $left_menu_item->target;
 							$left_menu_item_ID = $left_menu_item->ID;
-							$left_menu_icon_image = get_field('image', $left_menu_item_ID);
+							$left_menu_icon_image = get_field('image_icon', $left_menu_item_ID);
 					?>
 							<div class="itg_a_container">
 								<a id="itg_a_button_<?php echo $key; ?>" data-target="Itg_PreHeaderData_<?php echo $left_menu_item_ID; ?>" class="itgPreHeader--singleItem itg-mr-10">
 									<?php
 									if ($left_menu_icon_image) {
 									?>
-										<img id="itg_a_image_<?php echo $key; ?>" class="itg-mr-10" src="<?php echo get_field('image', $left_menu_item_ID); ?>" alt="<?php echo $left_menu_item_title; ?>">
+										<img id="itg_a_image_<?php echo $key; ?>" class="itg-mr-10" src="<?php echo $left_menu_icon_image; ?>" alt="<?php echo $left_menu_item_title; ?>">
 									<?php } ?>
 									<?php echo $left_menu_item_title; ?></a>
 							</div>
@@ -127,10 +127,10 @@
 							$links_menu_item_target = $links_menu_item->target;
 					?>
 							<?php
-							if (get_field('image', $links_menu_item_ID)) {
+							if (get_field('image_icon', $links_menu_item_ID)) {
 							?>
 								<a target="_blank" href="<?php echo $links_menu_item_url; ?>" class="itgPreHeader--singleItem itg_a_image">
-									<img class="itg-mr-10" src="<?php echo get_field('image', $links_menu_item_ID); ?>" alt="<?php echo $links_menu_item_title; ?>">
+									<img class="itg-mr-10" src="<?php echo get_field('image_icon', $links_menu_item_ID); ?>" alt="<?php echo $links_menu_item_title; ?>">
 								</a>
 							<?php
 							} else if (get_field('link_tipology', $links_menu_item_ID) === 'linblank') {
@@ -192,14 +192,8 @@
 					<?php
 					}
 					?>
-					<?php
-					if (get_field('language', $right_menu_item->language)) {
-					?>
-						<!-- Selettore Lingua WPML -->
-						<?php do_action('wpml_add_language_selector'); ?>
-					<?php
-					}
-					?>
+					<!-- Selettore Lingua WPML -->
+					<?php do_action('wpml_add_language_selector'); ?>
 				</div>
 			</div>
 			<nav class="navbar" aria-label="main navigation">
@@ -272,6 +266,7 @@
 																				<img class="linkIcon" src="<?php echo get_template_directory_uri() . '/dist/src/images/icons/internal_page.svg'; ?>" alt="">
 																			</a>
 																		</div>
+<<<<<<< HEAD
 																	</div>
 														</div>
 
@@ -399,12 +394,18 @@
 
 																</div>
 														<?php  // End loop.
+=======
+																	</div>
+
+															<?php  // End loop.
+>>>>>>> f8e105c188846d27a7d2a7138f7f3397680d359a
 																endwhile;
 
 															// No value.
 															else :
 															// Do something...
 															endif;
+<<<<<<< HEAD
 														?>
 															</div>
 
@@ -418,6 +419,159 @@
 										</div>
 
 										<!--
+=======
+															?>
+														</div>
+													<?php } else { ?>
+														<?php
+														// Check rows exists.
+														if (have_rows('launch_megamenu', $main_menu_item_ID)) :
+
+															// Loop through rows.
+															while (have_rows('launch_megamenu', $main_menu_item_ID)) : the_row();
+																$cta_megamenu_title =  get_sub_field('cta_title', $main_menu_item_ID);
+																$cta_megamenu_link	= get_sub_field('cta_link', $main_menu_item_ID);
+																$cta_megamenu_image = get_sub_field('cta_image', $main_menu_item_ID); ?>
+
+																<div class="Itg_mega_menu_cta">
+																	<a href="<?php echo $cta_megamenu_link; ?>">
+																		<div class="img_cta_megamnu"><img src="<?php echo $cta_megamenu_image; ?>" width="80" height="80" /></div>
+																		<p><?php echo $cta_megamenu_title; ?></p>
+																		<img class="linkIcon" src="<?php echo get_template_directory_uri() . '/dist/src/images/icons/internal_page.svg'; ?>" alt="">
+																	</a>
+																</div>
+
+
+														<?php  // End loop.
+															endwhile;
+
+														// No value.
+														else :
+														// Do something...
+														endif;
+														?>
+
+													<?php } ?>
+
+												</div>
+											</div>
+										</div>
+
+
+										<div class="itg_bg_herocolumnsmenu">
+											<div class="itg__columns-menus">
+												<div class="columns Itg-hero-menu-lower">
+
+													<div class="column is-12 ItgLeftTabs">
+														<div class="Itg-hero-menu-lower-left-tabs is-flex-direction-row is-justify-content-space-between is-align-items-center">
+
+															<div class="columns">
+
+																<div class="Itg_mega_menu_cta column is-3">
+																	<ul class="itg_navtabs">
+																		<?php // Check rows exists.
+																		$main_menu_item_ID = $main_menu_item->ID;
+																		$main_menu_item_title = $main_menu_item->title;
+																		$main_menu_item_url = $main_menu_item->url;
+																		$main_menu_item_target = $main_menu_item->target;
+																		$main_menu_item_class = $main_menu_item->classes[1];
+																		$itg_megamenu_cta = get_field('cta_link', $main_menu_item_ID);
+
+																		if (have_rows('tabs_links', $main_menu_item_ID)) :
+																			$i = 0;
+																			// Loop through rows.
+																			while (have_rows('tabs_links', $main_menu_item_ID)) : the_row();
+																				$cta_megamenu_tabslink	= get_sub_field('tab_link', $main_menu_item_ID);
+																				$cta_megamenu_tabscontent	= get_sub_field('tab_content', $main_menu_item_ID);
+																				$cta_megamenu_tabsid	= get_sub_field('tab_id', $main_menu_item_ID);
+																				$fields = get_fields($main_menu_item_ID);
+
+
+																		?>
+
+																				<li class="">
+																					<span href="" data-name="<?php echo $cta_megamenu_tabsid; ?>" class="is-narrow <?php if ($i == 0) {
+																																										$i = 1;
+																																										echo 'active is-active';
+																																									} ?>" data-toggle="tab" aria-controls="<?php echo $cta_megamenu_tabsid; ?>">
+																						<?php echo $cta_megamenu_tabslink; ?>
+
+																					</span>
+																				</li>
+
+																		<?php  // End loop.
+																			endwhile;
+
+																		// No value.
+																		else :
+																		// Do something...
+																		endif;
+																		?>
+
+																	</ul>
+																</div>
+
+																<div class="Itg-hero-menu-lower-central column is-9 tab-content">
+
+																	<?php // Check rows exists.
+																	if (have_rows('tabs_links', $main_menu_item_ID)) :
+																		$i = 0;
+																		// Loop through rows.
+																		while (have_rows('tabs_links', $main_menu_item_ID)) : the_row();
+																			$cta_megamenu_tabslink	= get_sub_field('tab_link', $main_menu_item_ID);
+																			$cta_megamenu_tabscontent	= get_sub_field('tab_content', $main_menu_item_ID);
+																			$cta_megamenu_tabsid	= get_sub_field('tab_id', $main_menu_item_ID);
+																			$cta_megamenu_tabstitle	= get_sub_field('title_content', $main_menu_item_ID);
+																			$cta_megamenu_tabsscdncolumn	= get_sub_field('tab_content_2ndcolumn', $main_menu_item_ID);
+
+																	?>
+																			<div class="tab-pane <?php echo $cta_megamenu_tabsid; ?> <?php if ($i == 0) {
+																																			$i = 1;
+																																			echo 'active';
+																																		} ?>" role="tabpanel" aria-labelledby="<?php echo $cta_megamenu_tabsid; ?>">
+																				<div class="columns is-multiline">
+																					<div class="column is-12">
+																						<?php if ($cta_megamenu_tabstitle) :  ?>
+																							<p><strong><?php echo $cta_megamenu_tabstitle; ?></strong></p>
+																							<hr>
+																						<?php endif; ?>
+																					</div>
+																					<?php if ($cta_megamenu_tabsscdncolumn) {  ?>
+																						<div class="column is-6">
+																							<?php echo $cta_megamenu_tabscontent; ?>
+																						</div>
+																						<div class="column is-6">
+																							<?php echo $cta_megamenu_tabsscdncolumn; ?>
+																						</div>
+																					<?php } else { ?>
+																						<div class="column is-12">
+																							<?php echo $cta_megamenu_tabscontent; ?>
+																						</div>
+																					<?php } ?>
+																				</div>
+
+																			</div>
+																	<?php  // End loop.
+																		endwhile;
+
+																	// No value.
+																	else :
+																	// Do something...
+																	endif;
+																	?>
+																</div>
+
+															</div>
+
+
+														</div>
+
+													</div>
+
+												</div>
+
+												<!--
+>>>>>>> f8e105c188846d27a7d2a7138f7f3397680d359a
 																								<div class="column is-3 launchlinks">
 																									<div class="is-flex is-flex-direction-row is-align-items-center">
 																										<a>Scopri anche</a>
@@ -425,13 +579,22 @@
 																										</div>
 																							</div>
 																							-->
+<<<<<<< HEAD
 										<div>
+=======
+												<div>
+
+												</div>
+
+											</div>
+>>>>>>> f8e105c188846d27a7d2a7138f7f3397680d359a
 
 										</div>
 
 									</div>
 
 								</div>
+<<<<<<< HEAD
 
 							</div>
 
@@ -446,10 +609,24 @@
 	</nav>
 	</div>
 
+=======
+							</div>
+
+						<?php } ?>
+
+					</div>
+				</div>
+			</nav>
+	</div>
+>>>>>>> f8e105c188846d27a7d2a7138f7f3397680d359a
 
 
 
 	</header><!-- #masthead -->
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+	</header><!-- #masthead -->
+>>>>>>> f8e105c188846d27a7d2a7138f7f3397680d359a

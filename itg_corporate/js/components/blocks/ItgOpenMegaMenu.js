@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import { ids } from "webpack";
 
+=======
+>>>>>>> f8e105c188846d27a7d2a7138f7f3397680d359a
 export const ItgOpenMegaMenu = function (key) 
 {
   window.addEventListener("load", function ()
@@ -10,6 +13,10 @@ export const ItgOpenMegaMenu = function (key)
     const tabContents = document.querySelectorAll(".navbar-dropdown");
 
     const narrow = document.querySelectorAll('.is-narrow');
+<<<<<<< HEAD
+=======
+    const panes = document.querySelectorAll('.tab-pane');
+>>>>>>> f8e105c188846d27a7d2a7138f7f3397680d359a
 
     let narrowelems = [];
 
@@ -47,12 +54,27 @@ export const ItgOpenMegaMenu = function (key)
         }
       });
 
+<<<<<<< HEAD
+=======
+      panes.forEach(function (pane, index)
+      {
+        if (pane.classList.contains('active'))
+        {
+          pane.classList.remove('active');
+        }
+      });
+
+>>>>>>> f8e105c188846d27a7d2a7138f7f3397680d359a
       for (let i = 0; i < narrowelems.length; i++)
       {
         if (narrow[narrowelems[i]])
         {
           narrow[narrowelems[i]].classList.add('active');
           narrow[narrowelems[i]].classList.add('is-active');
+<<<<<<< HEAD
+=======
+          panes[narrowelems[i]].classList.add('active');
+>>>>>>> f8e105c188846d27a7d2a7138f7f3397680d359a
         }
       }
       // Loop over the tabs
