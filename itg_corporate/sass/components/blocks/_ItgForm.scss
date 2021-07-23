@@ -1,0 +1,89 @@
+@import "../../abstracts/abstracts";
+
+.itgBlock__ItgForm {
+  .columns {
+    .column {
+      .gform_heading {
+        padding-bottom: 56px;
+        h2 {
+          font-size: 40px !important;
+          font-weight: bold !important;
+          line-height: 48px !important;
+          font-family: $font__main;
+          color: $itg__blue-1;
+        }
+        p {
+          display: none;
+        }
+      }
+
+      form {
+        .gfield {
+          padding-bottom: 56px;
+          .gfield_label {
+            margin: 0;
+            color: $itg__blue-1;
+            line-height: 25.6px;
+            font-weight: 600;
+            font-family: $font__main;
+            font-size: 14px;
+          }
+          .gfield_description {
+            color: $itg__grey-1;
+            line-height: 25.6px;
+            font-family: $font__main;
+            font-size: 16px;
+          }
+          .ginput_container {
+            input {
+              border-radius: 0;
+              border-top: none;
+              border-right: none;
+              border-left: none;
+              border-color: $itg__grey-1;
+              width: 100%;
+              outline: none;
+
+              &:active {
+                border-radius: 0;
+                border-top: none;
+                border-right: none;
+                border-left: none;
+                border-width: 1px;
+                border-color: $itg__blue-3;
+                outline: none;
+              }
+
+              &:focus {
+                border-radius: 0;
+                border-top: none;
+                border-right: none;
+                border-left: none;
+                border-width: 1px;
+                border-color: $itg__blue-3;
+                outline: none;
+              }
+            }
+            textarea {
+              border-color: $itg__grey-1;
+              outline: none;
+              &:active {
+                border-width: 1px;
+                outline: none;
+                border-color: $itg__blue-3;
+              }
+              &:focus {
+                border-width: 1px;
+                outline: none;
+                border-color: $itg__blue-3;
+              }
+            }
+            label {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
