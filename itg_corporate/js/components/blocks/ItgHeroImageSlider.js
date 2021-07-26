@@ -22,6 +22,19 @@ export const ItgHeroImageSwiper = function ()
                 return '<span class="' + className + '">' + "</span>";
             },
         },
+        breakpoints: {
+            700: {
+                pagination: {
+                    dynamicBullets: false,
+                    clickable: true,
+                    el: ".swiper-pagination",
+                    renderBullet: function (index, className)
+                    {
+                        return '<span class="' + className + '">' + "</span>";
+                    },
+                }
+            },
+        }
     });
 };
 
