@@ -455,7 +455,7 @@
 																									?>
 
 																	<li class="">
-																		<span href="" data-name="<?php echo $cta_megamenu_tabsid; ?>" class="is-narrow <?php if($i==0) { $i=1; echo 'active'; } ?>" data-toggle="tab" aria-controls="<?php echo $cta_megamenu_tabsid; ?>">
+																		<span href="" data-name="<?php echo $cta_megamenu_tabsid; ?>" class="is-narrow <?php if($i==0) { $i=1; echo 'active is-active'; } ?>" data-toggle="tab" aria-controls="<?php echo $cta_megamenu_tabsid; ?>">
 																			<?php echo $cta_megamenu_tabslink; ?>
 
 																		</span>
