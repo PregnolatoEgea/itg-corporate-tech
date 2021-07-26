@@ -31,6 +31,7 @@ defined('ABSPATH') or die("You can't access this file directly.");
  */
 // $terms = get_the_terms( get_the_ID() );
 ?>
+<div class="container">
 <div class='itgitem itg_aspcontent columns'> 
 	    <?php do_action('asp_res_vertical_begin_item'); ?>
        
@@ -101,3 +102,4 @@ defined('ABSPATH') or die("You can't access this file directly.");
 
     <?php do_action('asp_res_vertical_end_item'); ?> 
     </div>
+</div>

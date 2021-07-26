@@ -6,9 +6,7 @@
   @include h1($font-size:5rem !important, $line-height: 6rem !important)
 }
 .h2, h2{
-  &:not(#CybotCookiebotDialogBodyContentTitle){
     @include h2($font-size:4rem !important, $line-height: 4.75rem !important);
-  }
 }
 .h3, h3{
   @include h3($font-size:3.5rem !important, $line-height: 4.1875rem !important)

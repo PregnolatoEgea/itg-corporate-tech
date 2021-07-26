@@ -1,10 +1,10 @@
 export const ItgFooter = function () {
 	// Tablet and up constraints
 	let footerAnchorContainer = document.getElementById('menu-footer-menu');
-	let elementClicked = footerAnchorContainer.querySelectorAll(".menu-item-has-children>a");
+	let elementClicked = document.querySelectorAll(".itgFooter__menu .menu-item-has-children>a");
 	let itgSubmenus = document.querySelector("[class*=sub-menu]");
 	let itgSubmenusToggler = document.querySelector(".ItgFooter__toggleBtn");
-
+	if (elementClicked !== null) {
 	elementClicked.forEach(function ($el) {
 
 		$el.addEventListener('click', function () {
@@ -13,11 +13,12 @@ export const ItgFooter = function () {
 
 			for (var i = 0; i < itgSubmenus.length; i++) {
 				itgSubmenus[i].classList.toggle("is-show");
-				
+
 			}
 			itgSubmenusToggler.classList.add("is-active");
 		});
 	});
+}
 
 	itgSubmenusToggler.addEventListener('click', function () {
 		event.preventDefault();
@@ -45,10 +46,10 @@ export const ItgFooter = function () {
 		.forEach(function (element) {
 			element
 				.addEventListener('click', function (event) {
-					event.preventDefault();
+					//event.preventDefault();
 					// Capture clicked element
 					const clickedEntrySubMenu = event.target.parentElement.querySelector('.sub-menu');
-					const isClickedElementShown = clickedEntrySubMenu.classList.contains('is-show');
+				//	const isClickedElementShown = clickedEntrySubMenu.classList.contains('is-show');
 
 					event.target.parentElement.classList.toggle('expanded');
 

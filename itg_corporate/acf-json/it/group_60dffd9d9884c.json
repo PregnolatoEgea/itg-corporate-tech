@@ -41,14 +41,14 @@
             "collapsed": "",
             "min": 0,
             "max": 0,
-            "layout": "table",
+            "layout": "block",
             "button_label": "Aggiungi slide",
             "sub_fields": [
                 {
                     "key": "field_60dffe003554b",
                     "label": "Slide Title",
                     "name": "slide_title",
-                    "type": "text",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -57,12 +57,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 0,
                     "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
+                    "wpml_cf_preferences": 0
                 },
                 {
                     "key": "field_60dffe503554c",
@@ -90,6 +90,29 @@
                     "wpml_cf_preferences": 0
                 },
                 {
+                    "key": "field_60eef9c87d13e",
+                    "label": "Paragraph alignment",
+                    "name": "paragraph_alignment",
+                    "type": "button_group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "is-left": "Left",
+                        "is-centered": "Center"
+                    },
+                    "allow_null": 0,
+                    "default_value": "",
+                    "layout": "horizontal",
+                    "return_format": "value",
+                    "wpml_cf_preferences": 0
+                },
+                {
                     "key": "field_60dffe7d3554d",
                     "label": "Slide Paragraph",
                     "name": "slide_paragraph",
@@ -107,6 +130,28 @@
                     "toolbar": "full",
                     "media_upload": 1,
                     "delay": 0,
+                    "wpml_cf_preferences": 0
+                },
+                {
+                    "key": "field_60eef9ff7d13f",
+                    "label": "Paragraph style",
+                    "name": "paragraph_style",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_5fc27334c7cd8"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0,
                     "wpml_cf_preferences": 0
                 },
                 {
@@ -151,5 +196,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1625467891
+    "modified": 1626335274
 }

@@ -21,15 +21,16 @@
           </div>
         </div>
       </div>
-        <div class="container">
-	        <div class="columns columns is-centered">
-	          <div id="Itg_media_results" class="column is-10 ">
-	            <div>
-	              <?php echo do_shortcode ( $filter_results ); ?>
-	            </div>
-	          </div>
-	        </div>
+        
+    </div>
+    <div class="container">
+      <div class="columns columns is-centered">
+        <div id="Itg_media_results" class="column is-10 ">
+          <div>
+            <?php echo do_shortcode ( $filter_results ); ?>
+          </div>
         </div>
+      </div>
     </div>
   </div>
 </section>
