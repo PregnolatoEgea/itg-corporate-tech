@@ -318,6 +318,7 @@
     background-color: $itg__white;
     &--logo {
       width: auto;
+      max-height: 35px!important;
     }
   }
   &__leftSide,
@@ -788,6 +789,9 @@ header.site-header {
   transform: translateY(0%);
   z-index: 9999;
   position: relative;
+  @include mobile {
+    height: 80px;
+  }
   nav.navbar {
     padding: 0 55px;
     @media (max-width: $tablet) {

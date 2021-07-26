@@ -1,5 +1,5 @@
 export const ItgHamburgers = function () {
-  let hamburgers = document.querySelectorAll('.hamburger');
+  let hamburgers = document.querySelectorAll('.navbar-burger');
   let menuItems = document.querySelectorAll('.itgMainMenu__highlightedItems--single');
   let searchBoxItems = document.querySelectorAll('.itgMainMenu__searchBox');
   let toggles = document.querySelectorAll('.itgMainMenu__toggle');
@@ -14,17 +14,17 @@ export const ItgHamburgers = function () {
     hamburger.addEventListener('click', function () {
       menuToggler(hamburger)
     })
-    /*
+/*
     mainSearch.addEventListener('click', function () {
       if(hamburger.classList.contains('is-active')){
         menuToggler(hamburger)
       }
     })
-				*/
+*/
     function menuToggler(that) {
       that.classList.toggle('is-active');
-      that.getElementsByClassName('hamburger-box')[0].classList.toggle('is-active');
-      that.getElementsByClassName('hamburger-inner')[0].classList.toggle('is-active');
+      //that.getElementsByClassName('hamburger-box')[0].classList.toggle('is-active');
+      //that.getElementsByClassName('hamburger-inner')[0].classList.toggle('is-active');
       for (const toggle of toggles) {
         toggle.classList.toggle('highlighted-are-hide')
       }
@@ -35,7 +35,7 @@ export const ItgHamburgers = function () {
         searchBoxItem.classList.toggle('highlighted-are-hide')
       }
       for (const mainMenuContainerItem of mainMenuContainer) {
-        mainMenuContainerItem.classList.toggle('is-hide')
+        mainMenuContainerItem.classList.toggle('is-active')
       }
       for (const mainMenuSupContainerItem of mainMenuSupContainer) {
         mainMenuSupContainerItem.classList.toggle('is-hide')

@@ -1,74 +1,90 @@
-<section class="section is-paddingless">
-  <div id="itg_block_<?php echo $block_id; ?>" class="itgBlock-hero-image-slider swiper-container is-paddingless <?php if (get_sub_field('has_reduced_height')) {
-                                                            echo 'has_reduced_height';
-                                                          } ?>">
+<?php
+$title_alignment = get_sub_field('title_alignment');
+$paragraph_alignment = get_sub_field('paragraph_alignment');
+$title = get_sub_field('title');
+$heading_style = get_sub_field('heading_style');
+$paragraph = get_sub_field('paragraph');
+$paragraph_style = get_sub_field('paragraph_style');
+$background_image = get_sub_field('background_image');
+$arrow_down_centered = get_sub_field('arrow_down_centered');
+if ($title_alignment === 'is-centered') {
+  $title_align = 'has-text-centered';
+} else {
+  $title_align = 'has-text-left';
+}
+if ($paragraph_alignment === 'is-centered') {
+  $paragraph_align = 'has-text-centered';
+} else {
+  $paragraph_align = 'has-text-left';
+}
+?>
+<section class="section">
+<div id="itg_block_<?php echo $block_id; ?>" class="container itgBlock-hero-image <?php if(get_sub_field('has_reduced_height')){echo 'has_reduced_height';} ?>" style="background-image: url(<?php echo $background_image; ?>)">
+  <div class="columns is-variable is-12-desktop is-10-touch is-multiline">
+    <div class="column itgBlock-hero-image-container">
+      <div class="columns is-12-desktop is-hidden-touch is-multiline <?php echo $title_alignment; ?>">
+        <div class="column is-12 itg-mt-116 <?php echo $title_align; ?>">
+          <?php
+            if(get_field("stampare_breadcrumbs") && $block_id === 0) {
+              $breadcrumbs_color = get_field("colore_breadcrumbs") == "nero" ? "#000" : "#fff";
 
-    <div class="swiper-wrapper itgBlock__ItgHeroImageSlider--sliderWrapper is-12-desktop">
-      <?php if (have_rows('hero_image_slider')) {
-
-        $background_color = '#d3f4ff';
-        $color = '#003478';
-        $background = 'none';
-        $opacity = '1';
-
-        // Loop through rows.
-        while (have_rows('hero_image_slider')) : the_row();
-          $hero_slider_cta_link = get_sub_field('link_cta');
-          $hero_slider_paragraph = get_sub_field('slide_paragraph');
-          $hero_slider_title = get_sub_field('slide_title');
-          $hero_cta = get_sub_field('cta_link');
-          $bg_image = get_sub_field('slide_image');
-
-          if ($bg_image) {
-            $background_color = 'transparent';
-            $color = 'white';
-            $opacity = '0.8';
-            $background = 'linear-gradient(297.44deg, rgba(2, 28, 61, 0.5) 0%, #021c3d 100%)';
-          }
-      ?>
-          <div class="swiper-slide" style="background-image: url(<?php echo $bg_image; ?>); color: <?php echo $color; ?>; opacity: <?php echo $opacity; ?>; background: <?php echo $background; ?>; background-color: <?php echo $background_color; ?>;">
-            <div class="columns is-12-desktop is-multiline px-3 ">
-              <?php
-              if (get_field("stampare_breadcrumbs") && $block_id === 0) {
-                $breadcrumbs_color = get_field("colore_breadcrumbs") == "nero" ? "#000" : "#fff";
-
-                if (function_exists('yoast_breadcrumb')) {
-                  yoast_breadcrumb('<p id="breadcrumbs" style="color: ' . $breadcrumbs_color . '">', '</p>');
-                }
+              if ( function_exists('yoast_breadcrumb') ) {
+                yoast_breadcrumb( '<p id="breadcrumbs" style="color: '.$breadcrumbs_color.'">','</p>' );
               }
-              ?>
-              <?php
-              if ($hero_slider_title) {
-              ?>
-                <h3>
-                  <?php echo $hero_slider_title; ?>
-                </h3>
-              <?php } ?>
-            </div>
-            <?php
-            if ($hero_slider_paragraph) {
-            ?>
-              <div class="itgBlock-hero-image-slider__subtitle column is-10-desktop px-0">
-                <div class="<?php echo $paragraph_style ?> itgBlock-hero-image__subtitle--mobile-style">
-                  <?php echo $hero_slider_paragraph ?>
-                </div>
-              </div>
-            <?php } ?>
-            <?php
-            if ($hero_cta) {
-            ?>
-              <div class="itgBlock-hero-image-slider__cta-list column is-5">
-                <div class="itgBlock-hero-image-slider__cta-list-inner columns">
-                  <?php require 'atoms/ItgAtomCta.php'; ?>
-                </div>
-              </div>
-            <?php } ?>
+            }
+          ?>
+          <div class="<?php echo $heading_style ?>">
+            <<?php echo $heading_style ?>>
+              <?php echo $title ?>
+            </<?php echo $heading_style ?>>
           </div>
-        <?php
-        endwhile;
-        ?>
+        </div>
+      </div>
+      <div class="columns is-10-touch is-hidden-desktop is-multiline is-centered">
+
+        <div class="column is-10 itg-mt-116 has-text-centered>">
+          <?php
+            if(get_field("stampare_breadcrumbs") && $block_id === 0) {
+              $breadcrumbs_color = get_field("colore_breadcrumbs") == "nero" ? "#000" : "#fff";
+
+              if ( function_exists('yoast_breadcrumb') ) {
+                yoast_breadcrumb( '<p id="breadcrumbs" style="color: '.$breadcrumbs_color.'">','</p>' );
+              }
+            }
+          ?>
+          <div class="<?php echo $heading_style ?>">
+            <<?php echo $heading_style ?>>
+              <?php echo $title ?>
+            </<?php echo $heading_style ?>>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-multiline <?php echo $paragraph_alignment; ?>">
+        <div class="itgBlock-hero-image__subtitle column is-10 <?php echo $paragraph_align; ?>">
+          <div class="<?php echo $paragraph_style ?> itgBlock-hero-image__subtitle--mobile-style">
+            <?php echo $paragraph ?>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-multiline">
+        <div class="itgBlock-hero-image__cta-list column is-5">
+          <div class="itgBlock-hero-image__cta-list-inner columns">
+            <?php
+              while( have_rows('cta_list') ) : the_row();
+                $is_offset = 'is-offset-0';
+                require 'atoms/ItgAtomCta.php';
+              endwhile;
+            ?>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="swiper-pagination itgBlock__ItgHeroImageSlider--pagination"></div>
-  <?php } ?>
+    <?php if ($arrow_down_centered) { ?>
+      <div class="itgBlock-hero-image__arrow-down">
+        <a class="itgBlock-hero-image__arrow-down-image" href="#itg_block_<?php echo $block_id + 1; ?>">
+        </a>
+      </div>
+    <?php } ?>
   </div>
+</div>
 </section>

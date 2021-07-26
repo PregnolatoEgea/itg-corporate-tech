@@ -24,4 +24,5 @@ import ItgOpenPreHeaderBottomSide from "./components/blocks/ItgOpenPreHeaderBott
 import ItgOpenMegaMenu from "./components/blocks/ItgOpenMegaMenu";
 import ItgFooter from "./components/animations/ItgFooter";
 import ItgNavTabs from "./components/atoms/ItgNavTabs";
+import ItgSectionClosePreheadr from "./components/blocks/ItgSectionClosePreheader";
 import ItgNavigation from "./navigation";

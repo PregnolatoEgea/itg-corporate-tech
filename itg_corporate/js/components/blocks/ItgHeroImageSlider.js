@@ -6,13 +6,14 @@ export const ItgHeroImageSwiper = function ()
 
     let mySwiper = new Swiper(ItgHeroImageContainers, {
         direction: 'horizontal',
-        loop: false,
+        loop: true,
+        //navigation: false,
         pagination: {
             clickable: true,
             el: ".swiper-pagination",
             renderBullet: function (index, className)
             {
-                return '<span class="' + className + '">' + "</span>";
+               return '<span class="' + className + '">' + "</span>";
             },
         },
     });

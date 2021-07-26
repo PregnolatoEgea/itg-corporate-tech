@@ -38,6 +38,7 @@
     "webpack-cli": "^4.2.0"
   },
   "dependencies": {
-    "animejs": "^3.2.1"
+    "animejs": "^3.2.1",
+    "mmenu-light": "^3.0.9"
   }
 }

@@ -1,4 +1,4 @@
-export const ItgSectionClosePreheader = function (key) 
+export const ItgSectionClosePreheader = function (key)
 {
     document.addEventListener('DOMContentLoaded', function ()
     {
