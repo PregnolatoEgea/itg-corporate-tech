@@ -36,6 +36,18 @@
     }
 
     &-bullets-dynamic {
+      @include mobile {
+        left: calc(50% + 20px) !important;
+      }
+      @media screen and (min-width: 400px) {
+        left: calc(50%) !important;
+      }
+      @media screen and (max-width: 320px) {
+        left: calc(50% + 45px) !important;
+      }
+      @media screen and (min-width: 321) and (max-width: 360px) {
+        left: calc(50% + 25px) !important;
+      }
       @include tablet-only {
         transform: translateX(-60%) !important;
       }
