@@ -7,14 +7,13 @@
 
 		<div class="swiper-wrapper itgBlock__ItgHeroImageSlider--sliderWrapper is-12-desktop">
 			<?php if (have_rows('hero_image_slider')) {
-
-				$background_color = '#d3f4ff';
-				$color = '#003478';
-				$background = 'none';
-				$opacity = '1';
-
 				// Loop through rows.
 				while (have_rows('hero_image_slider')) : the_row();
+					$background_color = '#d3f4ff';
+					$color = '#003478';
+					$background = 'none';
+					$opacity = '1';
+
 					$hero_slider_cta_link = get_sub_field('link_cta');
 					$hero_slider_paragraph = get_sub_field('slide_paragraph');
 					$hero_slider_title = get_sub_field('slide_title');
@@ -27,9 +26,9 @@
 					$paragraph_alignment = get_sub_field('paragraph_alignment');
 
 					if ($paragraph_alignment === 'is-centered') {
-							$paragraph_align = 'has-text-centered';
+						$paragraph_align = 'has-text-centered';
 					} else {
-							$paragraph_align = 'has-text-left';
+						$paragraph_align = 'has-text-left';
 					}
 
 					if ($bg_image) {
@@ -37,7 +36,8 @@
 						$color = 'white';
 					}
 			?>
-					<div class="swiper-slide <?php if ($bg_image): echo 'bgImageslide'; endif;?>" style="background-image: url(<?php echo $bg_image; ?>); color: <?php echo $color; ?>; opacity: <?php echo $opacity; ?>; background-color: <?php echo $background_color; ?>;">
+					<div class="swiper-slide <?php if ($bg_image) : echo 'bgImageslide';
+												endif; ?>" style="background-image: url(<?php echo $bg_image; ?>); color: <?php echo $color; ?>; opacity: <?php echo $opacity; ?>; background-color: <?php echo $background_color; ?>;">
 						<div class="columns is-12-desktop is-multiline px-3 space-title itg-mt-80">
 							<?php
 							if (get_field("stampare_breadcrumbs") && $block_id === 0) {
@@ -51,7 +51,7 @@
 							<?php
 							if ($hero_slider_title) {
 							?>
-									<?php echo $hero_slider_title; ?>
+								<?php echo $hero_slider_title; ?>
 							<?php } ?>
 						</div>
 						<?php

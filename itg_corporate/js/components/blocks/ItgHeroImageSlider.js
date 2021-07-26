@@ -14,7 +14,7 @@ export const ItgHeroImageSwiper = function ()
         },
         pagination: {
             dynamicBullets: true,
-            dynamicMainBullets: 4,
+            dynamicMainBullets: 1,
             clickable: true,
             el: ".swiper-pagination",
             renderBullet: function (index, className)
@@ -23,7 +23,7 @@ export const ItgHeroImageSwiper = function ()
             },
         },
         breakpoints: {
-            700: {
+            800: {
                 pagination: {
                     dynamicBullets: false,
                     clickable: true,
