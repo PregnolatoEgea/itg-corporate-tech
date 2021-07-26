@@ -675,6 +675,9 @@ if( have_rows('layout_builder_posts') ):
           case 'hero_image_slider':
             require 'blocks/ItgHeroImageSlider.php';
           break;
+          case 'form':
+            require 'blocks/ItgForm.php';
+            break;
 
           default:
 
