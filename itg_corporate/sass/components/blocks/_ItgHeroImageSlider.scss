@@ -35,7 +35,13 @@
       left: 0px;
     }
 
-    .swiper-pagination-bullet {
+    &-bullets-dynamic {
+      @include tablet-only {
+        transform: translateX(-60%) !important;
+      }
+    }
+
+    &-bullet {
       height: 12.39px !important;
       width: 52.25px !important;
       border-radius: 28px !important;
