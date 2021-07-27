@@ -3,6 +3,9 @@
 .itgBlock__ItgForm {
   .columns {
     .column {
+      .gform_validation_errors {
+        display: none;
+      }
       .gform_heading {
         padding-bottom: 56px;
 
@@ -25,6 +28,21 @@
       form {
         .gfield {
           padding-bottom: 56px;
+
+          @include mobile {
+            padding-bottom: 50px;
+          }
+
+          .validation_message {
+            padding: 0;
+            border: none;
+            background-color: initial;
+            margin-top: 11px;
+            color: $itg__red !important;
+            line-height: 16px !important;
+            font-family: $font__main;
+            font-size: 14px !important;
+          }
           .gfield_label {
             margin: 0;
             color: $itg__blue-1;
@@ -45,7 +63,7 @@
               border-top: none;
               border-right: none;
               border-left: none;
-              border-color: $itg__grey-1;
+              border-bottom-color: $itg__grey-1;
               width: 100%;
               outline: none;
 
@@ -59,7 +77,7 @@
                 border-right: none;
                 border-left: none;
                 border-width: 1px;
-                border-color: $itg__blue-3;
+                border-bottom-color: $itg__blue-3;
                 outline: none;
               }
 
@@ -69,7 +87,17 @@
                 border-right: none;
                 border-left: none;
                 border-width: 1px;
-                border-color: $itg__blue-3;
+                border-bottom-color: $itg__blue-3;
+                outline: none;
+              }
+
+              &:invalid {
+                border-radius: 0;
+                border-top: none;
+                border-right: none;
+                border-left: none;
+                border-width: 1px;
+                border-bottom-color: $itg__red !important;
                 outline: none;
               }
             }
@@ -85,6 +113,11 @@
                 border-width: 1px;
                 outline: none;
                 border-color: $itg__blue-3;
+              }
+              &:invalid {
+                border-width: 1px;
+                outline: none;
+                border-color: $itg__red !important;
               }
             }
             label {
