@@ -27,12 +27,20 @@ function menuTransition() {
 		// Add and remove menu active (transition) class
 		mainMenu.classList.remove('active');
 		if (!isHidden(mainMenuToggle)) {
+<<<<<<< Updated upstream
 				mainMenu.classList.add('active');
 		}
 		else {
 				mainMenu.classList.remove('active');
 		}
 
+=======
+			mainMenu.classList.add('active');
+		}
+		else {
+			mainMenu.classList.remove('active');
+		}
+>>>>>>> Stashed changes
 }
 
 // Run menuTransition() on resize
@@ -66,6 +74,11 @@ for (var i = 0; i < mainMenuParent.length; i++) {
 				var parent = this.parentNode;
 				var targeturl = this.href;
 
+<<<<<<< Updated upstream
+=======
+				//console.log("DEBUG COLONNA il livello è:" + level);
+
+>>>>>>> Stashed changes
 				// Make parent active
 				if (level === '1') {
 						var openItems = document.querySelectorAll('.open');
@@ -78,6 +91,7 @@ for (var i = 0; i < mainMenuParent.length; i++) {
 						else {
 								parent.className += ' ' + 'open';
 						}
+<<<<<<< Updated upstream
 				}
 
 
@@ -91,11 +105,35 @@ for (var i = 0; i < mainMenuParent.length; i++) {
 				else {
 						mainMenuList.className += ' ' + 'is-active-' + level;
 				}
+=======
+				}
+				if (level === '2') {
+						var openItems = document.querySelectorAll('.open');
+
+
+						if (parent.classList) {
+							parent.classList.add('open');
+						}
+						else {
+							parent.className += ' ' + 'open';
+						}
+				}
+
+				mainMenuList.className = ('main-menu__list');
+				// Add is-active-LEVEL class for each section
+				if (mainMenuList.classList) {
+					mainMenuList.classList.add('is-active-' + level);
+				}
+				else {
+					mainMenuList.className += ' ' + 'is-active-' + level;
+				}
+>>>>>>> Stashed changes
 				e.preventDefault();
 		});
 }
 
 for (var r = 0; r < mainMenuBack.length; r++) {
+<<<<<<< Updated upstream
 		mainMenuBack[r].addEventListener('click', function (e) {
 				var level = this.getAttribute('data-childLevel');
 				mainMenuList.className = ('main-menu__list');
@@ -108,6 +146,25 @@ for (var r = 0; r < mainMenuBack.length; r++) {
 				}
 				e.preventDefault();
 		});
+=======
+	mainMenuBack[r].addEventListener('click', function (e) {
+
+		//add by colonna
+		this.parentNode.parentNode.classList.remove('open');
+
+		var level = this.getAttribute('data-childLevel');
+
+		mainMenuList.className = ('main-menu__list');
+		// Add is-active-LEVEL class for each section
+		if (mainMenuList.classList) {
+				mainMenuList.classList.add('is-active-' + level);
+		}
+		else {
+				mainMenuList.className += ' ' + 'is-active-' + level;
+		}
+		e.preventDefault();
+	});
+>>>>>>> Stashed changes
 }
 
 })();
