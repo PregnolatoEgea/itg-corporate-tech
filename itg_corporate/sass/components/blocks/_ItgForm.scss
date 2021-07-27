@@ -90,16 +90,15 @@
                 border-bottom-color: $itg__blue-3;
                 outline: none;
               }
-
-              &:invalid {
-                border-radius: 0;
-                border-top: none;
-                border-right: none;
-                border-left: none;
-                border-width: 1px;
-                border-bottom-color: $itg__red !important;
-                outline: none;
-              }
+            }
+            input[aria-invalid="true"] {
+              border-radius: 0;
+              border-top: none;
+              border-right: none;
+              border-left: none;
+              border-width: 1px !important;
+              border-bottom-color: $itg__red !important;
+              outline: none;
             }
             textarea {
               border-color: $itg__grey-1;
@@ -114,11 +113,11 @@
                 outline: none;
                 border-color: $itg__blue-3;
               }
-              &:invalid {
-                border-width: 1px;
-                outline: none;
-                border-color: $itg__red !important;
-              }
+            }
+            textarea[aria-invalid="true"] {
+              border-width: 1px !important;
+              outline: none;
+              border-color: $itg__red !important;
             }
             label {
               display: none;
